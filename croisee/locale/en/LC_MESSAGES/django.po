@@ -1,0 +1,302 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Geburt & Leben\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-03 17:32+0200\n"
+"PO-Revision-Date: 2009-08-03 17:33+0100\n"
+"Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
+"Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: models.py:18
+msgid "Standard template"
+msgstr "Standard template"
+
+#: models.py:21
+#: models.py:29
+msgid "Main content area"
+msgstr "Main content area"
+
+#: models.py:26
+msgid "Person template"
+msgstr "Person template"
+
+#: models.py:30
+msgid "Right content area"
+msgstr "Right content area"
+
+#: models.py:41
+msgid "Event"
+msgstr "Event"
+
+#: models.py:42
+msgid "Events"
+msgstr "Events"
+
+#: models.py:52
+#: templates/root.html:81
+msgid "Calendar"
+msgstr "Calendar"
+
+#: models.py:53
+#, fuzzy
+msgid "Calendars"
+msgstr "Calendar"
+
+#: models.py:84
+#: models.py:90
+msgid "right"
+msgstr "right"
+
+#: models.py:85
+#: models.py:91
+msgid "center"
+msgstr "center"
+
+#: settings.py:23
+msgid "STRING_NOT_SET"
+msgstr "STRING_NOT_SET"
+
+#: settings.py:78
+msgid "English"
+msgstr "English"
+
+#: settings.py:79
+msgid "German"
+msgstr "German"
+
+#: settings.py:166
+#, python-format
+msgid "Please create a %s file with random characters to generate your secret key!"
+msgstr "Please create a %s file with random characters to generate your secret key!"
+
+#: templates/404.html:4
+#: templates/404.html.py:7
+#: templates/500.html:4
+msgid "404 Page Not Found"
+msgstr "404 Page Not Found"
+
+#: templates/500.html:7
+msgid "500 Server Error"
+msgstr "500 Server Error"
+
+#: templates/dummy.html:3
+msgid "TIME_FORMAT"
+msgstr "G:i"
+
+#: templates/root.html:7
+#: templates/root.html.py:64
+msgid "Home"
+msgstr "Home"
+
+#: templates/root.html:26
+msgid "logout"
+msgstr "logout"
+
+#: templates/root.html:28
+msgid "login"
+msgstr "login"
+
+#: templates/root.html:32
+msgid "search"
+msgstr "search"
+
+#: templates/root.html:36
+msgid "Imprint"
+msgstr "Imprint"
+
+#: templates/admin/feincms/splitpane_editor_tree.html:38
+msgid "Cannot remove this frame while inside this admin section."
+msgstr "Cannot remove this frame while inside this admin section."
+
+#: templates/admin/feincms/splitpane_editor_tree.html:91
+msgid "remove"
+msgstr "remove"
+
+#: templates/admin/feincms/splitpane_editor_tree.html:105
+#: templates/admin/feincms/tree_editor.html:33
+#, python-format
+msgid "Add %(name)s"
+msgstr "Add %(name)s"
+
+#: templates/admin/feincms/splitpane_editor_tree.html:106
+msgid "Reload"
+msgstr "Reload"
+
+#: templates/admin/feincms/splitpane_editor_tree.html:108
+#: templates/admin/feincms/splitpane_editor_tree.html:115
+msgid "Edit"
+msgstr "Edit"
+
+#: templates/admin/feincms/splitpane_editor_tree.html:109
+#: templates/admin/feincms/splitpane_editor_tree.html:116
+#: templates/admin/feincms/tree_editor.html:51
+msgid "Delete"
+msgstr "Delete"
+
+#: templates/admin/feincms/tree_editor.html:37
+msgid "Save tree"
+msgstr "Save tree"
+
+#: templates/admin/feincms/tree_editor.html:40
+msgid "Expand all"
+msgstr "Expand all"
+
+#: templates/admin/feincms/tree_editor.html:41
+msgid "Collapse all"
+msgstr "Collapse all"
+
+#: templates/admin/feincms/tree_editor.html:60
+msgid "Insert after"
+msgstr "Insert after"
+
+#: templates/admin/feincms/tree_editor.html:61
+msgid "Insert before"
+msgstr "Insert before"
+
+#: templates/admin/feincms/tree_editor.html:62
+msgid "Insert as child"
+msgstr "Insert as child"
+
+#: templates/content/mediafile/image.html:6
+#: templates/content/mediafile/image_center.html:3
+msgid "Foto:"
+msgstr "Photo: "
+
+#: templates/content/schedule/event.html:4
+msgid "Starts"
+msgstr "Starts"
+
+#: templates/content/schedule/event.html:5
+#: templates/content/schedule/event.html:7
+#: templates/content/schedule/event.html:10
+msgid "DATETIME_FORMAT"
+msgstr "Y-m-d G:i"
+
+#: templates/content/schedule/event.html:6
+msgid "Ends"
+msgstr "Ends"
+
+#: templates/content/schedule/event.html:9
+msgid "Reoccurs"
+msgstr "Reoccurs"
+
+#: templates/content/schedule/event.html:10
+msgid "until"
+msgstr "until"
+
+#: templates/content/schedule/event.html:14
+msgid "Description"
+msgstr "Description"
+
+#~ msgid "ReStructured Text"
+#~ msgstr "ReStructured Text"
+#~ msgid "ReStructured Texts"
+#~ msgstr "ReStructured Texts"
+#~ msgid "Add Event"
+#~ msgstr "Add Event"
+#~ msgid "%(start_date)s"
+#~ msgstr "%(start_date)s"
+#~ msgid "%(end_date)s"
+#~ msgstr "%(end_date)s"
+#~ msgid "Details"
+#~ msgstr "Details"
+#~ msgid "Question"
+#~ msgstr "Question"
+#~ msgid ""
+#~ "Do you want to cancel this occurrence or delete all occurrences of this "
+#~ "event?"
+#~ msgstr ""
+#~ "Do you want to cancel this occurrence or delete all occurrences of this "
+#~ "event?"
+#~ msgid "This is a recurring event"
+#~ msgstr "This is a recurring event"
+#~ msgid "Do you want to edit this occurrence or all occurrences?"
+#~ msgstr "Do you want to edit this occurrence or all occurrences?"
+#~ msgid "Edit Event"
+#~ msgstr "Edit Event"
+#~ msgid "Delete Event"
+#~ msgstr "Delete Event"
+#~ msgid "Add"
+#~ msgstr "Add"
+#~ msgid "YEAR_MONTH_FORMAT"
+#~ msgstr "F Y"
+#~ msgid "Continues"
+#~ msgstr "Continues"
+#~ msgid "Week"
+#~ msgstr "Week"
+#~ msgid "Month"
+#~ msgstr "Month"
+#~ msgid "Year"
+#~ msgstr "Year"
+#~ msgid "Available Calendars"
+#~ msgstr "Available Calendars"
+#~ msgid "Small Month"
+#~ msgstr "Small Month"
+#~ msgid "1 Month"
+#~ msgstr "1 Month"
+#~ msgid "3 Months"
+#~ msgstr "3 Months"
+#~ msgid "This Year"
+#~ msgstr "This Year"
+#~ msgid "Weekly"
+#~ msgstr "Weekly"
+#~ msgid "Daily"
+#~ msgstr "Daily"
+#~ msgid "Feed"
+#~ msgstr "Feed"
+#~ msgid "This month"
+#~ msgstr "This month"
+#~ msgid "Three Months"
+#~ msgstr "Three Months"
+#~ msgid "This week"
+#~ msgstr "This week"
+#~ msgid "Current Month"
+#~ msgstr "Current Month"
+#~ msgid "Current Year"
+#~ msgstr "Current Year"
+#~ msgid "Are you sure that you really want to cancel this occurrence?"
+#~ msgstr "Are you sure that you really want to cancel this occurrence?"
+#~ msgid "From"
+#~ msgstr "From"
+#~ msgid "to"
+#~ msgstr "to"
+#~ msgid "Cancel"
+#~ msgstr "Cancel"
+#~ msgid "Are you sure that you really want to delete it?"
+#~ msgstr "Are you sure that you really want to delete it?"
+#~ msgid "Back"
+#~ msgstr "Back"
+#~ msgid "Change"
+#~ msgstr "Change"
+#~ msgid "%(end_recurring_date)s"
+#~ msgstr "%(end_recurring_date)s"
+#~ msgid "Never. This is a 'one time only' event."
+#~ msgstr "Never. This is a 'one time only' event."
+#~ msgid "Day"
+#~ msgstr "Day"
+#~ msgid "left"
+#~ msgstr "left"
+#~ msgid "Three Month Calendar"
+#~ msgstr "Three Month Calendar"
+#~ msgid "Full Year Calendar"
+#~ msgstr "Full Year Calendar"
+#~ msgid "Startseite"
+#~ msgstr "Home"
+#~ msgid "Impressum"
+#~ msgstr "Imprint"
+#~ msgid "monatlich"
+#~ msgstr "monthly"
+#~ msgid "userwelcome"
+#~ msgstr "userwelcome"
+

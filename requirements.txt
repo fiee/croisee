@@ -1,0 +1,6 @@
+Django
+#django-tagging
+#django-tinymce
+#django-mptt # nötiger Patch nur im SVN!
+#feincms # nur direkt auf github
+#schedule # nur direkt auf github
