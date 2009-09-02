@@ -12,3 +12,4 @@ dev.db
 build
 *.tar.gz
 *.bak
+temp
