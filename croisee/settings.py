@@ -15,7 +15,7 @@ sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT,'lib/python2.5/site-package
 # debug settings
 # ==============================================================================
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 INTERNAL_IPS = ('127.0.0.1')
 if DEBUG:
@@ -74,10 +74,8 @@ DATABASE_PORT = ''
 
 TIME_ZONE = 'Europe/Zurich'
 LANGUAGE_CODE = 'de'
-"""
-LANGUAGES = (('en', _(u'English')),
-             ('de', _(u'German')))
-"""
+#LANGUAGES = (('en', _(u'English')),
+#             ('de', _(u'German')))
 USE_I18N = True
 
 SITE_ID = 1
@@ -92,7 +90,7 @@ ROOT_URLCONF = '%s.urls' % PROJECT_NAME
 # application and middleware settings
 # ==============================================================================
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -102,7 +100,7 @@ INSTALLED_APPS = (
     #'django.contrib.sitemaps',
     #'tagging',
     PROJECT_NAME,
-)
+]
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -169,3 +167,5 @@ try:
     from settings_local import *
 except ImportError:
     pass
+if DEBUG:
+    INSTALLED_APPS.append('django.contrib.admindocs')

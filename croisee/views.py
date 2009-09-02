@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from feincms.views.base import handler
+from django.conf import settings
+from django.shortcuts import render_to_response
 
-def home(request):
-    """
-    This is only a redirect to the 'home' page of feincms, handled by feincms.views.base.handler
-    """
-    return handler(request, '/home/')
+def home(request, *args, **kwargs):
+    return render_to_response('root.html', {'MEDIA_URL':settings.MEDIA_URL})
