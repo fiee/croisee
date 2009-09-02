@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Geburt & Leben\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-03 17:32+0200\n"
-"PO-Revision-Date: 2009-08-03 17:33+0100\n"
+"POT-Creation-Date: 2009-09-02 23:17+0200\n"
+"PO-Revision-Date: 2009-09-02 23:19+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -18,186 +18,193 @@ msgstr ""
 "X-Poedit-Country: Germany\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: models.py:18
-msgid "Standard template"
-msgstr "Musterseite"
-
-#: models.py:21
-#: models.py:29
-msgid "Main content area"
-msgstr "Hauptinhalt"
-
-#: models.py:26
-msgid "Person template"
-msgstr "Personen-Seite"
-
-#: models.py:30
-msgid "Right content area"
-msgstr "Rechts"
-
-#: models.py:41
-msgid "Event"
-msgstr "Termin"
-
-#: models.py:42
-msgid "Events"
-msgstr "Termine"
-
 #: models.py:52
-#: templates/root.html:81
-msgid "Calendar"
-msgstr "Kalender"
+#: models.py:56
+#: models.py:104
+msgid "Word"
+msgstr "Wort"
 
 #: models.py:53
-msgid "Calendars"
-msgstr "Kalender"
+msgid "Words"
+msgstr "Wörter"
 
-#: models.py:84
-#: models.py:90
-msgid "right"
-msgstr "Rechts"
+#: models.py:58
+msgid "a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc."
+msgstr "ein Kreuzworträtsel-Wort; wird in Großbuchstaben umgewandelt; keine Zahlen, Bindestriche usw."
+
+#: models.py:77
+#: models.py:105
+msgid "Dictionary"
+msgstr "Wörterbuch"
+
+#: models.py:78
+msgid "Dictionaries"
+msgstr "Wörterbücher"
+
+#: models.py:82
+#: models.py:120
+msgid "Name"
+msgstr "Name"
+
+#: models.py:82
+#: models.py:120
+msgid "A short descriptive name"
+msgstr "Ein kurzer, aussagekräftiger Name"
+
+#: models.py:83
+#: models.py:121
+msgid "Language"
+msgstr "Sprache"
 
 #: models.py:85
-#: models.py:91
-msgid "center"
-msgstr "Mitte"
+#: models.py:123
+msgid "Language of (most of) the words in this dictionary"
+msgstr "Sprache der (meisten) Wörter in diesem Wörterbuch"
 
-#: settings.py:23
+#: models.py:86
+#: models.py:98
+#: models.py:106
+#: models.py:124
+msgid "Description"
+msgstr "Beschreibung"
+
+#: models.py:99
+msgid "Descriptions"
+msgstr "Beschreibungen"
+
+#: models.py:106
+msgid "Meaning of the word within the context of the selected dictionary"
+msgstr "Bedeutung des Wortes im Kontext des ausgewählten Wörterbuchs"
+
+#: models.py:107
+msgid "Priority"
+msgstr "Priorität"
+
+#: models.py:107
+msgid "0 is neutral, you can increase or decrease the priority"
+msgstr "0 ist neutral, Sie können die Priorität erhöhen oder verringern"
+
+#: models.py:117
+msgid "wordlist file (.txt)"
+msgstr "Wortlisten-Datei (*.txt)"
+
+#: models.py:118
+msgid "Select a .txt file containing a single word per line to upload as a new dictionary."
+msgstr "Wählen Sie eine Textdatei, die pro Zeile ein einzelnes Wort enthält, um sie als neues Wörterbuch hochzuladen."
+
+#: models.py:119
+msgid "Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name."
+msgstr "Wählen Sie ein Wörterbuch, dem diese Wörter hinzugefügt werden sollen. Lassen Sie dieses Feld frei, um ein neues Wörterbuch mit dem angegebenen Namen zu erzeugen."
+
+#: models.py:127
+msgid "wordlist upload"
+msgstr "Wortlisten-Upload"
+
+#: models.py:128
+msgid "wordlist uploads"
+msgstr "Wortlisten-Uploads"
+
+#: settings.py:22
 msgid "STRING_NOT_SET"
 msgstr "ZEICHENKETTE_NICHT_DEFINIERT"
 
-#: settings.py:78
-msgid "English"
-msgstr "Englisch"
-
-#: settings.py:79
-msgid "German"
-msgstr "Deutsch"
-
-#: settings.py:166
+#: settings.py:154
 #, python-format
 msgid "Please create a %s file with random characters to generate your secret key!"
 msgstr "Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen Schlüssel zu erzeugen!"
 
 #: templates/404.html:4
 #: templates/404.html.py:7
-#: templates/500.html:4
 msgid "404 Page Not Found"
 msgstr "404 Seite nicht gefunden"
 
-#: templates/500.html:7
+#: templates/500.html:4
+#: templates/500.html.py:7
 msgid "500 Server Error"
 msgstr "500 Server-Fehler"
 
-#: templates/dummy.html:3
-msgid "TIME_FORMAT"
-msgstr "G:i"
-
-#: templates/root.html:7
-#: templates/root.html.py:64
+#: templates/root.html:6
 msgid "Home"
 msgstr "Startseite"
 
-#: templates/root.html:26
-msgid "logout"
-msgstr "Abmelden"
+#: templates/admin/base_site.html:4
+msgid "fiëé croisée Site Admin"
+msgstr "fiëé croisée Site-Admin"
 
-#: templates/root.html:28
-msgid "login"
-msgstr "Anmelden"
+#: templates/admin/base_site.html:7
+msgid "fiëé croisée Administration"
+msgstr "fiëé croisée Administration"
 
-#: templates/root.html:32
-msgid "search"
-msgstr "Suchen"
-
-#: templates/root.html:36
-msgid "Imprint"
-msgstr "Impressum"
-
-#: templates/admin/feincms/splitpane_editor_tree.html:38
-msgid "Cannot remove this frame while inside this admin section."
-msgstr "Dieser Rahmen kann in diesem Admin-Bereich nicht entfernt werden."
-
-#: templates/admin/feincms/splitpane_editor_tree.html:91
-msgid "remove"
-msgstr "entfernen"
-
-#: templates/admin/feincms/splitpane_editor_tree.html:105
-#: templates/admin/feincms/tree_editor.html:33
-#, python-format
-msgid "Add %(name)s"
-msgstr "%(name)s hinzufügen"
-
-#: templates/admin/feincms/splitpane_editor_tree.html:106
-msgid "Reload"
-msgstr "Neu laden"
-
-#: templates/admin/feincms/splitpane_editor_tree.html:108
-#: templates/admin/feincms/splitpane_editor_tree.html:115
-msgid "Edit"
-msgstr "Bearbeiten"
-
-#: templates/admin/feincms/splitpane_editor_tree.html:109
-#: templates/admin/feincms/splitpane_editor_tree.html:116
-#: templates/admin/feincms/tree_editor.html:51
-msgid "Delete"
-msgstr "Löschen"
-
-#: templates/admin/feincms/tree_editor.html:37
-msgid "Save tree"
-msgstr "Baum speichern"
-
-#: templates/admin/feincms/tree_editor.html:40
-msgid "Expand all"
-msgstr "Alles ausklappen"
-
-#: templates/admin/feincms/tree_editor.html:41
-msgid "Collapse all"
-msgstr "Alles einklappen"
-
-#: templates/admin/feincms/tree_editor.html:60
-msgid "Insert after"
-msgstr "danach einfügen"
-
-#: templates/admin/feincms/tree_editor.html:61
-msgid "Insert before"
-msgstr "davor einfügen"
-
-#: templates/admin/feincms/tree_editor.html:62
-msgid "Insert as child"
-msgstr "untergeordnet einfügen"
-
-#: templates/content/mediafile/image.html:6
-#: templates/content/mediafile/image_center.html:3
-msgid "Foto:"
-msgstr "Foto: "
-
-#: templates/content/schedule/event.html:4
-msgid "Starts"
-msgstr "Beginn"
-
-#: templates/content/schedule/event.html:5
-#: templates/content/schedule/event.html:7
-#: templates/content/schedule/event.html:10
-msgid "DATETIME_FORMAT"
-msgstr "d.m.Y G:i"
-
-#: templates/content/schedule/event.html:6
-msgid "Ends"
-msgstr "Ende"
-
-#: templates/content/schedule/event.html:9
-msgid "Reoccurs"
-msgstr "Wiederholung"
-
-#: templates/content/schedule/event.html:10
-msgid "until"
-msgstr "bis"
-
-#: templates/content/schedule/event.html:14
-msgid "Description"
-msgstr "Beschreibung"
-
+#~ msgid "Standard template"
+#~ msgstr "Musterseite"
+#~ msgid "Main content area"
+#~ msgstr "Hauptinhalt"
+#~ msgid "Person template"
+#~ msgstr "Personen-Seite"
+#~ msgid "Right content area"
+#~ msgstr "Rechts"
+#~ msgid "Event"
+#~ msgstr "Termin"
+#~ msgid "Events"
+#~ msgstr "Termine"
+#~ msgid "Calendar"
+#~ msgstr "Kalender"
+#~ msgid "Calendars"
+#~ msgstr "Kalender"
+#~ msgid "right"
+#~ msgstr "Rechts"
+#~ msgid "center"
+#~ msgstr "Mitte"
+#~ msgid "English"
+#~ msgstr "Englisch"
+#~ msgid "German"
+#~ msgstr "Deutsch"
+#~ msgid "TIME_FORMAT"
+#~ msgstr "G:i"
+#~ msgid "logout"
+#~ msgstr "Abmelden"
+#~ msgid "login"
+#~ msgstr "Anmelden"
+#~ msgid "search"
+#~ msgstr "Suchen"
+#~ msgid "Imprint"
+#~ msgstr "Impressum"
+#~ msgid "Cannot remove this frame while inside this admin section."
+#~ msgstr "Dieser Rahmen kann in diesem Admin-Bereich nicht entfernt werden."
+#~ msgid "remove"
+#~ msgstr "entfernen"
+#~ msgid "Add %(name)s"
+#~ msgstr "%(name)s hinzufügen"
+#~ msgid "Reload"
+#~ msgstr "Neu laden"
+#~ msgid "Edit"
+#~ msgstr "Bearbeiten"
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+#~ msgid "Save tree"
+#~ msgstr "Baum speichern"
+#~ msgid "Expand all"
+#~ msgstr "Alles ausklappen"
+#~ msgid "Collapse all"
+#~ msgstr "Alles einklappen"
+#~ msgid "Insert after"
+#~ msgstr "danach einfügen"
+#~ msgid "Insert before"
+#~ msgstr "davor einfügen"
+#~ msgid "Insert as child"
+#~ msgstr "untergeordnet einfügen"
+#~ msgid "Foto:"
+#~ msgstr "Foto: "
+#~ msgid "Starts"
+#~ msgstr "Beginn"
+#~ msgid "DATETIME_FORMAT"
+#~ msgstr "d.m.Y G:i"
+#~ msgid "Ends"
+#~ msgstr "Ende"
+#~ msgid "Reoccurs"
+#~ msgstr "Wiederholung"
+#~ msgid "until"
+#~ msgstr "bis"
 #~ msgid "ReStructured Text"
 #~ msgstr "ReStructured Text"
 #~ msgid "ReStructured Texts"
@@ -403,8 +410,6 @@ msgstr "Beschreibung"
 #~ msgstr "Diese Begriffe werden vor die Standard-Begriffsliste eingefügt."
 #~ msgid "This will be prepended to the default description."
 #~ msgstr "Diese Beschreibung wird vor der Standard-Beschreibung eingefügt."
-#~ msgid "language"
-#~ msgstr "Sprache"
 #~ msgid "page"
 #~ msgstr "Seite"
 #~ msgid "pages"
@@ -431,8 +436,6 @@ msgstr "Beschreibung"
 #~ msgstr "Löschen"
 #~ msgid "category"
 #~ msgstr "Kategorie"
-#~ msgid "categories"
-#~ msgstr "Kategorien"
 #~ msgid "caption"
 #~ msgstr "Legende"
 #~ msgid "copyright"
