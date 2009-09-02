@@ -31,7 +31,7 @@ def splitwordline(line):
     if description and priority are missing, default is the word and 0
     """
     parts = line.replace('\n','').split('\t')
-    if len(parts)==1:
+    if len(parts)==1 or len(parts[1])<2:
         parts.extend([parts[0],0])
     elif len(parts)==2:
         parts.append(0)
@@ -151,8 +151,8 @@ class WordlistUpload(models.Model):
             DC.save()
             
             for w in words:
-                (newword, newdesc, newprio) = splitwordline(w)
-                if len(newword)<3: next
+                (newword, newdesc, newprio) = splitwordline(w.decode('utf-8'))
+                if len(newword)<2: continue
                 try:
                     W = Word.objects.get(word=newword)
                 except Word.DoesNotExist:
@@ -171,5 +171,9 @@ class WordlistUpload(models.Model):
                         priority = newprio,
                     )
                 DE.save()
+            try:
+                os.remove(self.wordlist_file.path)
+            except Exception, ex:
+                print ex
             
             return DC
