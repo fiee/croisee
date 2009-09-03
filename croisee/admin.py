@@ -3,27 +3,25 @@ from django.contrib import admin
 from models import *
 
 
-class DescriptionInline(admin.TabularInline):
-    model = Description
+class WordInline(admin.TabularInline):
+    model = Word
 
-class WordAdmin(admin.ModelAdmin):
-    search_fields = ('word',)
-    inlines = [DescriptionInline,]
-    
 class DictionaryAdmin(admin.ModelAdmin):
     list_display = ('name','language','description')
     list_display_links = ['name',]
     list_filter = ('language',)
     list_editable = ('language','description',)
     search_fields = ('description',)
+    #inlines = (WordInline,) # too much
+    ordering = ('name','language')
 
-class DescriptionAdmin(admin.ModelAdmin):
+class WordAdmin(admin.ModelAdmin):
     list_display = ('word','description','dictionary','priority')
     list_display_links = ['word',]
     list_filter = ('dictionary',)
     list_editable = ('description','priority')
-    raw_id_fields = ('word',)
-    search_fields = ('word__word','description')
+    search_fields = ('word','description')
+    ordering = ('word',)
 
 class WordlistUploadAdmin(admin.ModelAdmin):
     def has_change_permission(self, request, obj=None):
@@ -31,5 +29,4 @@ class WordlistUploadAdmin(admin.ModelAdmin):
 
 admin.site.register(Word, WordAdmin)
 admin.site.register(Dictionary, DictionaryAdmin)
-admin.site.register(Description, DescriptionAdmin)
 admin.site.register(WordlistUpload, WordlistUploadAdmin)

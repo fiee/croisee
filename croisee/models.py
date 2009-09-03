@@ -13,15 +13,23 @@ REPLACEMENTS = (
     (u'Ö', 'OE'),
     (u'Ü', 'UE'),
     (u'ß', 'SS'),
+    (u'Œ', 'OE'),
+    (u'Æ', 'AE'),
+    (u'Ø', 'OE'),
+    #(u'', ''),
 )
-reASCIIonly = re.compile(r'[^A-Z]+', re.I)
+reASCIIonly = re.compile(r'[^A-Z]', re.I)
+reCleanInput = re.compile(r'[^\w_%\?\*]', re.I)
 
-def cleanword(word):
+def cleanword(word, strict=True):
     word = word.upper()
     for k,v in REPLACEMENTS:
         word = word.replace(k,v)
     word = unicodedata.normalize('NFD', word).encode('ASCII', 'ignore') # decompose international chars
-    word = reASCIIonly.sub('', word)
+    if strict:
+        word = reASCIIonly.sub('', word)
+    else:
+        word = reCleanInput.sub('', word)
     return word
 
 def splitwordline(line):
@@ -31,10 +39,14 @@ def splitwordline(line):
     if description and priority are missing, default is the word and 0
     """
     parts = line.replace('\n','').split('\t')
-    if len(parts)==1 or len(parts[1])<2:
+    if len(parts)==1:
         parts.extend([parts[0],0])
     elif len(parts)==2:
         parts.append(0)
+    elif len(parts)>3:
+        parts = parts[0:2]
+    if len(parts[1])<2:
+        parts[1] = parts[0]
     try:
         parts[2] = int(parts[2])
     except ValueError, ex:
@@ -42,32 +54,6 @@ def splitwordline(line):
     parts[0] = cleanword(parts[0])
     return parts
     
-
-class Word(models.Model):
-    """
-    A word
-    """
-
-    class Meta:
-        verbose_name = _(u'Word')
-        verbose_name_plural = _(u'Words')
-        ordering = ['word',]
-    
-    word = models.CharField(_(u'Word'), max_length=20, 
-                            unique=True, primary_key=True, 
-                            help_text=_(u'a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc.'))
-
-    def __unicode__(self):
-        return self.word
-
-    def length(self):
-        return len(self.word)
-    
-    def save(self, force_insert=False, force_update=False):
-        self.word = cleanword(self.word)
-        super(Word, self).save(force_insert, force_update)
-
-
 
 class Dictionary(models.Model):
     """
@@ -90,24 +76,27 @@ class Dictionary(models.Model):
 
 
 
-class Description(models.Model):
+class Word(models.Model):
     """
-    A description or question for a word, according to a dictionary
+    A word with a description, according to a dictionary
     """
     class Meta:
-        verbose_name = _(u'Description')
-        verbose_name_plural = _(u'Descriptions')
-        order_with_respect_to = 'word'
-        ordering = ['priority','word']
+        verbose_name = _(u'Word')
+        verbose_name_plural = _(u'Words')
+        ordering = ['word','priority']
         unique_together = (('word','dictionary'),)
 
-    word = models.ForeignKey(Word, verbose_name=_(u'Word'))
-    dictionary = models.ForeignKey(Dictionary, verbose_name=_(u'Dictionary'), related_name="%(class)s_related")
+    word = models.CharField(_(u'Word'), max_length=63, help_text=_(u'a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc.'))
+    dictionary = models.ForeignKey(Dictionary, verbose_name=_(u'Dictionary')) #, related_name="%(class)s_related")
     description = models.CharField(_(u'Description'), max_length=127, help_text=_(u'Meaning of the word within the context of the selected dictionary'))
     priority = models.SmallIntegerField(_(u'Priority'), default=0, help_text=_(u'0 is neutral, you can increase or decrease the priority'))
     
     def __unicode__(self):
         return "%s\t%s" % (self.word, self.description)
+    
+    def save(self, force_insert=False, force_update=False):
+        self.word = cleanword(self.word)
+        super(Word, self).save(force_insert, force_update)
 
 
 class WordlistUpload(models.Model):
@@ -134,46 +123,38 @@ class WordlistUpload(models.Model):
         return dictionary
 
     def process_wordlist(self):
-        if os.path.isfile(self.wordlist_file.path):
-            words = []
-            wordfile = file(self.wordlist_file.path, 'rU')
-            words += wordfile.readlines()
-            wordfile.close()
-            
-            if self.dictionary:
-                DC = self.dictionary
-            else:
-                DC = Dictionary.objects.create(
-                    name = self.name,
-                    language = self.language,
-                    description = self.description
-                )
-            DC.save()
-            
-            for w in words:
-                (newword, newdesc, newprio) = splitwordline(w.decode('utf-8'))
-                if len(newword)<2: continue
-                try:
-                    W = Word.objects.get(word=newword)
-                except Word.DoesNotExist:
-                    W = Word.objects.create(word=newword)
-                    W.save()
-                    
-                try:
-                    DE = Description.objects.get(word=W, dictionary=DC)
-                    if newdesc: DE.description = newdesc
-                    if newprio: DE.priority = newprio
-                except Description.DoesNotExist:
-                    DE = Description.objects.create(
-                        word = W,
-                        dictionary = DC,
-                        description = newdesc,
-                        priority = newprio,
-                    )
-                DE.save()
+        if not os.path.isfile(self.wordlist_file.path):
+            # TODO: throw exception?
+            return None
+        wordfile = file(self.wordlist_file.path, 'rU')
+        lines = wordfile.readlines()
+        wordfile.close()
+        
+        if self.dictionary:
+            D = self.dictionary
+        else:
+            D = Dictionary.objects.create(
+                name = self.name,
+                language = self.language,
+                description = self.description
+            )
+        D.save()
+        
+        for line in lines:
+            (newword, newdesc, newprio) = splitwordline(line.decode('utf-8'))
+            # TODO: exception if decoding fails
+            if len(newword)<2: continue
             try:
-                os.remove(self.wordlist_file.path)
-            except Exception, ex:
-                print ex
-            
-            return DC
+                W = Word.objects.get(word=newword, dictionary=D)
+            except Word.DoesNotExist:
+                W = Word.objects.create(word=newword, dictionary=D)
+            if newdesc: W.description = newdesc
+            if newprio: W.priority = newprio
+            W.save()
+                
+        try:
+            os.remove(self.wordlist_file.path)
+        except Exception, ex:
+            print ex
+        
+        return D
