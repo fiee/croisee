@@ -91,10 +91,21 @@ h5, th, dt {
 	font-size: 100%;
 }
 
+/* Forms */
+
+.hint {
+	font-size: 77%;
+}
+
 /* Lists */
 
 li, dd {
 	margin-left: 0.5em;
+}
+
+.resultlist li,
+.resultlist dd {
+	font-size: 77%;
 }
 
 /* Areas */

@@ -25,5 +25,6 @@ def index(request, *args, **kwargs):
         'dictionaries': dictionaries,
         'searchterm':   searchterm,
         'results':      results,
-        'posted':       posted
+        'posted':       posted,
+        'resultcount':  len(results),
     })
