@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Geburt & Leben\n"
+"Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-03 15:47+0200\n"
-"PO-Revision-Date: 2009-09-03 15:49+0100\n"
+"POT-Creation-Date: 2009-09-04 00:36+0200\n"
+"PO-Revision-Date: 2009-09-04 00:39+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -38,18 +38,18 @@ msgid "A short descriptive name"
 msgstr "Ein kurzer, aussagekräftiger Name"
 
 #: models.py:69
-#: models.py:110
+#: models.py:111
 msgid "Language"
 msgstr "Sprache"
 
 #: models.py:71
-#: models.py:112
+#: models.py:113
 msgid "Language of (most of) the words in this dictionary"
 msgstr "Sprache der (meisten) Wörter in diesem Wörterbuch"
 
 #: models.py:72
 #: models.py:91
-#: models.py:113
+#: models.py:114
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -90,11 +90,19 @@ msgstr "Wählen Sie eine Textdatei, die pro Zeile ein einzelnes Wort enthält, u
 msgid "Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name."
 msgstr "Wählen Sie ein Wörterbuch, dem diese Wörter hinzugefügt werden sollen. Lassen Sie dieses Feld frei, um ein neues Wörterbuch mit dem angegebenen Namen zu erzeugen."
 
-#: models.py:116
+#: models.py:110
+msgid "only unique"
+msgstr "eindeutig"
+
+#: models.py:110
+msgid "Import only words that are not contained in any other dictionary?"
+msgstr "Nur Wörter importieren, die nicht in einem andern Wörterbuch enthalten sind?"
+
+#: models.py:117
 msgid "wordlist upload"
 msgstr "Wortlisten-Upload"
 
-#: models.py:117
+#: models.py:118
 msgid "wordlist uploads"
 msgstr "Wortlisten-Uploads"
 
@@ -117,45 +125,51 @@ msgstr "404 Seite nicht gefunden"
 msgid "500 Server Error"
 msgstr "500 Server-Fehler"
 
-#: templates/index.html:5
+#: templates/grid.html:4
+#: templates/grid.html.py:16
+msgid "Puzzle Grid"
+msgstr "Rätsel-Gitter"
+
+#: templates/grid.html:31
+msgid "Fill in letters, navigate with arrow keys, block a field with space key. "
+msgstr "Füllen Sie das Gitter mit Buchstaben, navigieren Sie mit den Pfeiltasten, blockieren Sie Felder mit der Leertaste."
+
+#: templates/index.html:4
+#: templates/index.html.py:7
 msgid "Cloze Search"
 msgstr "Lückentext-Suche"
 
-#: templates/index.html:8
+#: templates/index.html:10
 msgid "Search for:"
 msgstr "Suche nach:"
 
-#: templates/index.html:10
+#: templates/index.html:12
 msgid "Search"
 msgstr "Suchen"
 
-#: templates/index.html:11
+#: templates/index.html:13
 msgid "You can use <q>?</q> and <q>*</q> as wildcards for single or several characters."
 msgstr "Sie können <q>?</q> und <q>*</q> als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
 
-#: templates/index.html:13
+#: templates/index.html:15
 msgid "Available Dictionaries"
 msgstr "Verfügbare Wörterbücher"
 
-#: templates/index.html:21
+#: templates/index.html:23
 msgid "No dictionaries found"
 msgstr "Keine Wörterbücher gefunden"
 
-#: templates/index.html:29
+#: templates/index.html:31
 msgid "Search Results"
 msgstr "Suchergebnisse"
 
-#: templates/index.html:33
+#: templates/index.html:35
 msgid "in"
 msgstr "in"
 
-#: templates/index.html:35
+#: templates/index.html:37
 msgid "No matching words found"
 msgstr "Keine passenden Wörter gefunden"
-
-#: templates/root.html:6
-msgid "Home"
-msgstr "Startseite"
 
 #: templates/root.html:41
 msgid "fiëé croisée is a free service of fiëé visuëlle."
@@ -173,6 +187,8 @@ msgstr "fiëé croisée Site-Admin"
 msgid "fiëé croisée Administration"
 msgstr "fiëé croisée Administration"
 
+#~ msgid "Home"
+#~ msgstr "Startseite"
 #~ msgid "Descriptions"
 #~ msgstr "Beschreibungen"
 #~ msgid "Standard template"
