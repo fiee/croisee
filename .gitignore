@@ -7,7 +7,7 @@
 .svn
 secret.txt
 settings_local.py
-dev.db
+*.db
 .tmp*
 build
 *.tar.gz
