@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Geburt & Leben\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-03 15:12+0200\n"
-"PO-Revision-Date: 2009-09-03 15:13+0100\n"
+"POT-Creation-Date: 2009-09-03 15:47+0200\n"
+"PO-Revision-Date: 2009-09-03 15:49+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -133,33 +133,37 @@ msgstr "Suchen"
 msgid "You can use <q>?</q> and <q>*</q> as wildcards for single or several characters."
 msgstr "Sie können <q>?</q> und <q>*</q> als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
 
-#: templates/index.html:15
-msgid "Search Results"
-msgstr "Suchergebnisse"
-
-#: templates/index.html:19
-msgid "in"
-msgstr "in"
-
-#: templates/index.html:21
-msgid "No matching words found"
-msgstr "Keine passenden Wörter gefunden"
-
-#: templates/index.html:28
+#: templates/index.html:13
 msgid "Available Dictionaries"
 msgstr "Verfügbare Wörterbücher"
 
-#: templates/index.html:33
+#: templates/index.html:21
 msgid "No dictionaries found"
 msgstr "Keine Wörterbücher gefunden"
+
+#: templates/index.html:29
+msgid "Search Results"
+msgstr "Suchergebnisse"
+
+#: templates/index.html:33
+msgid "in"
+msgstr "in"
+
+#: templates/index.html:35
+msgid "No matching words found"
+msgstr "Keine passenden Wörter gefunden"
 
 #: templates/root.html:6
 msgid "Home"
 msgstr "Startseite"
 
+#: templates/root.html:41
+msgid "fiëé croisée is a free service of fiëé visuëlle."
+msgstr "fiëé croisée ist ein kostenloses Angebot von fiëé visuëlle."
+
 #: templates/root.html:42
-msgid "fiëé croisée is a service of fiëé visuëlle"
-msgstr "fiëé croisée ist ein Angebot von fiëé visuëlle"
+msgid "If you like it, would you please donate for further development?"
+msgstr "Wenn es Ihnen gefällt, wäre es nett, wenn Sie für die weitere Entwicklung spenden."
 
 #: templates/admin/base_site.html:4
 msgid "fiëé croisée Site Admin"

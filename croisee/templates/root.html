@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>fiëé croisée :: {% block title %}{% trans "Home" %}{% endblock %}</title>
+	<title>fiëé croisée :: {% block title %}{% endblock %}</title>
 	<link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" />
 	<link rel="icon" href="{{ MEDIA_URL }}favicon.ico" type="image/ico" />
 	<link rel="stylesheet" type="text/css" media="all" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" />
@@ -22,16 +22,15 @@
 			<div class="fiee"><h1><img src="{{ MEDIA_URL }}/img/fiee_croisee.png" alt="ﬁëé croisée" /></h1></div>
 			{% endblock %}
 		</div>
-		<div id="bd" class="ui-widget">
+		<div id="bd">
 			{% block bd %}
 			<div id="yui-main">
 				<div class="yui-b">
 					{% block maincontent %}
-					<input />
 					{% endblock %}
 				</div>
 			</div>
-			<div class="yui-b">
+			<div id="sidebar" class="yui-b">
 				{% block sidecontent %}
 				{% endblock %}
 			</div>
@@ -39,7 +38,16 @@
 		</div>
 		<div id="ft">
 			{% block ft %}
-			<div class="right"><em><a href="http://www.fiee.net">{% trans "fiëé croisée is a service of fiëé visuëlle" %}</a></em></div>
+			<div class="left"><em><a href="http://www.fiee.net">{% trans "fiëé croisée is a free service of fiëé visuëlle." %}</a></em><br />
+			{% trans "If you like it, would you please donate for further development?" %}</div>
+			<div class="right">
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="7955781">
+					<input type="image" src="https://www.paypal.com/{{ LANGUAGE_CODE }}/CH/i/btn/btn_donate_SM.gif" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+					<img alt="" src="https://www.paypal.com/{{ LANGUAGE_CODE }}/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			</div>
 			{% endblock %}
 		</div>
 	</div>
