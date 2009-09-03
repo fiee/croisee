@@ -7,7 +7,7 @@ import os
 admin.autodiscover()
 
 urlpatterns = patterns('',
-        (r'^/?$', '%s.views.home' % settings.PROJECT_NAME),
+        (r'^/?$', '%s.views.index' % settings.PROJECT_NAME),
 )
 
 # serve static content in debug mode
@@ -26,5 +26,5 @@ if settings.DEBUG:
 
 urlpatterns += patterns('',
     (r'^admin/', include(admin.site.urls)),    
-    (r'^$|^(.*)/$', '%s.views.home' % settings.PROJECT_NAME),
+    (r'^$|^(.*?)/$', '%s.views.index' % settings.PROJECT_NAME),
 )

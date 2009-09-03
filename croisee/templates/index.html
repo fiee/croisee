@@ -1,0 +1,35 @@
+{% extends "root.html" %}
+{% load cache i18n %}
+
+{% block maincontent %}
+<form action="/" method="post" name="wordsearch">
+	<div class="formline ui-widget">
+		<label for="searchterm">{% trans "Search for:" %}</label>
+		<input type="text" name="searchterm" id="searchterm" class="ui-widget-content" value="{{ searchterm }}" />
+		<button>{% trans "Search" %}</button>
+		<div class="hint">{% trans "You can use <q>?</q> and <q>*</q> as wildcards for single or several characters." %}</div>
+	</div>
+</form>
+{% if posted %}
+<h3>{% trans "Search Results" %}</h3>
+<dl>
+	{% for w in results %}
+	<dt title="{{ w.description }}">{{ w.word }}</dt>
+		<dd>{% trans "in" %} {{ w.dictionary }}</dd>
+	{% empty %}
+	<dt>{% trans "No matching words found" %}</dt>
+	{% endfor %}
+</dl>
+{% endif %}
+{% endblock %}
+
+{% block sidecontent %}
+<h3>{% trans "Available Dictionaries" %}</h3>
+<ul>
+	{% for d in dictionaries %}
+	<li title="{{ d.description }}">{{ d.name }} ({{ d.language }})</li>
+	{% empty %}
+	<li>{% trans "No dictionaries found" %}</li>
+	{% endfor %}
+</ul>
+{% endblock %}
