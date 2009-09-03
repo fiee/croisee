@@ -44,7 +44,6 @@ Roadmap
 
 I'm planning to implement the following features in about this order:
 
-* select dictionaries
 * puzzle GUI (make grid of 20x10, fill-in grid, block cells)
 * search-in-grid (place cursor, find matching words in both directions)
 * export grid and solution as text / HTML / TeX
