@@ -107,6 +107,7 @@ class WordlistUpload(models.Model):
                                 help_text=_(u'Select a .txt file containing a single word per line to upload as a new dictionary.'))
     dictionary = models.ForeignKey(Dictionary, null=True, blank=True, help_text=_(u'Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name.'))
     name = models.CharField(_(u'Name'), max_length=31, help_text=_(u'A short descriptive name'))
+    uniqueonly = models.BooleanField(_(u'only unique'), default=True, help_text=_(u'Import only words that are not contained in any other dictionary?'))
     language = models.CharField(_(u'Language'), max_length=15, 
                                 default=settings.LANGUAGE_CODE, choices=settings.LANGUAGES, 
                                 help_text=_(u'Language of (most of) the words in this dictionary'))
@@ -145,7 +146,11 @@ class WordlistUpload(models.Model):
             # TODO: exception if decoding fails
             if len(newword)<2: continue
             try:
-                W = Word.objects.get(word=newword, dictionary=D)
+                if self.uniqueonly:
+                    W = Word.objects.filter(word=newword)
+                    continue
+                else:
+                    W = Word.objects.get(word=newword, dictionary=D)
             except Word.DoesNotExist:
                 W = Word.objects.create(word=newword, dictionary=D)
             if newdesc: W.description = newdesc
