@@ -11,25 +11,32 @@ I hope it will become a tool that makes creating crossword puzzles just fun.
 Installation
 ------------
 
-It's a Django application.
+It's a Django application, to be run on Apache/mod_wsgi.
 
 The provided fabfile (fabric deployment) is for an Debian server 
 and documented in this gist: http://gist.github.com/158177
 
 
+Make a wordlist
+---------------
+
+# use a dictionary from aspell:
+
+ aspell dump master > mydict.txt
+
+# get some long text, e.g. from Project Gutenberg
+# write your own
+
+* The wordlist file is expected in UTF-8 encoding.
+* Format is "(word)\t(description)\t(priority)\n". Description and priority are optional (default to word and 0).
+* run `make-wordlist.py` on it (or several), result is `wordlist.txt`
+
+
 Make a dictionary
 -----------------
 
-* get some long text, e.g. from Project Gutenberg
-* save it in UTF-8 encoding
-* run `make-wordlist.py` on it
-* upload the resulting wordlist to your croisee installation (Wordlist Upload); that may take a while
+* upload a wordlist file to your croisee installation (Wordlist Upload); that may take a while
 * fix the descriptions and priorities, if you like
-
-You can also write your own wordlist, it's just a text file (utf-8) with one word per line.
-You can add description and priority behind tabs, i.e.
-
-    word	description	-1
 
 
 Roadmap
@@ -37,6 +44,7 @@ Roadmap
 
 I'm planning to implement the following features in about this order:
 
+* change models: replace Word
 * cloze/wildcard search (e.g. search for ?Y??O%)
 * select dictionaries
 * puzzle GUI (make grid of 20x10, fill-in grid, block cells)
@@ -49,10 +57,6 @@ I'm planning to implement the following features in about this order:
 * set up a paid service
 * get rich ;-)
 
-And on the way:
-
-* enhance the dictionaries (at least for German, possibly English)
-
 
 License
 -------
@@ -60,6 +64,12 @@ License
 GPLv3, see http://www.gnu.org/copyleft/gpl.html
 
 Feel free to ask after different, additional licensing.
+
+I don't plan to release my edited dictionaries, because in them's the most work.
+
+Everything related to fiëé visuëlle (logo, names) is copyrighted and contained only for the sake of completeness.
+That means you must not use the fiëé logo, fiëé favicon or any name containing fiëé in public, 
+except in a descriptive manner, where it is encouraged (e.g. "this is derived from / based on").
 
 
 Author(s)
