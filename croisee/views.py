@@ -36,3 +36,23 @@ def index(request, *args, **kwargs):
     except (KeyError, Word.DoesNotExist), ex:
         pass
     return render_to_response('index.html', context)
+
+def grid(request, *args, **kwargs):
+    maxrow = 20
+    maxline = 10
+    puzzle = {
+        'maxrow':   maxrow,
+        'maxline':  maxline,
+        'rows':     range(1,maxrow+1),
+        'lines':    range(1,maxline+1),
+        'chars':    {}
+    }
+    for y in puzzle['lines']:
+        puzzle['chars'][y] = {}
+        for x in puzzle['rows']:
+            puzzle['chars'][y][x] = 'X'
+    context = {
+        'MEDIA_URL':    settings.MEDIA_URL,
+        'puzzle':       puzzle,
+    }
+    return render_to_response('grid.html', context)

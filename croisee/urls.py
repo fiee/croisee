@@ -26,5 +26,6 @@ if settings.DEBUG:
 
 urlpatterns += patterns('',
     (r'^admin/', include(admin.site.urls)),    
+    (r'^grid/(.*?)/?$', '%s.views.grid' % settings.PROJECT_NAME),
     (r'^$|^(.*?)/$', '%s.views.index' % settings.PROJECT_NAME),
 )
