@@ -15,7 +15,7 @@ sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT,'lib/python2.5/site-package
 # debug settings
 # ==============================================================================
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 INTERNAL_IPS = ('127.0.0.1')
 if DEBUG:
