@@ -44,8 +44,6 @@ Roadmap
 
 I'm planning to implement the following features in about this order:
 
-* change models: replace Word
-* cloze/wildcard search (e.g. search for ?Y??O%)
 * select dictionaries
 * puzzle GUI (make grid of 20x10, fill-in grid, block cells)
 * search-in-grid (place cursor, find matching words in both directions)
