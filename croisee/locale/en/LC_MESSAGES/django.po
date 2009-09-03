@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Geburt & Leben\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-03 14:33+0200\n"
-"PO-Revision-Date: 2009-09-03 14:35+0100\n"
+"POT-Creation-Date: 2009-09-03 15:12+0200\n"
+"PO-Revision-Date: 2009-09-03 15:13+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -117,35 +117,39 @@ msgstr "404 Page Not Found"
 msgid "500 Server Error"
 msgstr "500 Server Error"
 
-#: templates/index.html:7
+#: templates/index.html:5
+msgid "Cloze Search"
+msgstr "Cloze Search"
+
+#: templates/index.html:8
 msgid "Search for:"
 msgstr "Search for:"
 
-#: templates/index.html:9
+#: templates/index.html:10
 msgid "Search"
 msgstr "Search"
 
-#: templates/index.html:10
+#: templates/index.html:11
 msgid "You can use <q>?</q> and <q>*</q> as wildcards for single or several characters."
 msgstr "You can use <q>?</q> and <q>*</q> as wildcards for single or several characters."
 
-#: templates/index.html:14
+#: templates/index.html:15
 msgid "Search Results"
 msgstr "Search Results"
 
-#: templates/index.html:18
+#: templates/index.html:19
 msgid "in"
 msgstr "in"
 
-#: templates/index.html:20
+#: templates/index.html:21
 msgid "No matching words found"
 msgstr "No matching words found"
 
-#: templates/index.html:27
+#: templates/index.html:28
 msgid "Available Dictionaries"
 msgstr "Available Dictionaries"
 
-#: templates/index.html:32
+#: templates/index.html:33
 msgid "No dictionaries found"
 msgstr "No dictionaries found"
 
@@ -153,7 +157,7 @@ msgstr "No dictionaries found"
 msgid "Home"
 msgstr "Home"
 
-#: templates/root.html:41
+#: templates/root.html:42
 msgid "fiëé croisée is a service of fiëé visuëlle"
 msgstr "fiëé croisée is a service of fiëé visuëlle"
 
