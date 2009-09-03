@@ -19,9 +19,10 @@
 	<div id="doc2" class="yui-t5">
 		<div id="hd">
 			{% block hd %}
+			<div class="fiee"><h1><img src="{{ MEDIA_URL }}/img/fiee_croisee.png" alt="ﬁëé croisée" /></h1></div>
 			{% endblock %}
 		</div>
-		<div id="bd">
+		<div id="bd" class="ui-widget">
 			{% block bd %}
 			<div id="yui-main">
 				<div class="yui-b">
@@ -38,7 +39,7 @@
 		</div>
 		<div id="ft">
 			{% block ft %}
-			<p class="author"><a href="http://www.fiee.net">{% trans "fiëé croisée is a service of fiëé visuëlle" %}</a></p>
+			<div class="right"><em><a href="http://www.fiee.net">{% trans "fiëé croisée is a service of fiëé visuëlle" %}</a></em></div>
 			{% endblock %}
 		</div>
 	</div>

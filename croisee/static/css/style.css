@@ -9,7 +9,7 @@ html {
 
 body {
 	margin: 0 0 0 0;
-	font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+	font-family: Lucida Grande, Lucida Sans, Helvetica, Arial, sans-serif;
     text-align: left;
     font-size: 77%;
 	volume: medium;
@@ -60,6 +60,16 @@ h1, h2, h3, h4, h5 {
 	margin: 0.5em 0 0.5em 0;
 }
 
+.fiee h1 {
+	font-size:35px;
+	font-family: Berkeley, Times, serif;
+	font-style:italic;
+	font-weight: lighter;
+	text-align: right;
+	color: #fff;
+	margin: 0;
+}
+
 h1 {
 	font-size: 108%;
 }
@@ -94,13 +104,18 @@ li, dd {
 }
 
 #bd {
-	border: 1px solid #ccc;
-	background-color: #fff;
 	padding: 1em 1em 2em 1em;
 }
 
+#bd, #ft {
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+
 #ft {
-	position: fixed;
+	position: relative;
 	bottom: 0;
 	font-size: 77%;
+	border-top: none;
+	padding: 0.5em 1em 0.5em 1em;
 }
