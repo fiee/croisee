@@ -17,6 +17,7 @@ reSINGLECHAR = re.compile(r'^\w?\n', re.LOCALE|re.MULTILINE)
 def clean_text(text):
     text = reTEX.sub(' ', text)
     text = re.sub(r'<[^>]+>', '', text) # XML tags
+    text = re.sub(r'[\'’´`‘]s', '', text) # genitives
     text = reNONCHARS.sub('', text)
     text = reSINGLECHAR.sub('', text)
     text = re.sub(r'[\s\n\d_]+', ' ', text) # unify spaces and numbers

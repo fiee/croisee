@@ -26,7 +26,7 @@ replacements = (
     #('\n\n', '\n')
 )
 
-reSUFFIX = re.compile(r'/[A-Z#]+$',re.I|re.M)
+reSUFFIX = re.compile(r'[/\t][A-Z#]+$',re.I|re.M)
 reNONCHARS = re.compile(r'[^\w\s]', re.LOCALE)
 reSINGLECHAR = re.compile(r'^\w?\n', re.LOCALE|re.MULTILINE)
 
