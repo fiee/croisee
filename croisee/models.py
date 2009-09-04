@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from django.template.loader import render_to_string
 from django.conf import settings
+from django.contrib.auth.models import User
 
 REPLACEMENTS = (
 # international characters that need more than just stripping accents
@@ -66,10 +67,12 @@ class Dictionary(models.Model):
         unique_together = (('name','language'),)
 
     name = models.CharField(_(u'Name'), max_length=31, help_text=_(u'A short descriptive name'))
+    public = models.BooleanField(_(u'public?'), default=True, help_text=_(u'May everyone use this dictionary?'))
     language = models.CharField(_(u'Language'), max_length=15, 
                                 default=settings.LANGUAGE_CODE, choices=settings.LANGUAGES, 
                                 help_text=_(u'Language of (most of) the words in this dictionary'))
     description = models.CharField(_(u'Description'), max_length=255, blank=True)
+    owner = models.ForeignKey(User, verbose_name=_(u'Owner'))
     
     def __unicode__(self):
         return "%s (%s)" % (self.name, self.language)
@@ -108,10 +111,12 @@ class WordlistUpload(models.Model):
     dictionary = models.ForeignKey(Dictionary, null=True, blank=True, help_text=_(u'Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name.'))
     name = models.CharField(_(u'Name'), max_length=31, help_text=_(u'A short descriptive name'))
     uniqueonly = models.BooleanField(_(u'only unique'), default=True, help_text=_(u'Import only words that are not contained in any other dictionary?'))
+    public = models.BooleanField(_(u'public?'), default=True, help_text=_(u'May everyone use this dictionary?'))
     language = models.CharField(_(u'Language'), max_length=15, 
                                 default=settings.LANGUAGE_CODE, choices=settings.LANGUAGES, 
                                 help_text=_(u'Language of (most of) the words in this dictionary'))
     description = models.CharField(_(u'Description'), max_length=255)
+    owner = models.ForeignKey(User, verbose_name=_(u'Owner'))
 
     class Meta:
         verbose_name = _(u'wordlist upload')
@@ -136,8 +141,10 @@ class WordlistUpload(models.Model):
         else:
             D = Dictionary.objects.create(
                 name = self.name,
+                public = self.public,
                 language = self.language,
-                description = self.description
+                description = self.description,
+                owner = self.owner,
             )
         D.save()
         
