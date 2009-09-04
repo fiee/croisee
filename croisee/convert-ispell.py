@@ -3,25 +3,39 @@
 """
 Crossword tool - wordlist
 
-Make a wordlist from a text (in utf-8 encoding)
+Make a wordlist from an ispell dict
+
+Those dicts are wordlists with additional metadata behind a slash.
+The text encoding is similar to old TeX conventions.
+But some files contain accented vocals in Latin-1 encoding.
 """
 import os, sys, locale
 import re
 import sets
 locale.setlocale(locale.LC_ALL, 'de_DE.utf-8') # affects re's \w
 
-reTEX = re.compile(r'\\\w+', re.LOCALE)
+replacements = (
+    ('a"', u'ä'),
+    ('o"', u'ö'),
+    ('u"', u'ü'),
+    ('A"', u'Ä'),
+    ('O"', u'Ö'),
+    ('U"', u'Ü'),
+    ('sS', u'ß'),
+    ('qq', ''), # hyphenation?
+    #('\n\n', '\n')
+)
+
+reSUFFIX = re.compile(r'/[A-Z#]+$',re.I|re.M)
 reNONCHARS = re.compile(r'[^\w\s]', re.LOCALE)
 reSINGLECHAR = re.compile(r'^\w?\n', re.LOCALE|re.MULTILINE)
 
 def clean_text(text):
-    text = reTEX.sub(' ', text)
-    text = re.sub(r'<[^>]+>', '', text) # XML tags
+    for k,v in replacements:
+        text = text.replace(k,v)
+    text = reSUFFIX.sub('', text) # word type identifiers
     text = reNONCHARS.sub('', text)
     text = reSINGLECHAR.sub('', text)
-    text = re.sub(r'[\s\n\d_]+', ' ', text) # unify spaces and numbers
-    #text = re.sub(r'(^|\s)\w{1,2}\s', ' ', text) # single and double letters
-    text = re.sub(r'\s+', ' ', text) # unify spaces
     return text
 
 def text_to_set(text):
@@ -48,7 +62,10 @@ if __name__ == '__main__':
         path = os.path.abspath(args.pop())
         print u"reading %s" % path
         sourcefile = file(path, 'rU')
-        sourcetext = unicode(''.join(sourcefile.readlines()), 'utf-8')
+        sourcetext = u''
+        #for line in sourcefile.readlines():
+        #    sourcetext += unicode(line, 'latin-1')
+        sourcetext = unicode(''.join(sourcefile.readlines()), 'latin-1')
         sourcefile.close()
         text += sourcetext
 
