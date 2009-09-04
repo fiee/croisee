@@ -1,0 +1,15 @@
+# Name:         README
+# Content:      Information about Esperanto dictionary for the Ispell speller
+# Created:      1997-08-30 de Sergio Pokrovskij <pok@nbsp.nsk.su>
+# Versio 2.0.
+# Lasta sxangxo:
+#               Time-stamp: <98/09/18 11:33:17 pok>
+#
+# Copyright 1997, 1998 Sergio Pokrovskij
+#
+# This dictionary  is available on the terms of GNU General Public License
+# (Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA).
+
+This wordlist for fiee croisee is converted to the h style of Esperanto.
+Unfortunately there's still no Esperanto localisation of Django.
+I (Hraban) myself don't speak Esperanto, so cannot help.
