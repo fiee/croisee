@@ -7,11 +7,11 @@ class WordInline(admin.TabularInline):
     model = Word
 
 class DictionaryAdmin(admin.ModelAdmin):
-    list_display = ('name','language','description')
+    list_display = ('name','language','description','public','owner')
     list_display_links = ['name',]
     list_filter = ('owner','language',)
-    list_editable = ('language','description',)
-    search_fields = ('description',)
+    list_editable = ('language','description','public')
+    search_fields = ('description','name')
     #inlines = (WordInline,) # too much
     ordering = ('name','language')
     exclude = ('owner',)
