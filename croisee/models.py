@@ -155,10 +155,10 @@ class WordlistUpload(models.Model):
             try:
                 if self.uniqueonly:
                     W = Word.objects.filter(word=newword)
-                    continue
+                    W = W[0]
                 else:
                     W = Word.objects.get(word=newword, dictionary=D)
-            except Word.DoesNotExist:
+            except (Word.DoesNotExist, IndexError):
                 W = Word.objects.create(word=newword, dictionary=D)
             if newdesc: W.description = newdesc
             if newprio: W.priority = newprio
