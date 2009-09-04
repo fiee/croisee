@@ -17,6 +17,17 @@ The provided fabfile (fabric deployment) is for an Debian server
 and documented in this gist: http://gist.github.com/158177
 
 
+Features
+--------
+
+* public
+  * find words that match a specified pattern (e.g. PY?H?N or ?YT*)
+  * work in a puzzle grid (custom size 4-20 lines/rows)
+* admin
+  * manage words and their descriptions in several dictionaries
+  * import word lists
+
+
 Make a wordlist
 ---------------
 
@@ -44,10 +55,13 @@ Roadmap
 
 I'm planning to implement the following features in about this order:
 
-* puzzle GUI (make grid of 20x10, fill-in grid, block cells)
 * search-in-grid (place cursor, find matching words in both directions)
+* user registration (OpenID?)
+* custom private/public dictionaries for registered users
 * export grid and solution as text / HTML / TeX
 * import text files
+* safe puzzles for registered users as private/public
+* make safed puzzles available
 * export as PDF
 * different types of crossword grids (fat lines instead of blocked cells, uneven outline...)
 * automate filling the grid
