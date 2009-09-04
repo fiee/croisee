@@ -154,7 +154,7 @@ class WordlistUpload(models.Model):
             if len(newword)<2: continue
             try:
                 if self.uniqueonly:
-                    W = Word.objects.filter(word=newword)
+                    W = Word.objects.filter(word=newword, dictionary__language=D.language)
                     W = W[0]
                 else:
                     W = Word.objects.get(word=newword, dictionary=D)
