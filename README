@@ -57,16 +57,23 @@ I'm planning to implement the following features in about this order:
 
 * search-in-grid (place cursor, find matching words in both directions)
 * user registration (OpenID?)
-* custom private/public dictionaries for registered users
 * export grid and solution as text / HTML / TeX
 * import text files
 * safe puzzles for registered users as private/public
 * make safed puzzles available
 * export as PDF
 * different types of crossword grids (fat lines instead of blocked cells, uneven outline...)
-* automate filling the grid
+* automate filling the grid (algorithm?)
 * set up a paid service
 * get rich ;-)
+
+
+Bugs / Todo
+-----------
+
+* Limit public results to 100
+* Show only public dicts
+* admin: if adding to an existing dict, disable other fields
 
 
 License
