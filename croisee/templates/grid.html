@@ -4,10 +4,6 @@
 {% block title %}{% trans "Puzzle Grid" %}{% endblock %}
 
 {% block extrahead %}
-<script type="text/javascript">
-	var maxx = {{puzzle.maxrow}};
-	var maxy = {{puzzle.maxline}};
-</script>
 <script type="text/javascript" src="{{MEDIA_URL}}js/puzzle.js">
 </script>
 {% endblock %}
@@ -16,6 +12,8 @@
 <h2>{% trans "Puzzle Grid" %}</h2>
 <form action="/grid/" name="grid" method="post">
 {% if puzzle %}
+<input type="hidden" name="maxx" id="maxx" value="{{puzzle.maxrow}}" />
+<input type="hidden" name="maxy" id="maxy" value="{{puzzle.maxline}}" />
 <table class="puzzle">
 	{% for y in puzzle.lines %}
 	<tr>
@@ -27,9 +25,18 @@
 	</tr>
 	{% endfor %}
 </table>
-</form>
 <p class="hint">{% trans "Fill in letters, navigate with arrow keys, block a field with space key. " %}</p>
+<input type="submit" value="{% trans "Save" %}" />
+{% else %}
+<div class="formline ui-widget">
+	<label for="maxx">{% trans "Rows:" %}</label> <input type="text" name="maxx" id="maxx" length="3" maxlength="2" value="0" class="ui-widget-content numeric" />
+</div>
+<div class="formline ui-widget">
+	<label for="maxy">{% trans "Lines:" %}</label> <input type="text" name="maxy" id="maxy" length="3" maxlength="2" value="0" class="ui-widget-content numeric" />
+</div>
+<input type="submit" value="{% trans "Create" %}" />
 {% endif %}
+</form>
 {% endblock %}
 
 {% block sidecontent %}

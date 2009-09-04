@@ -40,19 +40,33 @@ def index(request, *args, **kwargs):
 def grid(request, *args, **kwargs):
     maxrow = 20
     maxline = 10
-    puzzle = {
-        'maxrow':   maxrow,
-        'maxline':  maxline,
-        'rows':     range(1,maxrow+1),
-        'lines':    range(1,maxline+1),
-        'chars':    {}
-    }
-    for y in puzzle['lines']:
-        puzzle['chars'][y] = {}
-        for x in puzzle['rows']:
-            puzzle['chars'][y][x] = 'X'
+    posted = False
+    puzzle = None
+    if request.POST:
+        posted = True
+        maxrow = int(request.POST['maxx'])
+        maxline = int(request.POST['maxy'])
+        if maxrow<4: maxrow=4
+        if maxline<4: maxline=4
+        # TODO: make limits configurable
+        if maxrow>20: maxrow=20
+        if maxline>20: maxline=20
+        puzzle = {
+            'maxrow':   maxrow,
+            'maxline':  maxline,
+            'rows':     range(1,maxrow+1),
+            'lines':    range(1,maxline+1),
+            'chars':    {},
+            'posted':   False,
+            'puzzle':   None,
+        }
+        for y in puzzle['lines']:
+            puzzle['chars'][y] = {}
+            for x in puzzle['rows']:
+                puzzle['chars'][y][x] = 'X'
     context = {
         'MEDIA_URL':    settings.MEDIA_URL,
+        'posted':       posted,
         'puzzle':       puzzle,
     }
     return render_to_response('grid.html', context)

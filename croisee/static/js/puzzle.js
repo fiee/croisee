@@ -1,7 +1,7 @@
 var letters = 'ABCDEFGHIJKLMNOPQRTSUVWXYZ ';
 var goodkeys = [9,32,37,38,39,40,27];
 
-function getWord(x,y) {
+function getWord(x,y,maxx,maxy) {
 	var horiz='';
 	var vert='';
 	var letter = '';
@@ -19,8 +19,10 @@ function getWord(x,y) {
 }
 
 $(function(){
+	var maxx = Number($('input#maxx').val());
+	var maxy = Number($('input#maxy').val());
 	$('input.puzzlechar').keyup(function(event){
-		console.log(event.keyCode);
+		//console.log(event.keyCode);
 		event.preventDefault();
 		$(this).val(this.value.toUpperCase());
 		var idp = this.id.split('_'); // char,y,x
@@ -47,7 +49,7 @@ $(function(){
 				break;
 			case 27: // escape
 				// TODO: AJAX query for matching words
-				console.log(getWord(x,y));
+				console.log(getWord(x,y,maxx,maxy));
 				break;
 			default:
 				$(this).parent('td').removeClass('blocked');
@@ -71,5 +73,11 @@ $(function(){
 			$(this).val('');
 		}
 		return true;
+	});
+	$('input.numeric').keyup(function(event){
+		event.preventDefault();
+		var num = Number(this.value);
+		if (isNaN(num)) num=0;
+		$(this).val(num);
 	});
 });
