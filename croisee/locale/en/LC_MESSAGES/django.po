@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-04 15:31+0200\n"
-"PO-Revision-Date: 2009-09-04 15:32+0100\n"
+"POT-Creation-Date: 2009-09-04 18:36+0200\n"
+"PO-Revision-Date: 2009-09-04 18:38+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -18,91 +18,106 @@ msgstr ""
 "X-Poedit-Country: UNITED STATES\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: models.py:63
-#: models.py:90
+#: models.py:64
+#: models.py:93
 msgid "Dictionary"
 msgstr "Dictionary"
 
-#: models.py:64
+#: models.py:65
 msgid "Dictionaries"
 msgstr "Dictionaries"
 
-#: models.py:68
-#: models.py:109
+#: models.py:69
+#: models.py:112
 msgid "Name"
 msgstr "Name"
 
-#: models.py:68
-#: models.py:109
+#: models.py:69
+#: models.py:112
 msgid "A short descriptive name"
 msgstr "A short descriptive name"
 
-#: models.py:69
-#: models.py:111
+#: models.py:70
+#: models.py:114
+msgid "public?"
+msgstr "public?"
+
+#: models.py:70
+#: models.py:114
+msgid "May everyone use this dictionary?"
+msgstr "May everyone use this dictionary?"
+
+#: models.py:71
+#: models.py:115
 msgid "Language"
 msgstr "Language"
 
-#: models.py:71
-#: models.py:113
+#: models.py:73
+#: models.py:117
 msgid "Language of (most of) the words in this dictionary"
 msgstr "Language of (most of) the words in this dictionary"
 
-#: models.py:72
-#: models.py:91
-#: models.py:114
+#: models.py:74
+#: models.py:94
+#: models.py:118
 msgid "Description"
 msgstr "Description"
 
-#: models.py:84
-#: models.py:89
+#: models.py:75
+#: models.py:119
+msgid "Owner"
+msgstr "Owner"
+
+#: models.py:87
+#: models.py:92
 msgid "Word"
 msgstr "Word"
 
-#: models.py:85
+#: models.py:88
 msgid "Words"
 msgstr "Words"
 
-#: models.py:89
+#: models.py:92
 msgid "a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc."
 msgstr "a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc."
 
-#: models.py:91
+#: models.py:94
 msgid "Meaning of the word within the context of the selected dictionary"
 msgstr "Meaning of the word within the context of the selected dictionary"
 
-#: models.py:92
+#: models.py:95
 msgid "Priority"
 msgstr "Priority"
 
-#: models.py:92
+#: models.py:95
 msgid "0 is neutral, you can increase or decrease the priority"
 msgstr "0 is neutral, you can increase or decrease the priority"
 
-#: models.py:106
+#: models.py:109
 msgid "wordlist file (.txt)"
 msgstr "wordlist file (.txt)"
 
-#: models.py:107
+#: models.py:110
 msgid "Select a .txt file containing a single word per line to upload as a new dictionary."
 msgstr "Select a .txt file containing a single word per line to upload as a new dictionary."
 
-#: models.py:108
+#: models.py:111
 msgid "Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name."
 msgstr "Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name."
 
-#: models.py:110
+#: models.py:113
 msgid "only unique"
 msgstr "only unique"
 
-#: models.py:110
+#: models.py:113
 msgid "Import only words that are not contained in any other dictionary?"
 msgstr "Import only words that are not contained in any other dictionary?"
 
-#: models.py:117
+#: models.py:122
 msgid "wordlist upload"
 msgstr "wordlist upload"
 
-#: models.py:118
+#: models.py:123
 msgid "wordlist uploads"
 msgstr "wordlist uploads"
 
