@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-04 00:36+0200\n"
-"PO-Revision-Date: 2009-09-04 00:39+0100\n"
+"POT-Creation-Date: 2009-09-04 15:31+0200\n"
+"PO-Revision-Date: 2009-09-04 15:32+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -126,13 +126,29 @@ msgid "500 Server Error"
 msgstr "500 Server-Fehler"
 
 #: templates/grid.html:4
-#: templates/grid.html.py:16
+#: templates/grid.html.py:12
 msgid "Puzzle Grid"
 msgstr "Rätsel-Gitter"
 
-#: templates/grid.html:31
+#: templates/grid.html:28
 msgid "Fill in letters, navigate with arrow keys, block a field with space key. "
 msgstr "Füllen Sie das Gitter mit Buchstaben, navigieren Sie mit den Pfeiltasten, blockieren Sie Felder mit der Leertaste."
+
+#: templates/grid.html:29
+msgid "Save"
+msgstr "Speichern"
+
+#: templates/grid.html:32
+msgid "Rows:"
+msgstr "Spalten:"
+
+#: templates/grid.html:35
+msgid "Lines:"
+msgstr "Zeilen:"
+
+#: templates/grid.html:37
+msgid "Create"
+msgstr "Erzeugen"
 
 #: templates/index.html:4
 #: templates/index.html.py:7
@@ -235,8 +251,6 @@ msgstr "fiëé croisée Administration"
 #~ msgstr "Bearbeiten"
 #~ msgid "Delete"
 #~ msgstr "Löschen"
-#~ msgid "Save tree"
-#~ msgstr "Baum speichern"
 #~ msgid "Expand all"
 #~ msgstr "Alles ausklappen"
 #~ msgid "Collapse all"
