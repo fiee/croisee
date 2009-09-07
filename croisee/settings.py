@@ -108,6 +108,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.http.ConditionalGetMiddleware',
 #    'django.middleware.gzip.GZipMiddleware',
+    'django.contrib.csrf.middleware.CsrfMiddleware',
     'django.middleware.doc.XViewMiddleware',
     'django.middleware.common.CommonMiddleware',
 )
