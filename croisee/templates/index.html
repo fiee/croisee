@@ -31,7 +31,7 @@
 <h3>{{ resultcount}} {% trans "Search Results" %}</h3>
 <dl class="resultlist">
 	{% for w in results %}
-	<dt title="{{ w.description }}">{{ w.word }}</dt>
+	<dt title="{{ w.description }}"><a href="http://{{w.dictionary.language}}.wikipedia.org/wiki/{{w.word.title}}" title="{% trans "Look up in Wikipedia" %}"><img src="http://upload.wikimedia.org/wikipedia/commons/archive/6/63/20050601172023%21Wikipedia-logo.png" style="height:1em;width:1em;" alt="Wikipedia Logo"/></a> {{ w.word }}</dt>
 		<dd>{% trans "in" %} {{ w.dictionary }}</dd>
 	{% empty %}
 	<dt class="error">{% trans "No matching words found" %}</dt>
