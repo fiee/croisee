@@ -97,9 +97,24 @@ h5, th, dt {
 	font-size: 77%;
 }
 
+div.formline {
+	margin: 0.5em 0 0.5em 0;
+}
+
+div.formline .label {
+	display: inline-block;
+	width: 8em;
+}
+
+div.formline input.numeric {
+	width: 4em;
+	text-align: right;
+}
+
 table.puzzle {
 	border: 2px solid #aaa;
 	font-size: 150%;
+	margin: 0.5em 0 0.5em 0;
 }
 
 table.puzzle td {
@@ -121,6 +136,19 @@ input.puzzlechar {
 	height: 1.5em;
 	text-align: center;
 	background-color: transparent;
+	z-index: 99;
+}
+
+.puzzlenum {
+	position: relative;
+	top:0.5em;
+	left:0;
+	z-index: 1;
+	font-size: 20%;
+	color: #6cf;
+	line-height: 1%;
+	height: 0;
+	width: 0;
 }
 
 /* Lists */
@@ -132,6 +160,16 @@ li, dd {
 .resultlist li,
 .resultlist dd {
 	font-size: 77%;
+}
+
+dl.legend dt {
+	display: inline-block;
+	float: left;
+	clear: both;
+}
+
+dl.legend dd {
+	float: left;
 }
 
 /* Areas */

@@ -14,27 +14,45 @@
 {% if puzzle %}
 <input type="hidden" name="maxx" id="maxx" value="{{puzzle.maxrow}}" />
 <input type="hidden" name="maxy" id="maxy" value="{{puzzle.maxline}}" />
+<input type="hidden" name="chars" id="chars" value="" />
+<input type="hidden" name="nums" id="nums" value="" />
 <table class="puzzle">
 	{% for y in puzzle.lines %}
 	<tr>
 		{% for x in puzzle.rows %}
 		<td>
+			<div class="puzzlenum" id="num_{{y}}_{{x}}"></div>
 			<input type="text" name="char_{{y}}_{{x}}" id="char_{{y}}_{{x}}" class="puzzlechar" length="1" maxlength="1" value="{{ puzzle.chars.y.x }}" />
 		</td>
 		{% endfor %}
 	</tr>
 	{% endfor %}
 </table>
-<p class="hint">{% trans "Fill in letters, navigate with arrow keys, block a field with space key. " %}</p>
-<input type="submit" value="{% trans "Save" %}" />
+<div class="formline ui-widget">
+	<input type="submit" value="{% trans "Save" %}" />
+</div>
+<h3 class="legend dontprint">{% trans "Keys" %}</h3>
+<dl class="legend dontprint">
+	<dt>&larr; &uarr; &darr; &rarr;</dt><dd>{% trans "move cursor" %}</dd>
+	<dt>a&ndash;z</dt><dd>{% trans "place character and move right" %}</dd>
+	<dt>A&ndash;Z</dt><dd>{% trans "place character and move down" %}</dd>
+	<dt>{% trans "space" %}</dt><dd>{% trans "block field" %}</dd>
+	<dt>{% trans "backspace" %}</dt><dd>{% trans "delete character" %}</dd>
+	<dt>#</dt><dd>{% trans "set or reset number" %}</dd>
+	<dt>?</dt><dd>{% trans "query dictionary for matching words" %}</dd>
+</dl>
 {% else %}
 <div class="formline ui-widget">
-	<label for="maxx">{% trans "Rows:" %}</label> <input type="text" name="maxx" id="maxx" length="3" maxlength="2" value="{{defaultx}}" class="ui-widget-content numeric" />
+	<span class="label"><label for="maxx">{% trans "Rows:" %}</label></span> 
+	<input type="text" name="maxx" id="maxx" length="3" maxlength="2" value="{{defaultx}}" class="ui-widget-content numeric" />
 </div>
 <div class="formline ui-widget">
-	<label for="maxy">{% trans "Lines:" %}</label> <input type="text" name="maxy" id="maxy" length="3" maxlength="2" value="{{defaulty}}" class="ui-widget-content numeric" />
+	<span class="label"><label for="maxy">{% trans "Lines:" %}</label></span> 
+	<input type="text" name="maxy" id="maxy" length="3" maxlength="2" value="{{defaulty}}" class="ui-widget-content numeric" />
 </div>
-<input type="submit" value="{% trans "Create" %}" />
+<div class="formline ui-widget">
+	<input type="submit" value="{% trans "Create" %}" />
+</div>
 {% endif %}
 </form>
 {% endblock %}
