@@ -19,13 +19,15 @@ if settings.DEBUG:
         }),
         (r'^(?P<path>favicon.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
+            'mimetype': 'application/x-favicon',
         }),
         (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     )
 
 
 urlpatterns += patterns('',
-    (r'^admin/', include(admin.site.urls)),    
+    (r'^admin/', include(admin.site.urls)),
+    (r'^ajax/(?P<horizontal>[A-Z\*\?_%]+)(,(?P<hletter>\d+))?/(?P<vertical>[A-Z\*\?_%]+)(,(?P<vletter>\d+))?/?$', '%s.views.ajax_query' % settings.PROJECT_NAME),  
     (r'^grid/(.*?)/?$', '%s.views.grid' % settings.PROJECT_NAME),
     (r'^$|^(.*?)/$', '%s.views.index' % settings.PROJECT_NAME),
 )

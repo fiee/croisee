@@ -1,0 +1,17 @@
+{% load i18n %}
+<h3>{{ resultcount}} {% trans "Search Results" %}</h3>
+{% for res in results %}
+<div class="ajax_result {{ res.name }}">
+	<h4>{{ res.name }}:
+	<span class="searchterm">{{ res.searchterm }}</span>
+	(<span class="resultcount">{{ res.resultcount }}</span> {% trans "results" %})
+	</h4>
+	<dl class="resultlist">
+		{% for w in res.results %}
+		<dt>{{ w.word }}</dt>
+			<dd class="description">{{ w.description }}</dd>
+			<dd class="from_dict">{{ w.dictionary }}</dd>
+		{% endfor %}
+	</dl>
+</div>
+{% endfor %}
