@@ -52,12 +52,7 @@ function getWord(x,y,maxx,maxy) {
 		console.log(data);
 		$('#result').html(data);
 	}, 'html');
-	/*
-	 * send Query
-	 * place result in sidebar
-	 * make result clickable and insert on click, then requery
-	 * 
-	 */
+	// TODO: make result clickable and insert on click, then requery
 }
 
 $(function(){
@@ -91,7 +86,6 @@ $(function(){
 				y++;
 				break;
 			case 27: // escape
-				// TODO: AJAX query for matching words
 				// TODO: change to other key
 				console.log(getWord(x,y,maxx,maxy));
 				break;
