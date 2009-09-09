@@ -57,7 +57,6 @@ Roadmap
 
 I'm planning to implement the following features in about this order:
 
-* set numbers on the grid (some automatic numbering?)
 * output list of solutions
 * export grid and solution as text / HTML / TeX
 * user registration (OpenID?)

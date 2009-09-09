@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-09 10:06+0200\n"
-"PO-Revision-Date: 2009-09-09 10:09+0100\n"
+"POT-Creation-Date: 2009-09-09 13:28+0200\n"
+"PO-Revision-Date: 2009-09-09 13:33+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -171,28 +171,74 @@ msgstr "Search Results"
 msgid "results"
 msgstr "results"
 
+#: templates/ajax_query.html:10
+#: templates/index.html:34
+msgid "Look up in Wikipedia"
+msgstr "Look up in Wikipedia"
+
+#: templates/ajax_query.html:12
+#: templates/index.html:35
+msgid "in"
+msgstr "in"
+
 #: templates/grid.html:4
 #: templates/grid.html.py:12
 msgid "Puzzle Grid"
 msgstr "Puzzle Grid"
 
-#: templates/grid.html:28
-msgid "Fill in letters, navigate with arrow keys, block a field with space key. "
-msgstr "Fill in letters, navigate with arrow keys, block a field with space key. "
-
-#: templates/grid.html:29
+#: templates/grid.html:32
 msgid "Save"
 msgstr "Save"
 
-#: templates/grid.html:32
+#: templates/grid.html:34
+msgid "Keys"
+msgstr "Keys"
+
+#: templates/grid.html:36
+msgid "move cursor"
+msgstr "move cursor"
+
+#: templates/grid.html:37
+msgid "place character and move right"
+msgstr "place character and move right"
+
+#: templates/grid.html:38
+msgid "place character and move down"
+msgstr "place character and move down"
+
+#: templates/grid.html:39
+msgid "space"
+msgstr "space"
+
+#: templates/grid.html:39
+msgid "block field"
+msgstr "block field"
+
+#: templates/grid.html:40
+msgid "backspace"
+msgstr ""
+
+#: templates/grid.html:40
+msgid "delete character"
+msgstr "delete character"
+
+#: templates/grid.html:41
+msgid "set or reset number"
+msgstr "set or reset number"
+
+#: templates/grid.html:42
+msgid "query dictionary for matching words"
+msgstr "query dictionary for matching words"
+
+#: templates/grid.html:46
 msgid "Rows:"
 msgstr "Rows:"
 
-#: templates/grid.html:35
+#: templates/grid.html:50
 msgid "Lines:"
 msgstr "Lines:"
 
-#: templates/grid.html:37
+#: templates/grid.html:54
 msgid "Create"
 msgstr "Create"
 
@@ -221,14 +267,6 @@ msgstr "Available Dictionaries"
 msgid "No dictionaries found"
 msgstr "No dictionaries found"
 
-#: templates/index.html:34
-msgid "Look up in Wikipedia"
-msgstr "Look up in Wikipedia"
-
-#: templates/index.html:35
-msgid "in"
-msgstr "in"
-
 #: templates/index.html:37
 msgid "No matching words found"
 msgstr "No matching words found"
@@ -249,6 +287,10 @@ msgstr "fiëé croisée Site Admin"
 msgid "fiëé croisée Administration"
 msgstr "fiëé croisée Administration"
 
+#~ msgid ""
+#~ "Fill in letters, navigate with arrow keys, block a field with space key. "
+#~ msgstr ""
+#~ "Fill in letters, navigate with arrow keys, block a field with space key. "
 #~ msgid "Home"
 #~ msgstr "Home"
 #~ msgid "Descriptions"
