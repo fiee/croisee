@@ -101,10 +101,10 @@ $(function(){
 		}
 		if (x>maxx) {
 			x=1;
-			y++;
+			//y++;
 		} else if (x<1) {
 			x=maxx;
-			y--;
+			//y--;
 		}
 		if (y>maxy) {
 			y=1;
