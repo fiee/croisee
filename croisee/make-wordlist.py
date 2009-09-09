@@ -43,7 +43,7 @@ if __name__ == '__main__':
     else:
         sys.exit(1)
     
-    targetfile = file('wordlist.txt', 'w+')
+    targetfile = file('wordlist.txt', 'a+')
     text = ''
     while len(args)>0:
         path = os.path.abspath(args.pop())
