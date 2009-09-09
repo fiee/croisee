@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-04 18:36+0200\n"
-"PO-Revision-Date: 2009-09-04 18:38+0100\n"
+"POT-Creation-Date: 2009-09-09 10:06+0200\n"
+"PO-Revision-Date: 2009-09-09 10:09+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -125,20 +125,51 @@ msgstr "wordlist uploads"
 msgid "STRING_NOT_SET"
 msgstr "STRING_NOT_SET"
 
-#: settings.py:154
+#: settings.py:155
 #, python-format
 msgid "Please create a %s file with random characters to generate your secret key!"
 msgstr "Please create a %s file with random characters to generate your secret key!"
+
+#: views.py:138
+msgid "horizontal"
+msgstr "horizontal"
+
+#: views.py:139
+msgid "vertical"
+msgstr "vertical"
+
+#: templates/403.html:4
+#: templates/403.html.py:7
+msgid "403 Access Denied"
+msgstr "403 Access Denied"
+
+#: templates/403.html:8
+#: templates/500.html:8
+msgid "An internal error occurred. Try again. If it still doesn't work, try again later - we got the message and will try to fix it."
+msgstr "An internal error occurred. Try again. If it still doesn't work, try again later - we got the message and will try to fix it."
 
 #: templates/404.html:4
 #: templates/404.html.py:7
 msgid "404 Page Not Found"
 msgstr "404 Page Not Found"
 
+#: templates/404.html:8
+msgid "The address you tried to receive doesn't exist or doesn't work. We received an error message and try to fix it, if it's an error on our site."
+msgstr "The address you tried to receive doesn't exist or doesn't work. We received an error message and try to fix it, if it's an error on our site."
+
 #: templates/500.html:4
 #: templates/500.html.py:7
 msgid "500 Server Error"
 msgstr "500 Server Error"
+
+#: templates/ajax_query.html:2
+#: templates/index.html:31
+msgid "Search Results"
+msgstr "Search Results"
+
+#: templates/ajax_query.html:7
+msgid "results"
+msgstr "results"
 
 #: templates/grid.html:4
 #: templates/grid.html.py:12
@@ -190,9 +221,9 @@ msgstr "Available Dictionaries"
 msgid "No dictionaries found"
 msgstr "No dictionaries found"
 
-#: templates/index.html:31
-msgid "Search Results"
-msgstr "Search Results"
+#: templates/index.html:34
+msgid "Look up in Wikipedia"
+msgstr "Look up in Wikipedia"
 
 #: templates/index.html:35
 msgid "in"
@@ -202,11 +233,11 @@ msgstr "in"
 msgid "No matching words found"
 msgstr "No matching words found"
 
-#: templates/root.html:41
+#: templates/root.html:39
 msgid "fiëé croisée is a free service of fiëé visuëlle."
 msgstr "fiëé croisée is a free service of fiëé visuëlle."
 
-#: templates/root.html:42
+#: templates/root.html:40
 msgid "If you like it, would you please donate for further development?"
 msgstr "If you like it, would you please donate for further development?"
 
