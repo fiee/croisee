@@ -31,6 +31,8 @@ Features
 Make a wordlist
 ---------------
 
+# use the provided wordlists for german, english and esperanto 
+  (derived from ispell dictionaries); you can upload them directly
 # use a dictionary from aspell:
 
  aspell dump master > mydict.txt
@@ -55,9 +57,10 @@ Roadmap
 
 I'm planning to implement the following features in about this order:
 
-* search-in-grid (place cursor, find matching words in both directions)
-* user registration (OpenID?)
+* set numbers on the grid (some automatic numbering?)
+* output list of solutions
 * export grid and solution as text / HTML / TeX
+* user registration (OpenID?)
 * import text files
 * safe puzzles for registered users as private/public
 * make safed puzzles available
@@ -65,14 +68,14 @@ I'm planning to implement the following features in about this order:
 * different types of crossword grids (fat lines instead of blocked cells, uneven outline...)
 * automate filling the grid (algorithm?)
 * set up a paid service
-* get rich ;-)
+* get rich
+* world domination
 
 
 Bugs / Todo
 -----------
 
-* Limit public results to 100
-* Show only public dicts
+* Show dicts in grid view
 * admin: if adding to an existing dict, disable other fields
 
 
