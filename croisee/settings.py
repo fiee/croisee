@@ -159,6 +159,14 @@ except NameError:
 # ==============================================================================
 
 # ..third party app settings here
+CROISEE_GRIDMIN_X =   4 # minimum rows in puzzle grid
+CROISEE_GRIDMIN_Y =   4 # minimum lines in puzzle grid
+CROISEE_GRIDMAX_X =  20 # maximum rows in puzzle grid
+CROISEE_GRIDMAX_Y =  20 # maximum lines in puzzle grid
+CROISEE_GRIDDEF_X =  12 # default rows in puzzle grid
+CROISEE_GRIDDEF_Y =  12 # default lines in puzzle grid
+CROISEE_QUERYMAX  = 100 # maximum query results
+CROISEE_XQUERYMAX = 1024 # maximum cross query results
 
 # ==============================================================================
 # host specific settings
