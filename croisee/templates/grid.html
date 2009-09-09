@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block maincontent %}
-<h2>{% trans "Puzzle Grid" %}</h2>
+<h2 class="dontprint">{% trans "Puzzle Grid" %}</h2>
 <form action="/grid/" name="grid" method="post">
 {% if puzzle %}
 <input type="hidden" name="maxx" id="maxx" value="{{puzzle.maxrow}}" />
@@ -29,10 +29,10 @@
 <input type="submit" value="{% trans "Save" %}" />
 {% else %}
 <div class="formline ui-widget">
-	<label for="maxx">{% trans "Rows:" %}</label> <input type="text" name="maxx" id="maxx" length="3" maxlength="2" value="0" class="ui-widget-content numeric" />
+	<label for="maxx">{% trans "Rows:" %}</label> <input type="text" name="maxx" id="maxx" length="3" maxlength="2" value="{{defaultx}}" class="ui-widget-content numeric" />
 </div>
 <div class="formline ui-widget">
-	<label for="maxy">{% trans "Lines:" %}</label> <input type="text" name="maxy" id="maxy" length="3" maxlength="2" value="0" class="ui-widget-content numeric" />
+	<label for="maxy">{% trans "Lines:" %}</label> <input type="text" name="maxy" id="maxy" length="3" maxlength="2" value="{{defaulty}}" class="ui-widget-content numeric" />
 </div>
 <input type="submit" value="{% trans "Create" %}" />
 {% endif %}
@@ -40,4 +40,6 @@
 {% endblock %}
 
 {% block sidecontent %}
+<div id="result">
+</div>
 {% endblock %}
