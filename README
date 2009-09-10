@@ -27,6 +27,53 @@ Features
   * manage words and their descriptions in several dictionaries
   * import word lists
 
+User
+====
+
+Cloze Query
+-----------
+
+On the start page you can look up words that contain defined letters at discrete locations.
+
+You can use _ and ? as wildcards for single letters, * and % for an undefined number of letters (including none).
+
+E.g. if you look up `_Y__O_` you get PYTHON and SYMBOL (depending on dictionaries, of course);
+if you look up `RAM*`, you get e.g. RAM, RAMBLE, RAMADAN etc. Of course you can mix wildcards at will.
+
+All letters get uppercased, German umlauts get converted from Ä, Ö, Ü to AE, OE, UE; other international
+characters get de-accented. (If your language needs other conversions, please contact the developer.)
+
+Below the query field there's a list of installed (and permitted) dictionaries;
+you can enable or disable them to delimit where the answers come from. 
+
+Query results are limited to 100 answers.
+
+
+Grid View  (URL: /grid/)
+---------
+
+Here's how to make your own crossword puzzle:
+
+Create a grid in your favourite size (12x12 is good).
+
+You can move around in the grid with the arrow keys (tab, shift-tab, backspace, delete work also).
+If you write letters, the cursor will move right to the next cell; if you press shift, it will move downward.
+
+Write some words into the grid "by heart" - in an empty grid, you'd get thousands of possible words.
+
+Perhaps write only on letter in the corners - that's how I mostly start.
+Press ? (question mark) at any place, and after a short delay you'll get two lists of words that match in this place horizontally and vertically.
+
+You can click on the words in the result list to place them in the grid. The list will adapt automatically to the new situation.
+
+To mark cells as "blockers", press space (and again to remove the block).
+
+To set a number as start-of-word mark, press # (number sign). The numbering works automatically.
+Just press # again to remove the number.
+
+
+Admin
+=====
 
 Make a wordlist
 ---------------
@@ -52,12 +99,15 @@ Make a dictionary
 * fix the descriptions and priorities, if you like
 
 
+Development
+===========
+
 Roadmap
 -------
 
 I'm planning to implement the following features in about this order:
 
-* output list of solutions
+* output list of questions
 * export grid and solution as text / HTML / TeX
 * user registration (OpenID?)
 * import text files
@@ -75,7 +125,10 @@ Bugs / Todo
 -----------
 
 * Show dicts in grid view
+* Keep contents on submit
+* grid key handlers eats control keys
 * admin: if adding to an existing dict, disable other fields
+* test in other browsers than Safari
 
 
 License
