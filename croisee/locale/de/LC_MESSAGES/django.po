@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-09 13:28+0200\n"
-"PO-Revision-Date: 2009-09-09 13:32+0100\n"
+"POT-Creation-Date: 2009-09-10 13:37+0200\n"
+"PO-Revision-Date: 2009-09-10 13:37+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -125,16 +125,16 @@ msgstr "Wortlisten-Uploads"
 msgid "STRING_NOT_SET"
 msgstr "ZEICHENKETTE_NICHT_DEFINIERT"
 
-#: settings.py:155
+#: settings.py:156
 #, python-format
 msgid "Please create a %s file with random characters to generate your secret key!"
 msgstr "Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen Schlüssel zu erzeugen!"
 
-#: views.py:138
+#: views.py:140
 msgid "horizontal"
 msgstr "waagerecht"
 
-#: views.py:139
+#: views.py:141
 msgid "vertical"
 msgstr "senkrecht"
 
@@ -171,12 +171,16 @@ msgstr "Suchergebnisse"
 msgid "results"
 msgstr "Suchergebnisse"
 
-#: templates/ajax_query.html:10
+#: templates/ajax_query.html:11
 #: templates/index.html:34
 msgid "Look up in Wikipedia"
 msgstr "In der Wikipedia nachschlagen"
 
-#: templates/ajax_query.html:12
+#: templates/ajax_query.html:13
+msgid "insert in grid"
+msgstr "ins Gitter einfügen"
+
+#: templates/ajax_query.html:16
 #: templates/index.html:35
 msgid "in"
 msgstr "in"
@@ -348,8 +352,6 @@ msgstr "fiëé croisée Administration"
 #~ msgstr "danach einfügen"
 #~ msgid "Insert before"
 #~ msgstr "davor einfügen"
-#~ msgid "Insert as child"
-#~ msgstr "untergeordnet einfügen"
 #~ msgid "Foto:"
 #~ msgstr "Foto: "
 #~ msgid "Starts"

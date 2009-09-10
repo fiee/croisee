@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-09 13:28+0200\n"
-"PO-Revision-Date: 2009-09-09 13:33+0100\n"
+"POT-Creation-Date: 2009-09-10 13:37+0200\n"
+"PO-Revision-Date: 2009-09-10 13:37+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -125,16 +125,16 @@ msgstr "wordlist uploads"
 msgid "STRING_NOT_SET"
 msgstr "STRING_NOT_SET"
 
-#: settings.py:155
+#: settings.py:156
 #, python-format
 msgid "Please create a %s file with random characters to generate your secret key!"
 msgstr "Please create a %s file with random characters to generate your secret key!"
 
-#: views.py:138
+#: views.py:140
 msgid "horizontal"
 msgstr "horizontal"
 
-#: views.py:139
+#: views.py:141
 msgid "vertical"
 msgstr "vertical"
 
@@ -171,12 +171,16 @@ msgstr "Search Results"
 msgid "results"
 msgstr "results"
 
-#: templates/ajax_query.html:10
+#: templates/ajax_query.html:11
 #: templates/index.html:34
 msgid "Look up in Wikipedia"
 msgstr "Look up in Wikipedia"
 
-#: templates/ajax_query.html:12
+#: templates/ajax_query.html:13
+msgid "insert in grid"
+msgstr "insert in grid"
+
+#: templates/ajax_query.html:16
 #: templates/index.html:35
 msgid "in"
 msgstr "in"
@@ -216,7 +220,7 @@ msgstr "block field"
 
 #: templates/grid.html:40
 msgid "backspace"
-msgstr ""
+msgstr "backspace"
 
 #: templates/grid.html:40
 msgid "delete character"
@@ -349,8 +353,6 @@ msgstr "fiëé croisée Administration"
 #~ msgstr "Insert after"
 #~ msgid "Insert before"
 #~ msgstr "Insert before"
-#~ msgid "Insert as child"
-#~ msgstr "Insert as child"
 #~ msgid "Foto:"
 #~ msgstr "Photo: "
 #~ msgid "Starts"
