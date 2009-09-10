@@ -5,10 +5,10 @@ var modifiers = [16,17,18,91];
 function getWord(x,y,maxx,maxy) {
 	/*
 	 * parameters are relative to the grid
-	 * x, y = position of query in the grid, 1-based
-	 * maxx, maxy = size of the grid
-	 * 
-	 * xpos, ypos = position of the query, relative to word, 0-based
+	 * x, y 			= position of query in the grid, 1-based
+	 * maxx, maxy 		= size of the grid
+	 * xstart, ystart 	= start of the word, relative to the grid, 1-based
+	 * xpos, ypos 		= position of the query, relative to word, 0-based
 	 * 
 	 */
 	var horiz='';
@@ -16,6 +16,8 @@ function getWord(x,y,maxx,maxy) {
 	var letter = '';
 	var xpos = x-1;
 	var ypos = y-1;
+	var xstart = 0;
+	var ystart = 0;
 	for (i=1; i<=maxx; i++) {
 		letter = $('#char_'+y+'_'+i).val()
 		if (letter == '') {
@@ -25,6 +27,7 @@ function getWord(x,y,maxx,maxy) {
 			if (i < x) {
 				horiz = '';
 				xpos = x-i-1;
+				xstart = i;
 			} else if (i > x) {
 				break;
 			}
@@ -41,6 +44,7 @@ function getWord(x,y,maxx,maxy) {
 			if (i<y) {
 				vert = '';
 				ypos = y-i-1;
+				ystart = i;
 			} else if (i>y) {
 				break;
 			}
@@ -51,8 +55,24 @@ function getWord(x,y,maxx,maxy) {
 	var query = '/ajax/'+horiz+','+xpos+'/'+vert+','+ypos+'/';
 	return $.get(query, {}, function(data){
 		$('#result').html(data);
+		$('#result dl.resultlist span.word').click(function(event){
+			/* fill words in grid */
+			var word = $(this).html();
+			if ($(this).hasClass('horizontal')) {
+				for (i=0; i<word.length; i++) {
+					$('#char_'+y+'_'+(i+xstart+1)).val(word[i]);
+				}
+			} else if ($(this).hasClass('vertical')) {
+				for (i=0; i<word.length; i++) {
+					$('#char_'+(i+ystart+1)+'_'+x).val(word[i]);
+				}
+			} else {
+				alert('Code error! Word is neither horizontal nor vertical!');
+			}
+			getWord(x,y,maxx,maxy);
+			$('#char_'+y+'_'+x).focus();
+		});
 	}, 'html');
-	// TODO: make result clickable and insert on click
 }
 
 function renumberPuzzle(x,y,maxx,maxy,reset) {

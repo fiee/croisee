@@ -135,6 +135,8 @@ def ajax_query(request, **kwargs):
         results[1]['resultcount'] = len(vres)
     else:
         results = (_search(request, horiz), _search(request, vert)) # default limit
+    results[0]['direction'] = 'horizontal'
+    results[1]['direction'] = 'vertical'
     results[0]['name'] = _('horizontal')
     results[1]['name'] = _('vertical')
     return render_to_response('ajax_query.html', {'results':results})

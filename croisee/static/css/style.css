@@ -162,6 +162,10 @@ li, dd {
 	font-size: 77%;
 }
 
+.resultlist dt .word {
+	cursor: pointer;
+}
+
 dl.legend dt {
 	display: inline-block;
 	float: left;
