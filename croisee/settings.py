@@ -62,6 +62,7 @@ LOGIN_REDIRECT_URL = '/'
 # ==============================================================================
 
 DATABASE_ENGINE = 'mysql'
+DATABASE_OPTIONS = {'init_command': 'SET storage_engine=INNODB'} # mysql only
 DATABASE_NAME = PROJECT_NAME #os.path.join(PROJECT_ROOT, 'dev.db')
 DATABASE_USER = PROJECT_NAME
 DATABASE_PASSWORD = ''
@@ -158,7 +159,6 @@ except NameError:
 # third party
 # ==============================================================================
 
-# ..third party app settings here
 CROISEE_GRIDMIN_X =   4 # minimum rows in puzzle grid
 CROISEE_GRIDMIN_Y =   4 # minimum lines in puzzle grid
 CROISEE_GRIDMAX_X =  20 # maximum rows in puzzle grid
