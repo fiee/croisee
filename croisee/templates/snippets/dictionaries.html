@@ -1,0 +1,16 @@
+{% load cache i18n %}
+<h3>{% trans "Available Dictionaries" %}</h3>
+<ul class="resultlist">
+    {% for d in dictionaries %}
+    <li title="{{ d.description }}" class="ui-widget">
+        <input type="checkbox" name="dic_{{ d.id }}" id="dic_{{ d.id }}" class="dictionary-checkbox" {%  if not d.disabled %}checked="checked"{%  endif %} />
+        <label for="dic_{{ d.id }}">
+            {{ d.name }} ({{ d.language }})
+        </label>
+    </li>
+    {% empty %}
+    <li class="error">
+        {% trans "No dictionaries found" %}
+    </li>
+    {% endfor %}
+</ul>

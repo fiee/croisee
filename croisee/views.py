@@ -102,6 +102,7 @@ def grid(request, *args, **kwargs):
         'puzzle':       puzzle,
         'defaultx':     settings.CROISEE_GRIDDEF_X,
         'defaulty':     settings.CROISEE_GRIDDEF_Y,
+        'dictionaries': _get_dictionaries(request)[0],
     }
     return render_to_response('grid.html', context)
 
@@ -119,7 +120,6 @@ def ajax_query(request, **kwargs):
     except TypeError:
         hl = None
         vl = None
-    # TODO: make limits configurable
     if hl != None and vl != None and len(horiz)>hl and len(vert)>vl:
         results = (_search(request, horiz, 1024), _search(request, vert, settings.CROISEE_XQUERYMAX)) # "no" limit
         hres = sets.Set()

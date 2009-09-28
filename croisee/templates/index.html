@@ -12,18 +12,19 @@
 		<input type="submit" value="{% trans "Search" %}" />
 		<div class="hint">{% trans "You can use <q>?</q> and <q>*</q> as wildcards for single or several characters." %}</div>
 	</div>
-	<h3>{% trans "Available Dictionaries" %}</h3>
-	<ul class="resultlist">
-		{% for d in dictionaries %}
-		<li title="{{ d.description }}" class="ui-widget">
-			<input type="checkbox" name="dic_{{ d.id }}" id="dic_{{ d.id }}" {% if not d.disabled %}checked="checked"{% endif %} />
-			<label for="dic_{{ d.id }}">{{ d.name }} ({{ d.language }})</label>
-		</li>
-		{% empty %}
-		<li class="error">{% trans "No dictionaries found" %}</li>
-		{% endfor %}
-	</ul>
+	{% include "snippets/dictionaries.html" %}
 </form>
+<div class="dontprint">
+{% blocktrans %}
+<h3>What’s this?</h3>
+<p>The <em>fiëé croisée</em> project aims to become a semi-automatic crossword puzzle generator. 
+Even if there's still a long way to go, it’s already a valuable help in creating crossword puzzles.</p>
+<p>On this page you can just look up words that match a special pattern.</p>
+<p>There’s also a <strong><a href="/grid/">puzzle grid</a></strong> you can work in.
+At the moment you can just print the page from the browser, but soon you’ll be able to export complete layout data for T<sub>E</sub>X or order your print-ready puzzle as PDF.</p>
+<p>More details come with the source code at <a href="http://github.com/fiee/croisee/">GitHub</a>.</p>
+{% endblocktrans %}
+</div>
 {% endblock %}
 
 {% block sidecontent %}

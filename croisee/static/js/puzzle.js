@@ -53,7 +53,11 @@ function getWord(x,y,maxx,maxy) {
 		}
 	}
 	var query = '/ajax/'+horiz+','+xpos+'/'+vert+','+ypos+'/';
-	return $.get(query, {}, function(data){
+	var context = {};
+	$('input.dictionary-checkbox:checked').each(function(i){
+		context[this.id] = true;
+	});
+	return $.post(query, context, function(data){
 		$('#result').html(data);
 		$('#result dl.resultlist span.word').click(function(event){
 			/* fill words in grid */

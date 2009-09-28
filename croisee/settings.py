@@ -156,7 +156,7 @@ except NameError:
             Exception(_(u'Please create a %s file with random characters to generate your secret key!' % SECRET_FILE))
 
 # ==============================================================================
-# third party
+# croisee
 # ==============================================================================
 
 CROISEE_GRIDMIN_X =   4 # minimum rows in puzzle grid

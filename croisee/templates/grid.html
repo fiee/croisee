@@ -28,9 +28,13 @@
 	</tr>
 	{% endfor %}
 </table>
+
+{% include "snippets/dictionaries.html" %}
+<!--
 <div class="formline ui-widget">
 	<input type="submit" value="{% trans "Save" %}" />
 </div>
+-->
 <h3 class="legend dontprint">{% trans "Keys" %}</h3>
 <dl class="legend dontprint">
 	<dt>&larr; &uarr; &darr; &rarr;</dt><dd>{% trans "move cursor" %}</dd>
