@@ -109,7 +109,7 @@ def upload_tar_from_git():
     run('cd %(path)s/releases/%(release)s && tar zxf ../../packages/%(release)s.tar.gz' % env, pty=True)
     local('rm %(release)s.tar.gz' % env)
     # copy secret settings (not in public distro)
-    put('%(project_name)s/settings_webserver.py' % env, '%(path)s/releases/%(release)s/settings_local.py' % env)
+    put('%(project_name)s/settings_webserver.py' % env, '%(path)s/releases/%(release)s/%(project_name)s/settings_local.py' % env)
     
 def install_site():
     "Add the virtualhost file to apache"
