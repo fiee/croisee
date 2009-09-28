@@ -16,6 +16,9 @@ It's a Django application, to be run on Apache/mod_wsgi.
 The provided fabfile (fabric deployment) is for an Debian server 
 and documented in this gist: http://gist.github.com/158177
 
+Additionally you need a `settings_webserver.py` that gets copied as `settings_local.py`.
+It can contain every kind of local settings, at least the database password.
+
 
 Features
 --------
@@ -108,13 +111,14 @@ Roadmap
 I'm planning to implement the following features in about this order:
 
 * output list of questions
-* export grid and solution as text / HTML / TeX
+* export grid and solution as text / HTML / LaTeX (cwpuzzle) / ConTeXt / InDesign tagged text
 * user registration (OpenID?)
 * import text files
 * safe puzzles for registered users as private/public
 * make safed puzzles available
 * export as PDF
 * different types of crossword grids (fat lines instead of blocked cells, uneven outline...)
+* mark letters for extra solution (competition word)
 * automate filling the grid (algorithm?)
 * set up a paid service
 * get rich
@@ -124,11 +128,10 @@ I'm planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
-* Show dicts in grid view
-* Keep contents on submit
-* grid key handlers eats control keys
+* Bug: grid key handler eats control keys
 * admin: if adding to an existing dict, disable other fields
 * test in other browsers than Safari
+* clean up redundant template/view code
 
 
 License
@@ -156,5 +159,5 @@ Dependencies
 ------------
 
 * Python 2.5+
-* Django 1.0+
+* Django 1.1+
 * Fabric 0.9+ (optional, for easy deployment)
