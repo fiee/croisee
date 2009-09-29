@@ -31,3 +31,5 @@ urlpatterns += patterns('',
     (r'^grid/(.*?)/?$', '%s.views.grid' % settings.PROJECT_NAME),
     (r'^$|^(.*?)/$', '%s.views.index' % settings.PROJECT_NAME),
 )
+
+handler500 = '%s.views.server_error' % settings.PROJECT_NAME

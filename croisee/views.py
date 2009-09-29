@@ -3,8 +3,21 @@
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from croisee.models import Dictionary, Word, cleanword
 import sets
+
+def server_error(request, template_name='500.html'):
+    """
+    500 error handler.
+
+    Templates: `500.html`
+    Context: None
+    """
+    # see http://ericholscher.com/blog/2009/sep/23/pretty-django-error-pages/
+    return render_to_response(template_name,
+        context_instance = RequestContext(request)
+    )
 
 def _get_dictionaries(request):
     """
