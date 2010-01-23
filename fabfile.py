@@ -10,6 +10,7 @@ from fabric.api import *
 env.project_name = 'croisee'
 env.use_photologue = False # django-photologue gallery module
 env.use_medialibrary = False # feincms.medialibrary or similar
+env.webserver = 'nginx' # apache or nginx
 
 # environments
 
@@ -46,8 +47,11 @@ def setup():
     #sudo('pip install virtualenv')
     #sudo('aptitude install -y apache2-threaded')
     #sudo('aptitude install -y libapache2-mod-wsgi') # outdated on hardy!
-    # we want to get rid of the default apache config
-    sudo('cd /etc/apache2/sites-available/; a2dissite default;', pty=True)
+    if env.webserver=='apache':
+        # we want to get rid of the default apache config
+        sudo('cd /etc/apache2/sites-available/; a2dissite default;', pty=True)
+    elif env.webserver=='nginx':
+        sudo('cd /etc/nginx/sites-enabled/; rm default;', pty=True)
     sudo('mkdir -p %(path)s; chown %(user)s:%(user)s %(path)s;' % env, pty=True)
     run('ln -s %(path)s www;' % env, pty=True) # symlink web dir in home
     with cd(env.path):
@@ -115,8 +119,12 @@ def install_site():
     "Add the virtualhost file to apache"
     require('release', provided_by=[deploy, setup])
     #sudo('cd %(path)s/releases/%(release)s; cp %(project_name)s%(virtualhost_path)s%(project_name)s /etc/apache2/sites-available/' % env, pty=True)
-    sudo('cd %(path)s/releases/%(release)s; cp vhost.conf /etc/apache2/sites-available/%(project_name)s' % env, pty=True)
-    sudo('cd /etc/apache2/sites-available/; a2ensite %(project_name)s' % env, pty=True) 
+    if env.webserver=='apache':
+        sudo('cd %(path)s/releases/%(release)s; cp vhost.conf /etc/apache2/sites-available/%(project_name)s' % env, pty=True)
+        sudo('cd /etc/apache2/sites-available/; a2ensite %(project_name)s' % env, pty=True)
+    elif env.webserver=='nginx':
+        sudo('cd %(path)s/releases/%(release)s; cp nginx.conf /etc/nginx/sites-available/%(project_name)s' % env, pty=True)
+        sudo('cd /etc/nginx/sites-available/; ln -s %(project_name)s /etc/nginx/sites-enabled/%(project_name)s' % env, pty=True) 
     
 def install_requirements():
     "Install the required packages from the requirements file using pip"
@@ -139,4 +147,7 @@ def migrate():
     
 def restart_webserver():
     "Restart the web server"
-    sudo('/etc/init.d/apache2 reload', pty=True)
+    if env.webserver=='apache':
+        sudo('/etc/init.d/apache2 reload', pty=True)
+    elif env.webserver=='nginx':
+        sudo('/etc/init.d/nginx reload', pty=True)

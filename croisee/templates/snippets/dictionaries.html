@@ -1,6 +1,6 @@
 {% load cache i18n %}
-<h3>{% trans "Available Dictionaries" %}</h3>
-<ul class="resultlist">
+<h3 class="dontprint">{% trans "Available Dictionaries" %}</h3>
+<ul class="resultlist dontprint">
     {% for d in dictionaries %}
     <li title="{{ d.description }}" class="ui-widget">
         <input type="checkbox" name="dic_{{ d.id }}" id="dic_{{ d.id }}" class="dictionary-checkbox" {%  if not d.disabled %}checked="checked"{%  endif %} />

@@ -11,7 +11,7 @@ I hope it will become a tool that makes creating crossword puzzles just fun.
 Installation
 ------------
 
-It's a Django application, to be run on Apache/mod_wsgi.
+It's a Django application, to be run on Apache/mod_wsgi or Nginx with Django via FCGI.
 
 The provided fabfile (fabric deployment) is for an Debian server 
 and documented in this gist: http://gist.github.com/158177
@@ -128,9 +128,10 @@ I'm planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
+* JavaScript works only with Safari at the moment
 * Bug: grid key handler eats control keys
 * admin: if adding to an existing dict, disable other fields
-* test in other browsers than Safari
+* test in other browsers than Safari!
 * clean up redundant template/view code
 
 
