@@ -1,28 +1,41 @@
+Adunakhor	König von Númenor nach Calmacil
 Ainulindale
 Ainur
+Akallabeth	Sage oder Chronik von der Zerstörung der alten Welt
+Alcarin	König von Númenor
+Aldarion	König von Númenor
 Alqualonde
 Aman	westlichster Teil Ardas
-Anarion
+Amandil	Nachfahre Valandils, letzter Herr von Andúnië
+AmonAmarth	der Schicksalsberg
+Anarion	König von Númenor
+Ancalime	Königin von Númenor
+Ancalimon	König von Númenor
 Anduin
+Andunie	Gegend im Westen von Númenor
 Angband
 Angmar
+Ar	númenorischer Königstitel
 Aragorn	rechtmäßiger Thronfolger von Gondor
 Arda
 Arnor
 ArPharazon
 Arwen
+Atanamir	König von Númenor "der Große"
+Atani	die Edain
 Athelas	Königskraut
 Auenland
 Avari
 Balin
 Balrog
-Baraddur
+Barahir	Berens Vater
+BaradDur
 Baranduin
 Baumbart	ältester Ent
 Baumhirten
 Beleriand
 Beleriand
-Beren
+Beren	Barahirs Sohn, Tinúviels Geliebter
 Beutelsend
 Beutlin
 Bilbo
@@ -36,10 +49,13 @@ Brandywein
 Bree
 Bruchtal
 Calaquendi	Elben des Lichts
+Calmacil	letzter König von Númenor mit elbischem Namen
 Caradhras
 Celeborn
 Celebrimbor	Schmied der 19 Ringe
+Celebrindal	Idril
 Cirdan
+Ciryathan	König von Númenor
 Cirith
 CirithUngol
 Cuivienen	See im Osten von Mittelerde
@@ -50,31 +66,36 @@ Deagol
 Denethor
 Dernhelm	Tarnname von Eowyn
 Dick
+Dior	Sohn von Lúthien und Beren
 DolAmroth
 DolGuldur
-Doriath
+Doriath	
 Druedain
 Dunedain
 Düsterwald
 Ea	die Welt
-Earendil
-Edain
+Earendil	der Schiffer, Gatte Elwings
+Edain	die drei Menschenvölker
 Edoras
 Eidbrecher	Armee der Toten
 Elbereth
 Eldar
-Elendil
-Elrond
+Elendil	Sohn Amandils, "der Große"
+Elenna	westlichste Insel der sterblichen Lande
+Elrond	Sohn Eärendils
+Elros	Sohn Eärendils, erster König von Númenor
+Elwing	Tochter von Lúthien und Beren, Eärendils Frau
 Ent
 Enthing	Treffen der Ents
 Eomer
 Eowyn	wahrer Name Dernhelms
 Erebor
 Eregion
+Eressea	Hafen der Eldar
 Eru
 Fangorn
 Faramir
-Feanor
+Feanor	Hersteller der Silmarilli
 Fingolfin
 Finwe
 Fredegar
@@ -85,16 +106,20 @@ Gandalf	der Graue
 Gefährten
 Gildor
 GilGalad
+Gimilzor	König von Númenor
 Gimli	Sohn von Gloin
 Goldbeere
 Gollum
+Gondolin	die verborgene Stadt
 Gondor
 Gorbag	Ork-Anführer am Spinnenpass
 Gorgoroth
 Grabunhold
+Graumantel	Beiname König Thingols
 Grima
 Grünwald
 Gwaihir	König der Adler
+Hador	drittes Haus der Edain
 Halbelben
 Halblinge
 Haradrim
@@ -104,9 +129,12 @@ Hexenkönig
 Hobbits
 Hornburg	Festung in Helms Klamm
 Hügelgräberhöhen
+Huor	Tuors Vater
 Huorn	wilde Bäumhirten
+Idril	Tochter von Turgon
 Iluvatar
 Imrahil	Fürst aus Dol Amroth
+Inziladun	König von Númenor (alias Tar-Palantir)
 Isengard
 Isildur
 Istari
@@ -118,58 +146,68 @@ Landroval	Bruder von Gwaihir
 Laurelin	der Goldene Baum
 Legolas	Sohn des Elbenkönigs Tharanduil
 Lothlorien
+Luthien
 Mandos
 Manwe	irdischer Herr von Arda
 Mazarbul
 Melendor	Bruder von Gwaihir
+Melian	Mutter von Lúthien Tinúviel
 Melkor
+Meneldur	König von Númenor
+Meneltarma	Berg auf Elenna
 Meriadoc
 Merry	heißt eigentlich Meriadoc Brandybock
 Minas
 MinasAnor
 MinasIthil
 MinasMorgul
+Minastir	König von Númenor
 MinasTirith
+Miriel	rechtmäßige 4. Königin von Númenor
 Mittelerde
 Morannon
-Mordor
+Mordor	das Land Saurons
 Morgoth	späterer Name Melkors
 Moria
 Moriquendi	Dunkelelben
 Narsil
 Narya
-Nazgul
+Nazgul	Ringgeister
 Nebelberge
 Nebelgebirge
 Nenya
 Nimrodel
 NirnaethArnoediad
 Noldor
-Numenor
+Numenor	Reich auf Elenna
 Numenorer
-Olifant
-Orthanc
-Ostlinge
-Palantir
+Olifant	ampftier der Ostlinge
+Orthanc	Turm Sarumans
+Osgiliath	Stadt zwischen Minas Ithil und Minas Anor
+Ostlinge	Verbündete Saurons
+Palantir	"der Fernsehende" (Edelstein/König von Númenor)
 Pelennor
-Peregrin
+Peredhil	Halbelben, bes. Eärendils Söhne
+Peregrin	Vorname von Pippin
+Pharazon	letzter König von Númenor "der Goldene"
 Pippin	heißt eigentlich Peregrin Tuk
-Quenya
-Rauros
-Raurosfälle
+Quenya	eine Sprache
+Rauros	ein Fluss
+Raurosfälle	
 Reuel	Vorname Tolkiens
 Ring	darum dreht sich alles
-Ringgeister
-Ringkrieg
-Rohan
-Rohirrim
+Ringgeister	Nazgûl
+Ringkrieg	
+Rohan	Land der Rohirrim
+Rohirrim	Bewohner Rohans
 Ronald	Vorname Tolkiens
 Rosie	Geliebte und spätere Frau von Sam
-Sackheim
+Sackheim	Ort im Auenland
+Sakalthor	König von Númenor
 Sam	Diener und bester Freund von Frodo
-Samweis
-Saruman
-Sauron
+Samweis	Diener und bester Freund von Frodo
+Saruman	abtrünniger Magier
+Sauron	der Feind
 Schagrat	Ork-Anführer am Spinnenpass
 Schattenfell	Gandalfs Pferd
 Schatz	so nennt Gollum den Ring
@@ -177,32 +215,49 @@ Schicksalsberg
 Schicksalsklüfte
 Schlangenzunge
 Shire
-Silmaril
-Silmarillion
+Silmarien	Tochter von Elendil
+Silmaril	einer der Drei Edelsteine
+Silmarilli	die Drei Edelsteine
+Silmarillion	die Sagen-Sammlung
 Sindar
-Sindarin
-Smeagol
-Starren
+Sindarin	eine Sprache
+Smeagol	alter Name Gollums
+Starren	ein altes Hobbit-Volk
 Stich	Frodos Schwert
-Streicher
+Streicher	Tarnname Aragorns
+Surion	König von Númenor
+Tar	elbischer Königstitel in Númenor
+Amandil	König von Númenor
+Elendil	König von Númenor
+Minyatur	Elbenname von Elros
+Telemmaite	König von Númenor
 Teleri
+Telperien	2. Königin von Númenor
 Telperion	der Silberne Baum
+Thangorodrim	Festung Feanors
 Tharanduil
 Theoden	alter König von Rohan
-Thingol
-Tolkien
+Thingol	König Graumantel
+Tinuviel	Beiname Luthiens
+Tolkien	JRR
 Tom
 Totensümpfe
 Troll
-Truchsessen
-Tuck
+Truchsessen	Statthalter
+Tuck	Hobbit-Familie
+Tuor	Huors Sohn
+Turgon	König von Gondolin
 Udun
 Umbar	Heimat der Korsaren
 Ungoliant
 Urukhai
+Valandil	Sohn von Silmariën, erster Herr von Andúnië
 Valar
 Valinor
+Vanimelde	3. Königin von Númenor
 Vanyar
+Vardamir	2. König von Númenor
 Vilya
 Westernis
 Wetterspitze
+Zimrathon	König von Númenor
