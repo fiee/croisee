@@ -128,11 +128,11 @@ I'm planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
-* JavaScript works only with Safari at the moment
-* Bug: grid key handler eats control keys
+* word numbers are too small in Mozilla (and probably other browsers than Safari)
 * admin: if adding to an existing dict, disable other fields
-* test in other browsers than Safari!
 * clean up redundant template/view code
+* still not really a reusable app
+* adapt to Django 1.2
 
 
 License

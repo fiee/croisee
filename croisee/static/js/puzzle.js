@@ -11,6 +11,7 @@ function getWord(x,y,maxx,maxy) {
 	 * xpos, ypos 		= position of the query, relative to word, 0-based
 	 * 
 	 */
+	$('#result').html('');
 	var horiz='';
 	var vert='';
 	var letter = '';
@@ -54,9 +55,15 @@ function getWord(x,y,maxx,maxy) {
 	}
 	var query = '/ajax/'+horiz+','+xpos+'/'+vert+','+ypos+'/';
 	var context = {};
+	var count = 0;
 	$('input.dictionary-checkbox:checked').each(function(i){
 		context[this.id] = true;
+		count++;
 	});
+	if (count==0) {
+		$('#result').html('<p class="error">Chose a dictionary!</p>'); // TODO: i18n
+		return;
+	}
 	return $.post(query, context, function(data){
 		$('#result').html(data);
 		$('#result dl.resultlist span.word').click(function(event){
@@ -100,28 +107,43 @@ function renumberPuzzle(x,y,maxx,maxy,reset) {
 $(function(){
 	var maxx = Number($('input#maxx').val());
 	var maxy = Number($('input#maxy').val());
+
+	/*
+	 * Safari/Mac doesn't send keyPress for control keys (arrows, esc).
+	 * Mozilla doesn't send an usable keyUp for visible chars (?, #)
+	 */
+	
 	$('input.puzzlechar').keypress(function(event){
-		/* handle character keys A-Z */
-		if ( modifiers.indexOf(event.keyCode) < 1 ) { // no modifiers except shift
-			event.preventDefault();
-			if ((65 <= event.which && event.which <= 65 + 25) 
-				|| (97 <= event.which && event.which <= 97 + 25)) {
-		        var c = String.fromCharCode(event.which).toUpperCase();
-				$(this).val(c);
-				//console.log(event.keyCode, c);
-			}
-			return false;
-		}
-	});
-	$('input.puzzlechar').keyup(function(event){
-		/* handle any other keys */
-		//console.log(event.keyCode, 'UP');
+		//console.log('PR', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
+		if (event.metaKey || event.ctrlKey) return true;
 		var idp = this.id.split('_'); // char,y,x
 		var x = idp[2];
 		var y = idp[1];
-		switch (event.keyCode) {
+		/* handle character keys A-Z */
+		event.preventDefault();
+		if ((65 <= event.which && event.which <= 65 + 25) ||
+		(97 <= event.which && event.which <= 97 + 25)) {
+			var c = String.fromCharCode(event.which).toUpperCase();
+			$(this).val(c);
+		//console.log(event.keyCode, c);
+		} else
+		if (event.which==35)  renumberPuzzle(x,y,maxx,maxy,false);
+		else
+		if (event.which==63) getWord(x,y,maxx,maxy);
+		return false;
+	});
+	
+	$('input.puzzlechar').keyup(function(event){
+		if (event.metaKey || event.ctrlKey) return true;
+		/* handle any other keys */
+		var idp = this.id.split('_'); // char,y,x
+		var x = idp[2];
+		var y = idp[1];
+		//console.log('UP', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
+		switch (event.which) {
 			case 8: // backspace
 				$(this).val('');
+				$(this).parent('td').removeClass('blocked');
 				x--;
 				break;
 			case 9: // tab
@@ -146,18 +168,18 @@ $(function(){
 				break;
 			case 46: // forward delete
 				$(this).val('');
+				$(this).parent('td').removeClass('blocked');
 				x++;
-				break;
-			case 51: // number sign #
-				renumberPuzzle(x,y,maxx,maxy,false);
-				break;
-			case 191: // escape
-				getWord(x,y,maxx,maxy);
 				break;
 			default:
 				$(this).parent('td').removeClass('blocked');
-				if (event.shiftKey) { y++; } else { x++; }
-		}
+				if (event.shiftKey) {
+					y++;
+				}
+				else {
+					x++;
+				}
+		} // switch
 		if (x>maxx) {
 			x=1;
 		} else if (x<1) {
@@ -175,6 +197,7 @@ $(function(){
 		return true;
 	});
 	$('input.numeric').keyup(function(event){
+		if (event.metaKey || event.ctrlKey) return true;
 		/* handle numeric input fields */
 		event.preventDefault();
 		var num = Number(this.value);
