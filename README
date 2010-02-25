@@ -15,6 +15,7 @@ It's a Django application, to be run on Apache/mod_wsgi or Nginx with Django via
 
 The provided fabfile (fabric deployment) is for an Debian server 
 and documented in this gist: http://gist.github.com/158177
+(now superseded by http://github.com/fiee/generic_django_project)
 
 Additionally you need a `settings_webserver.py` that gets copied as `settings_local.py`.
 It can contain every kind of local settings, at least the database password.

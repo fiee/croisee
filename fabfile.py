@@ -7,26 +7,35 @@ from __future__ import with_statement # needed for python 2.5
 from fabric.api import *
 
 # globals
-env.project_name = 'croisee'
+env.project_name = 'croisee' # no spaces!
 env.use_photologue = False # django-photologue gallery module
+env.use_feincms = False
 env.use_medialibrary = False # feincms.medialibrary or similar
-env.webserver = 'nginx' # apache or nginx
+env.use_daemontools = False  # not available for hardy heron!
+env.webserver = 'nginx' # nginx or apache2 (directory name below /etc!)
+env.dbserver = 'mysql' # mysql or postgresql
+# TODO: database and SSH setup
+
+env.port = 8099 # local FCGI server
+
 
 # environments
 
 def localhost():
     "Use the local virtual server"
     env.hosts = ['localhost']
-    env.user = 'hraban'
-    env.path = '/Users/%(user)s/workspace/%(project_name)s' % env
+    env.user = 'hraban' # You must create and sudo-enable the user first!
+    env.path = '/Users/%(user)s/workspace/%(project_name)s' % env # User home on OSX, TODO: check local OS
     env.virtualhost_path = env.path
+    env.pysp = '%(virtualhost_path)s/lib/python2.6/site-packages' % env
 
 def webserver():
     "Use the actual webserver"
-    env.hosts = ['zipanu.fiee.net']
+    env.hosts = ['astarte.fiee.net'] # Change to your server name!
     env.user = env.project_name
     env.path = '/var/www/%(project_name)s' % env
     env.virtualhost_path = env.path
+    env.pysp = '%(virtualhost_path)s/lib/python2.5/site-packages' % env
     
 # tasks
 
@@ -42,23 +51,54 @@ def setup():
     """
     require('hosts', provided_by=[localhost,webserver])
     require('path')
-    #sudo('aptitude install -y python-setuptools')
-    #sudo('easy_install pip')
-    #sudo('pip install virtualenv')
-    #sudo('aptitude install -y apache2-threaded')
-    #sudo('aptitude install -y libapache2-mod-wsgi') # outdated on hardy!
-    if env.webserver=='apache':
-        # we want to get rid of the default apache config
-        sudo('cd /etc/apache2/sites-available/; a2dissite default;', pty=True)
-    elif env.webserver=='nginx':
-        sudo('cd /etc/nginx/sites-enabled/; rm default;', pty=True)
+    # install Python environment
+    sudo('apt-get install -y build-essential python-dev python-setuptools python-imaging')
+    # install some version control systems, since we need Django modules in development
+    sudo('apt-get install -y subversion git-core mercurial')
+
+    if env.use_daemontools:
+        sudo('apt-get install -y daemontools')
+        sudo('mkdir -p /etc/service/%(project_name)s' % env, pty=True)
+        
+    # install more Python stuff
+    sudo('easy_install -U setuptools')
+    sudo('easy_install pip')
+    sudo('pip install -U virtualenv')
+    
+    # install webserver and database server
+    sudo('apt-get remove -y apache2 apache2-mpm-prefork') # is mostly pre-installed
+    if env.webserver=='nginx':
+        sudo('apt-get install -y nginx')
+    else:
+        sudo('apt-get install -y apache2-threaded')
+        sudo('apt-get install -y libapache2-mod-wsgi') # outdated on hardy!
+    if env.dbserver=='mysql':
+        sudo('apt-get install -y mysql-server python-mysqldb')
+    elif env.dbserver=='postgresql':
+        sudo('apt-get install -y postgresql python-psycopg2')
+        
+    # disable default site
+    env.warn_only=True
+    sudo('cd /etc/%(webserver)s/sites-enabled/; rm default;' % env, pty=True)
+    env.warn_only=False
+    
+    # new project setup
     sudo('mkdir -p %(path)s; chown %(user)s:%(user)s %(path)s;' % env, pty=True)
     run('ln -s %(path)s www;' % env, pty=True) # symlink web dir in home
     with cd(env.path):
-        run('virtualenv .;' % env, pty=True)
-        run('mkdir logs; chmod a+w logs; mkdir releases; mkdir shared; mkdir packages;' % env, pty=True)
-        if env.use_photologue: run('mkdir photologue', pty=True);
-        if env.use_medialibrary: run('mkdir medialibrary', pty=True);
+        run('virtualenv .')
+        env.warn_only=True
+        run('mkdir -m a+w logs; mkdir releases; mkdir shared; mkdir packages; mkdir backup;' % env, pty=True)
+        env.warn_only=False
+        if env.use_feincms:
+            with cd(env.pysp):
+                run('git clone git://github.com/matthiask/django-mptt.git; echo django-mptt > mptt.pth;', pty=True)
+                run('git clone git://github.com/matthiask/feincms.git; echo feincms > feincms.pth;', pty=True)
+        if env.use_photologue:
+            run('mkdir photologue', pty=True)
+            #run('pip install -E . -U django-photologue' % env, pty=True)
+        if env.use_medialibrary:
+            run('mkdir medialibrary', pty=True)
         run('cd releases; ln -s . current; ln -s . previous;', pty=True)
     deploy()
     
@@ -91,7 +131,7 @@ def deploy_version(version):
     
 def rollback():
     """
-    Limited rollback capability. Simple loads the previously current
+    Limited rollback capability. Simply loads the previously current
     version of the code. Rolling back again will swap between the two.
     """
     require('hosts', provided_by=[localhost,webserver])
@@ -112,19 +152,17 @@ def upload_tar_from_git():
     put('%(release)s.tar.gz' % env, '%(path)s/packages/' % env)
     run('cd %(path)s/releases/%(release)s && tar zxf ../../packages/%(release)s.tar.gz' % env, pty=True)
     local('rm %(release)s.tar.gz' % env)
-    # copy secret settings (not in public distro)
-    put('%(project_name)s/settings_webserver.py' % env, '%(path)s/releases/%(release)s/%(project_name)s/settings_local.py' % env)
     
 def install_site():
-    "Add the virtualhost file to apache"
+    "Add the virtualhost file to the webserver's config"
     require('release', provided_by=[deploy, setup])
-    #sudo('cd %(path)s/releases/%(release)s; cp %(project_name)s%(virtualhost_path)s%(project_name)s /etc/apache2/sites-available/' % env, pty=True)
-    if env.webserver=='apache':
-        sudo('cd %(path)s/releases/%(release)s; cp vhost.conf /etc/apache2/sites-available/%(project_name)s' % env, pty=True)
-        sudo('cd /etc/apache2/sites-available/; a2ensite %(project_name)s' % env, pty=True)
-    elif env.webserver=='nginx':
-        sudo('cd %(path)s/releases/%(release)s; cp nginx.conf /etc/nginx/sites-available/%(project_name)s' % env, pty=True)
-        sudo('cd /etc/nginx/sites-available/; ln -s %(project_name)s /etc/nginx/sites-enabled/%(project_name)s' % env, pty=True) 
+    with cd('%(path)s/releases/%(release)s' % env):
+        sudo('cp %(webserver)s.conf /etc/%(webserver)s/sites-available/%(project_name)s' % env, pty=True)
+        if env.use_daemontools:
+            sudo('cp service-run.sh /etc/service/%(project_name)s/run' % env, pty=True)
+    env.warn_only=True        
+    sudo('cd /etc/%(webserver)s/sites-enabled/; ln -s ../sites-available/%(project_name)s %(project_name)s' % env, pty=True)
+    env.warn_only=False
     
 def install_requirements():
     "Install the required packages from the requirements file using pip"
@@ -141,13 +179,12 @@ def symlink_current_release():
             run('cd releases/current/%(project_name)s/static; rm -rf photologue; ln -s %(path)s/photologue;' % env, pty=True)
     
 def migrate():
-    "Update the database"
+    "Update the database (doesn't really make sense - no migration)"
     require('project_name')
     run('cd %(path)s/releases/current/%(project_name)s; ../../../bin/python manage.py syncdb --noinput' % env, pty=True)
     
 def restart_webserver():
     "Restart the web server"
-    if env.webserver=='apache':
-        sudo('/etc/init.d/apache2 reload', pty=True)
-    elif env.webserver=='nginx':
-        sudo('/etc/init.d/nginx reload', pty=True)
+    if env.webserver=='nginx':
+        run('cd $(path)s; bin/python releases/current/%(project_name)s/manage.py runfcgi method=threaded maxchildren=6 maxspare=4 minspare=2 host=127.0.0.1 port=$(port)d pidfile=./logs/django.pid' % env)
+    sudo('/etc/init.d/%(webserver)s reload' % env, pty=True)
