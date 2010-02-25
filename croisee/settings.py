@@ -9,7 +9,7 @@ PROJECT_NAME = os.path.split(PROJECT_ROOT)[-1]
 rel = lambda p: os.path.join(PROJECT_ROOT, p) # this is release and virtualenv dependent
 rootrel = lambda p: os.path.join('/var/www', PROJECT_NAME, p) # this is not
 
-sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT,'lib/python2.5/site-packages'), '/var/www/python']
+sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT,'lib/python2.5/site-packages')]
 
 # ==============================================================================
 # debug settings
@@ -17,7 +17,7 @@ sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT,'lib/python2.5/site-package
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-INTERNAL_IPS = ('127.0.0.1')
+INTERNAL_IPS = ('127.0.0.1',)
 if DEBUG:
     TEMPLATE_STRING_IF_INVALID = _(u'STRING_NOT_SET')
 
