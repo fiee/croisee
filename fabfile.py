@@ -183,10 +183,11 @@ def symlink_current_release():
 def migrate():
     "Update the database (doesn't really make sense - no migration)"
     require('project_name')
-    run('cd %(path)s/releases/current/%(project_name)s; ../../../bin/python manage.py syncdb --noinput' % env, pty=True)
+    run('cd %(path)s/releases/current/%(project_name)s; %(path)s/bin/python manage.py syncdb --noinput' % env, pty=True)
     
 def restart_webserver():
     "Restart the web server"
+    require('path')
     if env.webserver=='nginx':
-        run('cd $(path)s; bin/python releases/current/%(project_name)s/manage.py runfcgi method=threaded maxchildren=6 maxspare=4 minspare=2 host=127.0.0.1 port=$(port)d pidfile=./logs/django.pid' % env)
+        run('cd %(path)s; bin/python releases/current/%(project_name)s/manage.py runfcgi method=threaded maxchildren=6 maxspare=4 minspare=2 host=127.0.0.1 port=%(port)s pidfile=./logs/django.pid' % env)
     sudo('/etc/init.d/%(webserver)s reload' % env, pty=True)
