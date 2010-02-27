@@ -122,6 +122,9 @@ class WordlistUpload(models.Model):
         verbose_name = _(u'wordlist upload')
         verbose_name_plural = _(u'wordlist uploads')
 
+    def __unicode__(self):
+        return "%s (%s)" % (self.name, self.wordlist_file)
+
     def save(self, *args, **kwargs):
         super(WordlistUpload, self).save(*args, **kwargs)
         dictionary = self.process_wordlist()
