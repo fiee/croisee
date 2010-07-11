@@ -133,7 +133,6 @@ Bugs / Todo
 * admin: if adding to an existing dict, disable other fields
 * clean up redundant template/view code
 * still not really a reusable app
-* adapt to Django 1.2
 
 
 License
@@ -161,5 +160,5 @@ Dependencies
 ------------
 
 * Python 2.5+
-* Django 1.1+
+* Django 1.2+
 * Fabric 0.9+ (optional, for easy deployment)

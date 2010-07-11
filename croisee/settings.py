@@ -25,9 +25,10 @@ if DEBUG:
 # cache settings
 # ==============================================================================
 
-CACHE_BACKEND = 'locmem://'
-CACHE_MIDDLEWARE_KEY_PREFIX = '%s_' % PROJECT_NAME
+CACHE_BACKEND = 'file:///var/tmp/django_cache/%s' % PROJECT_NAME
+CACHE_MIDDLEWARE_KEY_PREFIX = '' # %s_' % PROJECT_NAME
 CACHE_MIDDLEWARE_SECONDS = 600
+USE_ETAGS = True
 
 # ==============================================================================
 # email and error-notify settings
@@ -39,7 +40,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DEFAULT_FROM_EMAIL = 'website@fiee.net'
+DEFAULT_FROM_EMAIL = '%s@fiee.net' % PROJECT_NAME
 SERVER_EMAIL = 'error-notify@fiee.net'
 
 EMAIL_SUBJECT_PREFIX = '[%s] ' % PROJECT_NAME
@@ -61,13 +62,17 @@ LOGIN_REDIRECT_URL = '/'
 # database settings
 # ==============================================================================
 
-DATABASE_ENGINE = 'mysql'
-DATABASE_OPTIONS = {'init_command': 'SET storage_engine=INNODB'} # mysql only
-DATABASE_NAME = PROJECT_NAME #os.path.join(PROJECT_ROOT, 'dev.db')
-DATABASE_USER = PROJECT_NAME
-DATABASE_PASSWORD = ''
-DATABASE_HOST = 'localhost'
-DATABASE_PORT = ''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'OPTIONS': {'init_command': 'SET storage_engine=INNODB'}, # mysql only
+        'NAME': PROJECT_NAME,                      # Or path to database file if using sqlite3.
+        'USER': PROJECT_NAME,                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
 
 # ==============================================================================
 # i18n and url settings
@@ -78,6 +83,7 @@ LANGUAGE_CODE = 'de'
 #LANGUAGES = (('en', _(u'English')),
 #             ('de', _(u'German')))
 USE_I18N = True
+USE_L10N = True
 
 SITE_ID = 1
 
@@ -96,22 +102,28 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.messages',
     'django.contrib.admin',
     #'django.contrib.humanize',
     #'django.contrib.sitemaps',
+    'south',
     #'tagging',
     PROJECT_NAME,
 ]
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.http.ConditionalGetMiddleware',
-#    'django.middleware.gzip.GZipMiddleware',
-    'django.contrib.csrf.middleware.CsrfMiddleware',
-    'django.middleware.doc.XViewMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware', # first
+    'django.middleware.gzip.GZipMiddleware', # second after UpdateCache
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfResponseMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.http.ConditionalGetMiddleware',
+    'django.middleware.doc.XViewMiddleware', # for local IPs
+    'django.middleware.cache.FetchFromCacheMiddleware', # last
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -120,6 +132,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
 )
 
 TEMPLATE_DIRS = (
@@ -127,9 +140,11 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#    'django.template.loaders.eggs.load_template_source',
+    ('django.template.loaders.cached.Loader', (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+#       'django.template.loaders.eggs.Loader',
+    )),
 )
 
 # ==============================================================================
