@@ -193,7 +193,7 @@ def migrate(param=''):
             env.southparam = '--initial'
         else:
             # copy migrations from previous release
-            run('cp %(path)s/releases/previous/%(project_name)s;/migrations ./' % env, pty=True, warn_only=True)
+            run('cp -r %(path)s/releases/previous/%(project_name)s/migrations ./' % env, pty=True)
         run('%(path)s/bin/python manage.py schemamigration %(project_name)s %(southparam)s && %(path)s/bin/python manage.py migrate %(project_name)s' % env)
         # TODO: also migrate other apps?
     
