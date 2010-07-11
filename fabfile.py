@@ -187,12 +187,15 @@ def migrate(param=''):
     require('project_name')
     require('path')
     env.southparam = '--auto'
-    if param=='first':
-        run('cd %(path)s/releases/current/%(project_name)s; %(path)s/bin/python manage.py syncdb --noinput' % env, pty=True)
-        env.southparam = '--initial'
     with cd('%(path)s/releases/current/%(project_name)s' % env):
+        if param=='first':
+            run('%(path)s/bin/python manage.py syncdb --noinput' % env, pty=True)
+            env.southparam = '--initial'
+        else:
+            # copy migrations from previous release
+            run('cp %(path)s/releases/previous/%(project_name)s;/migrations ./' % env, pty=True, warn_only=True)
         run('%(path)s/bin/python manage.py schemamigration %(project_name)s %(southparam)s && %(path)s/bin/python manage.py migrate %(project_name)s' % env)
-        # TODO: should also migrate other apps!
+        # TODO: also migrate other apps?
     
 def restart_webserver():
     "Restart the web server"
