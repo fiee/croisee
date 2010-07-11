@@ -189,6 +189,8 @@ CROISEE_XQUERYMAX = 1024 # maximum cross query results
 
 try:
     from settings_local import *
+    # database password is defined in settings_webserver.py (that gets copied to settings_local.py by fab)
+    DATABASES['default']['PASSWORD'] = DATABASE_PASSWORD
 except ImportError:
     pass
 if DEBUG:
