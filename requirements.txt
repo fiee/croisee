@@ -1,3 +1,4 @@
-flup
+gunicorn # not with fcgi
+#flup # for fcgi
 Django
 south

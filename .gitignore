@@ -14,3 +14,5 @@ build
 *.tar.gz
 *.bak
 temp
+migrations/
+static_collection/
