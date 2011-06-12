@@ -1,15 +1,14 @@
-{% load cache i18n %}{% get_current_language as LANGUAGE_CODE %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{% load cache i18n %}{% get_current_language as LANGUAGE_CODE %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>fiëé croisée :: {% block title %}{% endblock %}</title>
-	<link rel="shortcut icon" href="{{ MEDIA_URL }}favicon.ico" />
-	<link rel="icon" href="{{ MEDIA_URL }}favicon.ico" type="image/ico" />
-	<link rel="stylesheet" type="text/css" media="all" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" />
-	<link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css" type="text/css" media="screen,projection" />
-	<link rel="stylesheet" href="{{ MEDIA_URL }}css/print.css" type="text/css" media="print" />
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" ></script>
+	<link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
+	<link rel="icon" href="{{ STATIC_URL }}favicon.ico" type="image/ico" />
+	<link rel="stylesheet" type="text/css" media="all" href="http://yui.yahooapis.com/2.9.0/build/reset-fonts-grids/reset-fonts-grids.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen,projection" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/print.css" type="text/css" media="print" />
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" ></script>
 	{% block extrahead %}
 	{% endblock %}
 </head>
@@ -17,7 +16,7 @@
 	<div id="doc2" class="yui-t5">
 		<div id="hd">
 			{% block hd %}
-			<div class="fiee"><h1><img src="{{ MEDIA_URL }}img/fiee_croisee.png" alt="ﬁëé croisée" /></h1></div>
+			<div class="fiee"><h1><img src="{{ STATIC_URL }}img/fiee_croisee.png" alt="ﬁëé croisée" /></h1></div>
 			{% endblock %}
 		</div>
 		<div id="bd">
@@ -42,7 +41,7 @@
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="7955781">
-					<input type="image" src="https://www.paypal.com/de_DE/CH/i/btn/btn_donate_SM.gif" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+					<input type="image" src="https://www.paypal.com/de_DE/CH/i/btn/btn_donate_SM.gif" name="submit" alt="Jetzt einfach online bezahlen – mit PayPal.">
 					<img alt="" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
 				</form>
 			</div>
