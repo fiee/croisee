@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-28 17:29+0200\n"
+"POT-Creation-Date: 2011-06-12 15:28+0200\n"
 "PO-Revision-Date: 2009-09-28 17:34+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,8 +19,7 @@ msgstr ""
 "X-Poedit-Country: Germany\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: models.py:64
-#: models.py:93
+#: models.py:64 models.py:93
 msgid "Dictionary"
 msgstr "Wörterbuch"
 
@@ -27,49 +27,39 @@ msgstr "Wörterbuch"
 msgid "Dictionaries"
 msgstr "Wörterbücher"
 
-#: models.py:69
-#: models.py:112
+#: models.py:69 models.py:112
 msgid "Name"
 msgstr "Name"
 
-#: models.py:69
-#: models.py:112
+#: models.py:69 models.py:112
 msgid "A short descriptive name"
 msgstr "Ein kurzer, aussagekräftiger Name"
 
-#: models.py:70
-#: models.py:114
+#: models.py:70 models.py:114
 msgid "public?"
 msgstr "öffentlich?"
 
-#: models.py:70
-#: models.py:114
+#: models.py:70 models.py:114
 msgid "May everyone use this dictionary?"
 msgstr "Darf dieses Wörterbuch von jedermann benutzt werden?"
 
-#: models.py:71
-#: models.py:115
+#: models.py:71 models.py:115
 msgid "Language"
 msgstr "Sprache"
 
-#: models.py:73
-#: models.py:117
+#: models.py:73 models.py:117
 msgid "Language of (most of) the words in this dictionary"
 msgstr "Sprache der (meisten) Wörter in diesem Wörterbuch"
 
-#: models.py:74
-#: models.py:94
-#: models.py:118
+#: models.py:74 models.py:94 models.py:118
 msgid "Description"
 msgstr "Beschreibung"
 
-#: models.py:75
-#: models.py:119
+#: models.py:75 models.py:119
 msgid "Owner"
 msgstr "Besitzer"
 
-#: models.py:87
-#: models.py:92
+#: models.py:87 models.py:92
 msgid "Word"
 msgstr "Wort"
 
@@ -78,8 +68,12 @@ msgid "Words"
 msgstr "Wörter"
 
 #: models.py:92
-msgid "a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc."
-msgstr "ein Kreuzworträtsel-Wort; wird in Großbuchstaben umgewandelt; keine Zahlen, Bindestriche usw."
+msgid ""
+"a word fitting a crossword puzzle; will become uppercased; no numbers, "
+"hyphens etc."
+msgstr ""
+"ein Kreuzworträtsel-Wort; wird in Großbuchstaben umgewandelt; keine Zahlen, "
+"Bindestriche usw."
 
 #: models.py:94
 msgid "Meaning of the word within the context of the selected dictionary"
@@ -98,12 +92,21 @@ msgid "wordlist file (.txt)"
 msgstr "Wortlisten-Datei (*.txt)"
 
 #: models.py:110
-msgid "Select a .txt file containing a single word per line to upload as a new dictionary."
-msgstr "Wählen Sie eine Textdatei, die pro Zeile ein einzelnes Wort enthält, um sie als neues Wörterbuch hochzuladen."
+msgid ""
+"Select a .txt file containing a single word per line to upload as a new "
+"dictionary."
+msgstr ""
+"Wählen Sie eine Textdatei, die pro Zeile ein einzelnes Wort enthält, um sie "
+"als neues Wörterbuch hochzuladen."
 
 #: models.py:111
-msgid "Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name."
-msgstr "Wählen Sie ein Wörterbuch, dem diese Wörter hinzugefügt werden sollen. Lassen Sie dieses Feld frei, um ein neues Wörterbuch mit dem angegebenen Namen zu erzeugen."
+msgid ""
+"Select a dictionary to add these words to. leave this empty to create a new "
+"dictionary from the supplied name."
+msgstr ""
+"Wählen Sie ein Wörterbuch, dem diese Wörter hinzugefügt werden sollen. "
+"Lassen Sie dieses Feld frei, um ein neues Wörterbuch mit dem angegebenen "
+"Namen zu erzeugen."
 
 #: models.py:113
 msgid "only unique"
@@ -111,7 +114,8 @@ msgstr "eindeutig"
 
 #: models.py:113
 msgid "Import only words that are not contained in any other dictionary?"
-msgstr "Nur Wörter importieren, die nicht in einem andern Wörterbuch enthalten sind?"
+msgstr ""
+"Nur Wörter importieren, die nicht in einem andern Wörterbuch enthalten sind?"
 
 #: models.py:122
 msgid "wordlist upload"
@@ -121,133 +125,141 @@ msgstr "Wortlisten-Upload"
 msgid "wordlist uploads"
 msgstr "Wortlisten-Uploads"
 
-#: settings.py:22
+#: settings.py:24
 msgid "STRING_NOT_SET"
 msgstr "ZEICHENKETTE_NICHT_DEFINIERT"
 
-#: settings.py:156
+#: settings.py:267
 #, python-format
-msgid "Please create a %s file with random characters to generate your secret key!"
-msgstr "Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen Schlüssel zu erzeugen!"
+msgid ""
+"Please create a %s file with random characters to generate your secret key!"
+msgstr ""
+"Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen "
+"Schlüssel zu erzeugen!"
 
-#: views.py:140
+#: views.py:153
 msgid "horizontal"
 msgstr "waagerecht"
 
-#: views.py:141
+#: views.py:154
 msgid "vertical"
 msgstr "senkrecht"
 
-#: templates/403.html:4
-#: templates/403.html.py:7
+#: templates/403.html:4 templates/403.html.py:7
 msgid "403 Access Denied"
 msgstr "403 Zugriff verweigert"
 
-#: templates/403.html:8
-#: templates/500.html:8
-msgid "An internal error occurred. Try again. If it still doesn't work, try again later - we got the message and will try to fix it."
-msgstr "Es ist ein interner Fehler aufgetreten. Versuchen Sie es noch einmal. Wenn es dann immer noch nicht geht, versuchen Sie es später noch einmal – wir haben die Meldung erhalten und werden versuchen, das Problem zu beheben."
+#: templates/403.html:8 templates/500.html:8
+msgid ""
+"An internal error occurred. Try again. If it still doesn't work, try again "
+"later - we got the message and will try to fix it."
+msgstr ""
+"Es ist ein interner Fehler aufgetreten. Versuchen Sie es noch einmal. Wenn "
+"es dann immer noch nicht geht, versuchen Sie es später noch einmal – wir "
+"haben die Meldung erhalten und werden versuchen, das Problem zu beheben."
 
-#: templates/404.html:4
-#: templates/404.html.py:7
+#: templates/404.html:4 templates/404.html.py:7
 msgid "404 Page Not Found"
 msgstr "404 Seite nicht gefunden"
 
 #: templates/404.html:8
-msgid "The address you tried to receive doesn't exist or doesn't work. We received an error message and try to fix it, if it's an error on our site."
-msgstr "Die Adresse, die Sie versucht haben zu erreichen, gibt es nicht oder funktioniert nicht. Wir haben eine Fehlermeldung erhalten und werden versuchen, das Problem zu beheben, wenn es sich um einen Fehler unserer Website handelt."
+msgid ""
+"The address you tried to receive doesn't exist or doesn't work. We received "
+"an error message and try to fix it, if it's an error on our site."
+msgstr ""
+"Die Adresse, die Sie versucht haben zu erreichen, gibt es nicht oder "
+"funktioniert nicht. Wir haben eine Fehlermeldung erhalten und werden "
+"versuchen, das Problem zu beheben, wenn es sich um einen Fehler unserer "
+"Website handelt."
 
-#: templates/500.html:4
-#: templates/500.html.py:7
+#: templates/500.html:4 templates/500.html.py:7
 msgid "500 Server Error"
 msgstr "500 Server-Fehler"
 
-#: templates/ajax_query.html:2
-#: templates/index.html:42
+#: templates/ajax_query.html:2 templates/index.html:32
+#: templates/snippets/resultlist.html:5 templates/snippets/resultlist.html:17
 msgid "Search Results"
 msgstr "Suchergebnisse"
 
-#: templates/ajax_query.html:7
+#: templates/ajax_query.html:7 templates/snippets/resultlist.html:22
 msgid "results"
 msgstr "Suchergebnisse"
 
-#: templates/ajax_query.html:11
-#: templates/index.html:45
+#: templates/ajax_query.html:11 templates/index.html:35
+#: templates/snippets/resultlist.html:8 templates/snippets/resultlist.html:26
 msgid "Look up in Wikipedia"
 msgstr "In der Wikipedia nachschlagen"
 
-#: templates/ajax_query.html:13
+#: templates/ajax_query.html:13 templates/snippets/resultlist.html:28
 msgid "insert in grid"
 msgstr "ins Gitter einfügen"
 
-#: templates/ajax_query.html:16
-#: templates/index.html:46
+#: templates/ajax_query.html:16 templates/index.html:36
+#: templates/snippets/resultlist.html:9 templates/snippets/resultlist.html:31
 msgid "in"
 msgstr "in"
 
-#: templates/grid.html:4
-#: templates/grid.html.py:12
+#: templates/grid.html:4 templates/grid.html.py:12
 msgid "Puzzle Grid"
 msgstr "Rätsel-Gitter"
 
-#: templates/grid.html:32
+#: templates/grid.html:35
 msgid "Save"
 msgstr "Speichern"
 
-#: templates/grid.html:34
+#: templates/grid.html:38
 msgid "Keys"
 msgstr "Tasten"
 
-#: templates/grid.html:36
+#: templates/grid.html:40
 msgid "move cursor"
 msgstr "Einfügemarke bewegen"
 
-#: templates/grid.html:37
+#: templates/grid.html:41
 msgid "place character and move right"
 msgstr "Buchstabe setzen und nach rechts weiter"
 
-#: templates/grid.html:38
+#: templates/grid.html:42
 msgid "place character and move down"
 msgstr "Buchstabe setzen und nach unten weiter"
 
-#: templates/grid.html:39
+#: templates/grid.html:43
 msgid "space"
 msgstr "Leertaste"
 
-#: templates/grid.html:39
+#: templates/grid.html:43
 msgid "block field"
 msgstr "Feld blockieren"
 
-#: templates/grid.html:40
+#: templates/grid.html:44
 msgid "backspace"
 msgstr "Rückwärts-Löschtaste"
 
-#: templates/grid.html:40
+#: templates/grid.html:44
 msgid "delete character"
 msgstr "Zeichen löschen"
 
-#: templates/grid.html:41
+#: templates/grid.html:45
 msgid "set or reset number"
 msgstr "Zahl setzen oder entfernen"
 
-#: templates/grid.html:42
+#: templates/grid.html:46
 msgid "query dictionary for matching words"
 msgstr "Wörterbuchabfrage nach passenden Wörtern"
 
-#: templates/grid.html:46
+#: templates/grid.html:50
 msgid "Rows:"
 msgstr "Spalten:"
 
-#: templates/grid.html:50
+#: templates/grid.html:54
 msgid "Lines:"
 msgstr "Zeilen:"
 
-#: templates/grid.html:54
+#: templates/grid.html:58
 msgid "Create"
 msgstr "Erzeugen"
 
-#: templates/index.html:4
-#: templates/index.html.py:7
+#: templates/index.html:4 templates/index.html.py:7
 msgid "Cloze Search"
 msgstr "Lückentext-Suche"
 
@@ -260,48 +272,60 @@ msgid "Search"
 msgstr "Suchen"
 
 #: templates/index.html:13
-msgid "You can use <q>?</q> and <q>*</q> as wildcards for single or several characters."
-msgstr "Sie können <q>?</q> und <q>*</q> als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
+msgid ""
+"You can use <q>?</q> and <q>*</q> as wildcards for single or several "
+"characters."
+msgstr ""
+"Sie können <q>?</q> und <q>*</q> als Joker-Zeichen für einzelne oder mehrere "
+"Buchstaben verwenden."
 
-#: templates/index.html:15
-msgid "Available Dictionaries"
-msgstr "Verfügbare Wörterbücher"
-
-#: templates/index.html:23
-msgid "No dictionaries found"
-msgstr "Keine Wörterbücher gefunden"
-
-#: templates/index.html:28
+#: templates/index.html:18
 msgid ""
 "\n"
 "<h3>What’s this?</h3>\n"
-"<p>The <em>fiëé croisée</em> project aims to become a semi-automatic crossword puzzle generator. \n"
-"Even if there's still a long way to go, it’s already a valuable help in creating crossword puzzles.</p>\n"
-"<p>On this page you can just look up words that match a special pattern.</p>\n"
-"<p>There’s also a <strong><a href=\"/grid/\">puzzle grid</a></strong> you can work in.\n"
-"At the moment you can just print the page from the browser, but soon you’ll be able to export complete layout data for T<sub>E</sub>X or order your print-ready puzzle as PDF.</p>\n"
-"<p>More details come with the source code at <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
+"<p>The <em>fiëé croisée</em> project aims to become a semi-automatic "
+"crossword puzzle generator. \n"
+"Even if there's still a long way to go, it’s already a valuable help in "
+"creating crossword puzzles.</p>\n"
+"<p>On this page you can just look up words that match a special pattern.</"
+"p>\n"
+"<p>There’s also a <strong><a href=\"/grid/\">puzzle grid</a></strong> you "
+"can work in.\n"
+"At the moment you can just print the page from the browser, but soon you’ll "
+"be able to export complete layout data for T<sub>E</sub>X or order your "
+"print-ready puzzle as PDF.</p>\n"
+"<p>More details come with the source code at <a href=\"http://github.com/"
+"fiee/croisee/\">GitHub</a>.</p>\n"
 msgstr ""
 "\n"
 "<h3>Was ist das?</h3>\n"
-"<p>Das Projekt <em>fiëé croisée</em> entwickelt einen halbautomatischen Kreuzworträtsel-Generator.\n"
-"Obwohl es noch einen weiten Weg vor sich hat, ist es bereits eine wertvolle Hilfe beim Erstellen von Kreuzworträtseln.</p>\n"
-"<p>Auf dieser Seite können Sie nur Wörter nachschlagen, die zu einem bestimmten Muster passen.</p>\n"
-"<p>Sie können auch im <strong><a href=\"/grid/\">Rätsel-Gitter</a></strong> arbeiten.\n"
-"Im Moment können Sie nur die Seite im Browser ausdrucken, aber bald können Sie fertige Layout-Daten für T<sub>E</sub>X exportieren oder ein druckfertiges Kreuzworträtsel als PDF bestellen.</p>\n"
-"<p>Mehr Details finden Sie mit dem Quellcode auf <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
+"<p>Das Projekt <em>fiëé croisée</em> entwickelt einen halbautomatischen "
+"Kreuzworträtsel-Generator.\n"
+"Obwohl es noch einen weiten Weg vor sich hat, ist es bereits eine wertvolle "
+"Hilfe beim Erstellen von Kreuzworträtseln.</p>\n"
+"<p>Auf dieser Seite können Sie nur Wörter nachschlagen, die zu einem "
+"bestimmten Muster passen.</p>\n"
+"<p>Sie können auch im <strong><a href=\"/grid/\">Rätsel-Gitter</a></strong> "
+"arbeiten.\n"
+"Im Moment können Sie nur die Seite im Browser ausdrucken, aber bald können "
+"Sie fertige Layout-Daten für T<sub>E</sub>X exportieren oder ein "
+"druckfertiges Kreuzworträtsel als PDF bestellen.</p>\n"
+"<p>Mehr Details finden Sie mit dem Quellcode auf <a href=\"http://github.com/"
+"fiee/croisee/\">GitHub</a>.</p>\n"
 
-#: templates/index.html:48
+#: templates/index.html:38 templates/snippets/resultlist.html:11
 msgid "No matching words found"
 msgstr "Keine passenden Wörter gefunden"
 
-#: templates/root.html:39
+#: templates/root.html:38
 msgid "fiëé croisée is a free service of fiëé visuëlle."
 msgstr "fiëé croisée ist ein kostenloses Angebot von fiëé visuëlle."
 
-#: templates/root.html:40
+#: templates/root.html:39
 msgid "If you like it, would you please donate for further development?"
-msgstr "Wenn es Ihnen gefällt, wäre es nett, wenn Sie für die weitere Entwicklung spenden."
+msgstr ""
+"Wenn es Ihnen gefällt, wäre es nett, wenn Sie für die weitere Entwicklung "
+"spenden."
 
 #: templates/admin/base_site.html:4
 msgid "fiëé croisée Site Admin"
@@ -311,312 +335,459 @@ msgstr "fiëé croisée Site-Admin"
 msgid "fiëé croisée Administration"
 msgstr "fiëé croisée Administration"
 
+#: templates/snippets/dictionaries.html:2
+msgid "Available Dictionaries"
+msgstr "Verfügbare Wörterbücher"
+
+#: templates/snippets/dictionaries.html:13
+msgid "No dictionaries found"
+msgstr "Keine Wörterbücher gefunden"
+
 #~ msgid ""
 #~ "Fill in letters, navigate with arrow keys, block a field with space key. "
 #~ msgstr ""
 #~ "Füllen Sie das Gitter mit Buchstaben, navigieren Sie mit den Pfeiltasten, "
 #~ "blockieren Sie Felder mit der Leertaste."
+
 #~ msgid "Home"
 #~ msgstr "Startseite"
+
 #~ msgid "Descriptions"
 #~ msgstr "Beschreibungen"
+
 #~ msgid "Standard template"
 #~ msgstr "Musterseite"
+
 #~ msgid "Main content area"
 #~ msgstr "Hauptinhalt"
+
 #~ msgid "Person template"
 #~ msgstr "Personen-Seite"
+
 #~ msgid "Right content area"
 #~ msgstr "Rechts"
+
 #~ msgid "Event"
 #~ msgstr "Termin"
+
 #~ msgid "Events"
 #~ msgstr "Termine"
+
 #~ msgid "Calendar"
 #~ msgstr "Kalender"
+
 #~ msgid "Calendars"
 #~ msgstr "Kalender"
+
 #~ msgid "right"
 #~ msgstr "Rechts"
+
 #~ msgid "center"
 #~ msgstr "Mitte"
+
 #~ msgid "English"
 #~ msgstr "Englisch"
+
 #~ msgid "German"
 #~ msgstr "Deutsch"
+
 #~ msgid "TIME_FORMAT"
 #~ msgstr "G:i"
+
 #~ msgid "logout"
 #~ msgstr "Abmelden"
+
 #~ msgid "login"
 #~ msgstr "Anmelden"
+
 #~ msgid "Imprint"
 #~ msgstr "Impressum"
+
 #~ msgid "Cannot remove this frame while inside this admin section."
 #~ msgstr "Dieser Rahmen kann in diesem Admin-Bereich nicht entfernt werden."
+
 #~ msgid "remove"
 #~ msgstr "entfernen"
+
 #~ msgid "Add %(name)s"
 #~ msgstr "%(name)s hinzufügen"
+
 #~ msgid "Reload"
 #~ msgstr "Neu laden"
+
 #~ msgid "Edit"
 #~ msgstr "Bearbeiten"
+
 #~ msgid "Delete"
 #~ msgstr "Löschen"
+
 #~ msgid "Expand all"
 #~ msgstr "Alles ausklappen"
+
 #~ msgid "Collapse all"
 #~ msgstr "Alles einklappen"
+
 #~ msgid "Insert after"
 #~ msgstr "danach einfügen"
+
 #~ msgid "Insert before"
 #~ msgstr "davor einfügen"
+
 #~ msgid "Foto:"
 #~ msgstr "Foto: "
+
 #~ msgid "Starts"
 #~ msgstr "Beginn"
+
 #~ msgid "DATETIME_FORMAT"
 #~ msgstr "d.m.Y G:i"
+
 #~ msgid "Ends"
 #~ msgstr "Ende"
+
 #~ msgid "Reoccurs"
 #~ msgstr "Wiederholung"
+
 #~ msgid "until"
 #~ msgstr "bis"
+
 #~ msgid "ReStructured Text"
 #~ msgstr "ReStructured Text"
+
 #~ msgid "ReStructured Texts"
 #~ msgstr "ReStructured Texts"
+
 #~ msgid "Add Event"
 #~ msgstr "Termin hinzufügen"
+
 #~ msgid "%(start_date)s"
 #~ msgstr "%(start_date)s"
+
 #~ msgid "%(end_date)s"
 #~ msgstr "%(end_date)s"
+
 #~ msgid "Details"
 #~ msgstr "Details"
+
 #~ msgid "Question"
 #~ msgstr "Frage"
+
 #~ msgid ""
 #~ "Do you want to cancel this occurrence or delete all occurrences of this "
 #~ "event?"
 #~ msgstr ""
 #~ "Möchten Sie nur diese eine Wiederholung des Termins löschen oder alle?"
+
 #~ msgid "This is a recurring event"
 #~ msgstr "Dies ist ein wiederkehrender Termin"
+
 #~ msgid "Do you want to edit this occurrence or all occurrences?"
 #~ msgstr ""
 #~ "Möchten Sie nur diese eine Wiederholung des Termins bearbeiten oder alle?"
+
 #~ msgid "Edit Event"
 #~ msgstr "Termin bearbeiten"
+
 #~ msgid "Delete Event"
 #~ msgstr "Termin löschen"
+
 #~ msgid "Add"
 #~ msgstr "Hinzufügen"
+
 #~ msgid "YEAR_MONTH_FORMAT"
 #~ msgstr "F Y"
+
 #~ msgid "Continues"
 #~ msgstr "Weiter bis"
+
 #~ msgid "Week"
 #~ msgstr "Woche"
+
 #~ msgid "Month"
 #~ msgstr "Monat"
+
 #~ msgid "Year"
 #~ msgstr "Jahr"
+
 #~ msgid "Available Calendars"
 #~ msgstr "Verfügbare Kalender"
+
 #~ msgid "Small Month"
 #~ msgstr "Kleiner Monat"
+
 #~ msgid "1 Month"
 #~ msgstr "Monat"
+
 #~ msgid "3 Months"
 #~ msgstr "3 Monate"
+
 #~ msgid "This Year"
 #~ msgstr "Dieses Jahr"
+
 #~ msgid "Weekly"
 #~ msgstr "Wöchentlich"
+
 #~ msgid "Daily"
 #~ msgstr "Täglich"
+
 #~ msgid "Feed"
 #~ msgstr "Liste"
+
 #~ msgid "This month"
 #~ msgstr "Dieser Monat"
+
 #~ msgid "Three Months"
 #~ msgstr "3 Monate"
+
 #~ msgid "This week"
 #~ msgstr "Diese Woche"
+
 #~ msgid "Current Month"
 #~ msgstr "Dieser Monat"
+
 #~ msgid "Current Year"
 #~ msgstr "Dieses Jahr"
+
 #~ msgid "Are you sure that you really want to cancel this occurrence?"
 #~ msgstr "Sind Sie sicher, dass Sie diese Wiederholung absagen möchten?"
+
 #~ msgid "From"
 #~ msgstr "Von"
+
 #~ msgid "to"
 #~ msgstr "bis"
+
 #~ msgid "Cancel"
 #~ msgstr "Absagen"
+
 #~ msgid "Are you sure that you really want to delete it?"
 #~ msgstr "Sind Sie sicher, dass Sie löschen möchten?"
+
 #~ msgid "Back"
 #~ msgstr "Zurück"
+
 #~ msgid "Change"
 #~ msgstr "Ändern"
+
 #~ msgid "%(end_recurring_date)s"
 #~ msgstr "%(end_recurring_date)s"
+
 #~ msgid "Never. This is a 'one time only' event."
 #~ msgstr "Nie. Dies ist ein einmaliger Termin."
+
 #~ msgid "Day"
 #~ msgstr "Tag"
+
 #~ msgid "left"
 #~ msgstr "Links"
+
 #~ msgid "Three Month Calendar"
 #~ msgstr "Drei-Monats-Kalender"
+
 #~ msgid "Full Year Calendar"
 #~ msgstr "Ganzjahres-Kalender"
+
 #~ msgid "Startseite"
 #~ msgstr "Startseite"
+
 #~ msgid "Impressum"
 #~ msgstr "Impressum"
+
 #~ msgid "monatlich"
 #~ msgstr "monatlich"
+
 #~ msgid "userwelcome"
 #~ msgstr "Willkommen!"
+
 #~ msgid "Addresses"
 #~ msgstr "Adressen"
+
 #~ msgid "key"
 #~ msgstr "Schlüssel"
+
 #~ msgid "inherited"
 #~ msgstr "Vererbt"
+
 #~ msgid ""
 #~ "Should the content be inherited by subpages if they do not define any "
 #~ "content for this region?"
 #~ msgstr ""
 #~ "Soll der Inhalt dieser Region durch Unterseiten geerbt werden, sofern "
 #~ "diese keinen eigenen Inhalt definieren?"
+
 #~ msgid "region"
 #~ msgstr "Region"
+
 #~ msgid "regions"
 #~ msgstr "Regionen"
+
 #~ msgid "ordering"
 #~ msgstr "Sortierung"
+
 #~ msgid "Database error"
 #~ msgstr "Datenbankfehler"
+
 #~ msgid "file"
 #~ msgstr "Datei"
+
 #~ msgid "files"
 #~ msgstr "Dateien"
+
 #~ msgid "image"
 #~ msgstr "Bild"
+
 #~ msgid "images"
 #~ msgstr "Bilder"
+
 #~ msgid "media file"
 #~ msgstr "Mediendatei"
+
 #~ msgid "media files"
 #~ msgstr "Mediendateien"
+
 #~ msgid "text"
 #~ msgstr "Text"
+
 #~ msgid "rich text"
 #~ msgstr "Text"
+
 #~ msgid "rich texts"
 #~ msgstr "Texte"
+
 #~ msgid ""
 #~ "The rss field is updated several times a day. A change in the title will "
 #~ "only be visible on the home page after the next feed update."
 #~ msgstr ""
 #~ "Der RSS Feed wird mehrmals täglich aktualisiert. Eine Änderung des Titels "
 #~ "erscheint erst nach der nächsten Feed-Aktualisierung auf der Webseite."
+
 #~ msgid "Pre-rendered content"
 #~ msgstr "Vor-gerenderter Inhalt"
+
 #~ msgid "Last updated"
 #~ msgstr "Letzte Aktualisierung"
+
 #~ msgid "Max. items"
 #~ msgstr "Maximale Anzahl"
+
 #~ msgid "RSS feed"
 #~ msgstr "RSS Feed"
+
 #~ msgid "RSS feeds"
 #~ msgstr "RSS Feeds"
+
 #~ msgid "video link"
 #~ msgstr "Video-Link"
+
 #~ msgid ""
 #~ "This should be a link to a youtube video, i.e.: http://www.youtube.com/"
 #~ "watch?v=zmj1rpzDRZ0"
 #~ msgstr ""
 #~ "Dies sollte ein Link zu einem Youtube-Video sein, z.B.: http://www."
 #~ "youtube.com/watch?v=zmj1rpzDRZ0"
+
 #~ msgid "video"
 #~ msgstr "Video"
+
 #~ msgid "videos"
 #~ msgstr "Videos"
+
 #~ msgid "Other options"
 #~ msgstr "Weitere Optionen"
+
 #~ msgid "navigation extension"
 #~ msgstr "Navigations-Erweiterung"
+
 #~ msgid "active"
 #~ msgstr "Aktiv"
+
 #~ msgid "This is used for the generated navigation too."
 #~ msgstr "Dies wird auch für die generierte Navigation verwendet."
+
 #~ msgid "in navigation"
 #~ msgstr "In der Navigation"
+
 #~ msgid "override URL"
 #~ msgstr "Überschriebene URL"
+
 #~ msgid "Override the target URL for the navigation."
 #~ msgstr "Überschreibe die Ziel-URL für die Navigation."
+
 #~ msgid "redirect to"
 #~ msgstr "Weiterleiten zu"
+
 #~ msgid "Target URL for automatic redirects."
 #~ msgstr "Ziel-URL für automatische Weiterleitungen."
+
 #~ msgid "Cached URL"
 #~ msgstr "Zwischengespeicherte URL"
+
 #~ msgid ""
 #~ "Select the module providing subpages for this page if you need to "
 #~ "customize the navigation."
 #~ msgstr "Wähle das Modul aus, welches weitere Navigationspunkte erstellt."
+
 #~ msgid "The first line is the main title, the following lines are subtitles."
 #~ msgstr "Die erste Zeile ist der Haupttitel, die weiteren Zeilen Untertitel"
+
 #~ msgid "page title"
 #~ msgstr "Seitentitel"
+
 #~ msgid "Page title for browser window. Same as title by default."
 #~ msgstr ""
 #~ "Seitentitel für das Browser-Fenster. Standardmässig gleich wie der Titel."
+
 #~ msgid "meta keywords"
 #~ msgstr "Meta Begriffe"
+
 #~ msgid "This will be prepended to the default keyword list."
 #~ msgstr "Diese Begriffe werden vor die Standard-Begriffsliste eingefügt."
+
 #~ msgid "This will be prepended to the default description."
 #~ msgstr "Diese Beschreibung wird vor der Standard-Beschreibung eingefügt."
+
 #~ msgid "pages"
 #~ msgstr "Seiten"
+
 #~ msgid "Choose"
 #~ msgstr "Auswählen"
+
 #~ msgid "View on site"
 #~ msgstr "Auf der Webseite anzeigen"
+
 #~ msgid "Change Template"
 #~ msgstr "Template ändern"
+
 #~ msgid "Region empty"
 #~ msgstr "Region leer"
+
 #~ msgid ""
 #~ "Content from the parent site is automatically inherited. To override this "
 #~ "behaviour, add some content."
 #~ msgstr ""
 #~ "Inhalt wird von der übergeordneten Seite geerbt. Füge Inhalt hinzu, um "
 #~ "dieses Verhalten zu ändern"
+
 #~ msgid "Page"
 #~ msgstr "Seite"
+
 #~ msgid "in navi"
 #~ msgstr "Im Menü"
+
 #~ msgid "delete"
 #~ msgstr "Löschen"
+
 #~ msgid "category"
 #~ msgstr "Kategorie"
+
 #~ msgid "caption"
 #~ msgstr "Legende"
+
 #~ msgid "copyright"
 #~ msgstr "Copyright"
+
 #~ msgid "media file translation"
 #~ msgstr "Mediendatei-Übersetzung"
+
 #~ msgid "media file translations"
 #~ msgstr "Mediendatei-Übersetzungen"
-
