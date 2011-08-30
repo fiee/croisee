@@ -11,7 +11,7 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" ></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js" ></script>
   <script type="text/javascript">
-    // https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax
+    /* see https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax */
     $(document).ajaxSend(function(event, xhr, settings) {
         function safeMethod(method) {
             return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));

@@ -61,6 +61,10 @@ body {
     float: right;
     text-align: right;
 }
+.floatblock {
+  float: left;
+  margin-right: 2em;
+}
 
 i, em {
 	font-style: italic;
