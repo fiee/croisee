@@ -123,7 +123,7 @@ $(function(){
      * Mozilla doesn't send an usable keyUp for visible chars (?, #)
      */
     $('input.puzzlechar').keypress(function(event){
-        console.log('PRESS', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
+        //console.log('PRESS', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
         if (event.metaKey || event.ctrlKey) 
             return true;
         var idp = this.id.split('_'); // char,y,x
@@ -143,7 +143,6 @@ $(function(){
             else 
                 if (event.which == 63) {
                     getWord(x, y, maxx, maxy);
-                    event
                 }
         return false;
     });
@@ -155,8 +154,9 @@ $(function(){
         var idp = this.id.split('_'); // char,y,x
         var x = idp[2];
         var y = idp[1];
-        console.log('UP', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
+        //console.log('UP', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
         switch (event.which) {
+            case 0: break; // e.g. question mark on Mozilla
             case 8: // backspace
                 $(this).val('');
                 $(this).parent('td').removeClass('blocked');
