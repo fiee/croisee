@@ -5,7 +5,7 @@
 
 {% block maincontent %}
 <h2>{% trans "Cloze Search" %}</h2>
-<form action="/" method="post" name="wordsearch">
+<form action="/" method="post" name="wordsearch">{% csrf_token %}
 	<div class="formline ui-widget">
 		<label for="searchterm">{% trans "Search for:" %}</label>
 		<input type="text" name="searchterm" id="searchterm" class="ui-widget-content" value="{{ searchterm }}" />

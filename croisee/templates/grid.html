@@ -4,13 +4,12 @@
 {% block title %}{% trans "Puzzle Grid" %}{% endblock %}
 
 {% block extrahead %}
-<script type="text/javascript" src="{{MEDIA_URL}}js/puzzle.js">
-</script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/puzzle.js"></script>
 {% endblock %}
 
 {% block maincontent %}
 <h2 class="dontprint">{% trans "Puzzle Grid" %}</h2>
-<form action="/grid/" name="grid" method="post">
+<form action="/grid/" name="grid" method="post">{% csrf_token %}
 {% if puzzle %}
 <input type="hidden" name="maxx" id="maxx" value="{{puzzle.maxrow}}" />
 <input type="hidden" name="maxy" id="maxy" value="{{puzzle.maxline}}" />
