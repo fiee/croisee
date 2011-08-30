@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 from croisee.models import Dictionary, Word, cleanword
 import sets
@@ -15,9 +15,7 @@ def server_error(request, template_name='500.html'):
     Context: None
     """
     # see http://ericholscher.com/blog/2009/sep/23/pretty-django-error-pages/
-    return render_to_response(template_name,
-        context_instance = RequestContext(request)
-    )
+    return render(request, template_name)
 
 def _get_dictionaries(request):
     """
@@ -85,7 +83,7 @@ def index(request, *args, **kwargs):
         context.update(_search(request, request.POST['searchterm']))
     else:
         context['dictionaries'] = _get_dictionaries(request)[0]
-    return render_to_response('index.html', context)
+    return render(request, 'index.html', context)
 
 def grid(request, *args, **kwargs):
     puzzle = None
@@ -117,13 +115,13 @@ def grid(request, *args, **kwargs):
         'defaulty':     settings.CROISEE_GRIDDEF_Y,
         'dictionaries': _get_dictionaries(request)[0],
     }
-    return render_to_response('grid.html', context)
+    return render(request, 'grid.html', context)
 
 def ajax_query(request, **kwargs):
     """
     do a query for several words, separated by slashes
     
-    if words are in format "word,0", the number says which letter of both word must match
+    if words are in format "word,0", the number says which letter of both words must match
     """
     horiz = kwargs['horizontal']
     vert = kwargs['vertical']
@@ -152,4 +150,4 @@ def ajax_query(request, **kwargs):
     results[1]['direction'] = 'vertical'
     results[0]['name'] = _('horizontal')
     results[1]['name'] = _('vertical')
-    return render_to_response('ajax_query.html', {'results':results})
+    return render(request, 'ajax_query.html', {'results':results})
