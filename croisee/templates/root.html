@@ -9,6 +9,23 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen,projection" />
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/print.css" type="text/css" media="print" />
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" ></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js" ></script>
+  <script type="text/javascript">
+    // https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax
+    $(document).ajaxSend(function(event, xhr, settings) {
+        function safeMethod(method) {
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        if (!(safeMethod(settings.type) || settings.crossDomain)) {
+            xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+        }
+    });
+    $(function(){
+      $.ajaxSetup({ cache: false });
+      {% block extra_jquery %}
+      {% endblock %}
+    });
+  </script>
 	{% block extrahead %}
 	{% endblock %}
 </head>
