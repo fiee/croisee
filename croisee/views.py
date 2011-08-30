@@ -61,11 +61,11 @@ def _search(request, searchterm, limit=settings.CROISEE_QUERYMAX):
         searchterm = cleanword(searchterm, False).upper()
         internal = searchterm.replace('?','_').replace('*','%').replace('%','%%')
         if not ('_' in internal or '%%' in internal): # without wildcards = no search needed
-            context['results'] = Word.objects.filter(word=internal, dictionary__public=True).exclude(dictionary__id__in=dictionaries[1])[:limit]
+            context['results'] = Word.objects.filter(word=internal, dictionary__public=(not request.user.is_staff)).exclude(dictionary__id__in=dictionaries[1])[:limit]
             if not context['results']: # new word
                 context['results'] = [ Word(word=internal, description=searchterm.title()) ]
         else:
-            context['results'] = Word.objects.extra(where=['word LIKE "'+internal+'"']).filter(dictionary__public=True).exclude(dictionary__id__in=dictionaries[1])[:limit]
+            context['results'] = Word.objects.extra(where=['word LIKE "'+internal+'"']).filter(dictionary__public=(not request.user.is_staff)).exclude(dictionary__id__in=dictionaries[1])[:limit]
         # TODO: dictionaries in selected
         context['resultcount'] = len(context['results'])
         context['searchterm'] = searchterm
