@@ -128,8 +128,8 @@ I'm planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
-* JavaScript doesn’t work at all in most browsers except Safari
-* word numbers are too small in Mozilla (and probably other browsers than Safari)
+* JavaScript works only in WebKit and Mozilla browsers (i.e. Safari, Firefox)
+* word numbers rather small in Mozilla (and probably other browsers than Safari)
 * admin: if adding to an existing dict, disable other fields
 * clean up redundant template/view code
 * still not really a reusable app
