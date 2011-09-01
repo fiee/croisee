@@ -233,6 +233,19 @@ input.puzzlechar {
 	width: 0;
 }
 
+#mainmenu input[type=text] {
+  position: relative;
+  top: -0.75em;
+  width: 10em;
+}
+
+#mainmenu button {
+  position: relative;
+  top: -0.25em;
+  left: -0.5em;
+  font-size: 77%;
+}
+
 /* Lists */
 
 li, dd {

@@ -29,13 +29,6 @@
       <li><a href="{#% url croisee-clear %#}"><span class="ui-icon ui-icon-trash"></span>{% trans "Clear" %}</a></li>
     </ul>
   </li>
-  <li>{# Menu Search #}
-    <a>{% trans "Search" %}</a>
-    <ul>
-      <li><a href="{% url croisee-ajax_clozequery cloze="X" %}"><span class="ui-icon ui-icon-search"></span>{% trans "Cloze" %}</a></li>
-      <li><a href="/ajax/H,1/V,1/"><span class="ui-icon ui-icon-search"></span>{% trans "Cross fit" %}</a></li>
-    </ul>
-  </li>
   <li>{# Menu Dict #}
     <a>{% trans "Dictionaries" %}</a>
     <ul>
@@ -51,6 +44,18 @@
           {% trans "No dictionaries found" %}
       </li>
       {% endfor %}
+    </ul>
+  </li>
+  <li>{# Menu Search #}
+    <form action="/{{cloze_action}}" method="post" name="cloze_search" id="cloze_search">
+      {% csrf_token %}
+      <label for="searchterm" class="hidden">{% trans "Search for:" %}</label>
+      <input type="text" name="cloze_searchterm" id="cloze_searchterm" value="{{ searchterm }}" title="{% trans "You can use “_” and “*” as wildcards for single or several characters." %}"/>
+      <button id="cloze_search_submit" title="{% trans "Search" %}"><span class="ui-icon ui-icon-search"></span></button>
+    </form>
+    <ul>
+      <li><a href="{% url croisee-ajax_clozequery cloze="X" %}"><span class="ui-icon ui-icon-search"></span>{% trans "Cloze" %}</a></li>
+      <li><a href="/ajax/H,1/V,1/"><span class="ui-icon ui-icon-search"></span>{% trans "Cross fit" %}</a></li>
     </ul>
   </li>
   <li>{# Menu Help #}
