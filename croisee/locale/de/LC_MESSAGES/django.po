@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-12 15:28+0200\n"
-"PO-Revision-Date: 2009-09-28 17:34+0100\n"
+"POT-Creation-Date: 2011-09-01 15:58+0200\n"
+"PO-Revision-Date: 2011-09-01 16:01+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "Language: \n"
@@ -18,48 +18,61 @@ msgstr ""
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: Germany\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: models.py:64 models.py:93
+#: models.py:64
+#: models.py:93
 msgid "Dictionary"
 msgstr "Wörterbuch"
 
 #: models.py:65
+#: templates/snippets/menu.html:40
 msgid "Dictionaries"
 msgstr "Wörterbücher"
 
-#: models.py:69 models.py:112
+#: models.py:69
+#: models.py:112
 msgid "Name"
 msgstr "Name"
 
-#: models.py:69 models.py:112
+#: models.py:69
+#: models.py:112
 msgid "A short descriptive name"
 msgstr "Ein kurzer, aussagekräftiger Name"
 
-#: models.py:70 models.py:114
+#: models.py:70
+#: models.py:114
 msgid "public?"
 msgstr "öffentlich?"
 
-#: models.py:70 models.py:114
+#: models.py:70
+#: models.py:114
 msgid "May everyone use this dictionary?"
 msgstr "Darf dieses Wörterbuch von jedermann benutzt werden?"
 
-#: models.py:71 models.py:115
+#: models.py:71
+#: models.py:115
 msgid "Language"
 msgstr "Sprache"
 
-#: models.py:73 models.py:117
+#: models.py:73
+#: models.py:117
 msgid "Language of (most of) the words in this dictionary"
 msgstr "Sprache der (meisten) Wörter in diesem Wörterbuch"
 
-#: models.py:74 models.py:94 models.py:118
+#: models.py:74
+#: models.py:94
+#: models.py:118
 msgid "Description"
 msgstr "Beschreibung"
 
-#: models.py:75 models.py:119
+#: models.py:75
+#: models.py:119
 msgid "Owner"
 msgstr "Besitzer"
 
-#: models.py:87 models.py:92
+#: models.py:87
+#: models.py:92
 msgid "Word"
 msgstr "Wort"
 
@@ -68,12 +81,8 @@ msgid "Words"
 msgstr "Wörter"
 
 #: models.py:92
-msgid ""
-"a word fitting a crossword puzzle; will become uppercased; no numbers, "
-"hyphens etc."
-msgstr ""
-"ein Kreuzworträtsel-Wort; wird in Großbuchstaben umgewandelt; keine Zahlen, "
-"Bindestriche usw."
+msgid "a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc."
+msgstr "ein Kreuzworträtsel-Wort; wird in Großbuchstaben umgewandelt; keine Zahlen, Bindestriche usw."
 
 #: models.py:94
 msgid "Meaning of the word within the context of the selected dictionary"
@@ -92,21 +101,12 @@ msgid "wordlist file (.txt)"
 msgstr "Wortlisten-Datei (*.txt)"
 
 #: models.py:110
-msgid ""
-"Select a .txt file containing a single word per line to upload as a new "
-"dictionary."
-msgstr ""
-"Wählen Sie eine Textdatei, die pro Zeile ein einzelnes Wort enthält, um sie "
-"als neues Wörterbuch hochzuladen."
+msgid "Select a .txt file containing a single word per line to upload as a new dictionary."
+msgstr "Wählen Sie eine Textdatei, die pro Zeile ein einzelnes Wort enthält, um sie als neues Wörterbuch hochzuladen."
 
 #: models.py:111
-msgid ""
-"Select a dictionary to add these words to. leave this empty to create a new "
-"dictionary from the supplied name."
-msgstr ""
-"Wählen Sie ein Wörterbuch, dem diese Wörter hinzugefügt werden sollen. "
-"Lassen Sie dieses Feld frei, um ein neues Wörterbuch mit dem angegebenen "
-"Namen zu erzeugen."
+msgid "Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name."
+msgstr "Wählen Sie ein Wörterbuch, dem diese Wörter hinzugefügt werden sollen. Lassen Sie dieses Feld frei, um ein neues Wörterbuch mit dem angegebenen Namen zu erzeugen."
 
 #: models.py:113
 msgid "only unique"
@@ -114,8 +114,7 @@ msgstr "eindeutig"
 
 #: models.py:113
 msgid "Import only words that are not contained in any other dictionary?"
-msgstr ""
-"Nur Wörter importieren, die nicht in einem andern Wörterbuch enthalten sind?"
+msgstr "Nur Wörter importieren, die nicht in einem andern Wörterbuch enthalten sind?"
 
 #: models.py:122
 msgid "wordlist upload"
@@ -131,201 +130,163 @@ msgstr "ZEICHENKETTE_NICHT_DEFINIERT"
 
 #: settings.py:267
 #, python-format
-msgid ""
-"Please create a %s file with random characters to generate your secret key!"
-msgstr ""
-"Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen "
-"Schlüssel zu erzeugen!"
+msgid "Please create a %s file with random characters to generate your secret key!"
+msgstr "Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen Schlüssel zu erzeugen!"
 
-#: views.py:153
+#: views.py:224
+#: views.py:259
 msgid "horizontal"
 msgstr "waagerecht"
 
-#: views.py:154
+#: views.py:260
 msgid "vertical"
 msgstr "senkrecht"
 
-#: templates/403.html:4 templates/403.html.py:7
+#: templates/403.html:4
+#: templates/403.html.py:7
 msgid "403 Access Denied"
 msgstr "403 Zugriff verweigert"
 
-#: templates/403.html:8 templates/500.html:8
-msgid ""
-"An internal error occurred. Try again. If it still doesn't work, try again "
-"later - we got the message and will try to fix it."
-msgstr ""
-"Es ist ein interner Fehler aufgetreten. Versuchen Sie es noch einmal. Wenn "
-"es dann immer noch nicht geht, versuchen Sie es später noch einmal – wir "
-"haben die Meldung erhalten und werden versuchen, das Problem zu beheben."
+#: templates/403.html:8
+#: templates/500.html:8
+msgid "An internal error occurred. Try again. If it still doesn't work, try again later - we got the message and will try to fix it."
+msgstr "Es ist ein interner Fehler aufgetreten. Versuchen Sie es noch einmal. Wenn es dann immer noch nicht geht, versuchen Sie es später noch einmal – wir haben die Meldung erhalten und werden versuchen, das Problem zu beheben."
 
-#: templates/404.html:4 templates/404.html.py:7
+#: templates/404.html:4
+#: templates/404.html.py:7
 msgid "404 Page Not Found"
 msgstr "404 Seite nicht gefunden"
 
 #: templates/404.html:8
-msgid ""
-"The address you tried to receive doesn't exist or doesn't work. We received "
-"an error message and try to fix it, if it's an error on our site."
-msgstr ""
-"Die Adresse, die Sie versucht haben zu erreichen, gibt es nicht oder "
-"funktioniert nicht. Wir haben eine Fehlermeldung erhalten und werden "
-"versuchen, das Problem zu beheben, wenn es sich um einen Fehler unserer "
-"Website handelt."
+msgid "The address you tried to receive doesn't exist or doesn't work. We received an error message and try to fix it, if it's an error on our site."
+msgstr "Die Adresse, die Sie versucht haben zu erreichen, gibt es nicht oder funktioniert nicht. Wir haben eine Fehlermeldung erhalten und werden versuchen, das Problem zu beheben, wenn es sich um einen Fehler unserer Website handelt."
 
-#: templates/500.html:4 templates/500.html.py:7
+#: templates/500.html:4
+#: templates/500.html.py:7
 msgid "500 Server Error"
 msgstr "500 Server-Fehler"
 
-#: templates/ajax_query.html:2 templates/index.html:32
-#: templates/snippets/resultlist.html:5 templates/snippets/resultlist.html:17
+#: templates/ajax_query.html:2
+#: templates/snippets/resultlist.html:5
+#: templates/snippets/resultlist.html:17
 msgid "Search Results"
 msgstr "Suchergebnisse"
 
-#: templates/ajax_query.html:7 templates/snippets/resultlist.html:22
+#: templates/ajax_query.html:7
+#: templates/snippets/resultlist.html:22
 msgid "results"
 msgstr "Suchergebnisse"
 
-#: templates/ajax_query.html:11 templates/index.html:35
-#: templates/snippets/resultlist.html:8 templates/snippets/resultlist.html:26
+#: templates/ajax_query.html:11
+#: templates/snippets/resultlist.html:8
+#: templates/snippets/resultlist.html:26
 msgid "Look up in Wikipedia"
 msgstr "In der Wikipedia nachschlagen"
 
-#: templates/ajax_query.html:13 templates/snippets/resultlist.html:28
+#: templates/ajax_query.html:13
+#: templates/snippets/resultlist.html:28
 msgid "insert in grid"
 msgstr "ins Gitter einfügen"
 
-#: templates/ajax_query.html:16 templates/index.html:36
-#: templates/snippets/resultlist.html:9 templates/snippets/resultlist.html:31
+#: templates/ajax_query.html:16
+#: templates/snippets/resultlist.html:9
+#: templates/snippets/resultlist.html:31
 msgid "in"
 msgstr "in"
 
-#: templates/grid.html:4 templates/grid.html.py:12
+#: templates/grid.html:4
+#: templates/grid.html.py:11
 msgid "Puzzle Grid"
 msgstr "Rätsel-Gitter"
 
-#: templates/grid.html:35
-msgid "Save"
-msgstr "Speichern"
+#: templates/grid.html:34
+msgid "Save Puzzle"
+msgstr "Rätsel speichern"
 
-#: templates/grid.html:38
+#: templates/grid.html:43
 msgid "Keys"
 msgstr "Tasten"
 
-#: templates/grid.html:40
+#: templates/grid.html:45
 msgid "move cursor"
 msgstr "Einfügemarke bewegen"
 
-#: templates/grid.html:41
+#: templates/grid.html:46
 msgid "place character and move right"
 msgstr "Buchstabe setzen und nach rechts weiter"
 
-#: templates/grid.html:42
+#: templates/grid.html:47
 msgid "place character and move down"
 msgstr "Buchstabe setzen und nach unten weiter"
 
-#: templates/grid.html:43
+#: templates/grid.html:48
 msgid "space"
 msgstr "Leertaste"
 
-#: templates/grid.html:43
+#: templates/grid.html:48
 msgid "block field"
 msgstr "Feld blockieren"
 
-#: templates/grid.html:44
+#: templates/grid.html:49
 msgid "backspace"
 msgstr "Rückwärts-Löschtaste"
 
-#: templates/grid.html:44
+#: templates/grid.html:49
 msgid "delete character"
 msgstr "Zeichen löschen"
 
-#: templates/grid.html:45
+#: templates/grid.html:50
 msgid "set or reset number"
 msgstr "Zahl setzen oder entfernen"
 
-#: templates/grid.html:46
+#: templates/grid.html:51
 msgid "query dictionary for matching words"
 msgstr "Wörterbuchabfrage nach passenden Wörtern"
 
-#: templates/grid.html:50
+#: templates/grid.html:58
 msgid "Rows:"
 msgstr "Spalten:"
 
-#: templates/grid.html:54
+#: templates/grid.html:62
 msgid "Lines:"
 msgstr "Zeilen:"
 
-#: templates/grid.html:58
+#: templates/grid.html:66
 msgid "Create"
 msgstr "Erzeugen"
 
-#: templates/index.html:4 templates/index.html.py:7
+#: templates/index.html:4
+#: templates/snippets/clozeform.html:4
 msgid "Cloze Search"
 msgstr "Lückentext-Suche"
 
-#: templates/index.html:10
-msgid "Search for:"
-msgstr "Suche nach:"
-
-#: templates/index.html:12
-msgid "Search"
-msgstr "Suchen"
-
-#: templates/index.html:13
-msgid ""
-"You can use <q>?</q> and <q>*</q> as wildcards for single or several "
-"characters."
-msgstr ""
-"Sie können <q>?</q> und <q>*</q> als Joker-Zeichen für einzelne oder mehrere "
-"Buchstaben verwenden."
-
-#: templates/index.html:18
+#: templates/index.html:14
 msgid ""
 "\n"
 "<h3>What’s this?</h3>\n"
-"<p>The <em>fiëé croisée</em> project aims to become a semi-automatic "
-"crossword puzzle generator. \n"
-"Even if there's still a long way to go, it’s already a valuable help in "
-"creating crossword puzzles.</p>\n"
-"<p>On this page you can just look up words that match a special pattern.</"
-"p>\n"
-"<p>There’s also a <strong><a href=\"/grid/\">puzzle grid</a></strong> you "
-"can work in.\n"
-"At the moment you can just print the page from the browser, but soon you’ll "
-"be able to export complete layout data for T<sub>E</sub>X or order your "
-"print-ready puzzle as PDF.</p>\n"
-"<p>More details come with the source code at <a href=\"http://github.com/"
-"fiee/croisee/\">GitHub</a>.</p>\n"
+"<p>The <em>fiëé croisée</em> project aims to become a semi-automatic crossword puzzle generator. \n"
+"Even if there's still a long way to go, it’s already a valuable help in creating crossword puzzles.</p>\n"
+"<p>On this page you can just look up words that match a special pattern.</p>\n"
+"<p>There’s also a <strong><a href=\"/grid/\">puzzle grid</a></strong> you can work in.\n"
+"At the moment you can just print the page from the browser, but soon you’ll be able to export complete layout data for T<sub>E</sub>X or order your print-ready puzzle as PDF.</p>\n"
+"<p>More details come with the source code at <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
 msgstr ""
 "\n"
 "<h3>Was ist das?</h3>\n"
-"<p>Das Projekt <em>fiëé croisée</em> entwickelt einen halbautomatischen "
-"Kreuzworträtsel-Generator.\n"
-"Obwohl es noch einen weiten Weg vor sich hat, ist es bereits eine wertvolle "
-"Hilfe beim Erstellen von Kreuzworträtseln.</p>\n"
-"<p>Auf dieser Seite können Sie nur Wörter nachschlagen, die zu einem "
-"bestimmten Muster passen.</p>\n"
-"<p>Sie können auch im <strong><a href=\"/grid/\">Rätsel-Gitter</a></strong> "
-"arbeiten.\n"
-"Im Moment können Sie nur die Seite im Browser ausdrucken, aber bald können "
-"Sie fertige Layout-Daten für T<sub>E</sub>X exportieren oder ein "
-"druckfertiges Kreuzworträtsel als PDF bestellen.</p>\n"
-"<p>Mehr Details finden Sie mit dem Quellcode auf <a href=\"http://github.com/"
-"fiee/croisee/\">GitHub</a>.</p>\n"
+"<p>Das Projekt <em>fiëé croisée</em> entwickelt einen halbautomatischen Kreuzworträtsel-Generator.\n"
+"Obwohl es noch einen weiten Weg vor sich hat, ist es bereits eine wertvolle Hilfe beim Erstellen von Kreuzworträtseln.</p>\n"
+"<p>Auf dieser Seite können Sie nur Wörter nachschlagen, die zu einem bestimmten Muster passen.</p>\n"
+"<p>Sie können auch im <strong><a href=\"/grid/\">Rätsel-Gitter</a></strong> arbeiten.\n"
+"Im Moment können Sie nur die Seite im Browser ausdrucken, aber bald können Sie fertige Layout-Daten für T<sub>E</sub>X exportieren oder ein druckfertiges Kreuzworträtsel als PDF bestellen.</p>\n"
+"<p>Mehr Details finden Sie mit dem Quellcode auf <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
 
-#: templates/index.html:38 templates/snippets/resultlist.html:11
-msgid "No matching words found"
-msgstr "Keine passenden Wörter gefunden"
-
-#: templates/root.html:38
+#: templates/root.html:57
 msgid "fiëé croisée is a free service of fiëé visuëlle."
 msgstr "fiëé croisée ist ein kostenloses Angebot von fiëé visuëlle."
 
-#: templates/root.html:39
+#: templates/root.html:58
 msgid "If you like it, would you please donate for further development?"
-msgstr ""
-"Wenn es Ihnen gefällt, wäre es nett, wenn Sie für die weitere Entwicklung "
-"spenden."
+msgstr "Wenn es Ihnen gefällt, wäre es nett, wenn Sie für die weitere Entwicklung spenden."
 
 #: templates/admin/base_site.html:4
 msgid "fiëé croisée Site Admin"
@@ -335,22 +296,93 @@ msgstr "fiëé croisée Site-Admin"
 msgid "fiëé croisée Administration"
 msgstr "fiëé croisée Administration"
 
-#: templates/snippets/dictionaries.html:2
+#: templates/snippets/clozeform.html:7
+msgid "Search for:"
+msgstr "Suche nach:"
+
+#: templates/snippets/clozeform.html:9
+#: templates/snippets/menu.html:33
+msgid "Search"
+msgstr "Suchen"
+
+#: templates/snippets/clozeform.html:10
+msgid "You can use <q>_</q> and <q>*</q> as wildcards for single or several characters."
+msgstr "Sie können <q>_</q> und <q>*</q> als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
+
+#: templates/snippets/dictionaries.html:3
 msgid "Available Dictionaries"
 msgstr "Verfügbare Wörterbücher"
 
-#: templates/snippets/dictionaries.html:13
+#: templates/snippets/dictionaries.html:14
+#: templates/snippets/menu.html:51
 msgid "No dictionaries found"
 msgstr "Keine Wörterbücher gefunden"
+
+#: templates/snippets/menu.html:6
+msgid "About fiëé croisée"
+msgstr "Über fiëé croisée"
+
+#: templates/snippets/menu.html:7
+msgid "Home"
+msgstr "Startseite"
+
+#: templates/snippets/menu.html:9
+msgid "Logout"
+msgstr "Abmelden"
+
+#: templates/snippets/menu.html:10
+msgid "Password change"
+msgstr "Passwort ändern"
+
+#: templates/snippets/menu.html:12
+msgid "Administration"
+msgstr "Verwaltung"
+
+#: templates/snippets/menu.html:15
+msgid "Login"
+msgstr "Anmelden"
+
+#: templates/snippets/menu.html:23
+msgid "Puzzle"
+msgstr "Rätsel"
+
+#: templates/snippets/menu.html:25
+msgid "New"
+msgstr "Neu"
+
+#: templates/snippets/menu.html:26
+msgid "Save"
+msgstr "Speichern"
+
+#: templates/snippets/menu.html:35
+msgid "Cloze"
+msgstr "Lückentext"
+
+#: templates/snippets/menu.html:36
+msgid "Cross fit"
+msgstr "Passendes Kreuz"
+
+#: templates/snippets/menu.html:57
+msgid "Help"
+msgstr "Hilfe"
+
+#: templates/snippets/menu.html:59
+msgid "About"
+msgstr "Über"
+
+#: templates/snippets/menu.html:60
+msgid "Donations"
+msgstr "Spenden"
+
+#: templates/snippets/resultlist.html:11
+msgid "No matching words found"
+msgstr "Keine passenden Wörter gefunden"
 
 #~ msgid ""
 #~ "Fill in letters, navigate with arrow keys, block a field with space key. "
 #~ msgstr ""
 #~ "Füllen Sie das Gitter mit Buchstaben, navigieren Sie mit den Pfeiltasten, "
 #~ "blockieren Sie Felder mit der Leertaste."
-
-#~ msgid "Home"
-#~ msgstr "Startseite"
 
 #~ msgid "Descriptions"
 #~ msgstr "Beschreibungen"
@@ -393,12 +425,6 @@ msgstr "Keine Wörterbücher gefunden"
 
 #~ msgid "TIME_FORMAT"
 #~ msgstr "G:i"
-
-#~ msgid "logout"
-#~ msgstr "Abmelden"
-
-#~ msgid "login"
-#~ msgstr "Anmelden"
 
 #~ msgid "Imprint"
 #~ msgstr "Impressum"
@@ -779,9 +805,6 @@ msgstr "Keine Wörterbücher gefunden"
 
 #~ msgid "category"
 #~ msgstr "Kategorie"
-
-#~ msgid "caption"
-#~ msgstr "Legende"
 
 #~ msgid "copyright"
 #~ msgstr "Copyright"
