@@ -1,0 +1,64 @@
+{% load i18n %}
+<ul id="mainmenu">
+  <li>{# fiee Menu #}
+    <a href="/"><img src="{{ STATIC_URL }}img/favicon_16.png" style="height:16px;" alt="fiëé" /></a>
+    <ul>
+      <li><a href="/about/"><span class="ui-icon ui-icon-help"></span> {% trans "About fiëé croisée" %}</a></li>
+      <li><a href="/"><span class="ui-icon ui-icon-home"></span> {% trans "Home" %}</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="/accounts/logout/"><span class="ui-icon ui-icon-power"></span> {% trans "Logout" %} {{ user }}</a></li>
+      <li><a href="/accounts/password/change/"><span class="ui-icon ui-icon-wrench"></span> {% trans "Password change" %}</a></li>
+      {% if user.is_superuser %}
+      <li><a href="/admin/"><span class="ui-icon ui-icon-key"></span> {% trans "Administration" %}</a></li>
+      {% endif %}
+      {% else %}
+      <li><a href="/accounts/login/"><span class="ui-icon ui-icon-person"></span> {% trans "Login" %}</a></li>
+      {% endif %}
+      {% block menu_fiee %}
+      {% endblock %}
+    </ul>
+  </li>
+  {% block navigation %}
+  <li>{# Menu Puzzle #}
+    <a>{% trans "Puzzle" %}</a>
+    <ul>
+      <li><a href="{% url croisee-grid %}"><span class="ui-icon ui-icon-star"></span>{% trans "New" %}</a></li>
+      <li><a href="{% url croisee-save %}"><span class="ui-icon ui-icon-disk"></span>{% trans "Save" %}</a></li>
+      <li><a href="{#% url croisee-adapt %#}"><span class="ui-icon ui-icon-arrow-2-se-nw"></span>{% trans "Adapt" %}</a></li>
+      <li><a href="{#% url croisee-move %#}"><span class="ui-icon ui-icon-arrow-4-diag"></span>{% trans "Move" %}</a></li>
+      <li><a href="{#% url croisee-clear %#}"><span class="ui-icon ui-icon-trash"></span>{% trans "Clear" %}</a></li>
+    </ul>
+  </li>
+  <li>{# Menu Search #}
+    <a>{% trans "Search" %}</a>
+    <ul>
+      <li><a href="{% url croisee-ajax_clozequery cloze="X" %}"><span class="ui-icon ui-icon-search"></span>{% trans "Cloze" %}</a></li>
+      <li><a href="/ajax/H,1/V,1/"><span class="ui-icon ui-icon-search"></span>{% trans "Cross fit" %}</a></li>
+    </ul>
+  </li>
+  <li>{# Menu Dict #}
+    <a>{% trans "Dictionaries" %}</a>
+    <ul>
+      {% for d in dictionaries %}
+      <li title="{{ d.description }}">
+          <input type="checkbox" name="dic_{{ d.id }}" id="dic_{{ d.id }}" class="dictionary-checkbox" {%  if not d.disabled %}checked="checked"{%  endif %} />
+          <label for="dic_{{ d.id }}">
+              {{ d.name }} ({{ d.language }})
+          </label>
+      </li>
+      {% empty %}
+      <li class="error">
+          {% trans "No dictionaries found" %}
+      </li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li>{# Menu Help #}
+    <a>{% trans "Help" %}</a>
+    <ul>
+      <li><a href=""><span class="ui-icon ui-icon-help"></span>{% trans "About" %}</a></li>
+      <li><a href=""><span class="ui-icon ui-icon-heart"></span>{% trans "Donations" %}</a></li>
+    </ul>
+  </li>
+  {% endblock %}
+</ul>{# navlist main #}
