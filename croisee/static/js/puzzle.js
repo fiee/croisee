@@ -167,10 +167,12 @@ $(function(){
     var focus_x = 0;
     var focus_y = 0;
     
-    /* enable save puzzle button */
-    $('input#save_puzzle').click(function(event){
+    /* enable save puzzle button/menu */
+    $('#save_puzzle').click(function(event){
       $('form#grid #dicts').append($('input.dictionary-checkbox'));
       document.forms['grid'].submit();
+      event.preventDefault;
+      return false;
     });
 
     /* enable ajax processing of cloze search */

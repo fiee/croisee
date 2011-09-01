@@ -246,6 +246,10 @@ input.puzzlechar {
   font-size: 77%;
 }
 
+#mainmenu input[type=checkbox] {
+  margin: 0;
+}
+
 /* Lists */
 
 li, dd {
@@ -417,10 +421,11 @@ ul#mainmenu ul li {
   display: list-item;
   position: relative;
   float: none;
+  padding: 0.5em;
 }
 
 ul#mainmenu ul a {
-  padding: 0 0.5em 0.5em 0.5em;
+  padding-left: 0;
 }
 
 /* weitere Ebenen */
