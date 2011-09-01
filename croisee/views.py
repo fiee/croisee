@@ -5,7 +5,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render, redirect
 from django.template import RequestContext
 from croisee.models import Dictionary, Word, cleanword
-#from pprint import pprint
+import logging
+logger = logging.getLogger(settings.PROJECT_NAME)
 
 def server_error(request, template_name='500.html'):
     """
@@ -92,7 +93,7 @@ def _find_word(text, start_y, start_x, direction='h', stopchar='.'):
                 return None
             return ''.join([line[start_x] for line in lines[start_y:]]).split(stopchar)[0]
     except IndexError, e:
-        print start_y, start_x, direction, e
+        logger.warning('IndexError in _find_word with x=%d, y=%d, dir=%s: %s' % (start_x, start_y, direction, e))
     return None
 
 def index(request, *args, **kwargs):
@@ -159,11 +160,11 @@ def save(request, *args, **kwargs):
         maxcol = int(post['maxcol'])
         maxrow = int(post['maxrow'])
     except ValueError, e:
-        print e
+        logger.warning('ValueError in save: %s' % e)
         maxcol = 0
         maxrow = 0
     except KeyError, e:
-        print e
+        logger.warning('KeyError in save: %s' % e)
         maxcol = 0
         maxrow = 0
     if maxcol < settings.CROISEE_GRIDMIN_X: maxcol = settings.CROISEE_GRIDMIN_X
@@ -186,7 +187,7 @@ def save(request, *args, **kwargs):
                 num += 1
                 word_starts.append([num, y, x, ''])
         p_text += '\n'
-    print p_text.replace('.', '#').replace(' ', u'·')
+    logger.info('\n'+p_text.replace('.', '#').replace(' ', u'·'))
 
     words_horiz = [None for i in range(num+1)]
     words_vert = [None for i in range(num+1)]
@@ -216,7 +217,6 @@ def save(request, *args, **kwargs):
         'dictionaries': _get_dictionaries(request)[0],
         'cloze_action': 'ajax/DUMMY/',
     }
-    #pprint(context)
     return render(request, 'grid.html', context)
 
 def ajax_clozequery(request, **kwargs):
