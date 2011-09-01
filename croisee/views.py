@@ -144,7 +144,7 @@ def grid(request, *args, **kwargs):
 
 def save(request, *args, **kwargs):
     if request.method != 'POST':
-        return redirect('%s.index' % settings.PROJECT_NAME)
+        return redirect('%s-index' % settings.PROJECT_NAME)
 
     post = {}
     for key in request.POST:
