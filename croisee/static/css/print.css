@@ -24,13 +24,17 @@ img {
     border: none;
 }
 
-.dontprint, .hidden, .hint {
+.dontprint, .hidden, .hint,
+#mainmenu, #ft, #cloze_search,
+.formline, .ui-widget,
+input, button, .button, .ui-button {
 	display: none;
 }
 
 table.puzzle {
 	border: 2px solid #aaa;
 	font-size: 150%;
+	border-collapse: collapse;
 }
 
 table.puzzle td {
@@ -47,13 +51,10 @@ table.puzzle td.blocked input.puzzlechar {
 	border: 2px solid #ccc;
 }
 
-input {
-	display: none;
-}
-
 input.puzzlechar {
 	display: inline;
 	border: none;
+  font-size: 100%;
 	width: 1.5em;
 	height: 1.5em;
 	text-align: center;
