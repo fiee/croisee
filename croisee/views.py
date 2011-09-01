@@ -221,7 +221,7 @@ def save(request, *args, **kwargs):
 
 def ajax_clozequery(request, **kwargs):
     results = (_search(request, kwargs['cloze']),)
-    results[0]['name'] = _('horizontal')
+    results[0]['name'] = _('results')
     results[0]['direction'] = 'horizontal'
     return render(request, 'ajax_query.html', {'results':results})
 
