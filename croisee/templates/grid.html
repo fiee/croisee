@@ -34,7 +34,7 @@
     <input type="button" id="save_puzzle" value="{% trans "Save Puzzle" %}" />
   </div>
 </div>
-  {% include "snippets/dictionaries.html" %}
+<div class="hidden" id="dicts"></div>
 </form>
 
 {% include "snippets/clozeform.html" %}
@@ -70,6 +70,7 @@
 {% endblock %}
 
 {% block sidecontent %}
+<h3 class="dontprint">{{ resultcount}} {% trans "Search Results" %}</h3>
 <div id="result" class="dontprint">
 </div>
 {% endblock %}

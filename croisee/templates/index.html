@@ -9,7 +9,6 @@
 
 {% block maincontent %}
 {% include "snippets/clozeform.html" %}
-{% include "snippets/dictionaries.html" %}
 <div class="dontprint clear">
 {% blocktrans %}
 <h3>What’s this?</h3>
@@ -24,6 +23,7 @@ At the moment you can just print the page from the browser, but soon you’ll be
 {% endblock %}
 
 {% block sidecontent %}
+<h3 class="dontprint">{{ resultcount}} {% trans "Search Results" %}</h3>
 <div id="result" class="dontprint">
 </div>
 {% endblock %}

@@ -169,6 +169,7 @@ $(function(){
     
     /* enable save puzzle button */
     $('input#save_puzzle').click(function(event){
+      $('form#grid #dicts').append($('input.dictionary-checkbox'));
       document.forms['grid'].submit();
     });
 
