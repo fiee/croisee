@@ -28,18 +28,21 @@ q q:after { content:close-quote; }
 
 html {
   background-color: #6cf;
+  background: linear-gradient(top, #cff, #6cf);
   background: -moz-linear-gradient(top, #cff, #6cf);
 	background: -webkit-gradient(linear, center top, center bottom, from(#cff), to(#6cf));
 	background-attachment: fixed;
 	background-position: top left;
 	background-repeat: no-repeat;
+  behavior: url(/static/css/PIE.htc);
 }
 
 body {
-	margin: 0 0 0 0;
+  width: 974px;
+  margin: auto;
 	font-family: Lucida Grande, Lucida Sans, Helvetica, Arial, sans-serif;
-    text-align: left;
-    font-size: 77%;
+  text-align: left;
+  font-size: 77%;
 	volume: medium;
 	voice-family: female;
 	pitch: medium;
@@ -64,6 +67,9 @@ body {
 .floatblock {
   float: left;
   margin-right: 2em;
+}
+.hidden {
+  display: none;
 }
 
 i, em {
@@ -106,6 +112,12 @@ h1, h2, h3, h4, h5 {
 	margin: 0.5em 0 0.5em 0;
 }
 
+#sidebar h1,
+#sidebar h2,
+#sidebar h3 {
+  margin: 0 0 0.5em 0;
+}
+
 .fiee h1 {
 	font-size:35px;
 	font-family: Berkeley, Times, serif;
@@ -139,6 +151,23 @@ h5, th, dt {
 
 /* Forms */
 
+input, textarea {
+  line-height: 1.0;
+  padding: 0.25em;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+
+input[type=radio] {
+  margin-right: 0.5em;
+}
+
+input[type=checkbox],
+input[type=radio],
+input[type=file] {
+  border: none !important;
+}
+
 .hint {
 	font-size: 77%;
 }
@@ -157,10 +186,15 @@ div.formline input.numeric {
 	text-align: right;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 table.puzzle {
 	border: 2px solid #aaa;
 	font-size: 150%;
 	margin: 0.5em 0 0.5em 0;
+	background-color: #fff;
 }
 
 table.puzzle td {
@@ -178,6 +212,8 @@ table.puzzle td.blocked input.puzzlechar {
 
 input.puzzlechar {
 	border: none;
+  padding: 0;
+  font-size: 100%;
 	width: 1.5em;
 	height: 1.5em;
 	text-align: center;
@@ -224,25 +260,58 @@ dl.legend dd {
 
 /* Areas */
 
+.yui3-g {
+  word-spacing: 0;
+  letter-spacing: 0;
+}
+
 #hd {
-	height: 50px;
+  /* position and z-index needed for PIE.htc, because #hd is parent of ul#mainmenu */
+  position: relative;
+  z-index: 1;
+  height: 50px;
+  clear: both;
 }
 
 #bd {
-	padding: 1em 1em 2em 1em;
+  min-height: 11em;
+  padding: 1em 1em 2em 1em;
 }
 
 #bd, #ft {
+  clear: both;
+  position: relative;
 	border: 1px solid #ccc;
 	background-color: #fff;
+  background: linear-gradient(90deg, #eee, #fff);
+  background: -moz-linear-gradient(90deg, #eee, #fff);
+  background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#eee));
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  box-shadow: 0.25em 0.25em 1em #333;
+  -webkit-box-shadow: 0.25em 0.25em 1em #333;
+  -moz-box-shadow: 0.25em 0.25em 1em #333;
+  behavior: url(/static/css/PIE.htc);
 }
 
 #ft {
-	position: relative;
 	bottom: 0;
 	font-size: 77%;
-	border-top: none;
+	margin-top: 1em;
 	padding: 0.5em 1em 0.5em 1em;
+}
+
+#main {
+  width: 750px;
+  float: left;
+}
+
+#sidebar {
+  width: 180px;
+  max-height: 600px;
+  overflow-y: scroll;
+  padding: 1em 0 1em 0;
+  float:right;
 }
 
 /* *** Menu *** */
@@ -281,6 +350,13 @@ ul#mainmenu li {
   float: left;
   margin: 0;
   padding: 0.25em 0.75em 0 0;
+}
+
+ul#mainmenu li:hover {
+  background-color: #dfa;
+  background: linear-gradient(90deg, #6cf, #cff);
+  background: -moz-linear-gradient(90deg, #6cf, #cff);
+  background: -webkit-gradient(linear, center top, center bottom, from(#cff), to(#6cf));
 }
 
 ul#mainmenu a {
@@ -355,6 +431,11 @@ ul#mainmenu ul li:hover ul {
 
 /* jQuery UI */
 
+#bd .ui-widget {
+  font-size: 100%;
+  font-family: Lucida Grande, Lucida Sans, Helvetica, Arial, sans-serif;
+  
+}
 
 span.ui-icon {
   float: left;
@@ -369,4 +450,15 @@ p span.ui-icon {
 .right span.ui-icon {
   float: right;
   text-indent: 99999px;
+}
+
+input.ui-button {
+  font-size: 77%;
+  /* height: 2.45em; */
+}
+
+.ui-button-text {
+  font-size: 77%;
+  color: #555;
+  white-space: nowrap;
 }
