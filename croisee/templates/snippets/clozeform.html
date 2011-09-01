@@ -1,0 +1,14 @@
+{% load i18n %}
+<form action="/{{cloze_action}}" method="post" name="cloze_search" id="cloze_search">
+  <div class="floatblock">
+    <h2>{% trans "Cloze Search" %}</h2>
+    {% csrf_token %}
+    <div class="formline ui-widget">
+      <label for="searchterm">{% trans "Search for:" %}</label>
+      <input type="text" name="cloze_searchterm" id="cloze_searchterm" class="ui-widget-content" value="{{ searchterm }}" />
+      <input type="button" id="cloze_search_submit" value="{% trans "Search" %}" />
+      <div class="hint">{% trans "You can use <q>_</q> and <q>*</q> as wildcards for single or several characters." %}</div>
+    </div>
+  </div>
+  {% include "snippets/dictionaries.html" %}
+</form>

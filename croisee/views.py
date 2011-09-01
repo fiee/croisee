@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import RequestContext
 from croisee.models import Dictionary, Word, cleanword
-import sets
+#from pprint import pprint
 
 def server_error(request, template_name='500.html'):
     """
@@ -66,47 +66,70 @@ def _search(request, searchterm, limit=settings.CROISEE_QUERYMAX):
                 context['results'] = [ Word(word=internal, description=searchterm.title()) ]
         else:
             context['results'] = Word.objects.extra(where=['word LIKE "'+internal+'"']).filter(dictionary__public=(not request.user.is_staff)).exclude(dictionary__id__in=dictionaries[1])[:limit]
-        # TODO: dictionaries in selected
+        # TODO: dictionaries in selected (hu??)
         context['resultcount'] = len(context['results'])
         context['searchterm'] = searchterm
     except (KeyError, Word.DoesNotExist), ex:
         pass
     return context
 
+def _find_word(text, start_y, start_x, direction='h', stopchar='.'):
+    """
+    find a word in a text, starting at position y, x (0-based)
+    
+    direction is h or v
+    """
+    lines = [line for line in text.split('\n') if line]
+    try:
+        if direction=='h':
+            if start_x > 0 and lines[start_y][start_x-1] <> stopchar:
+                # word doesn’t start here
+                return None
+            return lines[start_y][start_x:].split(stopchar)[0]
+        elif direction=='v':
+            if start_y > 0 and lines[start_y-1][start_x] <> stopchar:
+                # word doesn’t start here
+                return None
+            return ''.join([line[start_x] for line in lines[start_y:]]).split(stopchar)[0]
+    except IndexError, e:
+        print start_y, start_x, direction, e
+    return None
 
 def index(request, *args, **kwargs):
     context = {
         'MEDIA_URL':    settings.MEDIA_URL,
         'posted':       (request.method == 'POST'),
+        'cloze_action': '',
     }
     if request.method == 'POST':
-        context.update(_search(request, request.POST['searchterm']))
+        context.update(_search(request, request.POST['cloze_searchterm']))
     else:
         context['dictionaries'] = _get_dictionaries(request)[0]
     return render(request, 'index.html', context)
 
 def grid(request, *args, **kwargs):
     puzzle = None
-    if request.method == 'POST':
-        maxrow = int(request.POST['maxx'])
-        maxline = int(request.POST['maxy'])
-        if maxrow < settings.CROISEE_GRIDMIN_X: maxrow = settings.CROISEE_GRIDMIN_X
-        if maxline < settings.CROISEE_GRIDMIN_Y: maxline = settings.CROISEE_GRIDMIN_Y
-        if maxrow > settings.CROISEE_GRIDMAX_X: maxrow = settings.CROISEE_GRIDMAX_X
-        if maxline > settings.CROISEE_GRIDMAX_Y: maxline = settings.CROISEE_GRIDMAX_Y
+    
+    if (request.method == 'POST'):
+        if ('maxcol' in request.POST and 'maxrow' in request.POST):
+            maxcol = int(request.POST['maxcol'])
+            maxrow = int(request.POST['maxrow'])
+            if maxcol < settings.CROISEE_GRIDMIN_X: maxcol = settings.CROISEE_GRIDMIN_X
+            if maxrow < settings.CROISEE_GRIDMIN_Y: maxrow = settings.CROISEE_GRIDMIN_Y
+            if maxcol > settings.CROISEE_GRIDMAX_X: maxcol = settings.CROISEE_GRIDMAX_X
+            if maxrow > settings.CROISEE_GRIDMAX_Y: maxrow = settings.CROISEE_GRIDMAX_Y
+        else:
+            maxcol = settings.CROISEE_GRIDMAX_X
+            maxrow = settings.CROISEE_GRIDMAX_Y
+        
         puzzle = {
+            'maxcol':   maxcol,
             'maxrow':   maxrow,
-            'maxline':  maxline,
-            'rows':     range(1,maxrow+1),
-            'lines':    range(1,maxline+1),
-            'chars':    {},
-            #'posted':   False,
-            'puzzle':   None,
+            'maxnum':   0,
+            'data':    [{'id':y, 'cols':[{'id':x, 'num':'', 'char':''} for x in range(maxcol)]} for y in range(maxrow)],
+            'text':     '',
         }
-        for y in puzzle['lines']:
-            puzzle['chars'][y] = {}
-            for x in puzzle['rows']:
-                puzzle['chars'][y][x] = 'X'
+        
     context = {
         'MEDIA_URL':    settings.MEDIA_URL,
         'posted':       (request.method == 'POST'),
@@ -114,10 +137,95 @@ def grid(request, *args, **kwargs):
         'defaultx':     settings.CROISEE_GRIDDEF_X,
         'defaulty':     settings.CROISEE_GRIDDEF_Y,
         'dictionaries': _get_dictionaries(request)[0],
+        'cloze_action': 'ajax/DUMMY/',
     }
     return render(request, 'grid.html', context)
 
-def ajax_query(request, **kwargs):
+def save(request, *args, **kwargs):
+    if request.method != 'POST':
+        return redirect('%s.index' % settings.PROJECT_NAME)
+
+    post = {}
+    for key in request.POST:
+        post[key.encode('ascii')] = request.POST[key]
+
+    try:
+        maxnum = int(post['maxnum'])
+    except ValueError, e:
+        maxnum = 0
+    except KeyError, e:
+        maxnum = 0
+    try:
+        maxcol = int(post['maxcol'])
+        maxrow = int(post['maxrow'])
+    except ValueError, e:
+        print e
+        maxcol = 0
+        maxrow = 0
+    except KeyError, e:
+        print e
+        maxcol = 0
+        maxrow = 0
+    if maxcol < settings.CROISEE_GRIDMIN_X: maxcol = settings.CROISEE_GRIDMIN_X
+    if maxrow < settings.CROISEE_GRIDMIN_Y: maxrow = settings.CROISEE_GRIDMIN_Y
+    if maxcol > settings.CROISEE_GRIDMAX_X: maxcol = settings.CROISEE_GRIDMAX_X
+    if maxrow > settings.CROISEE_GRIDMAX_Y: maxrow = settings.CROISEE_GRIDMAX_Y
+
+    word_starts = []
+    
+    p_text = '' # complete text of puzzle
+    num = 0 # word start number counter
+
+    for y in range(maxcol):
+        for x in range(maxrow):
+            coord = '%d_%d' % (y, x)
+            c = post['char_'+coord]
+            if c=='': c= ' '
+            p_text += c[0].upper()
+            if post['num_'+coord]:
+                num += 1
+                word_starts.append([num, y, x, ''])
+        p_text += '\n'
+    print p_text.replace('.', '#').replace(' ', u'·')
+
+    words_horiz = [None for i in range(num+1)]
+    words_vert = [None for i in range(num+1)]
+    
+    for c in range(len(word_starts)):
+        [num, y, x, dir] = word_starts[c]
+        words_horiz[num] = _find_word(p_text, y, x, 'h')
+        words_vert[num] = _find_word(p_text, y, x, 'v')
+        if words_horiz[num]: dir += 'h'
+        if words_vert[num]: dir += 'v'
+        word_starts[c][3] = dir
+        num += 1
+    
+    puzzle = {
+        'maxcol':   maxcol,
+        'maxrow':   maxrow,
+        'maxnum':   maxnum,
+        'text':     p_text,
+        'data':     [{'id':y, 'cols':[{'id':x, 'num':post['num_%d_%d' % (y,x)], 'char':post['char_%d_%d' % (y,x)]} for x in range(maxcol)]} for y in range(maxrow)],
+    }
+    context = {
+        'MEDIA_URL':    settings.MEDIA_URL,
+        'posted':       (request.method == 'POST'),
+        'puzzle':       puzzle,
+        'defaultx':     settings.CROISEE_GRIDDEF_X,
+        'defaulty':     settings.CROISEE_GRIDDEF_Y,
+        'dictionaries': _get_dictionaries(request)[0],
+        'cloze_action': 'ajax/DUMMY/',
+    }
+    #pprint(context)
+    return render(request, 'grid.html', context)
+
+def ajax_clozequery(request, **kwargs):
+    results = (_search(request, kwargs['cloze']),)
+    results[0]['name'] = _('horizontal')
+    results[0]['direction'] = 'horizontal'
+    return render(request, 'ajax_query.html', {'results':results})
+
+def ajax_crossquery(request, **kwargs):
     """
     do a query for several words, separated by slashes
     
@@ -133,8 +241,8 @@ def ajax_query(request, **kwargs):
         vl = None
     if hl != None and vl != None and len(horiz)>hl and len(vert)>vl:
         results = (_search(request, horiz, 1024), _search(request, vert, settings.CROISEE_XQUERYMAX)) # "no" limit
-        hres = sets.Set()
-        vres = sets.Set()
+        hres = set()
+        vres = set()
         for h in results[0]['results']:
             for v in results[1]['results']:
                 if h.word[hl] == v.word[vl]:

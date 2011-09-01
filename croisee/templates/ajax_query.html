@@ -2,7 +2,7 @@
 <h3>{{ resultcount}} {% trans "Search Results" %}</h3>
 {% for res in results %}
 <div class="ajax_result {{ res.direction }}">
-	<h4>{{ res.name }}:</h4>
+	{% if results|length > 1 %}<h4>{{ res.name }}:</h4>{% endif %}
 	<p><span class="searchterm">{{ res.searchterm }}</span>
 	(<span class="resultcount">{{ res.resultcount }}</span> {% trans "results" %})</p>
 	<dl class="resultlist">

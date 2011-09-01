@@ -7,7 +7,7 @@ import os
 admin.autodiscover()
 
 urlpatterns = patterns('',
-        (r'^/?$', '%s.views.index' % settings.PROJECT_NAME),
+        url(r'^/?$', '%s.views.index' % settings.PROJECT_NAME, name = '%s.index' % settings.PROJECT_NAME),
 )
 
 # serve static content in debug mode
@@ -26,10 +26,12 @@ if settings.DEBUG:
 
 
 urlpatterns += patterns('',
-    (r'^admin/', include(admin.site.urls)),
-    (r'^ajax/(?P<horizontal>[A-Z\*\?_%]+)(,(?P<hletter>\d+))?/(?P<vertical>[A-Z\*\?_%]+)(,(?P<vletter>\d+))?/?$', '%s.views.ajax_query' % settings.PROJECT_NAME),  
-    (r'^grid/(.*?)/?$', '%s.views.grid' % settings.PROJECT_NAME),
-    (r'^$|^(.*?)/$', '%s.views.index' % settings.PROJECT_NAME),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^ajax/(?P<cloze>[A-Z\*\?_%]+)/?$', '%s.views.ajax_clozequery' % settings.PROJECT_NAME),  
+    url(r'^ajax/(?P<horizontal>[A-Z\*\?_%]+)(,(?P<hletter>\d+))?/(?P<vertical>[A-Z\*\?_%]+)(,(?P<vletter>\d+))?/?$', '%s.views.ajax_crossquery' % settings.PROJECT_NAME),  
+    url(r'^grid/save/?$', '%s.views.save' % settings.PROJECT_NAME, name = '%s.save' % settings.PROJECT_NAME),
+    url(r'^grid/(.*?)/?$', '%s.views.grid' % settings.PROJECT_NAME, name = '%s.grid' % settings.PROJECT_NAME),
+    #url(r'^$|^(.*?)/$', '%s.views.index' % settings.PROJECT_NAME, name = '%s.index' % settings.PROJECT_NAME),
 )
 
 handler500 = '%s.views.server_error' % settings.PROJECT_NAME

@@ -3,17 +3,12 @@
 
 {% block title %}{% trans "Cloze Search" %}{% endblock %}
 
+{% block extrahead %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/puzzle.js"></script>
+{% endblock %}
+
 {% block maincontent %}
-<h2>{% trans "Cloze Search" %}</h2>
-<form action="/" method="post" name="wordsearch">{% csrf_token %}
-	<div class="formline ui-widget">
-		<label for="searchterm">{% trans "Search for:" %}</label>
-		<input type="text" name="searchterm" id="searchterm" class="ui-widget-content" value="{{ searchterm }}" />
-		<input type="submit" value="{% trans "Search" %}" />
-		<div class="hint">{% trans "You can use <q>?</q> and <q>*</q> as wildcards for single or several characters." %}</div>
-	</div>
-	{% include "snippets/dictionaries.html" %}
-</form>
+{% include "snippets/clozeform.html" %}
 <div class="dontprint clear">
 {% blocktrans %}
 <h3>What’s this?</h3>
@@ -28,15 +23,6 @@ At the moment you can just print the page from the browser, but soon you’ll be
 {% endblock %}
 
 {% block sidecontent %}
-{% if posted %}
-<h3>{{ resultcount}} {% trans "Search Results" %}</h3>
-<dl class="resultlist">
-	{% for w in results %}
-	<dt title="{{ w.description }}"><a href="http://{{w.dictionary.language}}.wikipedia.org/wiki/{{w.word.title}}" title="{% trans "Look up in Wikipedia" %}" class="dontprint"><img src="http://upload.wikimedia.org/wikipedia/commons/archive/6/63/20050601172023%21Wikipedia-logo.png" style="height:1em;width:1em;" alt="Wikipedia Logo"/></a> {{ w.word }}</dt>
-		<dd>{% trans "in" %} {{ w.dictionary }}</dd>
-	{% empty %}
-	<dt class="error">{% trans "No matching words found" %}</dt>
-	{% endfor %}
-</dl>
-{% endif %}
+<div id="result" class="dontprint">
+</div>
 {% endblock %}

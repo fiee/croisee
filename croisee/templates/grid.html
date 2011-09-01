@@ -10,30 +10,34 @@
 {% block maincontent %}
 <h2 class="dontprint">{% trans "Puzzle Grid" %}</h2>
 {% if puzzle %}
-<form action="/grid/save/" name="grid" method="post">{% csrf_token %}
-<input type="hidden" name="maxx" id="maxx" value="{{puzzle.maxrow}}" />
-<input type="hidden" name="maxy" id="maxy" value="{{puzzle.maxline}}" />
-<input type="hidden" name="chars" id="chars" value="" />
-<input type="hidden" name="nums" id="nums" value="" />
+<form action="/grid/save/" name="grid" id="grid" method="post">
+{% csrf_token %}
+<input type="hidden" name="maxcol" id="maxcol" value="{{puzzle.maxcol}}" />
+<input type="hidden" name="maxrow" id="maxrow" value="{{puzzle.maxrow}}" />
+<input type="hidden" name="maxnum" id="maxnum" value="{{puzzle.maxnum}}" />
+<input type="hidden" name="chars" id="chars" value="{{puzzle.text}}" />
 <table class="puzzle">
-	{% for y in puzzle.lines %}
-	<tr>
-		{% for x in puzzle.rows %}
-		<td>
-			<div class="puzzlenum" id="num_{{y}}_{{x}}"></div>
-			<input type="text" name="char_{{y}}_{{x}}" id="char_{{y}}_{{x}}" class="puzzlechar" length="1" maxlength="1" value="{{ puzzle.chars.y.x }}" />
+	{% for row in puzzle.data %}
+	<tr id="row_{{row.id}}">
+		{% for cell in row.cols %}
+		<td id="cell_{{row.id}}_{{cell.id}}">
+			<div id="num_{{row.id}}_{{cell.id}}" class="puzzlenum">{{ cell.num }}</div>
+      <input type="hidden" name="num_{{row.id}}_{{cell.id}}" id="num_{{row.id}}_{{cell.id}}" value="{{ cell.num }}" class="puzzlenum" />
+			<input type="text" name="char_{{row.id}}_{{cell.id}}" id="char_{{row.id}}_{{cell.id}}" class="puzzlechar" length="1" maxlength="1" value="{{ cell.char }}" />
 		</td>
 		{% endfor %}
 	</tr>
 	{% endfor %}
 </table>
-
-{% include "snippets/dictionaries.html" %}
 <div class="floatblock">
   <div class="formline ui-widget">
-    <input type="submit" value="{% trans "Save Puzzle" %}" />
+    <input type="button" id="save_puzzle" value="{% trans "Save Puzzle" %}" />
   </div>
 </div>
+</form>
+
+{% include "snippets/clozeform.html" %}
+
 <div class="legend clear">
   <h3 class="legend dontprint">{% trans "Keys" %}</h3>
   <dl class="legend dontprint">
@@ -46,21 +50,22 @@
   	<dt>?</dt><dd>{% trans "query dictionary for matching words" %}</dd>
   </dl>
 </div>
-{% else %}
-<form action="/grid/" name="grid" method="post">{% csrf_token %}
+{% else %}{# ask for dimensions to create grid #}
+<form action="/grid/" name="create_grid" method="post">
+{% csrf_token %}
 <div class="formline ui-widget">
-	<span class="label"><label for="maxx">{% trans "Rows:" %}</label></span> 
-	<input type="text" name="maxx" id="maxx" length="3" maxlength="2" value="{{defaultx}}" class="ui-widget-content numeric" />
+	<span class="label"><label for="maxcol">{% trans "Rows:" %}</label></span> 
+	<input type="text" name="maxcol" id="maxcol" length="3" maxlength="2" value="{{defaultx}}" class="ui-widget-content numeric" />
 </div>
 <div class="formline ui-widget">
-	<span class="label"><label for="maxy">{% trans "Lines:" %}</label></span> 
-	<input type="text" name="maxy" id="maxy" length="3" maxlength="2" value="{{defaulty}}" class="ui-widget-content numeric" />
+	<span class="label"><label for="maxrow">{% trans "Lines:" %}</label></span> 
+	<input type="text" name="maxrow" id="maxrow" length="3" maxlength="2" value="{{defaulty}}" class="ui-widget-content numeric" />
 </div>
 <div class="formline ui-widget">
 	<input type="submit" value="{% trans "Create" %}" />
 </div>
-{% endif %}
 </form>
+{% endif %}
 {% endblock %}
 
 {% block sidecontent %}
