@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-01 15:58+0200\n"
-"PO-Revision-Date: 2011-09-01 16:01+0100\n"
+"POT-Creation-Date: 2011-09-02 15:29+0200\n"
+"PO-Revision-Date: 2011-09-02 15:33+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "Language: \n"
@@ -26,7 +26,8 @@ msgid "Dictionary"
 msgstr "Wörterbuch"
 
 #: models.py:65
-#: templates/snippets/menu.html:40
+#: templates/snippets/menu.html:24
+#: templates/snippets/toolbar.html:20
 msgid "Dictionaries"
 msgstr "Wörterbücher"
 
@@ -128,12 +129,17 @@ msgstr "Wortlisten-Uploads"
 msgid "STRING_NOT_SET"
 msgstr "ZEICHENKETTE_NICHT_DEFINIERT"
 
-#: settings.py:267
+#: settings.py:266
 #, python-format
 msgid "Please create a %s file with random characters to generate your secret key!"
 msgstr "Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen Schlüssel zu erzeugen!"
 
 #: views.py:224
+#: templates/ajax_query.html:6
+#: templates/snippets/resultlist.html:22
+msgid "results"
+msgstr "Suchergebnisse"
+
 #: views.py:259
 msgid "horizontal"
 msgstr "waagerecht"
@@ -166,108 +172,53 @@ msgstr "Die Adresse, die Sie versucht haben zu erreichen, gibt es nicht oder fun
 msgid "500 Server Error"
 msgstr "500 Server-Fehler"
 
-#: templates/ajax_query.html:2
-#: templates/snippets/resultlist.html:5
-#: templates/snippets/resultlist.html:17
-msgid "Search Results"
-msgstr "Suchergebnisse"
-
-#: templates/ajax_query.html:7
-#: templates/snippets/resultlist.html:22
-msgid "results"
-msgstr "Suchergebnisse"
-
-#: templates/ajax_query.html:11
+#: templates/ajax_query.html:10
 #: templates/snippets/resultlist.html:8
 #: templates/snippets/resultlist.html:26
 msgid "Look up in Wikipedia"
 msgstr "In der Wikipedia nachschlagen"
 
-#: templates/ajax_query.html:13
+#: templates/ajax_query.html:12
 #: templates/snippets/resultlist.html:28
 msgid "insert in grid"
 msgstr "ins Gitter einfügen"
 
-#: templates/ajax_query.html:16
+#: templates/ajax_query.html:15
 #: templates/snippets/resultlist.html:9
 #: templates/snippets/resultlist.html:31
 msgid "in"
 msgstr "in"
 
 #: templates/grid.html:4
-#: templates/grid.html.py:11
 msgid "Puzzle Grid"
 msgstr "Rätsel-Gitter"
 
-#: templates/grid.html:34
-msgid "Save Puzzle"
-msgstr "Rätsel speichern"
+#: templates/grid.html:36
+msgid "Create a new crossword puzzle by clicking on the star button!"
+msgstr "Beginnen Sie ein neues Kreuzworträtsel, indem Sie auf den Stern-Button klicken!"
 
-#: templates/grid.html:43
-msgid "Keys"
-msgstr "Tasten"
+#: templates/grid.html:37
+msgid "Hint: Searching works only if you activate at least one dictionary."
+msgstr "Achtung: Die Suche funktioniert nur, wenn Sie mindestens ein Wörterbuch aktivieren."
 
-#: templates/grid.html:45
-msgid "move cursor"
-msgstr "Einfügemarke bewegen"
-
-#: templates/grid.html:46
-msgid "place character and move right"
-msgstr "Buchstabe setzen und nach rechts weiter"
-
-#: templates/grid.html:47
-msgid "place character and move down"
-msgstr "Buchstabe setzen und nach unten weiter"
-
-#: templates/grid.html:48
-msgid "space"
-msgstr "Leertaste"
-
-#: templates/grid.html:48
-msgid "block field"
-msgstr "Feld blockieren"
-
-#: templates/grid.html:49
-msgid "backspace"
-msgstr "Rückwärts-Löschtaste"
-
-#: templates/grid.html:49
-msgid "delete character"
-msgstr "Zeichen löschen"
-
-#: templates/grid.html:50
-msgid "set or reset number"
-msgstr "Zahl setzen oder entfernen"
-
-#: templates/grid.html:51
-msgid "query dictionary for matching words"
-msgstr "Wörterbuchabfrage nach passenden Wörtern"
-
-#: templates/grid.html:58
-msgid "Rows:"
-msgstr "Spalten:"
-
-#: templates/grid.html:62
-msgid "Lines:"
-msgstr "Zeilen:"
-
-#: templates/grid.html:66
-msgid "Create"
-msgstr "Erzeugen"
+#: templates/grid.html:42
+#: templates/snippets/resultlist.html:5
+#: templates/snippets/resultlist.html:17
+msgid "Search Results"
+msgstr "Suchergebnisse"
 
 #: templates/index.html:4
-#: templates/snippets/clozeform.html:4
-msgid "Cloze Search"
-msgstr "Lückentext-Suche"
+#: templates/snippets/menu.html:7
+msgid "Home"
+msgstr "Startseite"
 
-#: templates/index.html:14
+#: templates/index.html:8
 msgid ""
 "\n"
 "<h3>What’s this?</h3>\n"
 "<p>The <em>fiëé croisée</em> project aims to become a semi-automatic crossword puzzle generator. \n"
 "Even if there's still a long way to go, it’s already a valuable help in creating crossword puzzles.</p>\n"
-"<p>On this page you can just look up words that match a special pattern.</p>\n"
-"<p>There’s also a <strong><a href=\"/grid/\">puzzle grid</a></strong> you can work in.\n"
+"<p>Proceed to the <strong><a href=\"/grid/\" class=\"button\">puzzle grid</a></strong> page and create a new puzzle.\n"
 "At the moment you can just print the page from the browser, but soon you’ll be able to export complete layout data for T<sub>E</sub>X or order your print-ready puzzle as PDF.</p>\n"
 "<p>More details come with the source code at <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
 msgstr ""
@@ -275,8 +226,7 @@ msgstr ""
 "<h3>Was ist das?</h3>\n"
 "<p>Das Projekt <em>fiëé croisée</em> entwickelt einen halbautomatischen Kreuzworträtsel-Generator.\n"
 "Obwohl es noch einen weiten Weg vor sich hat, ist es bereits eine wertvolle Hilfe beim Erstellen von Kreuzworträtseln.</p>\n"
-"<p>Auf dieser Seite können Sie nur Wörter nachschlagen, die zu einem bestimmten Muster passen.</p>\n"
-"<p>Sie können auch im <strong><a href=\"/grid/\">Rätsel-Gitter</a></strong> arbeiten.\n"
+"<p>Gehen Sie weiter zum <strong><a href=\"/grid/\" class=\"button\">Rätsel-Gitter</a></strong> und beginnen Sie ein neues Kreuzworträtsel.\n"
 "Im Moment können Sie nur die Seite im Browser ausdrucken, aber bald können Sie fertige Layout-Daten für T<sub>E</sub>X exportieren oder ein druckfertiges Kreuzworträtsel als PDF bestellen.</p>\n"
 "<p>Mehr Details finden Sie mit dem Quellcode auf <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
 
@@ -296,12 +246,19 @@ msgstr "fiëé croisée Site-Admin"
 msgid "fiëé croisée Administration"
 msgstr "fiëé croisée Administration"
 
+#: templates/snippets/clozeform.html:4
+msgid "Cloze Search"
+msgstr "Lückentext-Suche"
+
 #: templates/snippets/clozeform.html:7
+#: templates/snippets/menu.html:45
+#: templates/snippets/toolbar.html:14
 msgid "Search for:"
 msgstr "Suche nach:"
 
 #: templates/snippets/clozeform.html:9
-#: templates/snippets/menu.html:33
+#: templates/snippets/menu.html:47
+#: templates/snippets/toolbar.html:16
 msgid "Search"
 msgstr "Suchen"
 
@@ -309,22 +266,20 @@ msgstr "Suchen"
 msgid "You can use <q>_</q> and <q>*</q> as wildcards for single or several characters."
 msgstr "Sie können <q>_</q> und <q>*</q> als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
 
-#: templates/snippets/dictionaries.html:3
+#: templates/snippets/dictionaries.html:2
+#: templates/snippets/toolbar.html:64
 msgid "Available Dictionaries"
 msgstr "Verfügbare Wörterbücher"
 
-#: templates/snippets/dictionaries.html:14
-#: templates/snippets/menu.html:51
+#: templates/snippets/dictionaries.html:13
+#: templates/snippets/menu.html:35
+#: templates/snippets/toolbar.html:75
 msgid "No dictionaries found"
 msgstr "Keine Wörterbücher gefunden"
 
 #: templates/snippets/menu.html:6
 msgid "About fiëé croisée"
 msgstr "Über fiëé croisée"
-
-#: templates/snippets/menu.html:7
-msgid "Home"
-msgstr "Startseite"
 
 #: templates/snippets/menu.html:9
 msgid "Logout"
@@ -342,33 +297,28 @@ msgstr "Verwaltung"
 msgid "Login"
 msgstr "Anmelden"
 
-#: templates/snippets/menu.html:23
-msgid "Puzzle"
-msgstr "Rätsel"
+#: templates/snippets/menu.html:46
+#: templates/snippets/toolbar.html:15
+msgid "You can use “_” and “*” as wildcards for single or several characters."
+msgstr "Sie können „_“ und „*“ als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
 
-#: templates/snippets/menu.html:25
-msgid "New"
-msgstr "Neu"
-
-#: templates/snippets/menu.html:26
-msgid "Save"
-msgstr "Speichern"
-
-#: templates/snippets/menu.html:35
+#: templates/snippets/menu.html:50
 msgid "Cloze"
 msgstr "Lückentext"
 
-#: templates/snippets/menu.html:36
+#: templates/snippets/menu.html:51
 msgid "Cross fit"
 msgstr "Passendes Kreuz"
 
 #: templates/snippets/menu.html:57
+#: templates/snippets/toolbar.html:21
 msgid "Help"
 msgstr "Hilfe"
 
 #: templates/snippets/menu.html:59
-msgid "About"
-msgstr "Über"
+#: templates/snippets/toolbar.html:27
+msgid "Keys"
+msgstr "Tasten"
 
 #: templates/snippets/menu.html:60
 msgid "Donations"
@@ -377,6 +327,95 @@ msgstr "Spenden"
 #: templates/snippets/resultlist.html:11
 msgid "No matching words found"
 msgstr "Keine passenden Wörter gefunden"
+
+#: templates/snippets/toolbar.html:4
+#: templates/snippets/toolbar.html.py:46
+msgid "New Puzzle"
+msgstr "Neues Rätsel"
+
+#: templates/snippets/toolbar.html:5
+msgid "Save Puzzle"
+msgstr "Rätsel speichern"
+
+#: templates/snippets/toolbar.html:6
+msgid "Clear Puzzle"
+msgstr "Rätsel leeren"
+
+#: templates/snippets/toolbar.html:8
+msgid "Adapt Puzzle Size"
+msgstr "Rätselgröße anpassen"
+
+#: templates/snippets/toolbar.html:9
+msgid "Move Puzzle Contents"
+msgstr "Inhalte verschieben"
+
+#: templates/snippets/toolbar.html:29
+msgid "move cursor"
+msgstr "Einfügemarke bewegen"
+
+#: templates/snippets/toolbar.html:30
+msgid "place character and move right"
+msgstr "Buchstabe setzen und nach rechts weiter"
+
+#: templates/snippets/toolbar.html:31
+msgid "place character and move down"
+msgstr "Buchstabe setzen und nach unten weiter"
+
+#: templates/snippets/toolbar.html:32
+msgid "space"
+msgstr "Leertaste"
+
+#: templates/snippets/toolbar.html:32
+msgid "block field"
+msgstr "Feld blockieren"
+
+#: templates/snippets/toolbar.html:33
+msgid "backspace"
+msgstr "Rückwärts-Löschtaste"
+
+#: templates/snippets/toolbar.html:33
+msgid "delete character"
+msgstr "Zeichen löschen"
+
+#: templates/snippets/toolbar.html:34
+msgid "set or reset number"
+msgstr "Zahl setzen oder entfernen"
+
+#: templates/snippets/toolbar.html:35
+msgid "query dictionary for matching words"
+msgstr "Wörterbuchabfrage nach passenden Wörtern"
+
+#: templates/snippets/toolbar.html:39
+msgid "Clean Puzzle"
+msgstr "Rätsel leeren"
+
+#: templates/snippets/toolbar.html:42
+msgid "Are you sure you want to delete all contents of your current puzzle?"
+msgstr "Sind Sie sicher, dass Sie alle Inhalte des aktuellen Rätsels löschen möchten?"
+
+#: templates/snippets/toolbar.html:51
+msgid "Rows:"
+msgstr "Spalten:"
+
+#: templates/snippets/toolbar.html:55
+msgid "Lines:"
+msgstr "Zeilen:"
+
+#: templates/snippets/toolbar.html:59
+msgid "Create"
+msgstr "Erzeugen"
+
+#~ msgid "Puzzle"
+#~ msgstr "Rätsel"
+
+#~ msgid "New"
+#~ msgstr "Neu"
+
+#~ msgid "Save"
+#~ msgstr "Speichern"
+
+#~ msgid "About"
+#~ msgstr "Über"
 
 #~ msgid ""
 #~ "Fill in letters, navigate with arrow keys, block a field with space key. "
@@ -573,9 +612,6 @@ msgstr "Keine passenden Wörter gefunden"
 
 #~ msgid "Current Year"
 #~ msgstr "Dieses Jahr"
-
-#~ msgid "Are you sure that you really want to cancel this occurrence?"
-#~ msgstr "Sind Sie sicher, dass Sie diese Wiederholung absagen möchten?"
 
 #~ msgid "From"
 #~ msgstr "Von"
