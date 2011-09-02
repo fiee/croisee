@@ -36,7 +36,7 @@ User
 Cloze Query
 -----------
 
-On the start page you can look up words that contain defined letters at discrete locations.
+Using the search field in the toolbar you can look up words that contain defined letters at discrete locations.
 
 You can use _ and ? as wildcards for single letters, * and % for an undefined number of letters (including none).
 
@@ -46,18 +46,17 @@ if you look up `RAM*`, you get e.g. RAM, RAMBLE, RAMADAN etc. Of course you can 
 All letters get uppercased, German umlauts get converted from Ä, Ö, Ü to AE, OE, UE; other international
 characters get de-accented. (If your language needs other conversions, please contact the developer.)
 
-Below the query field there's a list of installed (and permitted) dictionaries;
-you can enable or disable them to delimit where the answers come from. 
+Searching works only if you activate at least one dictionary fist.
 
 Query results are limited to 100 answers.
 
 
-Grid View  (URL: /grid/)
----------
+Puzzle Grid
+-----------
 
 Here's how to make your own crossword puzzle:
 
-Create a grid in your favourite size (12x12 is good).
+Click the "star" button to create a grid in your favourite size (12x12 is good).
 
 You can move around in the grid with the arrow keys (tab, shift-tab, backspace, delete work also).
 If you write letters, the cursor will move right to the next cell; if you press shift, it will move downward.
@@ -110,13 +109,12 @@ Roadmap
 
 I'm planning to implement the following features in about this order:
 
+* safe puzzles even for unregistered users, providing a link code (maybe provide a list of public puzzles)
 * output list of questions
-* export grid and solution as text / HTML / LaTeX (cwpuzzle) / ConTeXt / InDesign tagged text
+* export grid and solution as text / HTML / LaTeX (cwpuzzle) / ConTeXt / PDF / InDesign tagged text
 * user registration
-* import text files
 * safe puzzles for registered users as private/public
-* make safed puzzles available
-* export as PDF
+* import text files
 * different types of crossword grids (fat lines instead of blocked cells, uneven outline...)
 * mark letters for extra solution (competition word)
 * automate filling the grid (algorithm?)
@@ -128,11 +126,10 @@ I'm planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
-* JavaScript works only in WebKit and Mozilla browsers (i.e. Safari, Firefox)
 * word numbers rather small in Mozilla (and probably other browsers than Safari)
 * admin: if adding to an existing dict, disable other fields
 * clean up redundant template/view code
-* still not really a reusable app
+* still not really a reusable app (to be integrated in fiëé cérébrale)
 
 
 License
@@ -162,3 +159,6 @@ Dependencies
 * Python 2.5+
 * Django 1.3+
 * Fabric 0.9+ (optional, for easy deployment)
+* South (not really)
+* jQuery, jQuery UI
+
