@@ -210,8 +210,14 @@ table.puzzle td.blocked input.puzzlechar {
 	background-color: #666;
 }
 
+table.puzzle td.focus {
+  border: 1px solid orange;
+  background-color: #eeffff;
+}
+
 input.puzzlechar {
 	border: none;
+	outline: none;
   padding: 0;
   font-size: 100%;
 	width: 1.5em;

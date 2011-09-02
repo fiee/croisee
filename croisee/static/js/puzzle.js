@@ -2,6 +2,8 @@ var letters = 'ABCDEFGHIJKLMNOPQRTSUVWXYZ ';
 var stop_char = '.';
 var goodkeys = [9, 32, 37, 38, 39, 40, 46, 51, 191];
 var modifiers = [16, 17, 18, 91];
+var focus_x = 0;
+var focus_y = 0;
 
 function getWord(x, y, maxcol, maxrow){
     /*
@@ -161,11 +163,19 @@ function search_handler(event){
   return false; // don't propagate
 }
 
+function set_focus(x, y){
+  /*
+   * set focus on puzzle cell
+   */
+  focus_x = x;
+  focus_y = y;
+  $('td.puzzlecell').removeClass('focus');
+  $('td.puzzlecell#cell_'+y+'_'+x).addClass('focus');
+}
+
 $(function(){
     var maxcol = Number($('input#maxcol').val())-1;
     var maxrow = Number($('input#maxrow').val())-1;
-    var focus_x = 0;
-    var focus_y = 0;
     
     /* enable save puzzle button/menu */
     $('#save_puzzle').click(function(event){
@@ -196,8 +206,7 @@ $(function(){
         var idp = this.id.split('_'); // char,y,x
         var x = idp[2];
         var y = idp[1];
-        focus_x = x;
-        focus_y = y;
+        set_focus(x, y);
         /* handle character keys A-Z */
         event.preventDefault();
         if ((65 <= event.which && event.which <= 65 + 25) ||
@@ -223,8 +232,6 @@ $(function(){
         var idp = this.id.split('_'); // char,y,x
         var x = idp[2];
         var y = idp[1];
-        focus_x = x;
-        focus_y = y;
         //console.log('UP', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
         switch (event.which) {
             case 0: break; // e.g. question mark on Mozilla
@@ -288,6 +295,7 @@ $(function(){
         if (modifiers.indexOf(event.keyCode) == -1) {
             $('#char_' + y + '_' + x).focus().select();
         }
+        set_focus(x, y);
         return true;
     });
 	

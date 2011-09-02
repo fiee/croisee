@@ -10,7 +10,7 @@
 {% block maincontent %}
 <h2 class="dontprint">{% trans "Puzzle Grid" %}</h2>
 {% if puzzle %}
-<form action="/grid/save/" name="grid" id="grid" method="post">
+<form action="/grid/save/" name="grid" id="grid" method="post" autocomplete="off">
 {% csrf_token %}
 <input type="hidden" name="maxcol" id="maxcol" value="{{puzzle.maxcol}}" />
 <input type="hidden" name="maxrow" id="maxrow" value="{{puzzle.maxrow}}" />
@@ -20,7 +20,7 @@
 	{% for row in puzzle.data %}
 	<tr id="row_{{row.id}}">
 		{% for cell in row.cols %}
-		<td id="cell_{{row.id}}_{{cell.id}}">
+		<td id="cell_{{row.id}}_{{cell.id}}" class="puzzlecell">
 			<div id="num_{{row.id}}_{{cell.id}}" class="puzzlenum">{{ cell.num }}</div>
       <input type="hidden" name="num_{{row.id}}_{{cell.id}}" id="num_{{row.id}}_{{cell.id}}" value="{{ cell.num }}" class="puzzlenum" />
 			<input type="text" name="char_{{row.id}}_{{cell.id}}" id="char_{{row.id}}_{{cell.id}}" class="puzzlechar" length="1" maxlength="1" value="{{ cell.char }}" />
