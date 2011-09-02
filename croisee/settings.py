@@ -199,7 +199,6 @@ INSTALLED_APPS = [
     #'django.contrib.sitemaps',
     'django.contrib.staticfiles', # Django 1.3
     'gunicorn', # not with fcgi
-    'mptt',
     'south',
     #'tagging',
     PROJECT_NAME,
