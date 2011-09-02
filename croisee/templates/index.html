@@ -1,11 +1,7 @@
 {% extends "root.html" %}
-{% load cache i18n %}
+{% load i18n %}
 
-{% block title %}{% trans "Cloze Search" %}{% endblock %}
-
-{% block extrahead %}
-<script type="text/javascript" src="{{ STATIC_URL }}js/puzzle.js"></script>
-{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
 
 {% block maincontent %}
 <div class="dontprint clear">
@@ -13,16 +9,9 @@
 <h3>What’s this?</h3>
 <p>The <em>fiëé croisée</em> project aims to become a semi-automatic crossword puzzle generator. 
 Even if there's still a long way to go, it’s already a valuable help in creating crossword puzzles.</p>
-<p>On this page you can just look up words that match a special pattern.</p>
-<p>There’s also a <strong><a href="/grid/">puzzle grid</a></strong> you can work in.
+<p>Proceed to the <strong><a href="/grid/" class="button">puzzle grid</a></strong> page and create a new puzzle.
 At the moment you can just print the page from the browser, but soon you’ll be able to export complete layout data for T<sub>E</sub>X or order your print-ready puzzle as PDF.</p>
 <p>More details come with the source code at <a href="http://github.com/fiee/croisee/">GitHub</a>.</p>
 {% endblocktrans %}
-</div>
-{% endblock %}
-
-{% block sidecontent %}
-<h3 class="dontprint">{{ resultcount}} {% trans "Search Results" %}</h3>
-<div id="result" class="dontprint">
 </div>
 {% endblock %}

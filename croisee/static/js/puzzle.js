@@ -163,6 +163,15 @@ function search_handler(event){
   return false; // don't propagate
 }
 
+function clear_grid(){
+  /* delete all grid contents */
+  $('input.puzzlechar').val('');
+  $('div.puzzlenum').html('');
+  $('td.puzzlecell').removeClass('blocked focus');
+  $('input#chars').val('');
+  $('input#maxnum').val(0);
+}
+
 function set_focus(x, y){
   /*
    * set focus on puzzle cell
@@ -171,24 +180,64 @@ function set_focus(x, y){
   focus_y = y;
   $('td.puzzlecell').removeClass('focus');
   $('td.puzzlecell#cell_'+y+'_'+x).addClass('focus');
+  $('#char_'+y+'_'+x).focus().select();
 }
 
 $(function(){
     var maxcol = Number($('input#maxcol').val())-1;
     var maxrow = Number($('input#maxrow').val())-1;
     
+    /* toolbar init: disable normal link behaviour */
+    $('.toolbar a').click(function(event){
+      event.preventDefault();
+      //console.log($(this).attr('href'));
+      return false;      
+    });
+    /* enable new puzzle button */
+    $('#tb_new_puzzle').click(function(event){
+      $('#dialog_new_puzzle').dialog();
+    });
     /* enable save puzzle button/menu */
-    $('#save_puzzle').click(function(event){
+    $('#tb_save_puzzle').click(function(event){
       $('form#grid #dicts').append($('input.dictionary-checkbox'));
       document.forms['grid'].submit();
-      event.preventDefault;
-      return false;
+    });
+    /* enable clear button */
+    $('#tb_clear_puzzle').click(function(event){
+      $('#dialog_clear_confirm').dialog({
+        modal:true,
+        resizable:false,
+        buttons:{
+          'Clear': function(){
+            clear_grid();
+            $(this).dialog('close');            
+          },
+          'Cancel': function(){
+            $(this).dialog('close');
+          },
+        },
+      });
+    });
+    /* enable help button */
+    $('#tb_help, #menu_help').click(function(event){
+      $('#dialog_keys_help').dialog();
     });
 
     /* enable ajax processing of cloze search */
-    $('input#cloze_search_submit').click(search_handler);
+    $('#cloze_search_submit').click(search_handler);
     /* disable submit on return key */
     $('form#cloze_search').submit(search_handler);
+
+    /* enable dictionary button */
+    $('#tb_dicts').click(function(event){
+      $('#dialog_dicts').dialog({
+        resizable: false,
+        modal: true,
+        buttons:{
+          'Ok': function(){ $(this).dialog('close'); },
+        }
+      });
+    });
         
     /* restore blocked cells from saved grids */
     $('input.puzzlechar').each(function(index){
@@ -293,9 +342,9 @@ $(function(){
             }
         event.preventDefault();
         if (modifiers.indexOf(event.keyCode) == -1) {
-            $('#char_' + y + '_' + x).focus().select();
+          set_focus(x, y);
+          //  $('#char_' + y + '_' + x).focus().select();
         }
-        set_focus(x, y);
         return true;
     });
 	

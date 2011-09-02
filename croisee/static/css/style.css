@@ -191,9 +191,9 @@ table {
 }
 
 table.puzzle {
+  clear: both;
 	border: 2px solid #aaa;
 	font-size: 150%;
-	margin: 0.5em 0 0.5em 0;
 	background-color: #fff;
 }
 
@@ -239,46 +239,23 @@ input.puzzlechar {
 	width: 0;
 }
 
-#mainmenu input[type=text] {
-  position: relative;
-  top: -0.75em;
-  width: 10em;
-}
-
-#mainmenu button {
-  position: relative;
-  top: -0.25em;
-  left: -0.5em;
-  font-size: 77%;
-}
-
-#mainmenu input[type=checkbox] {
-  margin: 0;
-}
-
 /* Lists */
-
-li, dd {
-	margin-left: 0.5em;
-}
 
 .resultlist li,
 .resultlist dd {
 	font-size: 77%;
+	margin-left: 0.5em;
 }
 
 .resultlist dt .word {
 	cursor: pointer;
 }
 
-dl.legend dt {
-	display: inline-block;
-	float: left;
-	clear: both;
-}
-
-dl.legend dd {
-	float: left;
+.checkboxlist li {
+  list-style: none;
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0 0 0 -2em;
 }
 
 /* Areas */
@@ -341,12 +318,16 @@ dl.legend dd {
 
 /* erste Ebene */
 
-ul#mainmenu {
+ul#mainmenu,
+.toolbar ul {
+  clear: both;
   margin: 0;
   padding: 0;
+}
+
+ul#mainmenu {
   position: fixed;
   top:0;
-  clear: both;
   height: 2em;
   background-color: #eee;
   background: linear-gradient(90deg, #ddd, #eee);
@@ -362,9 +343,11 @@ ul#mainmenu {
   box-shadow: 0.25em 0.25em 1em #333;
   -webkit-box-shadow: 0.25em 0.25em 1em #333;
   -moz-box-shadow: 0.25em 0.25em 1em #333;
+  behavior: url(/static/css/PIE.htc);
 }
 
-ul#mainmenu li {
+ul#mainmenu li,
+.toolbar li {
   list-style: none;
   list-style-type: none;
   list-style-position: outside;
@@ -373,6 +356,10 @@ ul#mainmenu li {
   float: left;
   margin: 0;
   padding: 0.25em 0.75em 0 0;
+}
+
+.toolbar li {
+  padding: 0.25em 0 0 0;
 }
 
 ul#mainmenu li:hover {
@@ -391,6 +378,51 @@ ul#mainmenu a {
 ul#mainmenu > li > a {
   height: 1.75em;
 }
+
+#mainmenu input[type=text],
+.toolbar input[type=text] {
+  position: relative;
+  top: -0.75em;
+  width: 10em;
+}
+.toolbar input[type=text] {
+  top: -0.5em;
+  margin-right: -0.5em;
+}
+
+#mainmenu button,
+.toolbar .button {
+  font-size: 77%;
+  width: 18px;
+}
+
+#mainmenu button {
+  position: relative;
+  top: -0.25em;
+  left: -0.5em;
+}
+
+#mainmenu .ui-button-text-only .ui-button-text,
+.toolbar .ui-button-text-only .ui-button-text {
+  padding: 2px 0 0 0;
+}
+
+#mainmenu input[type=checkbox] {
+  margin: 0;
+}
+
+/*
+.toolbar {
+  position: relative;
+  top: -1em;
+  left: -1em;
+}
+
+.toolbar ul {
+  position: relative; 
+  padding-left: 0.25em;
+}
+*/
 
 /* zweite Ebene */
 
@@ -455,10 +487,9 @@ ul#mainmenu ul li:hover ul {
 
 /* jQuery UI */
 
-#bd .ui-widget {
+body .ui-widget {
   font-size: 100%;
-  font-family: Lucida Grande, Lucida Sans, Helvetica, Arial, sans-serif;
-  
+  font-family: Lucida Grande, Lucida Sans, Helvetica, Arial, sans-serif; 
 }
 
 span.ui-icon {

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block maincontent %}
-<h2 class="dontprint">{% trans "Puzzle Grid" %}</h2>
+{% include "snippets/toolbar.html" %}
 {% if puzzle %}
 <form action="/grid/save/" name="grid" id="grid" method="post" autocomplete="off">
 {% csrf_token %}
@@ -31,27 +31,15 @@
 </table>
 <div class="hidden" id="dicts"></div>
 </form>
-
-{% else %}{# ask for dimensions to create grid #}
-<form action="/grid/" name="create_grid" method="post">
-{% csrf_token %}
-<div class="formline ui-widget">
-	<span class="label"><label for="maxcol">{% trans "Rows:" %}</label></span> 
-	<input type="text" name="maxcol" id="maxcol" length="3" maxlength="2" value="{{defaultx}}" class="ui-widget-content numeric" />
-</div>
-<div class="formline ui-widget">
-	<span class="label"><label for="maxrow">{% trans "Lines:" %}</label></span> 
-	<input type="text" name="maxrow" id="maxrow" length="3" maxlength="2" value="{{defaulty}}" class="ui-widget-content numeric" />
-</div>
-<div class="formline ui-widget">
-	<input type="submit" value="{% trans "Create" %}" />
-</div>
-</form>
+{% else %}
+<div class="clear"></div>
+<p><span class="ui-icon ui-icon-star"></span> {% trans "Create a new crossword puzzle by clicking on the star button!" %}</p>
+<p><span class="ui-icon ui-icon-note"></span> {% trans "Hint: Searching works only if you activate at least one dictionary." %}</p>
 {% endif %}
 {% endblock %}
 
 {% block sidecontent %}
-<h3 class="dontprint">{{ resultcount}} {% trans "Search Results" %}</h3>
+<h3 class="dontprint hidden">{% trans "Search Results" %}</h3>
 <div id="result" class="dontprint">
 </div>
 {% endblock %}

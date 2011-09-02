@@ -19,16 +19,7 @@
     </ul>
   </li>
   {% block navigation %}
-  <li>{# Menu Puzzle #}
-    <a>{% trans "Puzzle" %}</a>
-    <ul>
-      <li><a href="{% url croisee-grid %}"><span class="ui-icon ui-icon-star"></span>{% trans "New" %}</a></li>
-      <li><a href="{% url croisee-save %}" id="save_puzzle"><span class="ui-icon ui-icon-disk"></span>{% trans "Save" %}</a></li>
-      <li><a href="{#% url croisee-adapt %#}"><span class="ui-icon ui-icon-arrow-2-se-nw"></span>{% trans "Adapt" %}</a></li>
-      <li><a href="{#% url croisee-move %#}"><span class="ui-icon ui-icon-arrow-4-diag"></span>{% trans "Move" %}</a></li>
-      <li><a href="{#% url croisee-clear %#}"><span class="ui-icon ui-icon-trash"></span>{% trans "Clear" %}</a></li>
-    </ul>
-  </li>
+  <!--
   <li>{# Menu Dict #}
     <a>{% trans "Dictionaries" %}</a>
     <ul>
@@ -46,6 +37,8 @@
       {% endfor %}
     </ul>
   </li>
+  -->
+  <!--
   <li>{# Menu Search #}
     <form action="/{{cloze_action}}" method="post" name="cloze_search" id="cloze_search">
       {% csrf_token %}
@@ -58,21 +51,15 @@
       <li><a href="/ajax/H,1/V,1/"><span class="ui-icon ui-icon-search"></span>{% trans "Cross fit" %}</a></li>
     </ul>
   </li>
+  -->
+  <!--
   <li>{# Menu Help #}
-    <a>{% trans "Keys" %}</a>
+    <a>{% trans "Help" %}</a>
     <ul>
-      <li><strong>&larr; &uarr; &darr; &rarr;</strong> {% trans "move cursor" %}</li>
-      <li><strong>a&ndash;z</strong> {% trans "place character and move right" %}</li>
-      <li><strong>A&ndash;Z</strong> {% trans "place character and move down" %}</li>
-      <li><strong>{% trans "space" %}</strong> {% trans "block field" %}</li>
-      <li><strong>{% trans "backspace" %}</strong> {% trans "delete character" %}</li>
-      <li><strong>#</strong> {% trans "set or reset number" %}</li>
-      <li><strong>?</strong> {% trans "query dictionary for matching words" %}</li>
-    <!--
-      <li><a href=""><span class="ui-icon ui-icon-help"></span>{% trans "About" %}</a></li>
+      <li><a id="menu_help"><span class="ui-icon ui-icon-help"></span>{% trans "Keys" %}</a></li>
       <li><a href=""><span class="ui-icon ui-icon-heart"></span>{% trans "Donations" %}</a></li>
-    -->
     </ul>
   </li>
+  -->
   {% endblock %}
 </ul>{# navlist main #}
