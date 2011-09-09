@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-02 15:29+0200\n"
-"PO-Revision-Date: 2011-09-02 15:33+0100\n"
+"POT-Creation-Date: 2011-09-09 14:51+0200\n"
+"PO-Revision-Date: 2011-09-09 14:52+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "Language: \n"
@@ -26,7 +26,6 @@ msgid "Dictionary"
 msgstr "Wörterbuch"
 
 #: models.py:65
-#: templates/snippets/menu.html:24
 #: templates/snippets/toolbar.html:20
 msgid "Dictionaries"
 msgstr "Wörterbücher"
@@ -134,17 +133,17 @@ msgstr "ZEICHENKETTE_NICHT_DEFINIERT"
 msgid "Please create a %s file with random characters to generate your secret key!"
 msgstr "Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen Schlüssel zu erzeugen!"
 
-#: views.py:224
+#: views.py:184
 #: templates/ajax_query.html:6
 #: templates/snippets/resultlist.html:22
 msgid "results"
 msgstr "Suchergebnisse"
 
-#: views.py:259
+#: views.py:219
 msgid "horizontal"
 msgstr "waagerecht"
 
-#: views.py:260
+#: views.py:220
 msgid "vertical"
 msgstr "senkrecht"
 
@@ -193,15 +192,19 @@ msgstr "in"
 msgid "Puzzle Grid"
 msgstr "Rätsel-Gitter"
 
-#: templates/grid.html:36
+#: templates/grid.html:38
 msgid "Create a new crossword puzzle by clicking on the star button!"
 msgstr "Beginnen Sie ein neues Kreuzworträtsel, indem Sie auf den Stern-Button klicken!"
 
-#: templates/grid.html:37
+#: templates/grid.html:39
 msgid "Hint: Searching works only if you activate at least one dictionary."
 msgstr "Achtung: Die Suche funktioniert nur, wenn Sie mindestens ein Wörterbuch aktivieren."
 
-#: templates/grid.html:42
+#: templates/grid.html:44
+msgid "Please select at least one dictionary!"
+msgstr "Bitte wählen Sie mindestens ein Wörterbuch aus!"
+
+#: templates/grid.html:45
 #: templates/snippets/resultlist.html:5
 #: templates/snippets/resultlist.html:17
 msgid "Search Results"
@@ -251,13 +254,11 @@ msgid "Cloze Search"
 msgstr "Lückentext-Suche"
 
 #: templates/snippets/clozeform.html:7
-#: templates/snippets/menu.html:45
 #: templates/snippets/toolbar.html:14
 msgid "Search for:"
 msgstr "Suche nach:"
 
 #: templates/snippets/clozeform.html:9
-#: templates/snippets/menu.html:47
 #: templates/snippets/toolbar.html:16
 msgid "Search"
 msgstr "Suchen"
@@ -272,7 +273,6 @@ msgid "Available Dictionaries"
 msgstr "Verfügbare Wörterbücher"
 
 #: templates/snippets/dictionaries.html:13
-#: templates/snippets/menu.html:35
 #: templates/snippets/toolbar.html:75
 msgid "No dictionaries found"
 msgstr "Keine Wörterbücher gefunden"
@@ -297,30 +297,17 @@ msgstr "Verwaltung"
 msgid "Login"
 msgstr "Anmelden"
 
-#: templates/snippets/menu.html:46
-#: templates/snippets/toolbar.html:15
-msgid "You can use “_” and “*” as wildcards for single or several characters."
-msgstr "Sie können „_“ und „*“ als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
-
-#: templates/snippets/menu.html:50
-msgid "Cloze"
-msgstr "Lückentext"
-
-#: templates/snippets/menu.html:51
-msgid "Cross fit"
-msgstr "Passendes Kreuz"
-
-#: templates/snippets/menu.html:57
+#: templates/snippets/menu.html:24
 #: templates/snippets/toolbar.html:21
 msgid "Help"
 msgstr "Hilfe"
 
-#: templates/snippets/menu.html:59
+#: templates/snippets/menu.html:26
 #: templates/snippets/toolbar.html:27
 msgid "Keys"
 msgstr "Tasten"
 
-#: templates/snippets/menu.html:60
+#: templates/snippets/menu.html:27
 msgid "Donations"
 msgstr "Spenden"
 
@@ -348,6 +335,10 @@ msgstr "Rätselgröße anpassen"
 #: templates/snippets/toolbar.html:9
 msgid "Move Puzzle Contents"
 msgstr "Inhalte verschieben"
+
+#: templates/snippets/toolbar.html:15
+msgid "You can use “_” and “*” as wildcards for single or several characters."
+msgstr "Sie können „_“ und „*“ als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
 
 #: templates/snippets/toolbar.html:29
 msgid "move cursor"
@@ -404,6 +395,12 @@ msgstr "Zeilen:"
 #: templates/snippets/toolbar.html:59
 msgid "Create"
 msgstr "Erzeugen"
+
+#~ msgid "Cloze"
+#~ msgstr "Lückentext"
+
+#~ msgid "Cross fit"
+#~ msgstr "Passendes Kreuz"
 
 #~ msgid "Puzzle"
 #~ msgstr "Rätsel"
