@@ -1,5 +1,5 @@
 {% extends "root.html" %}
-{% load cache i18n %}
+{% load i18n range_tags %}
 
 {% block title %}{% trans "Puzzle Grid" %}{% endblock %}
 
@@ -10,26 +10,28 @@
 {% block maincontent %}
 {% include "snippets/toolbar.html" %}
 {% if puzzle %}
-<form action="/grid/save/" name="grid" id="grid" method="post" autocomplete="off">
+<form action="/grid/save/" name="puzzle" id="puzzle" method="post" autocomplete="off">
 {% csrf_token %}
 <input type="hidden" name="maxcol" id="maxcol" value="{{puzzle.maxcol}}" />
 <input type="hidden" name="maxrow" id="maxrow" value="{{puzzle.maxrow}}" />
 <input type="hidden" name="maxnum" id="maxnum" value="{{puzzle.maxnum}}" />
 <input type="hidden" name="chars" id="chars" value="{{puzzle.text}}" />
+<input type="hidden" name="nums" id="nums" value="{{puzzle.nums}}" />
+<div class="hidden" id="dicts"></div>
+</form>
+<form action="#" name="grid", id="grid" method="post" autocomplete="off">
 <table class="puzzle">
-	{% for row in puzzle.data %}
-	<tr id="row_{{row.id}}">
-		{% for cell in row.cols %}
-		<td id="cell_{{row.id}}_{{cell.id}}" class="puzzlecell">
-			<div id="num_{{row.id}}_{{cell.id}}" class="puzzlenum">{{ cell.num }}</div>
-      <input type="hidden" name="num_{{row.id}}_{{cell.id}}" id="num_{{row.id}}_{{cell.id}}" value="{{ cell.num }}" class="puzzlenum" />
-			<input type="text" name="char_{{row.id}}_{{cell.id}}" id="char_{{row.id}}_{{cell.id}}" class="puzzlechar" length="1" maxlength="1" value="{{ cell.char }}" />
+	{% for row in puzzle.maxrow|get_range %}
+	<tr id="row_{{row}}">
+		{% for cell in puzzle.maxcol|get_range %}
+		<td id="cell_{{row}}_{{cell}}" class="puzzlecell">
+			<div id="num_{{row}}_{{cell}}" class="puzzlenum"></div>
+			<input type="text" name="char_{{row}}_{{cell}}" id="char_{{row}}_{{cell}}" class="puzzlechar" length="1" maxlength="1" value="" />
 		</td>
 		{% endfor %}
 	</tr>
 	{% endfor %}
 </table>
-<div class="hidden" id="dicts"></div>
 </form>
 {% else %}
 <div class="clear"></div>
@@ -39,6 +41,7 @@
 {% endblock %}
 
 {% block sidecontent %}
+<p class="error hidden" id="dict_error">{% trans "Please select at least one dictionary!" %}</p>
 <h3 class="dontprint hidden">{% trans "Search Results" %}</h3>
 <div id="result" class="dontprint">
 </div>

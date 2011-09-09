@@ -5,6 +5,54 @@ var modifiers = [16, 17, 18, 91];
 var focus_x = 0;
 var focus_y = 0;
 
+function chars2text(maxcol, maxrow) {
+  /*
+   * collect single chars from puzzle grid into one text string
+   */
+  var text = '';
+  for (var y=0; y <= maxrow; y++) {
+    for (var x=0; x <= maxcol; x++) {
+      text += $('#char_'+y+'_'+x).val() || ' ';
+    }
+    text += '/';
+  }
+  $('input#chars').val(text);
+  return text;
+}
+
+function text2chars(maxcol, maxrow) {
+  /*
+   * spread single chars from puzzle text into character cells
+   */
+  var lines = $('input#chars').val();
+  if (!lines) { return false; }
+  lines = lines.split('/');
+  for (var y=0; y <= maxrow; y++) {
+    var line = lines[y].split('');
+    for (var x=0; x <= maxcol; x++) {
+      $('#char_'+y+'_'+x).val(line[x]);
+    }
+  }
+  return true;
+}
+
+function spread_nums(maxcol, maxrow) {
+  /*
+   * spread word start number from input
+   */
+  var nums = $('input#nums').val();
+  if (!nums) { return false; }
+  nums = nums.split(',');
+  for (var n=0; n < nums.length; n++) {
+    var np = nums[n].split('.');
+    if (np.length != 3) { return false; }
+    var y = Number(np[0]);
+    var x = Number(np[1]);
+    $('#num_'+y+'_'+x).html(np[2]);
+  }
+  return true;
+}
+
 function getWord(x, y, maxcol, maxrow){
     /*
      * lookup words that fit the letters at the crossing x, y
@@ -72,7 +120,7 @@ function getWord(x, y, maxcol, maxrow){
     
     /* send query */
     var query = '/ajax/' + horiz + ',' + xpos + '/' + vert + ',' + ypos + '/';
-    //console.log(xstart, ystart, xpos, ypos, query);
+    console.log(x, y, maxcol, maxrow, xstart, ystart, xpos, ypos, query);
     return $.post(query, check_dictionaries(), function(data){
         $('#result').html(data); // display results
         if ($('table.puzzle').length > 0) {
@@ -92,13 +140,14 @@ function check_dictionaries(){
         dict_count++;
     });
     if (dict_count == 0) {
-        $('#result').html('<p class="error">Please select at least one dictionary!</p>'); // TODO: i18n
+        $('#dict_error').removeClass('hidden').show(500).delay(7000).hide(500);
     }
     return context;
 }
 
 function renumberPuzzle(x, y, maxcol, maxrow, reset){
     var id = '#num_' + y + '_' + x;
+    var nums = [];
     if (reset || $(id).html()) {
         $(id).html('');
     }
@@ -112,12 +161,14 @@ function renumberPuzzle(x, y, maxcol, maxrow, reset){
             var nf = $(nf_id);
             if (nf.html()) {
                 nf.html(num);
-                $('input'+nf_id).val(num);
+                //$('input'+nf_id).val(num);
+                nums.push(cy+'.'+cx+'.'+num); 
                 num++;
             }
         }
     }
     $('input#maxnum').val(num-1);
+    $('input#nums').val(nums.join(','));
 }
 
 function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
@@ -142,6 +193,7 @@ function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
     }
     getWord(x, y, maxcol, maxrow); // update result list
     $('#char_' + y + '_' + x).focus();
+    chars2text(maxcol, maxrow);
   });
   /* enable copy of searchterm to cloze search */
   $('span.searchterm').click(function(event){
@@ -187,6 +239,9 @@ $(function(){
     var maxcol = Number($('input#maxcol').val())-1;
     var maxrow = Number($('input#maxrow').val())-1;
     
+    text2chars(maxcol, maxrow);
+    spread_nums(maxcol, maxrow);
+    
     /* toolbar init: disable normal link behaviour */
     $('.toolbar a').click(function(event){
       event.preventDefault();
@@ -199,8 +254,9 @@ $(function(){
     });
     /* enable save puzzle button/menu */
     $('#tb_save_puzzle').click(function(event){
-      $('form#grid #dicts').append($('input.dictionary-checkbox'));
-      document.forms['grid'].submit();
+      $('form#puzzle #dicts').append($('input.dictionary-checkbox'));
+      chars2text(maxcol, maxrow);
+      document.forms['puzzle'].submit();
     });
     /* enable clear button */
     $('#tb_clear_puzzle').click(function(event){
@@ -265,10 +321,10 @@ $(function(){
             //console.log(event.keyCode, c);
         }
         else 
-            if (event.which == 35) 
+            if (event.which == 35) // # number sign
                 renumberPuzzle(x, y, maxcol, maxrow, false);
             else 
-                if (event.which == 63) {
+                if (event.which == 63) { // question mark
                     getWord(x, y, maxcol, maxrow);
                 }
         return false;

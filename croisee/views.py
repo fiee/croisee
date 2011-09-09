@@ -74,13 +74,13 @@ def _search(request, searchterm, limit=settings.CROISEE_QUERYMAX):
         pass
     return context
 
-def _find_word(text, start_y, start_x, direction='h', stopchar='.'):
+def _find_word(text, start_y, start_x, direction='h', stopchar='.', newline='\n'):
     """
     find a word in a text, starting at position y, x (0-based)
     
     direction is h or v
     """
-    lines = [line for line in text.split('\n') if line]
+    lines = [line for line in text.split(newline) if line]
     try:
         if direction=='h':
             if start_x > 0 and lines[start_y][start_x-1] <> stopchar:
@@ -112,23 +112,17 @@ def grid(request, *args, **kwargs):
     puzzle = None
     
     if (request.method == 'POST'):
-        if ('maxcol' in request.POST and 'maxrow' in request.POST):
-            maxcol = int(request.POST['maxcol'])
-            maxrow = int(request.POST['maxrow'])
-            if maxcol < settings.CROISEE_GRIDMIN_X: maxcol = settings.CROISEE_GRIDMIN_X
-            if maxrow < settings.CROISEE_GRIDMIN_Y: maxrow = settings.CROISEE_GRIDMIN_Y
-            if maxcol > settings.CROISEE_GRIDMAX_X: maxcol = settings.CROISEE_GRIDMAX_X
-            if maxrow > settings.CROISEE_GRIDMAX_Y: maxrow = settings.CROISEE_GRIDMAX_Y
-        else:
-            maxcol = settings.CROISEE_GRIDMAX_X
-            maxrow = settings.CROISEE_GRIDMAX_Y
+        maxcol = max(min(int(request.POST.get('new_maxcol', settings.CROISEE_GRIDMIN_X)), settings.CROISEE_GRIDMAX_X), settings.CROISEE_GRIDMIN_X)
+        maxrow = max(min(int(request.POST.get('new_maxrow', settings.CROISEE_GRIDMIN_Y)), settings.CROISEE_GRIDMAX_Y), settings.CROISEE_GRIDMIN_Y)
+        p_text = request.POST.get('chars', '').upper()
+        p_nums = request.POST.get('nums', '')
         
         puzzle = {
             'maxcol':   maxcol,
             'maxrow':   maxrow,
             'maxnum':   0,
-            'data':    [{'id':y, 'cols':[{'id':x, 'num':'', 'char':''} for x in range(maxcol)]} for y in range(maxrow)],
-            'text':     '',
+            'text':     p_text,
+            'nums':     p_nums,
         }
         
     context = {
@@ -142,6 +136,7 @@ def grid(request, *args, **kwargs):
     }
     return render(request, 'grid.html', context)
 
+
 def save(request, *args, **kwargs):
     if request.method != 'POST':
         return redirect('%s-index' % settings.PROJECT_NAME)
@@ -151,62 +146,27 @@ def save(request, *args, **kwargs):
         post[key.encode('ascii')] = request.POST[key]
 
     try:
-        maxnum = int(post['maxnum'])
+        maxnum = int(post.get('maxnum', 0))
     except ValueError, e:
-        maxnum = 0
-    except KeyError, e:
         maxnum = 0
     try:
-        maxcol = int(post['maxcol'])
-        maxrow = int(post['maxrow'])
+        maxcol = max(min(int(post.get('maxcol', settings.CROISEE_GRIDMIN_X)), settings.CROISEE_GRIDMAX_X), settings.CROISEE_GRIDMIN_X)
+        maxrow = max(min(int(post.get('maxrow', settings.CROISEE_GRIDMIN_Y)), settings.CROISEE_GRIDMAX_Y), settings.CROISEE_GRIDMIN_Y)
     except ValueError, e:
         logger.warning('ValueError in save: %s' % e)
-        maxcol = 0
-        maxrow = 0
-    except KeyError, e:
-        logger.warning('KeyError in save: %s' % e)
-        maxcol = 0
-        maxrow = 0
-    if maxcol < settings.CROISEE_GRIDMIN_X: maxcol = settings.CROISEE_GRIDMIN_X
-    if maxrow < settings.CROISEE_GRIDMIN_Y: maxrow = settings.CROISEE_GRIDMIN_Y
-    if maxcol > settings.CROISEE_GRIDMAX_X: maxcol = settings.CROISEE_GRIDMAX_X
-    if maxrow > settings.CROISEE_GRIDMAX_Y: maxrow = settings.CROISEE_GRIDMAX_Y
+        maxcol = settings.CROISEE_GRIDMIN_X
+        maxrow = settings.CROISEE_GRIDMIN_Y
 
-    word_starts = []
-    
-    p_text = '' # complete text of puzzle
-    num = 0 # word start number counter
-
-    for y in range(maxcol):
-        for x in range(maxrow):
-            coord = '%d_%d' % (y, x)
-            c = post['char_'+coord]
-            if c=='': c= ' '
-            p_text += c[0].upper()
-            if post['num_'+coord]:
-                num += 1
-                word_starts.append([num, y, x, ''])
-        p_text += '\n'
+    p_text = post.get('chars', '').upper().replace('/', '\n') # complete text of puzzle
     logger.info('\n'+p_text.replace('.', '#').replace(' ', u'·'))
+    logger.info(post.get('nums', ''))
 
-    words_horiz = [None for i in range(num+1)]
-    words_vert = [None for i in range(num+1)]
-    
-    for c in range(len(word_starts)):
-        [num, y, x, dir] = word_starts[c]
-        words_horiz[num] = _find_word(p_text, y, x, 'h')
-        words_vert[num] = _find_word(p_text, y, x, 'v')
-        if words_horiz[num]: dir += 'h'
-        if words_vert[num]: dir += 'v'
-        word_starts[c][3] = dir
-        num += 1
-    
     puzzle = {
         'maxcol':   maxcol,
         'maxrow':   maxrow,
         'maxnum':   maxnum,
-        'text':     p_text,
-        'data':     [{'id':y, 'cols':[{'id':x, 'num':post['num_%d_%d' % (y,x)], 'char':post['char_%d_%d' % (y,x)]} for x in range(maxcol)]} for y in range(maxrow)],
+        'text':     p_text.replace('\n', '/'),
+        'nums':     post.get('nums', ''),
     }
     context = {
         'MEDIA_URL':    settings.MEDIA_URL,
