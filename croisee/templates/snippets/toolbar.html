@@ -49,11 +49,11 @@
     {% csrf_token %}
     <div class="formline ui-widget">
       <span class="label"><label for="maxcol">{% trans "Rows:" %}</label></span> 
-      <input type="text" name="maxcol" id="maxcol" length="3" maxlength="2" value="{{defaultx}}" class="ui-widget-content numeric" />
+      <input type="text" name="new_maxcol" id="new_maxcol" length="3" maxlength="2" value="{{defaultx}}" class="ui-widget-content numeric" />
     </div>
     <div class="formline ui-widget">
       <span class="label"><label for="maxrow">{% trans "Lines:" %}</label></span> 
-      <input type="text" name="maxrow" id="maxrow" length="3" maxlength="2" value="{{defaulty}}" class="ui-widget-content numeric" />
+      <input type="text" name="new_maxrow" id="new_maxrow" length="3" maxlength="2" value="{{defaulty}}" class="ui-widget-content numeric" />
     </div>
     <div class="formline ui-widget">
       <input type="submit" value="{% trans "Create" %}" />
