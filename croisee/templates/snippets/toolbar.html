@@ -63,6 +63,10 @@
 
 <div id="dialog_dicts" class="hidden" title="{% trans "Available Dictionaries" %}">
 <ul class="checkboxlist">
+    <li title="{% trans "check/uncheck all dictionaries" %}" class="ui-widget">
+        <input type="checkbox" name="dic_all" id="dic_all" class="dictionary-checkbox" />
+        <label for="dic_all">{% trans "check/uncheck all dictionaries" %}</label>
+    </li>
     {% for d in dictionaries %}
     <li title="{{ d.description }}" class="ui-widget">
         <input type="checkbox" name="dic_{{ d.id }}" id="dic_{{ d.id }}" class="dictionary-checkbox" {%  if not d.disabled %}checked="checked"{%  endif %} />
