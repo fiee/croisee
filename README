@@ -64,14 +64,16 @@ If you write letters, the cursor will move right to the next cell; if you press 
 Write some words into the grid "by heart" - in an empty grid, you'd get thousands of possible words.
 
 Perhaps write only one letter in the corners - that's how I mostly start.
-Press ? (question mark) at any place, and after a short delay you'll get two lists of words that match in this place horizontally and vertically.
+Press ? (question mark) in any square, and after a short delay you'll get two lists of words that match in this place horizontally and vertically.
 
 You can click on the words in the result list to place them in the grid. The list will adapt automatically to the new situation.
 
 To mark cells as "blockers", press space (and again to remove the block).
 
 To set a number as start-of-word mark, press # (number sign). The numbering works automatically.
-Just press # again to remove the number.
+A question field is added to the horizontal and/or vertical list, it gets filled with the first solution from your selected dictionaries.
+ 
+Just press # again to remove the number and the question field.
 
 
 Admin
@@ -109,11 +111,14 @@ Roadmap
 
 I'm planning to implement the following features in about this order:
 
-* safe puzzles even for unregistered users, providing a link code (maybe provide a list of public puzzles)
-* output list of questions
+* safe puzzles, even for unregistered users, using a link code (maybe provide a list of public puzzles)
 * export grid and solution as text / HTML / LaTeX (cwpuzzle) / ConTeXt / PDF / InDesign tagged text
-* user registration
+* enable user registration (django-registration)
 * safe puzzles for registered users as private/public
+* handle personal dictionaries (incl. export)
+* list of / search for public puzzles, use tagging
+* delete anonymous puzzles after e.g. 1 month
+* allow adopting of anonymous puzzles by users
 * import text files
 * different types of crossword grids (fat lines instead of blocked cells, uneven outline...)
 * mark letters for extra solution (competition word)
@@ -126,10 +131,36 @@ I'm planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
-* word numbers rather small in Mozilla (and probably other browsers than Safari)
+* word numbers are rather small in Mozilla (and probably other browsers than Safari)
 * admin: if adding to an existing dict, disable other fields
 * clean up redundant template/view code
 * still not really a reusable app (to be integrated in fiëé cérébrale)
+* still no tests!
+* add Sphinx documentation
+* add setup.py
+* bind anonymous puzzles to one session to avoid puzzles being edited by several anonymous users at the same time
+
+
+Internal workflow (how it *should* work)
+----------------------------------------
+
+If you save a puzzle for the first time, a new hash code is generated from your IP address and the local datetime.
+The puzzle’s address is becoming something like "/puzzle/abcdef123456/".
+
+as anonymous user
+^^^^^^^^^^^^^^^^^
+
+Your saved puzzles are always public (otherwise you couldn’t access it later). Everyone can change it.
+Your solutions (i.e. questions for words) are only saved with the puzzle.
+
+as logged in user
+^^^^^^^^^^^^^^^^^
+
+You can decide to make your puzzles public, but only you can change it.
+Your solutions are also saved to your personal dictionary.
+If you’re a staff member, your solutions can be saved to a public dictionary and you can use non-public dictionaries.
+You can export your personal dictionary to use it with your own croisee installation.
+You can claim (adopt) puzzles of anonymous users (e.g. your own, while you weren’t logged in).
 
 
 License
