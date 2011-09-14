@@ -173,3 +173,39 @@ class WordlistUpload(models.Model):
             print ex
         
         return D
+
+PUZZLE_TYPES = (
+    ('d', _(u'default crossword puzzle with black squares')), # numbers and black squares in grid. only possible type ATM
+    ('b', _(u'crossword puzzle with bars (no squares)')),
+    ('s', _(u'Swedish crossword puzzle (questions in squares)')), # default in most magazines
+    # other...
+)
+
+class Puzzle(models.Model):
+    """
+    """
+    title = models.CharField(verbose_name=_(u'title'), max_length=255, blank=True, help_text=_(u'title or short description of this puzzle'))
+    code = models.SlugField(verbose_name=_(u'code'), max_length=63, editable=False, unique=True, help_text=_(u'auto-generated URL code of this puzzle'))
+    public = models.BooleanField(verbose_name=_(u'public'), default=True, help_text=_(u'Is this puzzle publicly viewable?'))
+    language = models.CharField(verbose_name=_(u'language'), max_length=7, default=settings.LANGUAGE_CODE, help_text=_(u'main language of this puzzle'), choices=settings.LANGUAGES)
+
+    owner = models.ForeignKey(User, verbose_name=_(u'owner'), help_text=_(u'owner of the puzzle'))
+    createdby = models.ForeignKey(User, verbose_name=_(u'created by'), related_name='+', editable=False, help_text=_(u'user that saved the puzzle for the first time (may be anonymous)'))
+    lastchangedby = models.ForeignKey(User, verbose_name=_(u'last changed by'), related_name='+', editable=False, help_text=_(u'user that saved the puzzle the latest time'))
+    createdon = models.DateTimeField(verbose_name=_(u'created on'), auto_now_add=True, help_text=_(u'timestamp of creation (first save)'))
+    lastchangedon = models.DateTimeField(verbose_name=_(u'last changed on'), auto_now=True, help_text=_(u'timestamp of last change'))
+    
+    type = models.CharField(verbose_name=_(u'type'), max_length=1, default='d', editable=False, help_text=_(u'type of this puzzle'), choices=PUZZLE_TYPES)
+    width = models.PositiveSmallIntegerField(verbose_name=_(u'width'), default=settings.CROISEE_GRIDDEF_X, help_text=_(u'width of the puzzle (number of characters)'))
+    height = models.PositiveSmallIntegerField(verbose_name=_(u'height'), default=settings.CROISEE_GRIDDEF_Y, help_text=_(u'height of the puzzle (number of characters)'))
+    text = models.TextField(verbose_name=_(u'text'), blank=True, help_text=_(u'characters of the puzzle (solution)'))
+    numbers = models.TextField(verbose_name=_(u'numbers'), blank=True, help_text=_(u'list of coordinates of word start numbers')) # x,y,num\n
+    questions = models.TextField(verbose_name=_(u'questions'), blank=True, help_text=_(u'list of questions')) # 1::h::Description\n
+
+    class Meta:
+        verbose_name = _(u'crossword puzzle')
+        verbose_name_plural = _(u'crossword puzzles')
+
+    def __unicode__(self):
+        return "%s (%s)" % (self.code, self.title)
+    
