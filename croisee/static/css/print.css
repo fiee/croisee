@@ -20,15 +20,20 @@ a {
     color: #000;
 }
 
-img {
+img, input {
     border: none;
 }
 
 .dontprint, .hidden, .hint,
 #mainmenu, #ft, #cloze_search,
-.formline, .ui-widget,
-input, button, .button, .ui-button {
+.formline, .toolbar,
+button, .button, .ui-button {
 	display: none;
+}
+
+.floatblock {
+  float: left;
+  margin-right: 2em;
 }
 
 table.puzzle {
@@ -71,4 +76,9 @@ input.puzzlechar {
 	line-height: 1%;
 	height: 0;
 	width: 0;
+}
+
+#questions_list_h, 
+#questions_list_v {
+  font-size: 77%;
 }
