@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django.conf import settings
+from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render, redirect
 from django.template import RequestContext
 from croisee.models import Dictionary, Word, cleanword
+from datetime import datetime
+from hashlib import md5
 import logging
 logger = logging.getLogger(settings.PROJECT_NAME)
 
@@ -29,7 +32,7 @@ def _get_dictionaries(request):
         queryset of dictionaries,
         list of disabled dictionary ids 
     """
-    dictionaries = Dictionary.objects.filter(public=True)
+    dictionaries = Dictionary.objects.filter(Q(public=True)|Q(owner=request.user.id)) # public or own
     if request.method != 'POST':
         return (dictionaries, [])
     disabled_dicts = []
@@ -109,6 +112,9 @@ def index(request, *args, **kwargs):
     return render(request, 'index.html', context)
 
 def grid(request, *args, **kwargs):
+    """
+    create new grid
+    """
     puzzle = None
     
     if (request.method == 'POST'):
@@ -123,6 +129,7 @@ def grid(request, *args, **kwargs):
             'maxnum':   0,
             'text':     p_text,
             'nums':     p_nums,
+            'questions': '',
         }
         
     context = {
@@ -138,6 +145,9 @@ def grid(request, *args, **kwargs):
 
 
 def save(request, *args, **kwargs):
+    """
+    save grid
+    """
     if request.method != 'POST':
         return redirect('%s-index' % settings.PROJECT_NAME)
 
@@ -158,16 +168,30 @@ def save(request, *args, **kwargs):
         maxrow = settings.CROISEE_GRIDMIN_Y
 
     p_text = post.get('chars', '').upper().replace('/', '\n') # complete text of puzzle
-    logger.info('\n'+p_text.replace('.', '#').replace(' ', u'·'))
-    logger.info(post.get('nums', ''))
+    #logger.info('\n'+p_text.replace('.', '#').replace(' ', u'·'))
+    #logger.info(post.get('nums', ''))
 
     puzzle = {
         'maxcol':   maxcol,
         'maxrow':   maxrow,
         'maxnum':   maxnum,
-        'text':     p_text.replace('\n', '/'),
+        'text':     p_text, #.replace('\n', '/'),
         'nums':     post.get('nums', ''),
+        'questions': '',
     }
+
+    # clean questions
+    puzzle['questions'] = post.get('questions', '')
+    if request.user.is_active:
+        for qu in puzzle['questions'].split('\n'):
+            (num, dir, word) = qu.strip().split('::') # 1::h::Word
+            if len(word)>3 and word != word.upper():
+                # TODO: if known user, save to personal dictionary
+                pass
+
+    # TODO: save puzzle to database, redirect to hash url
+    puzzle['hash'] = md5('%s/%s' % (request.META.get('REMOTE_ADDR', '127.0.0.1'), datetime.strftime(datetime.now(), '%Y-%m-%dT%H:%M:%S'))).hexdigest() 
+        
     context = {
         'MEDIA_URL':    settings.MEDIA_URL,
         'posted':       (request.method == 'POST'),
@@ -189,7 +213,7 @@ def ajax_crossquery(request, **kwargs):
     """
     do a query for several words, separated by slashes
     
-    if words are in format "word,0", the number says which letter of both words must match
+    if words are in format "word,0", the number says which letter of both words must match (0-based)
     """
     horiz = kwargs['horizontal']
     vert = kwargs['vertical']

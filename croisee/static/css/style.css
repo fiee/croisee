@@ -176,9 +176,19 @@ div.formline {
 	margin: 0.5em 0 0.5em 0;
 }
 
-div.formline .label {
+div.formline .label,
+.ui-widget .label {
 	display: inline-block;
 	width: 8em;
+}
+
+.ui-widget .numlabel {
+  text-align: right;
+  width: 1.5em;
+}
+
+.question input {
+  width: 20em;
 }
 
 div.formline input.numeric {

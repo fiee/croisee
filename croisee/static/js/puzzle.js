@@ -1,9 +1,11 @@
-var letters = 'ABCDEFGHIJKLMNOPQRTSUVWXYZ ';
-var stop_char = '.';
-var goodkeys = [9, 32, 37, 38, 39, 40, 46, 51, 191];
+//var letters = 'ABCDEFGHIJKLMNOPQRTSUVWXYZ ';
+//var goodkeys = [9, 32, 37, 38, 39, 40, 46, 51, 191];
 var modifiers = [16, 17, 18, 91];
+var stop_char = '.';
+var line_sep = '\n';
 var focus_x = 0;
 var focus_y = 0;
+var DEBUG = false;
 
 function chars2text(maxcol, maxrow) {
   /*
@@ -14,104 +16,183 @@ function chars2text(maxcol, maxrow) {
     for (var x=0; x <= maxcol; x++) {
       text += $('#char_'+y+'_'+x).val() || ' ';
     }
-    text += '/';
+    text += line_sep;
   }
   $('input#chars').val(text);
   return text;
 }
 
-function text2chars(maxcol, maxrow) {
+function text2chars() {
   /*
    * spread single chars from puzzle text into character cells
    */
   var lines = $('input#chars').val();
   if (!lines) { return false; }
-  lines = lines.split('/');
-  for (var y=0; y <= maxrow; y++) {
+  lines = lines.split(line_sep);
+  for (var y=0; y <= lines.length; y++) {
+    if (!lines[y]) return false;
     var line = lines[y].split('');
-    for (var x=0; x <= maxcol; x++) {
+    for (var x=0; x <= line.length; x++) {
       $('#char_'+y+'_'+x).val(line[x]);
     }
   }
   return true;
 }
 
-function spread_nums(maxcol, maxrow) {
+function spread_nums() {
   /*
-   * spread word start number from input
+   * spread word start numbers from hidden input into grid
+   * return object { num : [y,x,num] }
    */
   var nums = $('input#nums').val();
-  if (!nums) { return false; }
+  var dict = {};
+  if (!nums) { return dict; }
   nums = nums.split(',');
   for (var n=0; n < nums.length; n++) {
     var np = nums[n].split('.');
     if (np.length != 3) { return false; }
-    var y = Number(np[0]);
-    var x = Number(np[1]);
-    $('#num_'+y+'_'+x).html(np[2]);
+    np[0] = Number(np[0]);
+    np[1] = Number(np[1]);
+    np[2] = Number(np[2])-1;
+    $('#num_'+np[0]+'_'+np[1]).html(np[2]+1);
+    dict[np[2]] = np;
   }
-  return true;
+  return dict;
 }
 
-function getWord(x, y, maxcol, maxrow){
+function fill_questions(maxcol, maxrow, dict) {
+  /*
+   * fill question fields from saved data (hidden field) and solution words
+   * 
+   * dict from spread_nums
+   */
+  var quests = $('input#questions').val() || ''; 
+  quests = quests.split('\n');
+  if (DEBUG) console.log('fill_questions H, V, dict', quests, dict);
+  var ok = [];
+  for (var i=0; i < quests.length; i++) {
+    if (quests[i]) {
+      var qst = quests[i].split('::'); // num::dir::word
+      if (DEBUG) console.log('fill questions:', i, qst);
+      qst[0] = Number(qst[0]);
+      var coords = dict[qst[0]]
+      if (qst[2]) { //} && coords) {
+        add_question(coords[1], coords[0], maxcol, maxrow, qst[1], qst[0], qst[2]);
+        ok.push(qst[1]+'_'+qst[0]);
+      }
+    }
+  }
+  ok.sort();
+  console.log('fill_questions ok:', ok)
+  /* fill missing questions with solution word */
+  for (num in dict) {
+    var t = dict[num];
+    if (DEBUG) console.log(t);
+    if ($.inArray('h_'+num, ok)==-1) add_question(t[1], t[0], maxcol, maxrow, 'h', num);
+    if ($.inArray('v_'+num, ok)==-1) add_question(t[1], t[0], maxcol, maxrow, 'v', num);
+  }
+}
+
+function find_words(x, y, maxcol, maxrow, direction) {
+    /*
+     * find words _starting_ at x, y (e.g. from number position)
+     * return [horizontal,vertical]
+     * 
+     * parameters:
+     * x, y           = position of query in the grid, 0-based
+     * maxcol, maxrow = size of the grid
+     * direction      = if set to 'h' or 'v', get and return only one word ('b' or empty for both)
+     */
+    var direction = direction[0].toLowerCase() || 'b';
+    
+    if (direction != 'v') {
+      /* collect word horizontally */
+      var horiz = '';
+      for (var i = x; i <= maxcol; i++) {
+          var letter = $('#char_' + y + '_' + i).val() || '_';
+          if (letter == stop_char) { break; }
+          horiz += letter;
+      }
+      horiz = horiz.replace(/\s/g, '_');
+    }
+    
+    if (direction != 'h') {
+      /* collect word vertically */
+      var vert = '';
+      for (var i = y; i <= maxrow; i++) {
+          var letter = $('#char_' + i + '_' + x).val() || '_';
+          if (letter == stop_char) { break; }
+          vert += letter;
+      }
+      vert = vert.replace(/\s/g, '_');
+    }
+    
+    switch (direction) {
+      case 'b': return [horiz,vert];
+      case 'h': return horiz;
+      case 'v': return vert;
+      default:  return null;
+    } 
+}
+
+function lookup_word(x, y, maxcol, maxrow){
     /*
      * lookup words that fit the letters at the crossing x, y
      * 
      * parameters:
      * x, y 			    = position of query in the grid, 0-based
-     * maxcol, maxrow 		= size of the grid
+     * maxcol, maxrow = size of the grid
      * 
      * internals:
      * xstart, ystart = start of the word, relative to the grid, 0-based
-     * xpos, ypos 		= position of the query, relative to word, 0-based
-     *
+     * xpos, ypos     = position of the query, relative to word, 0-based (crossing)
+     * 
+     * the code is mostly a duplication of find_words, but we need to collect more data than there
      */
     $('#result').html('');
+
     var horiz = '';
     var vert = '';
-    var letter = '';
     var xpos = x;
     var ypos = y;
     var xstart = 0;
     var ystart = 0;
+     
     /* collect word horizontally */
-    for (i = 0; i <= maxcol; i++) {
-        letter = $('#char_' + y + '_' + i).val()
-        if (letter==''||letter==' ') { letter = '_'; }
-        if (letter == stop_char) {
-            if (i < x) {
-                horiz = '';
-                xpos = x - i;
-                xstart = i+1;
-            }
-            else 
-                if (i > x) {
-                    break;
-                }
+    for (var i = 0; i <= maxcol; i++) {
+      var letter = $('#char_' + y + '_' + i).val() || '_';
+      if (letter == stop_char) {
+        /* now there's the stop char at i,y */
+        if (i < x) {
+            horiz = '';
+            xpos = x - i - 1;
+            xstart = i+1;
+        } else if (i > x) {
+            break;
         }
-        else {
-            horiz += letter;
-        }
+      } else {
+        horiz += letter;
+      }
     }
+    horiz = horiz.replace(/\s/g, '_');
+    
     /* collect word vertically */
-    for (i = 0; i <= maxrow; i++) {
-        letter = $('#char_' + i + '_' + x).val();
-        if (letter==''||letter==' ') { letter = '_'; }
-        if (letter == stop_char) {
-            if (i < y) {
-                vert = '';
-                ypos = y - i;
-                ystart = i+1;
-            }
-            else 
-                if (i > y) {
-                    break;
-                }
+    for (var i = 0; i <= maxrow; i++) {
+      var letter = $('#char_' + i + '_' + x).val() || '_';
+      if (letter == stop_char) {
+        /* now there's the stop char at x,i */
+        if (i < y) {
+            vert = '';
+            ypos = y - i - 1;
+            ystart = i+1;
+        } else if (i > y) {
+            break;
         }
-        else {
-            vert += letter;
-        }
+      } else {
+        vert += letter;
+      }
     }
+    vert = vert.replace(/\s/g, '_');
     
     if (horiz.indexOf('_')==-1 && vert.indexOf('_')==-1) {
       console.log('No search necessary for', horiz, vert);
@@ -120,8 +201,10 @@ function getWord(x, y, maxcol, maxrow){
     
     /* send query */
     var query = '/ajax/' + horiz + ',' + xpos + '/' + vert + ',' + ypos + '/';
-    console.log(x, y, maxcol, maxrow, xstart, ystart, xpos, ypos, query);
-    return $.post(query, check_dictionaries(), function(data){
+    //if (DEBUG) console.log(x, y, maxcol, maxrow, xstart, ystart, xpos, ypos, query);
+    var dicts = check_dictionaries();
+    if (!dicts) return false;
+    return $.post(query, dicts, function(data){
         $('#result').html(data); // display results
         if ($('table.puzzle').length > 0) {
           activate_resultlist(x, y, maxcol, maxrow, xstart, ystart);
@@ -132,9 +215,11 @@ function getWord(x, y, maxcol, maxrow){
 }
 
 function check_dictionaries(){
+  /*
+   * check if there are any dictionaries selected and return {dict_id:true}
+   */
     var context = {};
     var dict_count = 0;
-    /* check for selected dictionaries */
     $('input.dictionary-checkbox:checked').each(function(i){
         context[this.id] = true;
         dict_count++;
@@ -145,34 +230,169 @@ function check_dictionaries(){
     return context;
 }
 
-function renumberPuzzle(x, y, maxcol, maxrow, reset){
-    var id = '#num_' + y + '_' + x;
-    var nums = [];
+function renumber_puzzle(x, y, maxcol, maxrow, reset){
+    /*
+     * set a new number at x, y and renew all word start numbers
+     * fill hidden numbers form fields
+     * TODO: re-organize list of questions
+     * 
+     * params:
+     * x, y: coordinates of grid field, 0-based
+     * maxcol, maxrow: size of grid
+     * reset (boolean): if true, unset the number // TODO: obsolete, just check content?
+     * 
+     */
+    var oldnums = $('input#nums').val();
+    var oldquestions = $('input#questions').val();
+    var insertpos = 0; // list position of inserted number
+    var id = '#num_' + y + '_' + x; // id of new numbered field (i.e. of number div)
     if (reset || $(id).html()) {
+        // we're removing a number
+        insertpos = Number($(id).html());
         $(id).html('');
+        reset = true;
     }
     else {
         $(id).html('#');
+        reset = false;
     }
-    var num = 1;
+    var nums = []; // list of coordinates with numbers
+    var num = 1; // start number
     for (cy = 0; cy <= maxrow; cy++) {
         for (cx = 0; cx <= maxcol; cx++) {
             var nf_id = '#num_' + cy + '_' + cx;
             var nf = $(nf_id);
-            if (nf.html()) {
+            if (nf.html()) { // if number field contains anything
                 nf.html(num);
-                //$('input'+nf_id).val(num);
-                nums.push(cy+'.'+cx+'.'+num); 
+                nums.push(cy+'.'+cx+'.'+num);
+                if (oldnums.indexOf(cy+'.'+cx+'.')==-1) {
+                  insertpos = num;
+                }
                 num++;
             }
         }
     }
-    $('input#maxnum').val(num-1);
+    num--;
+    insertpos--;
+    $('input#maxnum').val(num);
     $('input#nums').val(nums.join(','));
+    /* question fields */
+    if (reset) { // remove question
+      if (DEBUG) console.log('renumber, removing question at',insertpos,num);
+      $('#question_h_'+insertpos).remove();
+      $('#question_v_'+insertpos).remove();
+      // decrease following numbers
+      $.each(['h','v'], function(index,dir) {
+        for (var i=insertpos; i<=num; i++){
+          var nnr = i-1;
+          var oid = '_'+dir+'_'+i;
+          var nid = '_'+dir+'_'+nnr;
+          var div = $('#question'+oid);
+          if (div.length==1) {
+            if (DEBUG) console.log('renumber', oid, div.attr('id'), nid);
+            div.attr('id','question'+nid);
+            nid = '#qst'+nid; 
+            div.children('#qst'+oid).attr({'id':nid, 'name':nid});
+            div.find('label').attr('for', nid).html(i);
+          }
+        }
+      });
+    } else { // add question
+      if (DEBUG) console.log('renumber, adding question at',insertpos,num);
+      // increase following numbers
+      $.each(['h','v'], function(index,dir) {
+        for (var i=num; i>=insertpos; i--){
+          var nnr = i+1;
+          var oid = '_'+dir+'_'+i;
+          var nid = '_'+dir+'_'+nnr;
+          var div = $('#question'+oid);
+          if (div.length==1) {
+            if (DEBUG) console.log('renumber', oid, div.attr('id'), nid);
+            div.attr('id','question'+nid);
+            nid = '#qst'+nid; 
+            div.children('#qst'+oid).attr({'id':nid, 'name':nid});
+            div.find('label').attr('for', nid).html(nnr+1);
+          }
+        }
+      });
+      add_question(x, y, maxcol, maxrow, 'h', insertpos, '', true);
+      add_question(x, y, maxcol, maxrow, 'v', insertpos, '', true);
+    }
+    if (DEBUG) copy_questions_to_save();
+}
+
+function add_question(x, y, maxcol, maxrow, direction, num, word, lookup) {
+  /*
+   * clone question field template
+   * 
+   * parameters:
+   * x,y:       position of word start in grid (0-based)
+   * direction: h or v (horizontal or vertical)
+   * num:       number of question (0-based)
+   * word:      question value, defaults to word in grid (expensive!)
+   * lookup:    fill solution from dictionary? default=false (expensive!)
+   */
+  direction = direction[0].toLowerCase() || 'h';
+  if (direction=='h') {
+    if ((x > 0) && ($('input#char_'+y+'_'+(x-1)).val() != stop_char)) return false;
+  } else {
+    if ((y > 0) && ($('input#char_'+(y-1)+'_'+x).val() != stop_char)) return false;
+  }
+  num = Number( num );
+  word = word || find_words(x, y, maxcol, maxrow, direction);
+  lookup = lookup || false;
+  var clone = $('div#question_template').clone();
+  var id = 'qst_'+direction+'_'+num;
+  clone.attr('id','question_'+direction+'_'+num).find('label').attr('for', id).html(num+1);
+  clone.children('input').attr({'name':id, 'id':id}).val(word);
+
+  if ($('div#questions_list_'+direction+' div.question').length==0) {
+    clone.removeClass('hidden').appendTo($('div#questions_list_'+direction));
+  } else {
+    // find previous element
+    var found = -1;
+    for (var i=0; i<num; i++) {
+      if ($('#question_'+direction+'_'+i).length==1) { found=i; }
+    }
+    $('#question_'+direction+'_'+found).after(clone.removeClass('hidden'));
+  }
+  if (lookup===true) {
+    // get solution from dictionary
+    var query = '/ajax/' + word + '/';
+    $('input#cloze_searchterm').val(word);
+    $.post(query, check_dictionaries(), function(data){
+        $('#result').html(data); // display results
+        $('dl.resultlist .word').attr('title', '');
+        var solution = $('dl.resultlist span.word:contains("'+word+'")').parent('dt').next('dd').html();
+        if (solution) { $('input#'+id).val(solution); }
+    }, 'html');
+  }
+
+  if (num > Number($('input#maxnum').val())) $('input#maxnum').val(num);
+  //if (DEBUG) console.log('add_question',x,y,direction,num,word);
+  return clone;
+}
+
+function copy_questions_to_save() {
+  /*
+   * collect questions fields and add them to the submission
+   */
+    var maxnum = $('input#maxnum').val() || 0;
+    var sols_v = [];
+    var quests = [];
+    for (var i=0; i<=maxnum; i++) {
+      if ($('#qst_h_'+i).val()) quests.push(i+'::h::'+$('#qst_h_'+i).val());
+      if ($('#qst_v_'+i).val()) quests.push(i+'::v::'+$('#qst_v_'+i).val());
+    }
+    $('input#questions').val(quests.join('\n'));
+    if (DEBUG) console.log('copy questions:', $('input#questions').val());
+    return maxnum;
 }
 
 function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
   /*
+   * make words in search result clickable to insert them into the grid
+   * 
    * parameters:
    * x,y = cursor position
    */
@@ -191,7 +411,7 @@ function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
     } else {
         alert('Code error! Word is neither horizontal nor vertical!');
     }
-    getWord(x, y, maxcol, maxrow); // update result list
+    lookup_word(x, y, maxcol, maxrow); // update result list
     $('#char_' + y + '_' + x).focus();
     chars2text(maxcol, maxrow);
   });
@@ -201,7 +421,10 @@ function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
   });
 }
 
-function search_handler(event){
+function searchhandler(event){
+  /*
+   * handler for search field
+   */
   var word = $('input#cloze_searchterm').val();
   word = word.toUpperCase().replace(/[^A-Z\*_]/g, '');
   var query = '/ajax/' + word + '/';
@@ -209,7 +432,6 @@ function search_handler(event){
   if (!word) { return false; }
   $.post(query, check_dictionaries(), function(data){
       $('#result').html(data); // display results
-      //activate_resultlist(focus_x, focus_y, maxcol, maxrow, 0,0);
       $('dl.resultlist .word').attr('title', '');
   }, 'html');
   return false; // don't propagate
@@ -225,9 +447,7 @@ function clear_grid(){
 }
 
 function set_focus(x, y){
-  /*
-   * set focus on puzzle cell
-   */
+  /* set focus on puzzle cell */
   focus_x = x;
   focus_y = y;
   $('td.puzzlecell').removeClass('focus');
@@ -235,17 +455,24 @@ function set_focus(x, y){
   $('#char_'+y+'_'+x).focus().select();
 }
 
+function init_puzzle(maxcol, maxrow) {
+  /* initialize puzzle grid and questions at page load */
+  text2chars();
+  fill_questions(maxcol, maxrow, spread_nums());
+}
+
+function ___INIT___(){} // bookmark for jQuery’s anonymous init function
+
 $(function(){
     var maxcol = Number($('input#maxcol').val())-1;
     var maxrow = Number($('input#maxrow').val())-1;
     
-    text2chars(maxcol, maxrow);
-    spread_nums(maxcol, maxrow);
+    init_puzzle(maxcol, maxrow);
     
     /* toolbar init: disable normal link behaviour */
     $('.toolbar a').click(function(event){
       event.preventDefault();
-      //console.log($(this).attr('href'));
+      //if (DEBUG) console.log($(this).attr('href'));
       return false;      
     });
     /* enable new puzzle button */
@@ -254,7 +481,9 @@ $(function(){
     });
     /* enable save puzzle button/menu */
     $('#tb_save_puzzle').click(function(event){
+      /* append dictionary settings from other form */
       $('form#puzzle #dicts').append($('input.dictionary-checkbox'));
+      copy_questions_to_save();
       chars2text(maxcol, maxrow);
       document.forms['puzzle'].submit();
     });
@@ -280,9 +509,9 @@ $(function(){
     });
 
     /* enable ajax processing of cloze search */
-    $('#cloze_search_submit').click(search_handler);
+    $('#cloze_search_submit').click(searchhandler);
     /* disable submit on return key */
-    $('form#cloze_search').submit(search_handler);
+    $('form#cloze_search').submit(searchhandler);
 
     /* enable dictionary button */
     $('#tb_dicts').click(function(event){
@@ -294,6 +523,15 @@ $(function(){
         }
       });
     });
+    /* enable check/uncheck all dictionaries */
+    $('#dic_all').toggle(
+      function(){
+        $('#dialog_dicts input.dictionary-checkbox').attr('checked', true);
+      },
+      function(){
+        $('#dialog_dicts input.dictionary-checkbox').attr('checked', false);
+      }
+    );
         
     /* restore blocked cells from saved grids */
     $('input.puzzlechar').each(function(index){
@@ -305,7 +543,7 @@ $(function(){
      * Mozilla doesn't send an usable keyUp for visible chars (?, #)
      */
     $('input.puzzlechar').keypress(function(event){
-        //console.log('PRESS', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
+        //if (DEBUG) console.log('PRESS', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
         if (event.metaKey || event.ctrlKey) 
             return true;
         var idp = this.id.split('_'); // char,y,x
@@ -318,14 +556,14 @@ $(function(){
         (97 <= event.which && event.which <= 97 + 25)) {
             var c = String.fromCharCode(event.which).toUpperCase();
             $(this).val(c);
-            //console.log(event.keyCode, c);
+            //if (DEBUG) console.log(event.keyCode, c);
         }
         else 
             if (event.which == 35) // # number sign
-                renumberPuzzle(x, y, maxcol, maxrow, false);
+                renumber_puzzle(x, y, maxcol, maxrow, false);
             else 
                 if (event.which == 63) { // question mark
-                    getWord(x, y, maxcol, maxrow);
+                    lookup_word(x, y, maxcol, maxrow);
                 }
         return false;
     });
@@ -337,7 +575,7 @@ $(function(){
         var idp = this.id.split('_'); // char,y,x
         var x = idp[2];
         var y = idp[1];
-        //console.log('UP', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
+        //if (DEBUG) console.log('UP', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
         switch (event.which) {
             case 0: break; // e.g. question mark on Mozilla
             case 8: // backspace
@@ -348,9 +586,15 @@ $(function(){
             case 9: // tab
                 //if (event.shiftKey) { x--; } else { x++; }
                 break;
+            case 16: // shift
+                break;
             case 32: // space
-                $(this).val(stop_char).parent('td').toggleClass('blocked');
-                renumberPuzzle(x, y, maxcol, maxrow, true);
+                if ($(this).val()==stop_char) {
+                    $(this).val('').parent('td').removeClass('blocked');
+                } else {
+                    $(this).val(stop_char).parent('td').addClass('blocked');
+                }
+                renumber_puzzle(x, y, maxcol, maxrow, true);
                 x++;
                 break;
             case 37: // left
@@ -382,6 +626,7 @@ $(function(){
                     x++;
                 }
         } // switch
+        /* check coordinates to stay within grid */
         if (x > maxcol) {
             x = 0;
         }
@@ -399,13 +644,13 @@ $(function(){
         event.preventDefault();
         if (modifiers.indexOf(event.keyCode) == -1) {
           set_focus(x, y);
-          //  $('#char_' + y + '_' + x).focus().select();
         }
         return true;
     });
-	
+	  
+	  /* only allow numbers in numeric input fields, e.g. "new puzzle" form */
     $('input.numeric').keyup(function(event){
-        if (event.metaKey || event.ctrlKey) 
+        if (event.metaKey || event.ctrlKey || event.which==9) 
             return true;
         /* handle numeric input fields */
         event.preventDefault();

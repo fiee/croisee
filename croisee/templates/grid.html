@@ -10,16 +10,18 @@
 {% block maincontent %}
 {% include "snippets/toolbar.html" %}
 {% if puzzle %}
-<form action="/grid/save/" name="puzzle" id="puzzle" method="post" autocomplete="off">
+<form action="/grid/save/" name="puzzle" id="puzzle_form" method="post" autocomplete="off">
 {% csrf_token %}
 <input type="hidden" name="maxcol" id="maxcol" value="{{puzzle.maxcol}}" />
 <input type="hidden" name="maxrow" id="maxrow" value="{{puzzle.maxrow}}" />
 <input type="hidden" name="maxnum" id="maxnum" value="{{puzzle.maxnum}}" />
 <input type="hidden" name="chars" id="chars" value="{{puzzle.text}}" />
 <input type="hidden" name="nums" id="nums" value="{{puzzle.nums}}" />
+<input type="hidden" name="questions" id="questions" value="{{puzzle.questions}}" />
+<input type="hidden" name="hash" id="hash" value="{{puzzle.hash}}" />
 <div class="hidden" id="dicts"></div>
 </form>
-<form action="#" name="grid", id="grid" method="post" autocomplete="off">
+<form action="#" name="grid" id="grid_form" method="post" autocomplete="off">
 <table class="puzzle">
 	{% for row in puzzle.maxrow|get_range %}
 	<tr id="row_{{row}}">
@@ -32,6 +34,22 @@
 	</tr>
 	{% endfor %}
 </table>
+</form>
+<div class="clear"></div>
+<form action='#' name="questions" id="questions_form" method="post" autocomplete="off">
+
+{# we clone this template in javascript #}
+<div class="ui-widget question hidden" id="question_template">
+  <span class="label numlabel"><label for="qst_"></label></span>
+  <input type="text" name="qst_" id="qst_" class="question" length="30" maxlength="255" value="" />
+</div>
+
+<div class="floatblock" id="questions_list_h">
+  <h3>{% trans "horizontal" %}</h3>
+</div>
+<div class="floatblock" id="questions_list_v">
+  <h3>{% trans "vertical" %}</h3>
+</div>
 </form>
 {% else %}
 <div class="clear"></div>
