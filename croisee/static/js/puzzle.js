@@ -83,7 +83,7 @@ function fill_questions(maxcol, maxrow, dict) {
     }
   }
   ok.sort();
-  console.log('fill_questions ok:', ok)
+  if (DEBUG) console.log('fill_questions ok:', ok)
   /* fill missing questions with solution word */
   for (num in dict) {
     var t = dict[num];
@@ -195,7 +195,7 @@ function lookup_word(x, y, maxcol, maxrow){
     vert = vert.replace(/\s/g, '_');
     
     if (horiz.indexOf('_')==-1 && vert.indexOf('_')==-1) {
-      console.log('No search necessary for', horiz, vert);
+      console.log(interpolate(gettext('No search necessary for %s/%s'), [horiz, vert]));
       return false;
     }
     
@@ -225,6 +225,7 @@ function check_dictionaries(){
         dict_count++;
     });
     if (dict_count == 0) {
+        // TODO: gettext()
         $('#dict_error').removeClass('hidden').show(500).delay(7000).hide(500);
     }
     return context;
@@ -234,7 +235,6 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
     /*
      * set a new number at x, y and renew all word start numbers
      * fill hidden numbers form fields
-     * TODO: re-organize list of questions
      * 
      * params:
      * x, y: coordinates of grid field, 0-based
@@ -274,8 +274,13 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
     }
     num--;
     insertpos--;
+    if ((num<0) || (insertpos<0)) {
+      console.log('error in renumber_puzzle:',insertpos,num);
+      return false;
+    }
     $('input#maxnum').val(num);
     $('input#nums').val(nums.join(','));
+    
     /* question fields */
     if (reset) { // remove question
       if (DEBUG) console.log('renumber, removing question at',insertpos,num);
@@ -289,9 +294,9 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
           var nid = '_'+dir+'_'+nnr;
           var div = $('#question'+oid);
           if (div.length==1) {
-            if (DEBUG) console.log('renumber', oid, div.attr('id'), nid);
+            if (DEBUG) console.log('renumber', div.attr('id'), 'as', nid);
             div.attr('id','question'+nid);
-            nid = '#qst'+nid; 
+            nid = 'qst'+nid; 
             div.children('#qst'+oid).attr({'id':nid, 'name':nid});
             div.find('label').attr('for', nid).html(i);
           }
@@ -307,9 +312,9 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
           var nid = '_'+dir+'_'+nnr;
           var div = $('#question'+oid);
           if (div.length==1) {
-            if (DEBUG) console.log('renumber', oid, div.attr('id'), nid);
+            if (DEBUG) console.log('renumber', div.attr('id'), 'as', nid);
             div.attr('id','question'+nid);
-            nid = '#qst'+nid; 
+            nid = 'qst'+nid; 
             div.children('#qst'+oid).attr({'id':nid, 'name':nid});
             div.find('label').attr('for', nid).html(nnr+1);
           }
@@ -318,7 +323,6 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
       add_question(x, y, maxcol, maxrow, 'h', insertpos, '', true);
       add_question(x, y, maxcol, maxrow, 'v', insertpos, '', true);
     }
-    if (DEBUG) copy_questions_to_save();
 }
 
 function add_question(x, y, maxcol, maxrow, direction, num, word, lookup) {
@@ -347,15 +351,20 @@ function add_question(x, y, maxcol, maxrow, direction, num, word, lookup) {
   clone.children('input').attr({'name':id, 'id':id}).val(word);
 
   if ($('div#questions_list_'+direction+' div.question').length==0) {
-    clone.removeClass('hidden').appendTo($('div#questions_list_'+direction));
+    clone.appendTo($('div#questions_list_'+direction));
   } else {
     // find previous element
     var found = -1;
     for (var i=0; i<num; i++) {
       if ($('#question_'+direction+'_'+i).length==1) { found=i; }
     }
-    $('#question_'+direction+'_'+found).after(clone.removeClass('hidden'));
+    if (found >= 0) {
+      $('#question_'+direction+'_'+found).after(clone);
+    } else {
+      $('div#questions_list_'+direction+' h3').after(clone);
+    }
   }
+  clone.removeClass('hidden');
   if (lookup===true) {
     // get solution from dictionary
     var query = '/ajax/' + word + '/';
@@ -369,7 +378,7 @@ function add_question(x, y, maxcol, maxrow, direction, num, word, lookup) {
   }
 
   if (num > Number($('input#maxnum').val())) $('input#maxnum').val(num);
-  //if (DEBUG) console.log('add_question',x,y,direction,num,word);
+  if (DEBUG) console.log('add_question',x,y,direction,num,word);
   return clone;
 }
 
@@ -380,10 +389,13 @@ function copy_questions_to_save() {
     var maxnum = $('input#maxnum').val() || 0;
     var sols_v = [];
     var quests = [];
-    for (var i=0; i<=maxnum; i++) {
-      if ($('#qst_h_'+i).val()) quests.push(i+'::h::'+$('#qst_h_'+i).val());
-      if ($('#qst_v_'+i).val()) quests.push(i+'::v::'+$('#qst_v_'+i).val());
-    }
+    $('#questions_form input.question').each(function(index){
+      if ($(this).val()) {
+        var idp = $(this).attr('id').split('_'); // #qst_h_0
+        var val = idp[2]+'::'+idp[1]+'::'+$(this).val();
+        quests.push(val);
+      }
+    });
     $('input#questions').val(quests.join('\n'));
     if (DEBUG) console.log('copy questions:', $('input#questions').val());
     return maxnum;
@@ -409,7 +421,7 @@ function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
             $('#char_' + (i + ystart) + '_' + x).val(word[i]);
         }
     } else {
-        alert('Code error! Word is neither horizontal nor vertical!');
+        alert(gettext('Code error! Word is neither horizontal nor vertical!'));
     }
     lookup_word(x, y, maxcol, maxrow); // update result list
     $('#char_' + y + '_' + x).focus();
@@ -482,7 +494,7 @@ $(function(){
     /* enable save puzzle button/menu */
     $('#tb_save_puzzle').click(function(event){
       /* append dictionary settings from other form */
-      $('form#puzzle #dicts').append($('input.dictionary-checkbox'));
+      $('form#puzzle_form #dicts').append($('input.dictionary-checkbox'));
       copy_questions_to_save();
       chars2text(maxcol, maxrow);
       document.forms['puzzle'].submit();
@@ -594,7 +606,7 @@ $(function(){
                 } else {
                     $(this).val(stop_char).parent('td').addClass('blocked');
                 }
-                renumber_puzzle(x, y, maxcol, maxrow, true);
+                //renumber_puzzle(x, y, maxcol, maxrow, true);
                 x++;
                 break;
             case 37: // left
