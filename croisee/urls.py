@@ -6,8 +6,13 @@ import os
 
 admin.autodiscover()
 
+js_info_dict = {
+    'packages': (settings.PROJECT_NAME,),
+}
+
 urlpatterns = patterns('',
-        url(r'^/?$', '%s.views.index' % settings.PROJECT_NAME, name='%s-index' % settings.PROJECT_NAME),
+    url(r'^/?$', '%s.views.index' % settings.PROJECT_NAME, name='%s-index' % settings.PROJECT_NAME),
+    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
 )
 
 # serve static content in debug mode
