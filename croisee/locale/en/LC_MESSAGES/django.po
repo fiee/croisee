@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-09 14:51+0200\n"
+"POT-Creation-Date: 2011-09-16 10:56+0200\n"
 "PO-Revision-Date: 2011-09-09 14:51+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
@@ -20,59 +20,47 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: models.py:64
-#: models.py:93
+#: models.py:64 models.py:93
 msgid "Dictionary"
 msgstr "Dictionary"
 
-#: models.py:65
-#: templates/snippets/toolbar.html:20
+#: models.py:65 templates/snippets/toolbar.html:20
 msgid "Dictionaries"
 msgstr "Dictionaries"
 
-#: models.py:69
-#: models.py:112
+#: models.py:69 models.py:112
 msgid "Name"
 msgstr "Name"
 
-#: models.py:69
-#: models.py:112
+#: models.py:69 models.py:112
 msgid "A short descriptive name"
 msgstr "A short descriptive name"
 
-#: models.py:70
-#: models.py:114
+#: models.py:70 models.py:114
 msgid "public?"
 msgstr "public?"
 
-#: models.py:70
-#: models.py:114
+#: models.py:70 models.py:114
 msgid "May everyone use this dictionary?"
 msgstr "May everyone use this dictionary?"
 
-#: models.py:71
-#: models.py:115
+#: models.py:71 models.py:115
 msgid "Language"
 msgstr "Language"
 
-#: models.py:73
-#: models.py:117
+#: models.py:73 models.py:117
 msgid "Language of (most of) the words in this dictionary"
 msgstr "Language of (most of) the words in this dictionary"
 
-#: models.py:74
-#: models.py:94
-#: models.py:118
+#: models.py:74 models.py:94 models.py:118
 msgid "Description"
 msgstr "Description"
 
-#: models.py:75
-#: models.py:119
+#: models.py:75 models.py:119
 msgid "Owner"
 msgstr "Owner"
 
-#: models.py:87
-#: models.py:92
+#: models.py:87 models.py:92
 msgid "Word"
 msgstr "Word"
 
@@ -81,8 +69,12 @@ msgid "Words"
 msgstr "Words"
 
 #: models.py:92
-msgid "a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc."
-msgstr "a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc."
+msgid ""
+"a word fitting a crossword puzzle; will become uppercased; no numbers, "
+"hyphens etc."
+msgstr ""
+"a word fitting a crossword puzzle; will become uppercased; no numbers, "
+"hyphens etc."
 
 #: models.py:94
 msgid "Meaning of the word within the context of the selected dictionary"
@@ -101,12 +93,20 @@ msgid "wordlist file (.txt)"
 msgstr "wordlist file (.txt)"
 
 #: models.py:110
-msgid "Select a .txt file containing a single word per line to upload as a new dictionary."
-msgstr "Select a .txt file containing a single word per line to upload as a new dictionary."
+msgid ""
+"Select a .txt file containing a single word per line to upload as a new "
+"dictionary."
+msgstr ""
+"Select a .txt file containing a single word per line to upload as a new "
+"dictionary."
 
 #: models.py:111
-msgid "Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name."
-msgstr "Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name."
+msgid ""
+"Select a dictionary to add these words to. leave this empty to create a new "
+"dictionary from the supplied name."
+msgstr ""
+"Select a dictionary to add these words to. leave this empty to create a new "
+"dictionary from the supplied name."
 
 #: models.py:113
 msgid "only unique"
@@ -124,66 +124,217 @@ msgstr "wordlist upload"
 msgid "wordlist uploads"
 msgstr "wordlist uploads"
 
+#: models.py:178
+msgid "default crossword puzzle with black squares"
+msgstr ""
+
+#: models.py:179
+msgid "crossword puzzle with bars (no squares)"
+msgstr ""
+
+#: models.py:180
+msgid "Swedish crossword puzzle (questions in squares)"
+msgstr ""
+
+#: models.py:187
+msgid "title"
+msgstr ""
+
+#: models.py:187
+msgid "title or short description of this puzzle"
+msgstr ""
+
+#: models.py:188
+msgid "code"
+msgstr ""
+
+#: models.py:188
+msgid "auto-generated URL code of this puzzle"
+msgstr ""
+
+#: models.py:189
+#, fuzzy
+msgid "public"
+msgstr "public?"
+
+#: models.py:189
+msgid "Is this puzzle publicly viewable?"
+msgstr ""
+
+#: models.py:190
+#, fuzzy
+msgid "language"
+msgstr "Language"
+
+#: models.py:190
+msgid "main language of this puzzle"
+msgstr ""
+
+#: models.py:192
+#, fuzzy
+msgid "owner"
+msgstr "Owner"
+
+#: models.py:192
+msgid "owner of the puzzle"
+msgstr ""
+
+#: models.py:193
+#, fuzzy
+msgid "created by"
+msgstr "Create"
+
+#: models.py:193
+msgid "user that saved the puzzle for the first time (may be anonymous)"
+msgstr ""
+
+#: models.py:194
+#, fuzzy
+msgid "last changed by"
+msgstr "Password change"
+
+#: models.py:194
+msgid "user that saved the puzzle the latest time"
+msgstr ""
+
+#: models.py:195
+#, fuzzy
+msgid "created on"
+msgstr "Create"
+
+#: models.py:195
+msgid "timestamp of creation (first save)"
+msgstr ""
+
+#: models.py:196
+#, fuzzy
+msgid "last changed on"
+msgstr "Password change"
+
+#: models.py:196
+msgid "timestamp of last change"
+msgstr ""
+
+#: models.py:198
+msgid "type"
+msgstr ""
+
+#: models.py:198
+msgid "type of this puzzle"
+msgstr ""
+
+#: models.py:199
+msgid "width"
+msgstr ""
+
+#: models.py:199
+msgid "width of the puzzle (number of characters)"
+msgstr ""
+
+#: models.py:200
+#, fuzzy
+msgid "height"
+msgstr "right"
+
+#: models.py:200
+msgid "height of the puzzle (number of characters)"
+msgstr ""
+
+#: models.py:201
+msgid "text"
+msgstr ""
+
+#: models.py:201
+msgid "characters of the puzzle (solution)"
+msgstr ""
+
+#: models.py:202
+msgid "numbers"
+msgstr ""
+
+#: models.py:202
+msgid "list of coordinates of word start numbers"
+msgstr ""
+
+#: models.py:203
+#, fuzzy
+msgid "questions"
+msgstr "Question"
+
+#: models.py:203
+msgid "list of questions"
+msgstr ""
+
+#: models.py:206
+msgid "crossword puzzle"
+msgstr ""
+
+#: models.py:207
+msgid "crossword puzzles"
+msgstr ""
+
 #: settings.py:24
 msgid "STRING_NOT_SET"
 msgstr "STRING_NOT_SET"
 
 #: settings.py:266
 #, python-format
-msgid "Please create a %s file with random characters to generate your secret key!"
-msgstr "Please create a %s file with random characters to generate your secret key!"
+msgid ""
+"Please create a %s file with random characters to generate your secret key!"
+msgstr ""
+"Please create a %s file with random characters to generate your secret key!"
 
-#: views.py:184
-#: templates/ajax_query.html:6
+#: views.py:208 templates/ajax_query.html:6
 #: templates/snippets/resultlist.html:22
 msgid "results"
 msgstr "results"
 
-#: views.py:219
+#: views.py:243 templates/grid.html:48
 msgid "horizontal"
 msgstr "horizontal"
 
-#: views.py:220
+#: views.py:244 templates/grid.html:51
 msgid "vertical"
 msgstr "vertical"
 
-#: templates/403.html:4
-#: templates/403.html.py:7
+#: templates/403.html:4 templates/403.html.py:7
 msgid "403 Access Denied"
 msgstr "403 Access Denied"
 
-#: templates/403.html:8
-#: templates/500.html:8
-msgid "An internal error occurred. Try again. If it still doesn't work, try again later - we got the message and will try to fix it."
-msgstr "An internal error occurred. Try again. If it still doesn't work, try again later - we got the message and will try to fix it."
+#: templates/403.html:8 templates/500.html:8
+msgid ""
+"An internal error occurred. Try again. If it still doesn't work, try again "
+"later - we got the message and will try to fix it."
+msgstr ""
+"An internal error occurred. Try again. If it still doesn't work, try again "
+"later - we got the message and will try to fix it."
 
-#: templates/404.html:4
-#: templates/404.html.py:7
+#: templates/404.html:4 templates/404.html.py:7
 msgid "404 Page Not Found"
 msgstr "404 Page Not Found"
 
 #: templates/404.html:8
-msgid "The address you tried to receive doesn't exist or doesn't work. We received an error message and try to fix it, if it's an error on our site."
-msgstr "The address you tried to receive doesn't exist or doesn't work. We received an error message and try to fix it, if it's an error on our site."
+msgid ""
+"The address you tried to receive doesn't exist or doesn't work. We received "
+"an error message and try to fix it, if it's an error on our site."
+msgstr ""
+"The address you tried to receive doesn't exist or doesn't work. We received "
+"an error message and try to fix it, if it's an error on our site."
 
-#: templates/500.html:4
-#: templates/500.html.py:7
+#: templates/500.html:4 templates/500.html.py:7
 msgid "500 Server Error"
 msgstr "500 Server Error"
 
-#: templates/ajax_query.html:10
-#: templates/snippets/resultlist.html:8
+#: templates/ajax_query.html:10 templates/snippets/resultlist.html:8
 #: templates/snippets/resultlist.html:26
 msgid "Look up in Wikipedia"
 msgstr "Look up in Wikipedia"
 
-#: templates/ajax_query.html:12
-#: templates/snippets/resultlist.html:28
+#: templates/ajax_query.html:12 templates/snippets/resultlist.html:28
 msgid "insert in grid"
 msgstr "insert in grid"
 
-#: templates/ajax_query.html:15
-#: templates/snippets/resultlist.html:9
+#: templates/ajax_query.html:15 templates/snippets/resultlist.html:9
 #: templates/snippets/resultlist.html:31
 msgid "in"
 msgstr "in"
@@ -192,26 +343,24 @@ msgstr "in"
 msgid "Puzzle Grid"
 msgstr "Puzzle Grid"
 
-#: templates/grid.html:38
+#: templates/grid.html:56
 msgid "Create a new crossword puzzle by clicking on the star button!"
 msgstr "Create a new crossword puzzle by clicking on the star button!"
 
-#: templates/grid.html:39
+#: templates/grid.html:57
 msgid "Hint: Searching works only if you activate at least one dictionary."
 msgstr "Hint: Searching works only if you activate at least one dictionary."
 
-#: templates/grid.html:44
+#: templates/grid.html:62
 msgid "Please select at least one dictionary!"
 msgstr "Please select at least one dictionary!"
 
-#: templates/grid.html:45
-#: templates/snippets/resultlist.html:5
+#: templates/grid.html:63 templates/snippets/resultlist.html:5
 #: templates/snippets/resultlist.html:17
 msgid "Search Results"
 msgstr "Search Results"
 
-#: templates/index.html:4
-#: templates/snippets/menu.html:7
+#: templates/index.html:4 templates/snippets/menu.html:7
 msgid "Home"
 msgstr "Home"
 
@@ -219,25 +368,37 @@ msgstr "Home"
 msgid ""
 "\n"
 "<h3>What’s this?</h3>\n"
-"<p>The <em>fiëé croisée</em> project aims to become a semi-automatic crossword puzzle generator. \n"
-"Even if there's still a long way to go, it’s already a valuable help in creating crossword puzzles.</p>\n"
-"<p>Proceed to the <strong><a href=\"/grid/\" class=\"button\">puzzle grid</a></strong> page and create a new puzzle.\n"
-"At the moment you can just print the page from the browser, but soon you’ll be able to export complete layout data for T<sub>E</sub>X or order your print-ready puzzle as PDF.</p>\n"
-"<p>More details come with the source code at <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
+"<p>The <em>fiëé croisée</em> project aims to become a semi-automatic "
+"crossword puzzle generator. \n"
+"Even if there's still a long way to go, it’s already a valuable help in "
+"creating crossword puzzles.</p>\n"
+"<p>Proceed to the <strong><a href=\"/grid/\" class=\"button\">puzzle grid</"
+"a></strong> page and create a new puzzle.\n"
+"At the moment you can just print the page from the browser, but soon you’ll "
+"be able to export complete layout data for T<sub>E</sub>X or order your "
+"print-ready puzzle as PDF.</p>\n"
+"<p>More details come with the source code at <a href=\"http://github.com/"
+"fiee/croisee/\">GitHub</a>.</p>\n"
 msgstr ""
 "\n"
 "<h3>What’s this?</h3>\n"
-"<p>The <em>fiëé croisée</em> project aims to become a semi-automatic crossword puzzle generator. \n"
-"Even if there's still a long way to go, it’s already a valuable help in creating crossword puzzles.</p>\n"
-"<p>Proceed to the <strong><a href=\"/grid/\" class=\"button\">puzzle grid</a></strong> page and create a new puzzle.\n"
-"At the moment you can just print the page from the browser, but soon you’ll be able to export complete layout data for T<sub>E</sub>X or order your print-ready puzzle as PDF.</p>\n"
-"<p>More details come with the source code at <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
+"<p>The <em>fiëé croisée</em> project aims to become a semi-automatic "
+"crossword puzzle generator. \n"
+"Even if there's still a long way to go, it’s already a valuable help in "
+"creating crossword puzzles.</p>\n"
+"<p>Proceed to the <strong><a href=\"/grid/\" class=\"button\">puzzle grid</"
+"a></strong> page and create a new puzzle.\n"
+"At the moment you can just print the page from the browser, but soon you’ll "
+"be able to export complete layout data for T<sub>E</sub>X or order your "
+"print-ready puzzle as PDF.</p>\n"
+"<p>More details come with the source code at <a href=\"http://github.com/"
+"fiee/croisee/\">GitHub</a>.</p>\n"
 
-#: templates/root.html:57
+#: templates/root.html:58
 msgid "fiëé croisée is a free service of fiëé visuëlle."
 msgstr "fiëé croisée is a free service of fiëé visuëlle."
 
-#: templates/root.html:58
+#: templates/root.html:59
 msgid "If you like it, would you please donate for further development?"
 msgstr "If you like it, would you please donate for further development?"
 
@@ -253,27 +414,27 @@ msgstr "fiëé croisée Administration"
 msgid "Cloze Search"
 msgstr "Cloze Search"
 
-#: templates/snippets/clozeform.html:7
-#: templates/snippets/toolbar.html:14
+#: templates/snippets/clozeform.html:7 templates/snippets/toolbar.html:14
 msgid "Search for:"
 msgstr "Search for:"
 
-#: templates/snippets/clozeform.html:9
-#: templates/snippets/toolbar.html:16
+#: templates/snippets/clozeform.html:9 templates/snippets/toolbar.html:16
 msgid "Search"
 msgstr "Search"
 
 #: templates/snippets/clozeform.html:10
-msgid "You can use <q>_</q> and <q>*</q> as wildcards for single or several characters."
-msgstr "You can use <q>_</q> and <q>*</q> as wildcards for single or several characters."
+msgid ""
+"You can use <q>_</q> and <q>*</q> as wildcards for single or several "
+"characters."
+msgstr ""
+"You can use <q>_</q> and <q>*</q> as wildcards for single or several "
+"characters."
 
-#: templates/snippets/dictionaries.html:2
-#: templates/snippets/toolbar.html:64
+#: templates/snippets/dictionaries.html:2 templates/snippets/toolbar.html:64
 msgid "Available Dictionaries"
 msgstr "Available Dictionaries"
 
-#: templates/snippets/dictionaries.html:13
-#: templates/snippets/toolbar.html:75
+#: templates/snippets/dictionaries.html:13 templates/snippets/toolbar.html:79
 msgid "No dictionaries found"
 msgstr "No dictionaries found"
 
@@ -297,13 +458,11 @@ msgstr "Administration"
 msgid "Login"
 msgstr "Login"
 
-#: templates/snippets/menu.html:24
-#: templates/snippets/toolbar.html:21
+#: templates/snippets/menu.html:24 templates/snippets/toolbar.html:21
 msgid "Help"
 msgstr "Help"
 
-#: templates/snippets/menu.html:26
-#: templates/snippets/toolbar.html:27
+#: templates/snippets/menu.html:26 templates/snippets/toolbar.html:27
 msgid "Keys"
 msgstr "Keys"
 
@@ -315,8 +474,7 @@ msgstr "Donations"
 msgid "No matching words found"
 msgstr "No matching words found"
 
-#: templates/snippets/toolbar.html:4
-#: templates/snippets/toolbar.html.py:46
+#: templates/snippets/toolbar.html:4 templates/snippets/toolbar.html.py:46
 msgid "New Puzzle"
 msgstr "New Puzzle"
 
@@ -396,6 +554,10 @@ msgstr "Lines:"
 msgid "Create"
 msgstr "Create"
 
+#: templates/snippets/toolbar.html:66 templates/snippets/toolbar.html.py:68
+msgid "check/uncheck all dictionaries"
+msgstr ""
+
 #~ msgid "Cloze"
 #~ msgstr "Cloze"
 
@@ -446,9 +608,6 @@ msgstr "Create"
 #, fuzzy
 #~ msgid "Calendars"
 #~ msgstr "Calendar"
-
-#~ msgid "right"
-#~ msgstr "right"
 
 #~ msgid "center"
 #~ msgstr "center"
@@ -530,9 +689,6 @@ msgstr "Create"
 
 #~ msgid "Details"
 #~ msgstr "Details"
-
-#~ msgid "Question"
-#~ msgstr "Question"
 
 #~ msgid ""
 #~ "Do you want to cancel this occurrence or delete all occurrences of this "
