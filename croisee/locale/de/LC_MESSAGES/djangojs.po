@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-16 10:56+0200\n"
+"POT-Creation-Date: 2011-09-22 19:03+0200\n"
 "PO-Revision-Date: 2011-09-16 11:06+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
@@ -36,23 +36,43 @@ msgstr[0] "%(sel)s von %(cnt)s ausgewählt"
 msgstr[1] "%(sel)s von %(cnt)s ausgewählt"
 
 #: static_collection/admin/js/actions.js:109
-msgid "You have unsaved changes on individual editable fields. If you run an action, your unsaved changes will be lost."
-msgstr "Sie haben ungesicherte Änderungen in einzelnen Eingabefeldern. Wenn Sie eine Aktion ausführen, gehen Ihre ungesicherten Änderungen verloren."
+msgid ""
+"You have unsaved changes on individual editable fields. If you run an "
+"action, your unsaved changes will be lost."
+msgstr ""
+"Sie haben ungesicherte Änderungen in einzelnen Eingabefeldern. Wenn Sie eine "
+"Aktion ausführen, gehen Ihre ungesicherten Änderungen verloren."
 
 #: static_collection/admin/js/actions.js:121
 #: static_collection/admin/js/actions.min.js:6
-msgid "You have selected an action, but you haven't saved your changes to individual fields yet. Please click OK to save. You'll need to re-run the action."
-msgstr "Sie haben eine Aktion ausgewählt, aber Sie haben ihre Änderungen an einzelnen Eingabefeldern noch nicht gespeichert. Bitte klicken Sie auf „Ok“, um zu speichern. Sie müssen die Aktion danach noch einmal ausführen."
+msgid ""
+"You have selected an action, but you haven't saved your changes to "
+"individual fields yet. Please click OK to save. You'll need to re-run the "
+"action."
+msgstr ""
+"Sie haben eine Aktion ausgewählt, aber Sie haben ihre Änderungen an "
+"einzelnen Eingabefeldern noch nicht gespeichert. Bitte klicken Sie auf „Ok“, "
+"um zu speichern. Sie müssen die Aktion danach noch einmal ausführen."
 
 #: static_collection/admin/js/actions.js:123
 #: static_collection/admin/js/actions.min.js:6
-msgid "You have selected an action, and you haven't made any changes on individual fields. You're probably looking for the Go button rather than the Save button."
-msgstr "Sie haben eine Aktion ausgewählt, und Sie haben keinerlei Änderungen an Eingabefeldern gemacht. Wahrscheinlich suchen Sie eher nach dem „Ausführen“-Knopf als dem „Speichern“-Knopf."
+msgid ""
+"You have selected an action, and you haven't made any changes on individual "
+"fields. You're probably looking for the Go button rather than the Save "
+"button."
+msgstr ""
+"Sie haben eine Aktion ausgewählt, und Sie haben keinerlei Änderungen an "
+"Eingabefeldern gemacht. Wahrscheinlich suchen Sie eher nach dem „Ausführen“-"
+"Knopf als dem „Speichern“-Knopf."
 
 #: static_collection/admin/js/calendar.js:24
 #: static_collection/admin/js/dateparse.js:32
-msgid "January February March April May June July August September October November December"
-msgstr "Januar Februar März April Mai Juni Juli August September Oktober November Dezember"
+msgid ""
+"January February March April May June July August September October November "
+"December"
+msgstr ""
+"Januar Februar März April Mai Juni Juli August September Oktober November "
+"Dezember"
 
 #: static_collection/admin/js/calendar.js:25
 msgid "S M T W T F S"
@@ -119,4 +139,3 @@ msgstr "Gestern"
 #: static_collection/admin/js/admin/DateTimeShortcuts.js:184
 msgid "Tomorrow"
 msgstr "Morgen"
-

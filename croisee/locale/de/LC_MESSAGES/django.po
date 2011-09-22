@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-16 10:56+0200\n"
-"PO-Revision-Date: 2011-09-16 11:12+0100\n"
+"POT-Creation-Date: 2011-09-22 19:03+0200\n"
+"PO-Revision-Date: 2011-09-22 19:05+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "Language: de\n"
@@ -124,143 +124,143 @@ msgstr "Wortlisten-Upload"
 msgid "wordlist uploads"
 msgstr "Wortlisten-Uploads"
 
-#: models.py:178
+#: models.py:181
 msgid "default crossword puzzle with black squares"
 msgstr "Standard-Kreuzworträtsel mit schwarzen Blöcken"
 
-#: models.py:179
+#: models.py:182
 msgid "crossword puzzle with bars (no squares)"
 msgstr "Kreuzworträtsel mit Balken (keine Blöcke)"
 
-#: models.py:180
+#: models.py:183
 msgid "Swedish crossword puzzle (questions in squares)"
 msgstr "Schwedenrätsel (Fragen in Blöcken)"
 
-#: models.py:187
+#: models.py:190
 msgid "title"
 msgstr "Titel"
 
-#: models.py:187
+#: models.py:190
 msgid "title or short description of this puzzle"
 msgstr "Titel oder kurze Beschreibung dieses Rätsels"
 
-#: models.py:188
+#: models.py:191
 msgid "code"
 msgstr "Kürzel"
 
-#: models.py:188
+#: models.py:191
 msgid "auto-generated URL code of this puzzle"
 msgstr "automatisch erzeugter URL-Code dieses Rätsels"
 
-#: models.py:189
+#: models.py:192
 msgid "public"
 msgstr "öffentlich"
 
-#: models.py:189
+#: models.py:192
 msgid "Is this puzzle publicly viewable?"
 msgstr "Ist dieses Rätsel öffentlich sichtbar?"
 
-#: models.py:190
+#: models.py:193
 msgid "language"
 msgstr "Sprache"
 
-#: models.py:190
+#: models.py:193
 msgid "main language of this puzzle"
 msgstr "Hauptsprache dieses Rätsels"
 
-#: models.py:192
+#: models.py:195
 msgid "owner"
 msgstr "Eigentümer"
 
-#: models.py:192
+#: models.py:195
 msgid "owner of the puzzle"
 msgstr "Eigentümer des Rätsels"
 
-#: models.py:193
+#: models.py:196
 msgid "created by"
 msgstr "angelegt von"
 
-#: models.py:193
+#: models.py:196
 msgid "user that saved the puzzle for the first time (may be anonymous)"
 msgstr "Benutzer, der das Rätsel zum ersten Mal gespeichert hat (kann anonym sein)"
 
-#: models.py:194
+#: models.py:197
 msgid "last changed by"
 msgstr "zuletzt geändert von"
 
-#: models.py:194
+#: models.py:197
 msgid "user that saved the puzzle the latest time"
 msgstr "Benutzer, der das Rätsel zum letzten Mal gespeichert hat"
 
-#: models.py:195
+#: models.py:198
 msgid "created on"
 msgstr "angelegt am"
 
-#: models.py:195
+#: models.py:198
 msgid "timestamp of creation (first save)"
 msgstr "Zeitstempel der ersten Speicherung"
 
-#: models.py:196
+#: models.py:199
 msgid "last changed on"
 msgstr "zuletzt geändert am"
 
-#: models.py:196
+#: models.py:199
 msgid "timestamp of last change"
 msgstr "Zeitstempel der letzten Änderung"
 
-#: models.py:198
+#: models.py:201
 msgid "type"
 msgstr "Art"
 
-#: models.py:198
+#: models.py:201
 msgid "type of this puzzle"
 msgstr "Art dieses Rätsels"
 
-#: models.py:199
+#: models.py:202
 msgid "width"
 msgstr "Breite"
 
-#: models.py:199
+#: models.py:202
 msgid "width of the puzzle (number of characters)"
 msgstr "Breite des Rätsels (Anzahl der Zeichen)"
 
-#: models.py:200
+#: models.py:203
 msgid "height"
 msgstr "Höhe"
 
-#: models.py:200
+#: models.py:203
 msgid "height of the puzzle (number of characters)"
 msgstr "Höhe des Rätsels (Anzahl der Zeichen)"
 
-#: models.py:201
+#: models.py:204
 msgid "text"
 msgstr "Text"
 
-#: models.py:201
+#: models.py:204
 msgid "characters of the puzzle (solution)"
 msgstr "Buchstaben des Rätsels (Lösung)"
 
-#: models.py:202
+#: models.py:205
 msgid "numbers"
 msgstr "Zahlen"
 
-#: models.py:202
+#: models.py:205
 msgid "list of coordinates of word start numbers"
 msgstr "Liste von Koordinaten der Wortanfangsnummern"
 
-#: models.py:203
+#: models.py:206
 msgid "questions"
 msgstr "Fragen"
 
-#: models.py:203
+#: models.py:206
 msgid "list of questions"
 msgstr "Liste der Fragen"
 
-#: models.py:206
+#: models.py:209
 msgid "crossword puzzle"
 msgstr "Kreuzworträtsel"
 
-#: models.py:207
+#: models.py:210
 msgid "crossword puzzles"
 msgstr "Kreuzworträtsel"
 
@@ -273,18 +273,42 @@ msgstr "ZEICHENKETTE_NICHT_DEFINIERT"
 msgid "Please create a %s file with random characters to generate your secret key!"
 msgstr "Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen Schlüssel zu erzeugen!"
 
-#: views.py:208
+#: settings.py:280
+msgid "personal dictionary"
+msgstr "Persönliches Wörterbuch"
+
+#: views.py:236
+#, python-format
+msgid "personal dictionary of user %s, do not rename!"
+msgstr "Persönliches Wörterbuch von Benutzer %s, nicht umbenennen!"
+
+#: views.py:238
+#, python-format
+msgid "Personal dictionary for user %(username)s was created as %(dictname)s."
+msgstr "Persönliches Wörterbuch für Benutzer %(username)s wurde angelegt als „%(dictname)s“."
+
+#: views.py:262
+#, python-format
+msgid "Word %(word)s with question “%(question)s” was saved to your personal dictionary."
+msgstr "Wort „%(word)s“ mit der Frage „%(question)s“ wurde in Ihrem persönlichen Wörterbuch gespeichert."
+
+#: views.py:265
+#, python-format
+msgid "Word “%(word)s” with question “%(question)s” was updated in your personal dictionary."
+msgstr "Wort „%(word)s“ mit der Frage „%(question)s“ wurde in Ihrem persönlichen Wörterbuch aktualisiert."
+
+#: views.py:293
 #: templates/ajax_query.html:6
 #: templates/snippets/resultlist.html:22
 msgid "results"
 msgstr "Suchergebnisse"
 
-#: views.py:243
+#: views.py:334
 #: templates/grid.html:48
 msgid "horizontal"
 msgstr "waagerecht"
 
-#: views.py:244
+#: views.py:335
 #: templates/grid.html:51
 msgid "vertical"
 msgstr "senkrecht"
