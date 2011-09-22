@@ -97,9 +97,9 @@ class Word(models.Model):
     def __unicode__(self):
         return "%s\t%s" % (self.word, self.description)
     
-    def save(self, force_insert=False, force_update=False):
+    def save(self, *args, **kwargs):
         self.word = cleanword(self.word)
-        super(Word, self).save(force_insert, force_update)
+        super(Word, self).save(*args, **kwargs)
 
 
 class WordlistUpload(models.Model):
@@ -109,13 +109,13 @@ class WordlistUpload(models.Model):
     wordlist_file = models.FileField(_(u'wordlist file (.txt)'), upload_to=os.path.join(settings.MEDIA_ROOT, 'temp'),
                                 help_text=_(u'Select a .txt file containing a single word per line to upload as a new dictionary.'))
     dictionary = models.ForeignKey(Dictionary, null=True, blank=True, help_text=_(u'Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name.'))
-    name = models.CharField(_(u'Name'), max_length=31, help_text=_(u'A short descriptive name'))
+    name = models.CharField(_(u'Name'), max_length=31, blank=True, help_text=_(u'A short descriptive name'))
     uniqueonly = models.BooleanField(_(u'only unique'), default=True, help_text=_(u'Import only words that are not contained in any other dictionary?'))
     public = models.BooleanField(_(u'public?'), default=True, help_text=_(u'May everyone use this dictionary?'))
     language = models.CharField(_(u'Language'), max_length=15, 
                                 default=settings.LANGUAGE_CODE, choices=settings.LANGUAGES, 
                                 help_text=_(u'Language of (most of) the words in this dictionary'))
-    description = models.CharField(_(u'Description'), max_length=255)
+    description = models.CharField(_(u'Description'), blank=True, max_length=255)
     owner = models.ForeignKey(User, verbose_name=_(u'Owner'))
 
     class Meta:
@@ -142,6 +142,9 @@ class WordlistUpload(models.Model):
         if self.dictionary:
             D = self.dictionary
         else:
+            if not self.name:
+                # TODO: throw exception?
+                return false
             D = Dictionary.objects.create(
                 name = self.name,
                 public = self.public,
