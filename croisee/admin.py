@@ -16,6 +16,10 @@ class DictionaryAdmin(admin.ModelAdmin):
     ordering = ('name','language')
     exclude = ('owner',)
 
+    def save_model(self, request, obj, form, change):
+        obj.owner = request.user
+        obj.save()
+
 class WordAdmin(admin.ModelAdmin):
     list_display = ('word','description','dictionary','priority')
     list_display_links = ['word',]
@@ -26,8 +30,10 @@ class WordAdmin(admin.ModelAdmin):
 
 class WordlistUploadAdmin(admin.ModelAdmin):
     exclude = ('owner',)
+
     def has_change_permission(self, request, obj=None):
         return False # To remove the 'Save and continue editing' button
+
     def save_model(self, request, obj, form, change):
         obj.owner = request.user
         obj.save()
