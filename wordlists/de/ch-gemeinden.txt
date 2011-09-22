@@ -1,0 +1,2591 @@
+ZH	Abk. Kanton Zürich
+BE	Abk. Kanton Bern
+LU	Abk. Kanton Luzern
+UR	Abk. Kanton Uri
+SZ	Abk. Kanton Schwyz
+OW	Abk. Kanton Obwalden
+NW	Abk. Kanton Nidwalden
+GL	Abk. Kanton Glarus
+ZG	Abk. Kanton Zug
+FR	Abk. Kanton Freiburg
+SO	Abk. Kanton Solothurn
+BS	Abk. Kanton Basel-Stadt
+BL	Abk. Kanton Basel-Landschaft
+SH	Abk. Kanton Schaffhausen
+AR	Abk. Kanton Appenzell Ausserrhoden
+AI	Abk. Kanton Appenzell Innerrhoden
+SG	Abk. Kanton St.Gallen
+GR	Abk. Kanton Graubünden
+AG	Abk. Kanton Aargau
+TG	Abk. Kanton Thurgau
+TI	Abk. Kanton Ticino
+VD	Abk. Kanton Vaud
+VS	Abk. Kanton Wallis
+NE	Abk. Kanton Neuchâtel
+GE	Abk. Kanton Genève
+JU	Abk. Kanton Jura
+Zuerich	Kanton der Schweiz
+Bern	Kanton der Schweiz
+Berne	Kanton der Schweiz (frz.)
+Luzern	Kanton der Schweiz
+Uri	Kanton der Schweiz
+Schwyz	Kanton der Schweiz
+Obwalden	Kanton der Schweiz
+Nidwalden	Kanton der Schweiz
+Glarus	Kanton der Schweiz
+Zug	Kanton der Schweiz
+Fribourg	Kanton der Schweiz (frz.)
+Freiburg	Kanton der Schweiz
+Solothurn	Kanton der Schweiz
+Basel	Doppel-Kanton der Schweiz
+BaselStadt	Halbkanton der Schweiz
+BaselLandschaft	Halbkanton der Schweiz
+Schaffhausen	Kanton der Schweiz
+Appenzell	Doppel-Kanton der Schweiz
+Ausserrhoden	Halbkanton der Schweiz
+Innerrhoden	Halbkanton der Schweiz
+StGallen	Kanton der Schweiz
+Graubünden	Kanton der Schweiz
+Grigioni	Kanton der Schweiz (it.)
+Grischun	Kanton der Schweiz (rät.)
+Aargau	Kanton der Schweiz
+Thurgau	Kanton der Schweiz
+Tessin	Kanton der Schweiz
+Ticino	Kanton der Schweiz (it.)
+Vaud	Kanton der Schweiz
+Valais	Kanton der Schweiz (frz.)
+Wallis	Kanton der Schweiz
+Neuchatel	Kanton der Schweiz (frz.)
+Neuenburg	Kanton der Schweiz
+Geneve	Kanton der Schweiz (frz.)
+Genf	Kanton der Schweiz
+Jura	Kanton der Schweiz
+Aeugst am Albis	Gde. im Bez. Affoltern, Kt. Zürich
+Aeugst	Gde. im Bez. Affoltern, Kt. Zürich
+Affoltern am Albis	Gde. im Bez. Affoltern, Kt. Zürich
+Affoltern	Gde. im Bez. Affoltern, Kt. Zürich
+Bonstetten	Gde. im Bez. Affoltern, Kt. Zürich
+Hausen am Albis	Gde. im Bez. Affoltern, Kt. Zürich
+Hausen	Gde. im Bez. Affoltern, Kt. Zürich
+Hedingen	Gde. im Bez. Affoltern, Kt. Zürich
+Kappel am Albis	Gde. im Bez. Affoltern, Kt. Zürich
+Kappel	Gde. im Bez. Affoltern, Kt. Zürich
+Knonau	Gde. im Bez. Affoltern, Kt. Zürich
+Maschwanden	Gde. im Bez. Affoltern, Kt. Zürich
+Mettmenstetten	Gde. im Bez. Affoltern, Kt. Zürich
+Obfelden	Gde. im Bez. Affoltern, Kt. Zürich
+Ottenbach	Gde. im Bez. Affoltern, Kt. Zürich
+Rifferswil	Gde. im Bez. Affoltern, Kt. Zürich
+Stallikon	Gde. im Bez. Affoltern, Kt. Zürich
+Wettswil am Albis	Gde. im Bez. Affoltern, Kt. Zürich
+Wettswil	Gde. im Bez. Affoltern, Kt. Zürich
+Adlikon	Gde. im Bez. Andelfingen, Kt. Zürich
+Benken	Gde. im Bez. Andelfingen, Kt. Zürich
+Berg am Irchel	Gde. im Bez. Andelfingen, Kt. Zürich
+Buch am Irchel	Gde. im Bez. Andelfingen, Kt. Zürich
+Berg	Gde. im Bez. Andelfingen, Kt. Zürich
+Buch	Gde. im Bez. Andelfingen, Kt. Zürich
+Dachsen	Gde. im Bez. Andelfingen, Kt. Zürich
+Dorf	Gde. im Bez. Andelfingen, Kt. Zürich
+Feuerthalen	Gde. im Bez. Andelfingen, Kt. Zürich
+Flaach	Gde. im Bez. Andelfingen, Kt. Zürich
+Flurlingen	Gde. im Bez. Andelfingen, Kt. Zürich
+Andelfingen	Gde. im Bez. Andelfingen, Kt. Zürich
+Henggart	Gde. im Bez. Andelfingen, Kt. Zürich
+Humlikon	Gde. im Bez. Andelfingen, Kt. Zürich
+Kleinandelfingen	Gde. im Bez. Andelfingen, Kt. Zürich
+Laufen-Uhwiesen	Gde. im Bez. Andelfingen, Kt. Zürich
+Marthalen	Gde. im Bez. Andelfingen, Kt. Zürich
+Oberstammheim	Gde. im Bez. Andelfingen, Kt. Zürich
+Ossingen	Gde. im Bez. Andelfingen, Kt. Zürich
+Rheinau	Gde. im Bez. Andelfingen, Kt. Zürich
+Thalheim an der Thur	Gde. im Bez. Andelfingen, Kt. Zürich
+Trüllikon	Gde. im Bez. Andelfingen, Kt. Zürich
+Truttikon	Gde. im Bez. Andelfingen, Kt. Zürich
+Unterstammheim	Gde. im Bez. Andelfingen, Kt. Zürich
+Volken	Gde. im Bez. Andelfingen, Kt. Zürich
+Waltalingen	Gde. im Bez. Andelfingen, Kt. Zürich
+Bachenbülach	Gde. im Bez. Bülach, Kt. Zürich
+Bassersdorf	Gde. im Bez. Bülach, Kt. Zürich
+Bülach	Gde. im Bez. Bülach, Kt. Zürich
+Dietlikon	Gde. im Bez. Bülach, Kt. Zürich
+Eglisau	Gde. im Bez. Bülach, Kt. Zürich
+Embrach	Gde. im Bez. Bülach, Kt. Zürich
+Freienstein-Teufen	Gde. im Bez. Bülach, Kt. Zürich
+Glattfelden	Gde. im Bez. Bülach, Kt. Zürich
+Hochfelden	Gde. im Bez. Bülach, Kt. Zürich
+Höri	Gde. im Bez. Bülach, Kt. Zürich
+Hüntwangen	Gde. im Bez. Bülach, Kt. Zürich
+Kloten	Gde. im Bez. Bülach, Kt. Zürich
+Lufingen	Gde. im Bez. Bülach, Kt. Zürich
+Nürensdorf	Gde. im Bez. Bülach, Kt. Zürich
+Oberembrach	Gde. im Bez. Bülach, Kt. Zürich
+Opfikon	Gde. im Bez. Bülach, Kt. Zürich
+Rafz	Gde. im Bez. Bülach, Kt. Zürich
+Rorbas	Gde. im Bez. Bülach, Kt. Zürich
+Wallisellen	Gde. im Bez. Bülach, Kt. Zürich
+Wasterkingen	Gde. im Bez. Bülach, Kt. Zürich
+Wil	Gde. im Bez. Bülach, Kt. Zürich
+Winkel	Gde. im Bez. Bülach, Kt. Zürich
+Bachs	Gde. im Bez. Dielsdorf, Kt. Zürich
+Boppelsen	Gde. im Bez. Dielsdorf, Kt. Zürich
+Buchs	Gde. im Bez. Dielsdorf, Kt. Zürich
+Dällikon	Gde. im Bez. Dielsdorf, Kt. Zürich
+Dänikon	Gde. im Bez. Dielsdorf, Kt. Zürich
+Dielsdorf	Gde. im Bez. Dielsdorf, Kt. Zürich
+Hüttikon	Gde. im Bez. Dielsdorf, Kt. Zürich
+Neerach	Gde. im Bez. Dielsdorf, Kt. Zürich
+Niederglatt	Gde. im Bez. Dielsdorf, Kt. Zürich
+Niederhasli	Gde. im Bez. Dielsdorf, Kt. Zürich
+Niederweningen	Gde. im Bez. Dielsdorf, Kt. Zürich
+Oberglatt	Gde. im Bez. Dielsdorf, Kt. Zürich
+Oberweningen	Gde. im Bez. Dielsdorf, Kt. Zürich
+Otelfingen	Gde. im Bez. Dielsdorf, Kt. Zürich
+Regensberg	Gde. im Bez. Dielsdorf, Kt. Zürich
+Regensdorf	Gde. im Bez. Dielsdorf, Kt. Zürich
+Rümlang	Gde. im Bez. Dielsdorf, Kt. Zürich
+Schleinikon	Gde. im Bez. Dielsdorf, Kt. Zürich
+Schöfflisdorf	Gde. im Bez. Dielsdorf, Kt. Zürich
+Stadel	Gde. im Bez. Dielsdorf, Kt. Zürich
+Steinmaur	Gde. im Bez. Dielsdorf, Kt. Zürich
+Weiach	Gde. im Bez. Dielsdorf, Kt. Zürich
+Bäretswil	Gde. im Bez. Hinwil, Kt. Zürich
+Bubikon	Gde. im Bez. Hinwil, Kt. Zürich
+Dürnten	Gde. im Bez. Hinwil, Kt. Zürich
+Fischenthal	Gde. im Bez. Hinwil, Kt. Zürich
+Gossau	Gde. im Bez. Hinwil, Kt. Zürich
+Grüningen	Gde. im Bez. Hinwil, Kt. Zürich
+Hinwil	Gde. im Bez. Hinwil, Kt. Zürich
+Rüti	Gde. im Bez. Hinwil, Kt. Zürich
+Seegräben	Gde. im Bez. Hinwil, Kt. Zürich
+Wald	Gde. im Bez. Hinwil, Kt. Zürich
+Wetzikon	Gde. im Bez. Hinwil, Kt. Zürich
+Adliswil	Gde. im Bez. Horgen, Kt. Zürich
+Hirzel	Gde. im Bez. Horgen, Kt. Zürich
+Horgen	Gde. im Bez. Horgen, Kt. Zürich
+Hütten	Gde. im Bez. Horgen, Kt. Zürich
+Kilchberg	Gde. im Bez. Horgen, Kt. Zürich
+Langnau am Albis	Gde. im Bez. Horgen, Kt. Zürich
+Langnau	Gde. im Bez. Horgen, Kt. Zürich
+Oberrieden	Gde. im Bez. Horgen, Kt. Zürich
+Richterswil	Gde. im Bez. Horgen, Kt. Zürich
+Rüschlikon	Gde. im Bez. Horgen, Kt. Zürich
+Schönenberg	Gde. im Bez. Horgen, Kt. Zürich
+Thalwil	Gde. im Bez. Horgen, Kt. Zürich
+Wädenswil	Gde. im Bez. Horgen, Kt. Zürich
+Erlenbach	Gde. im Bez. Meilen, Kt. Zürich
+Herrliberg	Gde. im Bez. Meilen, Kt. Zürich
+Hombrechtikon	Gde. im Bez. Meilen, Kt. Zürich
+Küsnacht	Gde. im Bez. Meilen, Kt. Zürich
+Männedorf	Gde. im Bez. Meilen, Kt. Zürich
+Meilen	Gde. im Bez. Meilen, Kt. Zürich
+Oetwil am See	Gde. im Bez. Meilen, Kt. Zürich
+Oetwil	Gde. im Bez. Meilen, Kt. Zürich
+Stäfa	Gde. im Bez. Meilen, Kt. Zürich
+Uetikon am See	Gde. im Bez. Meilen, Kt. Zürich
+Uetikon	Gde. im Bez. Meilen, Kt. Zürich
+Zumikon	Gde. im Bez. Meilen, Kt. Zürich
+Zollikon	Gde. im Bez. Meilen, Kt. Zürich
+Bauma	Gde. im Bez. Pfäffikon, Kt. Zürich
+Fehraltorf	Gde. im Bez. Pfäffikon, Kt. Zürich
+Hittnau	Gde. im Bez. Pfäffikon, Kt. Zürich
+Illnau-Effretikon	Gde. im Bez. Pfäffikon, Kt. Zürich
+Kyburg	Gde. im Bez. Pfäffikon, Kt. Zürich
+Lindau	Gde. im Bez. Pfäffikon, Kt. Zürich
+Pfäffikon	Gde. im Bez. Pfäffikon, Kt. Zürich
+Russikon	Gde. im Bez. Pfäffikon, Kt. Zürich
+Sternenberg	Gde. im Bez. Pfäffikon, Kt. Zürich
+Weisslingen	Gde. im Bez. Pfäffikon, Kt. Zürich
+Wila	Gde. im Bez. Pfäffikon, Kt. Zürich
+Wildberg	Gde. im Bez. Pfäffikon, Kt. Zürich
+Dübendorf	Gde. im Bez. Uster, Kt. Zürich
+Egg	Gde. im Bez. Uster, Kt. Zürich
+Fällanden	Gde. im Bez. Uster, Kt. Zürich
+Greifensee	Gde. im Bez. Uster, Kt. Zürich
+Maur	Gde. im Bez. Uster, Kt. Zürich
+Mönchaltorf	Gde. im Bez. Uster, Kt. Zürich
+Schwerzenbach	Gde. im Bez. Uster, Kt. Zürich
+Uster	Gde. im Bez. Uster, Kt. Zürich
+Volketswil	Gde. im Bez. Uster, Kt. Zürich
+Wangen-Brüttisellen	Gde. im Bez. Uster, Kt. Zürich
+Altikon	Gde. im Bez. Winterthur, Kt. Zürich
+Bertschikon	Gde. im Bez. Winterthur, Kt. Zürich
+Brütten	Gde. im Bez. Winterthur, Kt. Zürich
+Dägerlen	Gde. im Bez. Winterthur, Kt. Zürich
+Dättlikon	Gde. im Bez. Winterthur, Kt. Zürich
+Dinhard	Gde. im Bez. Winterthur, Kt. Zürich
+Elgg	Gde. im Bez. Winterthur, Kt. Zürich
+Ellikon an der Thur	Gde. im Bez. Winterthur, Kt. Zürich
+Elsau	Gde. im Bez. Winterthur, Kt. Zürich
+Hagenbuch	Gde. im Bez. Winterthur, Kt. Zürich
+Hettlingen	Gde. im Bez. Winterthur, Kt. Zürich
+Hofstetten	Gde. im Bez. Winterthur, Kt. Zürich
+Neftenbach	Gde. im Bez. Winterthur, Kt. Zürich
+Pfungen	Gde. im Bez. Winterthur, Kt. Zürich
+Rickenbach	Gde. im Bez. Winterthur, Kt. Zürich
+Schlatt	Gde. im Bez. Winterthur, Kt. Zürich
+Seuzach	Gde. im Bez. Winterthur, Kt. Zürich
+Turbenthal	Gde. im Bez. Winterthur, Kt. Zürich
+Wiesendangen	Gde. im Bez. Winterthur, Kt. Zürich
+Winterthur	Gde. im Bez. Winterthur, Kt. Zürich
+Zell	Gde. im Bez. Winterthur, Kt. Zürich
+Aesch	Gde. im Bez. Dietikon, Kt. Zürich
+Birmensdorf	Gde. im Bez. Dietikon, Kt. Zürich
+Dietikon	Gde. im Bez. Dietikon, Kt. Zürich
+Geroldswil	Gde. im Bez. Dietikon, Kt. Zürich
+Oberengstringen	Gde. im Bez. Dietikon, Kt. Zürich
+Oetwil an der Limmat	Gde. im Bez. Dietikon, Kt. Zürich
+Schlieren	Gde. im Bez. Dietikon, Kt. Zürich
+Uitikon	Gde. im Bez. Dietikon, Kt. Zürich
+Unterengstringen	Gde. im Bez. Dietikon, Kt. Zürich
+Urdorf	Gde. im Bez. Dietikon, Kt. Zürich
+Weiningen	Gde. im Bez. Dietikon, Kt. Zürich
+Zürich	Gde. im Bez. Zürich, Kt. Zürich
+Aarberg	Gde. im Kr. Seeland, Kt. Bern
+Bargen	Gde. im Kr. Seeland, Kt. Bern
+Grossaffoltern	Gde. im Kr. Seeland, Kt. Bern
+Kallnach	Gde. im Kr. Seeland, Kt. Bern
+Kappelen	Gde. im Kr. Seeland, Kt. Bern
+Lyss	Gde. im Kr. Seeland, Kt. Bern
+Meikirch	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Niederried bei Kallnach	Gde. im Kr. Seeland, Kt. Bern
+Radelfingen	Gde. im Kr. Seeland, Kt. Bern
+Rapperswil	Gde. im Kr. Seeland, Kt. Bern
+Schüpfen	Gde. im Kr. Seeland, Kt. Bern
+Seedorf	Gde. im Kr. Seeland, Kt. Bern
+Aarwangen	Gde. im Kr. Oberaargau, Kt. Bern
+Auswil	Gde. im Kr. Oberaargau, Kt. Bern
+Bannwil	Gde. im Kr. Oberaargau, Kt. Bern
+Bleienbach	Gde. im Kr. Oberaargau, Kt. Bern
+Busswil bei Melchnau	Gde. im Kr. Oberaargau, Kt. Bern
+Gondiswil	Gde. im Kr. Oberaargau, Kt. Bern
+Langenthal	Gde. im Kr. Oberaargau, Kt. Bern
+Lotzwil	Gde. im Kr. Oberaargau, Kt. Bern
+Madiswil	Gde. im Kr. Oberaargau, Kt. Bern
+Melchnau	Gde. im Kr. Oberaargau, Kt. Bern
+Obersteckholz	Gde. im Kr. Oberaargau, Kt. Bern
+Oeschenbach	Gde. im Kr. Oberaargau, Kt. Bern
+Reisiswil	Gde. im Kr. Oberaargau, Kt. Bern
+Roggwil	Gde. im Kr. Oberaargau, Kt. Bern
+Rohrbach	Gde. im Kr. Oberaargau, Kt. Bern
+Rohrbachgraben	Gde. im Kr. Oberaargau, Kt. Bern
+Rütschelen	Gde. im Kr. Oberaargau, Kt. Bern
+Schwarzhäusern	Gde. im Kr. Oberaargau, Kt. Bern
+Thunstetten	Gde. im Kr. Oberaargau, Kt. Bern
+Ursenbach	Gde. im Kr. Oberaargau, Kt. Bern
+Wynau	Gde. im Kr. Oberaargau, Kt. Bern
+Bern	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Bolligen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Bremgarten bei Bern	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Kirchlindach	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Köniz	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Muri bei Bern	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Oberbalm	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Stettlen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Vechigen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Wohlen bei Bern	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Zollikofen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Ittigen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Ostermundigen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+BielBienne	Gde. im Kr. BielBienne, Kt. Bern
+Evilard	Gde. im Kr. BielBienne, Kt. Bern
+Arch	Gde. im Kr. Seeland, Kt. Bern
+Büetigen	Gde. im Kr. Seeland, Kt. Bern
+Büren an der Aare	Gde. im Kr. Seeland, Kt. Bern
+Diessbach bei Büren	Gde. im Kr. Seeland, Kt. Bern
+Dotzigen	Gde. im Kr. Seeland, Kt. Bern
+Lengnau	Gde. im Kr. BielBienne, Kt. Bern
+Leuzigen	Gde. im Kr. Seeland, Kt. Bern
+Meienried	Gde. im Kr. Seeland, Kt. Bern
+Meinisberg	Gde. im Kr. BielBienne, Kt. Bern
+Oberwil bei Büren	Gde. im Kr. Seeland, Kt. Bern
+Pieterlen	Gde. im Kr. BielBienne, Kt. Bern
+Rüti bei Büren	Gde. im Kr. Seeland, Kt. Bern
+Wengi	Gde. im Kr. Seeland, Kt. Bern
+Aefligen	Gde. im Kr. Emmental, Kt. Bern
+Alchenstorf	Gde. im Kr. Emmental, Kt. Bern
+Bäriswil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Burgdorf	Gde. im Kr. Emmental, Kt. Bern
+Ersigen	Gde. im Kr. Emmental, Kt. Bern
+Hasle bei Burgdorf	Gde. im Kr. Emmental, Kt. Bern
+Heimiswil	Gde. im Kr. Emmental, Kt. Bern
+Hellsau	Gde. im Kr. Emmental, Kt. Bern
+Hindelbank	Gde. im Kr. Emmental, Kt. Bern
+Höchstetten	Gde. im Kr. Emmental, Kt. Bern
+Kernenried	Gde. im Kr. Emmental, Kt. Bern
+Kirchberg	Gde. im Kr. Emmental, Kt. Bern
+Koppigen	Gde. im Kr. Emmental, Kt. Bern
+Krauchthal	Gde. im Kr. Emmental, Kt. Bern
+Lyssach	Gde. im Kr. Emmental, Kt. Bern
+Mötschwil	Gde. im Kr. Emmental, Kt. Bern
+Niederösch	Gde. im Kr. Emmental, Kt. Bern
+Oberburg	Gde. im Kr. Emmental, Kt. Bern
+Oberösch	Gde. im Kr. Emmental, Kt. Bern
+Rüdtligen-Alchenflüh	Gde. im Kr. Emmental, Kt. Bern
+Rumendingen	Gde. im Kr. Emmental, Kt. Bern
+Rüti bei Lyssach	Gde. im Kr. Emmental, Kt. Bern
+Willadingen	Gde. im Kr. Emmental, Kt. Bern
+Wynigen	Gde. im Kr. Emmental, Kt. Bern
+Corgémont	Gde. im Arr. Jura bernois, Kt. Bern
+Cormoret	Gde. im Arr. Jura bernois, Kt. Bern
+Cortébert	Gde. im Arr. Jura bernois, Kt. Bern
+Courtelary	Gde. im Arr. Jura bernois, Kt. Bern
+La Ferrière	Gde. im Arr. Jura bernois, Kt. Bern
+La Heutte	Gde. im Arr. Jura bernois, Kt. Bern
+Mont-Tramelan	Gde. im Arr. Jura bernois, Kt. Bern
+Orvin	Gde. im Arr. Jura bernois, Kt. Bern
+Péry	Gde. im Arr. Jura bernois, Kt. Bern
+Plagne	Gde. im Arr. Jura bernois, Kt. Bern
+Renan	Gde. im Arr. Jura bernois, Kt. Bern
+Romont	Gde. im Arr. Jura bernois, Kt. Bern
+Saint-Imier	Gde. im Arr. Jura bernois, Kt. Bern
+Sonceboz-Sombeval	Gde. im Arr. Jura bernois, Kt. Bern
+Sonvilier	Gde. im Arr. Jura bernois, Kt. Bern
+Tramelan	Gde. im Arr. Jura bernois, Kt. Bern
+Vauffelin	Gde. im Arr. Jura bernois, Kt. Bern
+Villeret	Gde. im Arr. Jura bernois, Kt. Bern
+Brüttelen	Gde. im Kr. Seeland, Kt. Bern
+Erlach	Gde. im Kr. Seeland, Kt. Bern
+Finsterhennen	Gde. im Kr. Seeland, Kt. Bern
+Gals	Gde. im Kr. Seeland, Kt. Bern
+Gampelen	Gde. im Kr. Seeland, Kt. Bern
+Ins	Gde. im Kr. Seeland, Kt. Bern
+Lüscherz	Gde. im Kr. Seeland, Kt. Bern
+Müntschemier	Gde. im Kr. Seeland, Kt. Bern
+Siselen	Gde. im Kr. Seeland, Kt. Bern
+Treiten	Gde. im Kr. Seeland, Kt. Bern
+Tschugg	Gde. im Kr. Seeland, Kt. Bern
+Vinelz	Gde. im Kr. Seeland, Kt. Bern
+Bangerten	Gde. im Kr. Seeland, Kt. Bern
+Bätterkinden	Gde. im Kr. Emmental, Kt. Bern
+Büren zum Hof	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Deisswil bei Münchenbuchsee	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Diemerswil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Etzelkofen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Fraubrunnen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Grafenried	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Jegenstorf	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Iffwil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Limpach	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Mattstetten	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Moosseedorf	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Mülchi	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Münchenbuchsee	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Münchringen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Ruppoldsried	Gde. im Kr. Seeland, Kt. Bern
+Schalunen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Scheunen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Urtenen-Schönbühl	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Utzenstorf	Gde. im Kr. Emmental, Kt. Bern
+Wiggiswil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Wiler bei Utzenstorf	Gde. im Kr. Emmental, Kt. Bern
+Zauggenried	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Zielebach	Gde. im Kr. Emmental, Kt. Bern
+Zuzwil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Adelboden	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Aeschi bei Spiez	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Frutigen	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Kandergrund	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Kandersteg	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Krattigen	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Reichenbach im Kandertal	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Beatenberg	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Bönigen	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Brienz	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Brienzwiler	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Därligen	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Grindelwald	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Gsteigwiler	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Gündlischwand	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Habkern	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Hofstetten bei Brienz	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Interlaken	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Iseltwald	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Lauterbrunnen	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Leissigen	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Lütschental	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Matten bei Interlaken	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Niederried bei Interlaken	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Oberried am Brienzersee	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Oberried	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Ringgenberg	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Saxeten	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Schwanden bei Brienz	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Unterseen	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Wilderswil	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Arni	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Biglen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Bleiken bei Oberdiessbach	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Bowil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Brenzikofen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Freimettigen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Grosshöchstetten	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Häutligen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Herbligen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Kiesen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Konolfingen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Landiswil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Linden	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Mirchel	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Münsingen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Niederhünigen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Oberdiessbach	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Oberthal	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Oppligen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Rubigen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Schlosswil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Tägertschi	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Walkringen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Worb	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Zäziwil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Oberhünigen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Allmendingen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Trimstein	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Wichtrach	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Clavaleyres	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Ferenbalm	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Frauenkappelen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Golaten	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Gurbrü	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Kriechenwil	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Laupen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Mühleberg	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Münchenwiler	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Neuenegg	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Wileroltigen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Belprahon	Gde. im Arr. Jura bernois, Kt. Bern
+Bévilard	Gde. im Arr. Jura bernois, Kt. Bern
+Champoz	Gde. im Arr. Jura bernois, Kt. Bern
+Châtelat	Gde. im Arr. Jura bernois, Kt. Bern
+Corcelles	Gde. im Arr. Jura bernois, Kt. Bern
+Court	Gde. im Arr. Jura bernois, Kt. Bern
+Crémines	Gde. im Arr. Jura bernois, Kt. Bern
+Eschert	Gde. im Arr. Jura bernois, Kt. Bern
+Grandval	Gde. im Arr. Jura bernois, Kt. Bern
+Loveresse	Gde. im Arr. Jura bernois, Kt. Bern
+Malleray	Gde. im Arr. Jura bernois, Kt. Bern
+Monible	Gde. im Arr. Jura bernois, Kt. Bern
+Moutier	Gde. im Arr. Jura bernois, Kt. Bern
+Perrefitte	Gde. im Arr. Jura bernois, Kt. Bern
+Pontenet	Gde. im Arr. Jura bernois, Kt. Bern
+Reconvilier	Gde. im Arr. Jura bernois, Kt. Bern
+Roches	Gde. im Arr. Jura bernois, Kt. Bern
+Saicourt	Gde. im Arr. Jura bernois, Kt. Bern
+Saules	Gde. im Arr. Jura bernois, Kt. Bern
+Schelten	Gde. im Arr. Jura bernois, Kt. Bern
+Seehof	Gde. im Arr. Jura bernois, Kt. Bern
+Sornetan	Gde. im Arr. Jura bernois, Kt. Bern
+Sorvilier	Gde. im Arr. Jura bernois, Kt. Bern
+Souboz	Gde. im Arr. Jura bernois, Kt. Bern
+Tavannes	Gde. im Arr. Jura bernois, Kt. Bern
+Rebévelier	Gde. im Arr. Jura bernois, Kt. Bern
+Diesse	Gde. im Arr. Jura bernois, Kt. Bern
+Lamboing	Gde. im Arr. Jura bernois, Kt. Bern
+La Neuveville	Gde. im Arr. Jura bernois, Kt. Bern
+Nods	Gde. im Arr. Jura bernois, Kt. Bern
+Prêles	Gde. im Arr. Jura bernois, Kt. Bern
+Aegerten	Gde. im Kr. BielBienne, Kt. Bern
+Bellmund	Gde. im Kr. BielBienne, Kt. Bern
+Brügg	Gde. im Kr. BielBienne, Kt. Bern
+Bühl	Gde. im Kr. Seeland, Kt. Bern
+Epsach	Gde. im Kr. Seeland, Kt. Bern
+Hagneck	Gde. im Kr. Seeland, Kt. Bern
+Hermrigen	Gde. im Kr. Seeland, Kt. Bern
+Jens	Gde. im Kr. Seeland, Kt. Bern
+Ipsach	Gde. im Kr. BielBienne, Kt. Bern
+Ligerz	Gde. im Kr. BielBienne, Kt. Bern
+Merzligen	Gde. im Kr. Seeland, Kt. Bern
+Mörigen	Gde. im Kr. BielBienne, Kt. Bern
+Nidau	Gde. im Kr. BielBienne, Kt. Bern
+Orpund	Gde. im Kr. BielBienne, Kt. Bern
+Port	Gde. im Kr. BielBienne, Kt. Bern
+Safnern	Gde. im Kr. BielBienne, Kt. Bern
+Scheuren	Gde. im Kr. BielBienne, Kt. Bern
+Schwadernau	Gde. im Kr. BielBienne, Kt. Bern
+Studen	Gde. im Kr. Seeland, Kt. Bern
+Sutz-Lattrigen	Gde. im Kr. BielBienne, Kt. Bern
+Täuffelen	Gde. im Kr. Seeland, Kt. Bern
+Walperswil	Gde. im Kr. Seeland, Kt. Bern
+Worben	Gde. im Kr. Seeland, Kt. Bern
+Twann-Tüscherz	Gde. im Kr. BielBienne, Kt. Bern
+Därstetten	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Diemtigen	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Erlenbach im Simmental	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Niederstocken	Gde. im Kr. Thun, Kt. Bern
+Oberstocken	Gde. im Kr. Thun, Kt. Bern
+Oberwil im Simmental	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Reutigen	Gde. im Kr. Thun, Kt. Bern
+Spiez	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Wimmis	Gde. im Kr. Frutigen-Niedersimmental, Kt. Bern
+Gadmen	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Guttannen	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Hasliberg	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Innertkirchen	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Meiringen	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Schattenhalb	Gde. im Kr. Interlaken-Oberhasli, Kt. Bern
+Boltigen	Gde. im Kr. Obersimmental-Saanen, Kt. Bern
+Lenk	Gde. im Kr. Obersimmental-Saanen, Kt. Bern
+St.Stephan	Gde. im Kr. Obersimmental-Saanen, Kt. Bern
+Zweisimmen	Gde. im Kr. Obersimmental-Saanen, Kt. Bern
+Gsteig	Gde. im Kr. Obersimmental-Saanen, Kt. Bern
+Lauenen	Gde. im Kr. Obersimmental-Saanen, Kt. Bern
+Saanen	Gde. im Kr. Obersimmental-Saanen, Kt. Bern
+Guggisberg	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Rüschegg	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Schwarzenburg	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Belp	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Belpberg	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Burgistein	Gde. im Kr. Thun, Kt. Bern
+Gelterfingen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Gerzensee	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Gurzelen	Gde. im Kr. Thun, Kt. Bern
+Jaberg	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Kaufdorf	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Kehrsatz	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Kienersrüti	Gde. im Kr. Thun, Kt. Bern
+Kirchdorf	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Kirchenthurnen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Lohnstorf	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Mühledorf	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Mühlethurnen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Niedermuhlern	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Noflen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Riggisberg	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Rüeggisberg	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Rümligen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Seftigen	Gde. im Kr. Thun, Kt. Bern
+Toffen	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Uttigen	Gde. im Kr. Thun, Kt. Bern
+Wattenwil	Gde. im Kr. Thun, Kt. Bern
+Wald	Gde. im Kr. Bern-Mittelland, Kt. Bern
+Eggiwil	Gde. im Kr. Emmental, Kt. Bern
+Langnau im Emmental	Gde. im Kr. Emmental, Kt. Bern
+Lauperswil	Gde. im Kr. Emmental, Kt. Bern
+Röthenbach im Emmental	Gde. im Kr. Emmental, Kt. Bern
+Rüderswil	Gde. im Kr. Emmental, Kt. Bern
+Schangnau	Gde. im Kr. Emmental, Kt. Bern
+Signau	Gde. im Kr. Emmental, Kt. Bern
+Trub	Gde. im Kr. Emmental, Kt. Bern
+Trubschachen	Gde. im Kr. Emmental, Kt. Bern
+Amsoldingen	Gde. im Kr. Thun, Kt. Bern
+Blumenstein	Gde. im Kr. Thun, Kt. Bern
+Buchholterberg	Gde. im Kr. Thun, Kt. Bern
+Eriz	Gde. im Kr. Thun, Kt. Bern
+Fahrni	Gde. im Kr. Thun, Kt. Bern
+Heiligenschwendi	Gde. im Kr. Thun, Kt. Bern
+Heimberg	Gde. im Kr. Thun, Kt. Bern
+Hilterfingen	Gde. im Kr. Thun, Kt. Bern
+Höfen	Gde. im Kr. Thun, Kt. Bern
+Homberg	Gde. im Kr. Thun, Kt. Bern
+Horrenbach-Buchen	Gde. im Kr. Thun, Kt. Bern
+Oberhofen am Thunersee	Gde. im Kr. Thun, Kt. Bern
+Oberhofen	Gde. im Kr. Thun, Kt. Bern
+Oberlangenegg	Gde. im Kr. Thun, Kt. Bern
+Pohlern	Gde. im Kr. Thun, Kt. Bern
+Schwendibach	Gde. im Kr. Thun, Kt. Bern
+Sigriswil	Gde. im Kr. Thun, Kt. Bern
+Steffisburg	Gde. im Kr. Thun, Kt. Bern
+Teuffenthal	Gde. im Kr. Thun, Kt. Bern
+Thierachern	Gde. im Kr. Thun, Kt. Bern
+Thun	Gde. im Kr. Thun, Kt. Bern
+Uebeschi	Gde. im Kr. Thun, Kt. Bern
+Uetendorf	Gde. im Kr. Thun, Kt. Bern
+Unterlangenegg	Gde. im Kr. Thun, Kt. Bern
+Wachseldorn	Gde. im Kr. Thun, Kt. Bern
+Zwieselberg	Gde. im Kr. Thun, Kt. Bern
+Forst-Längenbühl	Gde. im Kr. Thun, Kt. Bern
+Affoltern im Emmental	Gde. im Kr. Emmental, Kt. Bern
+Dürrenroth	Gde. im Kr. Emmental, Kt. Bern
+Eriswil	Gde. im Kr. Oberaargau, Kt. Bern
+Huttwil	Gde. im Kr. Oberaargau, Kt. Bern
+Lützelflüh	Gde. im Kr. Emmental, Kt. Bern
+Rüegsau	Gde. im Kr. Emmental, Kt. Bern
+Sumiswald	Gde. im Kr. Emmental, Kt. Bern
+Trachselwald	Gde. im Kr. Emmental, Kt. Bern
+Walterswil	Gde. im Kr. Oberaargau, Kt. Bern
+Wyssachen	Gde. im Kr. Oberaargau, Kt. Bern
+Attiswil	Gde. im Kr. Oberaargau, Kt. Bern
+Berken	Gde. im Kr. Oberaargau, Kt. Bern
+Bettenhausen	Gde. im Kr. Oberaargau, Kt. Bern
+Farnern	Gde. im Kr. Oberaargau, Kt. Bern
+Graben	Gde. im Kr. Oberaargau, Kt. Bern
+Heimenhausen	Gde. im Kr. Oberaargau, Kt. Bern
+Hermiswil	Gde. im Kr. Oberaargau, Kt. Bern
+Herzogenbuchsee	Gde. im Kr. Oberaargau, Kt. Bern
+Inkwil	Gde. im Kr. Oberaargau, Kt. Bern
+Niederbipp	Gde. im Kr. Oberaargau, Kt. Bern
+Niederönz	Gde. im Kr. Oberaargau, Kt. Bern
+Oberbipp	Gde. im Kr. Oberaargau, Kt. Bern
+Ochlenberg	Gde. im Kr. Oberaargau, Kt. Bern
+Rumisberg	Gde. im Kr. Oberaargau, Kt. Bern
+Seeberg	Gde. im Kr. Oberaargau, Kt. Bern
+Thörigen	Gde. im Kr. Oberaargau, Kt. Bern
+Walliswil bei Niederbipp	Gde. im Kr. Oberaargau, Kt. Bern
+Walliswil bei Wangen	Gde. im Kr. Oberaargau, Kt. Bern
+Wangen an der Aare	Gde. im Kr. Oberaargau, Kt. Bern
+Wangenried	Gde. im Kr. Oberaargau, Kt. Bern
+Wiedlisbach	Gde. im Kr. Oberaargau, Kt. Bern
+Wolfisberg	Gde. im Kr. Oberaargau, Kt. Bern
+Doppleschwand	Gde. im Amt Entlebuch, Kt. Luzern
+Entlebuch	Gde. im Amt Entlebuch, Kt. Luzern
+Escholzmatt	Gde. im Amt Entlebuch, Kt. Luzern
+Flühli	Gde. im Amt Entlebuch, Kt. Luzern
+Hasle	Gde. im Amt Entlebuch, Kt. Luzern
+Marbach	Gde. im Amt Entlebuch, Kt. Luzern
+Romoos	Gde. im Amt Entlebuch, Kt. Luzern
+Schüpfheim	Gde. im Amt Entlebuch, Kt. Luzern
+Werthenstein	Gde. im Amt Entlebuch, Kt. Luzern
+Aesch	Gde. im Amt Hochdorf, Kt. Luzern
+Altwis	Gde. im Amt Hochdorf, Kt. Luzern
+Ballwil	Gde. im Amt Hochdorf, Kt. Luzern
+Emmen	Gde. im Amt Hochdorf, Kt. Luzern
+Ermensee	Gde. im Amt Hochdorf, Kt. Luzern
+Eschenbach	Gde. im Amt Hochdorf, Kt. Luzern
+Hitzkirch	Gde. im Amt Hochdorf, Kt. Luzern
+Hochdorf	Gde. im Amt Hochdorf, Kt. Luzern
+Hohenrain	Gde. im Amt Hochdorf, Kt. Luzern
+Inwil	Gde. im Amt Hochdorf, Kt. Luzern
+Rain	Gde. im Amt Hochdorf, Kt. Luzern
+Römerswil	Gde. im Amt Hochdorf, Kt. Luzern
+Rothenburg	Gde. im Amt Hochdorf, Kt. Luzern
+Schongau	Gde. im Amt Hochdorf, Kt. Luzern
+Adligenswil	Gde. im Amt Luzern, Kt. Luzern
+Buchrain	Gde. im Amt Luzern, Kt. Luzern
+Dierikon	Gde. im Amt Luzern, Kt. Luzern
+Ebikon	Gde. im Amt Luzern, Kt. Luzern
+Gisikon	Gde. im Amt Luzern, Kt. Luzern
+Greppen	Gde. im Amt Luzern, Kt. Luzern
+Honau	Gde. im Amt Luzern, Kt. Luzern
+Horw	Gde. im Amt Luzern, Kt. Luzern
+Kriens	Gde. im Amt Luzern, Kt. Luzern
+Luzern	Gde. im Amt Luzern, Kt. Luzern
+Malters	Gde. im Amt Luzern, Kt. Luzern
+Meggen	Gde. im Amt Luzern, Kt. Luzern
+Meierskappel	Gde. im Amt Luzern, Kt. Luzern
+Root	Gde. im Amt Luzern, Kt. Luzern
+Schwarzenberg	Gde. im Amt Luzern, Kt. Luzern
+Udligenswil	Gde. im Amt Luzern, Kt. Luzern
+Vitznau	Gde. im Amt Luzern, Kt. Luzern
+Weggis	Gde. im Amt Luzern, Kt. Luzern
+Beromünster	Gde. im Amt Sursee, Kt. Luzern
+Büron	Gde. im Amt Sursee, Kt. Luzern
+Buttisholz	Gde. im Amt Sursee, Kt. Luzern
+Eich	Gde. im Amt Sursee, Kt. Luzern
+Geuensee	Gde. im Amt Sursee, Kt. Luzern
+Grosswangen	Gde. im Amt Sursee, Kt. Luzern
+Hildisrieden	Gde. im Amt Sursee, Kt. Luzern
+Knutwil	Gde. im Amt Sursee, Kt. Luzern
+Mauensee	Gde. im Amt Sursee, Kt. Luzern
+Neudorf	Gde. im Amt Sursee, Kt. Luzern
+Neuenkirch	Gde. im Amt Sursee, Kt. Luzern
+Nottwil	Gde. im Amt Sursee, Kt. Luzern
+Oberkirch	Gde. im Amt Sursee, Kt. Luzern
+Pfeffikon	Gde. im Amt Sursee, Kt. Luzern
+Rickenbach	Gde. im Amt Sursee, Kt. Luzern
+Ruswil	Gde. im Amt Sursee, Kt. Luzern
+Schenkon	Gde. im Amt Sursee, Kt. Luzern
+Schlierbach	Gde. im Amt Sursee, Kt. Luzern
+Sempach	Gde. im Amt Sursee, Kt. Luzern
+Sursee	Gde. im Amt Sursee, Kt. Luzern
+Triengen	Gde. im Amt Sursee, Kt. Luzern
+Wolhusen	Gde. im Amt Sursee, Kt. Luzern
+Alberswil	Gde. im Amt Willisau, Kt. Luzern
+Altbüron	Gde. im Amt Willisau, Kt. Luzern
+Altishofen	Gde. im Amt Willisau, Kt. Luzern
+Dagmersellen	Gde. im Amt Willisau, Kt. Luzern
+Ebersecken	Gde. im Amt Willisau, Kt. Luzern
+Egolzwil	Gde. im Amt Willisau, Kt. Luzern
+Ettiswil	Gde. im Amt Willisau, Kt. Luzern
+Fischbach	Gde. im Amt Willisau, Kt. Luzern
+Gettnau	Gde. im Amt Willisau, Kt. Luzern
+Grossdietwil	Gde. im Amt Willisau, Kt. Luzern
+Hergiswil bei Willisau	Gde. im Amt Willisau, Kt. Luzern
+Luthern	Gde. im Amt Willisau, Kt. Luzern
+Menznau	Gde. im Amt Willisau, Kt. Luzern
+Nebikon	Gde. im Amt Willisau, Kt. Luzern
+Ohmstal	Gde. im Amt Willisau, Kt. Luzern
+Pfaffnau	Gde. im Amt Willisau, Kt. Luzern
+Reiden	Gde. im Amt Willisau, Kt. Luzern
+Roggliswil	Gde. im Amt Willisau, Kt. Luzern
+Schötz	Gde. im Amt Willisau, Kt. Luzern
+Ufhusen	Gde. im Amt Willisau, Kt. Luzern
+Wauwil	Gde. im Amt Willisau, Kt. Luzern
+Wikon	Gde. im Amt Willisau, Kt. Luzern
+Zell	Gde. im Amt Willisau, Kt. Luzern
+Willisau	Gde. im Amt Willisau, Kt. Luzern
+Altdorf	Gde. im Kanton Uri, Kt. Uri
+Andermatt	Gde. im Kanton Uri, Kt. Uri
+Attinghausen	Gde. im Kanton Uri, Kt. Uri
+Bauen	Gde. im Kanton Uri, Kt. Uri
+Bürglen	Gde. im Kanton Uri, Kt. Uri
+Erstfeld	Gde. im Kanton Uri, Kt. Uri
+Flüelen	Gde. im Kanton Uri, Kt. Uri
+Göschenen	Gde. im Kanton Uri, Kt. Uri
+Gurtnellen	Gde. im Kanton Uri, Kt. Uri
+Hospental	Gde. im Kanton Uri, Kt. Uri
+Isenthal	Gde. im Kanton Uri, Kt. Uri
+Realp	Gde. im Kanton Uri, Kt. Uri
+Schattdorf	Gde. im Kanton Uri, Kt. Uri
+Seedorf	Gde. im Kanton Uri, Kt. Uri
+Seelisberg	Gde. im Kanton Uri, Kt. Uri
+Silenen	Gde. im Kanton Uri, Kt. Uri
+Sisikon	Gde. im Kanton Uri, Kt. Uri
+Spiringen	Gde. im Kanton Uri, Kt. Uri
+Unterschächen	Gde. im Kanton Uri, Kt. Uri
+Wassen	Gde. im Kanton Uri, Kt. Uri
+Einsiedeln	Gde. im Bez. Einsiedeln, Kt. Schwyz
+Gersau	Gde. im Bez. Gersau, Kt. Schwyz
+Feusisberg	Gde. im Bez. Höfe, Kt. Schwyz
+Freienbach	Gde. im Bez. Höfe, Kt. Schwyz
+Wollerau	Gde. im Bez. Höfe, Kt. Schwyz
+Küssnacht	Gde. im Bez. Küssnacht, Kt. Schwyz
+Altendorf	Gde. im Bez. March, Kt. Schwyz
+Galgenen	Gde. im Bez. March, Kt. Schwyz
+Innerthal	Gde. im Bez. March, Kt. Schwyz
+Lachen	Gde. im Bez. March, Kt. Schwyz
+Reichenburg	Gde. im Bez. March, Kt. Schwyz
+Schübelbach	Gde. im Bez. March, Kt. Schwyz
+Tuggen	Gde. im Bez. March, Kt. Schwyz
+Vorderthal	Gde. im Bez. March, Kt. Schwyz
+Wangen	Gde. im Bez. March, Kt. Schwyz
+Alpthal	Gde. im Bez. Schwyz, Kt. Schwyz
+Arth	Gde. im Bez. Schwyz, Kt. Schwyz
+Illgau	Gde. im Bez. Schwyz, Kt. Schwyz
+Ingenbohl	Gde. im Bez. Schwyz, Kt. Schwyz
+Lauerz	Gde. im Bez. Schwyz, Kt. Schwyz
+Morschach	Gde. im Bez. Schwyz, Kt. Schwyz
+Muotathal	Gde. im Bez. Schwyz, Kt. Schwyz
+Oberiberg	Gde. im Bez. Schwyz, Kt. Schwyz
+Riemenstalden	Gde. im Bez. Schwyz, Kt. Schwyz
+Rothenthurm	Gde. im Bez. Schwyz, Kt. Schwyz
+Sattel	Gde. im Bez. Schwyz, Kt. Schwyz
+Schwyz	Gde. im Bez. Schwyz, Kt. Schwyz
+Steinen	Gde. im Bez. Schwyz, Kt. Schwyz
+Steinerberg	Gde. im Bez. Schwyz, Kt. Schwyz
+Unteriberg	Gde. im Bez. Schwyz, Kt. Schwyz
+Alpnach	Gde. im Kanton Obwalden, Kt. Obwalden
+Engelberg	Gde. im Kanton Obwalden, Kt. Obwalden
+Giswil	Gde. im Kanton Obwalden, Kt. Obwalden
+Kerns	Gde. im Kanton Obwalden, Kt. Obwalden
+Lungern	Gde. im Kanton Obwalden, Kt. Obwalden
+Sachseln	Gde. im Kanton Obwalden, Kt. Obwalden
+Sarnen	Gde. im Kanton Obwalden, Kt. Obwalden
+Beckenried	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Buochs	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Dallenwil	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Emmetten	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Ennetbürgen	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Ennetmoos	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Hergiswil	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Oberdorf	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Stans	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Stansstad	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Wolfenschiessen	Gde. im Kanton Nidwalden, Kt. Nidwalden
+Glarus Nord	Gde. im Kanton Glarus, Kt. Glarus
+Glarus Süd	Gde. im Kanton Glarus, Kt. Glarus
+Glarus	Gde. im Kanton Glarus, Kt. Glarus
+Baar	Gde. im Kanton Zug, Kt. Zug
+Cham	Gde. im Kanton Zug, Kt. Zug
+Hünenberg	Gde. im Kanton Zug, Kt. Zug
+Menzingen	Gde. im Kanton Zug, Kt. Zug
+Neuheim	Gde. im Kanton Zug, Kt. Zug
+Oberägeri	Gde. im Kanton Zug, Kt. Zug
+Risch	Gde. im Kanton Zug, Kt. Zug
+Steinhausen	Gde. im Kanton Zug, Kt. Zug
+Unterägeri	Gde. im Kanton Zug, Kt. Zug
+Walchwil	Gde. im Kanton Zug, Kt. Zug
+Zug	Gde. im Kanton Zug, Kt. Zug
+Bussy	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Châbles	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Châtillon	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Cheiry	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Cheyres	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Cugy	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Domdidier	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Dompierre	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Estavayer-le-Lac	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Fétigny	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Font	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Gletterens	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Léchelles	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Lully	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Ménières	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Montagny	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Morens	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Murist	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Nuvilly	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Prévondavaux	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Rueyres-les-Prés	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Russy	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Saint-Aubin	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Sévaz	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Surpierre	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Vallon	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Villeneuve	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Vuissens	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Les Montets	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Delley-Portalban	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Vernay	Gde. im Bez. la Broye, Kt. Fribourg  Freiburg
+Auboranges	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Billens-Hennens	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Chapelle	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Le Châtelard	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Châtonnaye	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Ecublens	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Grangettes	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Massonnens	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Mézières	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Montet	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Romont	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Rue	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Siviriez	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Ursy	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Villaz-Saint-Pierre	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Vuarmarens	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Vuisternens-devant-Romont	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Villorsonnens	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Torny	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+La Folliaz	Gde. im Bez. la Glâne, Kt. Fribourg  Freiburg
+Haut-Intyamon	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Pont-en-Ogoz	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Botterens	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Broc	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Bulle	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Cerniat	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Charmey	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Châtel-sur-Montsalvens	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Corbières	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Crésuz	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Echarlens	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Grandvillard	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Gruyères	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Hauteville	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Jaun	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Marsens	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Morlon	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Le Pâquier	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Pont-la-Ville	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Riaz	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+La Roche	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Sâles	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Sorens	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Vaulruz	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Vuadens	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Bas-Intyamon	Gde. im Bez. la Gruyère, Kt. Fribourg  Freiburg
+Arconciel	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Autafond	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Autigny	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Avry	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Belfaux	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Chénens	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Chésopelloz	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Corminboeuf	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Corpataux-Magnedens	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Corserey	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Cottens	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Ependes	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Farvagny	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Ferpicloz	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Fribourg	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Givisiez	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Granges-Paccot	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Grolley	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Marly	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Matran	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Neyruz	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Noréaz	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Pierrafortscha	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Ponthaux	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Le Mouret	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Prez-vers-Noréaz	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Rossens	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Le Glèbe	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Senèdes	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Treyvaux	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Villars-sur-Glâne	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Villarsel-sur-Marly	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Vuisternens-en-Ogoz	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Hauterive	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+La Brillaz	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+La Sonnaz	Gde. im Bez. la Sarine, Kt. Fribourg  Freiburg
+Barberêche	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Büchslen	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Courgevaux	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Courlevon	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Courtepin	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Cressier	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Fräschels	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Galmiz	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Gempenach	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Greng	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Gurmels	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Jeuss	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Kerzers	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Kleinbösingen	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Lurtigen	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Meyriez	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Misery-Courtion	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Muntelier	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Murten	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Ried bei Kerzers	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Salvenach	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Ulmiz	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Villarepos	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Bas-Vully	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Haut-Vully	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Wallenried	Gde. im Bez. See  Bez. Lac, Kt. Fribourg  Freiburg
+Alterswil	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Brünisried	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Düdingen	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Giffers	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Bösingen	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Heitenried	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Oberschrot	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Plaffeien	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Plasselb	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Rechthalten	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+St.Antoni	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+St.Silvester	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+St.Ursen	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Schmitten	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Tafers	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Tentlingen	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Ueberstorf	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Wünnewil-Flamatt	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Zumholz	Gde. im Bez. Sense, Kt. Fribourg  Freiburg
+Attalens	Gde. im Bez. la Veveyse, Kt. Fribourg  Freiburg
+Bossonnens	Gde. im Bez. la Veveyse, Kt. Fribourg  Freiburg
+Châtel-Saint-Denis	Gde. im Bez. la Veveyse, Kt. Fribourg  Freiburg
+Granges	Gde. im Bez. la Veveyse, Kt. Fribourg  Freiburg
+Remaufens	Gde. im Bez. la Veveyse, Kt. Fribourg  Freiburg
+Saint-Martin	Gde. im Bez. la Veveyse, Kt. Fribourg  Freiburg
+Semsales	Gde. im Bez. la Veveyse, Kt. Fribourg  Freiburg
+Le Flon	Gde. im Bez. la Veveyse, Kt. Fribourg  Freiburg
+La Verrerie	Gde. im Bez. la Veveyse, Kt. Fribourg  Freiburg
+Egerkingen	Gde. im Bez. Gäu, Kt. Solothurn
+Härkingen	Gde. im Bez. Gäu, Kt. Solothurn
+Kestenholz	Gde. im Bez. Gäu, Kt. Solothurn
+Neuendorf	Gde. im Bez. Gäu, Kt. Solothurn
+Niederbuchsiten	Gde. im Bez. Gäu, Kt. Solothurn
+Oberbuchsiten	Gde. im Bez. Gäu, Kt. Solothurn
+Oensingen	Gde. im Bez. Gäu, Kt. Solothurn
+Wolfwil	Gde. im Bez. Gäu, Kt. Solothurn
+Aedermannsdorf	Gde. im Bez. Thal, Kt. Solothurn
+Balsthal	Gde. im Bez. Thal, Kt. Solothurn
+Gänsbrunnen	Gde. im Bez. Thal, Kt. Solothurn
+Herbetswil	Gde. im Bez. Thal, Kt. Solothurn
+Holderbank	Gde. im Bez. Thal, Kt. Solothurn
+Laupersdorf	Gde. im Bez. Thal, Kt. Solothurn
+Matzendorf	Gde. im Bez. Thal, Kt. Solothurn
+Mümliswil-Ramiswil	Gde. im Bez. Thal, Kt. Solothurn
+Welschenrohr	Gde. im Bez. Thal, Kt. Solothurn
+Aetigkofen	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Aetingen	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Bibern	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Biezwil	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Brügglen	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Gossliwil	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Hessigkofen	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Küttigkofen	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Kyburg-Buchegg	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Lüsslingen	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Lüterkofen-Ichertswil	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Lüterswil-Gächliwil	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Messen	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Mühledorf	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Nennigkofen	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Schnottwil	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Tscheppach	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Unterramsern	Gde. im Bez. Bucheggberg, Kt. Solothurn
+Bättwil	Gde. im Bez. Dorneck, Kt. Solothurn
+Büren	Gde. im Bez. Dorneck, Kt. Solothurn
+Dornach	Gde. im Bez. Dorneck, Kt. Solothurn
+Gempen	Gde. im Bez. Dorneck, Kt. Solothurn
+Hochwald	Gde. im Bez. Dorneck, Kt. Solothurn
+Hofstetten-Flüh	Gde. im Bez. Dorneck, Kt. Solothurn
+Metzerlen-Mariastein	Gde. im Bez. Dorneck, Kt. Solothurn
+Nuglar-St.Pantaleon	Gde. im Bez. Dorneck, Kt. Solothurn
+Rodersdorf	Gde. im Bez. Dorneck, Kt. Solothurn
+Seewen	Gde. im Bez. Dorneck, Kt. Solothurn
+Witterswil	Gde. im Bez. Dorneck, Kt. Solothurn
+Hauenstein-Ifenthal	Gde. im Bez. Gösgen, Kt. Solothurn
+Kienberg	Gde. im Bez. Gösgen, Kt. Solothurn
+Lostorf	Gde. im Bez. Gösgen, Kt. Solothurn
+Niedergösgen	Gde. im Bez. Gösgen, Kt. Solothurn
+Obergösgen	Gde. im Bez. Gösgen, Kt. Solothurn
+Rohr	Gde. im Bez. Gösgen, Kt. Solothurn
+Stüsslingen	Gde. im Bez. Gösgen, Kt. Solothurn
+Trimbach	Gde. im Bez. Gösgen, Kt. Solothurn
+Winznau	Gde. im Bez. Gösgen, Kt. Solothurn
+Wisen	Gde. im Bez. Gösgen, Kt. Solothurn
+Erlinsbach	Gde. im Bez. Gösgen, Kt. Solothurn
+Aeschi	Gde. im Bez. Wasseramt, Kt. Solothurn
+Biberist	Gde. im Bez. Wasseramt, Kt. Solothurn
+Bolken	Gde. im Bez. Wasseramt, Kt. Solothurn
+Deitingen	Gde. im Bez. Wasseramt, Kt. Solothurn
+Derendingen	Gde. im Bez. Wasseramt, Kt. Solothurn
+Etziken	Gde. im Bez. Wasseramt, Kt. Solothurn
+Gerlafingen	Gde. im Bez. Wasseramt, Kt. Solothurn
+Halten	Gde. im Bez. Wasseramt, Kt. Solothurn
+Heinrichswil-Winistorf	Gde. im Bez. Wasseramt, Kt. Solothurn
+Hersiwil	Gde. im Bez. Wasseramt, Kt. Solothurn
+Horriwil	Gde. im Bez. Wasseramt, Kt. Solothurn
+Hüniken	Gde. im Bez. Wasseramt, Kt. Solothurn
+Kriegstetten	Gde. im Bez. Wasseramt, Kt. Solothurn
+Lohn-Ammannsegg	Gde. im Bez. Wasseramt, Kt. Solothurn
+Luterbach	Gde. im Bez. Wasseramt, Kt. Solothurn
+Obergerlafingen	Gde. im Bez. Wasseramt, Kt. Solothurn
+Oekingen	Gde. im Bez. Wasseramt, Kt. Solothurn
+Recherswil	Gde. im Bez. Wasseramt, Kt. Solothurn
+Steinhof	Gde. im Bez. Wasseramt, Kt. Solothurn
+Subingen	Gde. im Bez. Wasseramt, Kt. Solothurn
+Zuchwil	Gde. im Bez. Wasseramt, Kt. Solothurn
+Balm bei Günsberg	Gde. im Bez. Lebern, Kt. Solothurn
+Bellach	Gde. im Bez. Lebern, Kt. Solothurn
+Bettlach	Gde. im Bez. Lebern, Kt. Solothurn
+Feldbrunnen-St.Niklaus	Gde. im Bez. Lebern, Kt. Solothurn
+Flumenthal	Gde. im Bez. Lebern, Kt. Solothurn
+Grenchen	Gde. im Bez. Lebern, Kt. Solothurn
+Günsberg	Gde. im Bez. Lebern, Kt. Solothurn
+Hubersdorf	Gde. im Bez. Lebern, Kt. Solothurn
+Kammersrohr	Gde. im Bez. Lebern, Kt. Solothurn
+Langendorf	Gde. im Bez. Lebern, Kt. Solothurn
+Lommiswil	Gde. im Bez. Lebern, Kt. Solothurn
+Oberdorf	Gde. im Bez. Lebern, Kt. Solothurn
+Riedholz	Gde. im Bez. Lebern, Kt. Solothurn
+Rüttenen	Gde. im Bez. Lebern, Kt. Solothurn
+Selzach	Gde. im Bez. Lebern, Kt. Solothurn
+Boningen	Gde. im Bez. Olten, Kt. Solothurn
+Däniken	Gde. im Bez. Olten, Kt. Solothurn
+Dulliken	Gde. im Bez. Olten, Kt. Solothurn
+Eppenberg-Wöschnau	Gde. im Bez. Olten, Kt. Solothurn
+Fulenbach	Gde. im Bez. Olten, Kt. Solothurn
+Gretzenbach	Gde. im Bez. Olten, Kt. Solothurn
+Gunzgen	Gde. im Bez. Olten, Kt. Solothurn
+Hägendorf	Gde. im Bez. Olten, Kt. Solothurn
+Kappel	Gde. im Bez. Olten, Kt. Solothurn
+Olten	Gde. im Bez. Olten, Kt. Solothurn
+Rickenbach	Gde. im Bez. Olten, Kt. Solothurn
+Schönenwerd	Gde. im Bez. Olten, Kt. Solothurn
+Starrkirch-Wil	Gde. im Bez. Olten, Kt. Solothurn
+Walterswil	Gde. im Bez. Olten, Kt. Solothurn
+Wangen bei Olten	Gde. im Bez. Olten, Kt. Solothurn
+Solothurn	Gde. im Bez. Solothurn, Kt. Solothurn
+Bärschwil	Gde. im Bez. Thierstein, Kt. Solothurn
+Beinwil	Gde. im Bez. Thierstein, Kt. Solothurn
+Breitenbach	Gde. im Bez. Thierstein, Kt. Solothurn
+Büsserach	Gde. im Bez. Thierstein, Kt. Solothurn
+Erschwil	Gde. im Bez. Thierstein, Kt. Solothurn
+Fehren	Gde. im Bez. Thierstein, Kt. Solothurn
+Grindel	Gde. im Bez. Thierstein, Kt. Solothurn
+Himmelried	Gde. im Bez. Thierstein, Kt. Solothurn
+Kleinlützel	Gde. im Bez. Thierstein, Kt. Solothurn
+Meltingen	Gde. im Bez. Thierstein, Kt. Solothurn
+Nunningen	Gde. im Bez. Thierstein, Kt. Solothurn
+Zullwil	Gde. im Bez. Thierstein, Kt. Solothurn
+Basel	Gde. im Kanton Basel-Stadt, Kt. Basel-Stadt
+Bettingen	Gde. im Kanton Basel-Stadt, Kt. Basel-Stadt
+Riehen	Gde. im Kanton Basel-Stadt, Kt. Basel-Stadt
+Aesch	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Allschwil	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Arlesheim	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Biel-Benken	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Binningen	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Birsfelden	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Bottmingen	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Ettingen	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Münchenstein	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Muttenz	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Oberwil	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Pfeffingen	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Reinach	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Schönenbuch	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Therwil	Gde. im Bez. Arlesheim, Kt. Basel-Landschaft
+Blauen	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Brislach	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Burg im Leimental	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Dittingen	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Duggingen	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Grellingen	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Laufen	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Liesberg	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Nenzlingen	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Roggenburg	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Röschenz	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Wahlen	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Zwingen	Gde. im Bez. Laufen, Kt. Basel-Landschaft
+Arisdorf	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Augst	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Bubendorf	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Frenkendorf	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Füllinsdorf	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Giebenach	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Hersberg	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Lausen	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Liestal	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Lupsingen	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Pratteln	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Ramlinsburg	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Seltisberg	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Ziefen	Gde. im Bez. Liestal, Kt. Basel-Landschaft
+Anwil	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Böckten	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Buckten	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Buus	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Diepflingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Gelterkinden	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Häfelfingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Hemmiken	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Itingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Känerkinden	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Kilchberg	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Läufelfingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Maisprach	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Nusshof	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Oltingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Ormalingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Rickenbach	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Rothenfluh	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Rümlingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Rünenberg	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Sissach	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Tecknau	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Tenniken	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Thürnen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Wenslingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Wintersingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Wittinsburg	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Zeglingen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Zunzgen	Gde. im Bez. Sissach, Kt. Basel-Landschaft
+Arboldswil	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Bennwil	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Bretzwil	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Diegten	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Eptingen	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Hölstein	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Lampenberg	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Langenbruck	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Lauwil	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Liedertswil	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Niederdorf	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Oberdorf	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Reigoldswil	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Titterten	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Waldenburg	Gde. im Bez. Waldenburg, Kt. Basel-Landschaft
+Gächlingen	Gde. im Bez. Oberklettgau, Kt. Schaffhausen
+Guntmadingen	Gde. im Bez. Oberklettgau, Kt. Schaffhausen
+Löhningen	Gde. im Bez. Oberklettgau, Kt. Schaffhausen
+Neunkirch	Gde. im Bez. Oberklettgau, Kt. Schaffhausen
+Büttenhardt	Gde. im Bez. Reiat, Kt. Schaffhausen
+Dörflingen	Gde. im Bez. Reiat, Kt. Schaffhausen
+Lohn	Gde. im Bez. Reiat, Kt. Schaffhausen
+Stetten	Gde. im Bez. Reiat, Kt. Schaffhausen
+Thayngen	Gde. im Bez. Reiat, Kt. Schaffhausen
+Bargen	Gde. im Bez. Schaffhausen, Kt. Schaffhausen
+Beringen	Gde. im Bez. Schaffhausen, Kt. Schaffhausen
+Buchberg	Gde. im Bez. Schaffhausen, Kt. Schaffhausen
+Merishausen	Gde. im Bez. Schaffhausen, Kt. Schaffhausen
+Neuhausen am Rheinfall	Gde. im Bez. Schaffhausen, Kt. Schaffhausen
+Neuhausen	Gde. im Bez. Schaffhausen, Kt. Schaffhausen
+Rüdlingen	Gde. im Bez. Schaffhausen, Kt. Schaffhausen
+Schaffhausen	Gde. im Bez. Schaffhausen, Kt. Schaffhausen
+Beggingen	Gde. im Bez. Schleitheim, Kt. Schaffhausen
+Schleitheim	Gde. im Bez. Schleitheim, Kt. Schaffhausen
+Siblingen	Gde. im Bez. Schleitheim, Kt. Schaffhausen
+Buch	Gde. im Bez. Stein, Kt. Schaffhausen
+Hemishofen	Gde. im Bez. Stein, Kt. Schaffhausen
+Ramsen	Gde. im Bez. Stein, Kt. Schaffhausen
+Stein am Rhein	Gde. im Bez. Stein, Kt. Schaffhausen
+Hallau	Gde. im Bez. Unterklettgau, Kt. Schaffhausen
+Oberhallau	Gde. im Bez. Unterklettgau, Kt. Schaffhausen
+Trasadingen	Gde. im Bez. Unterklettgau, Kt. Schaffhausen
+Wilchingen	Gde. im Bez. Unterklettgau, Kt. Schaffhausen
+Herisau	Gde. im Bez. Hinterland, Kt. Appenzell Ausserrhoden
+Hundwil	Gde. im Bez. Hinterland, Kt. Appenzell Ausserrhoden
+Schönengrund	Gde. im Bez. Hinterland, Kt. Appenzell Ausserrhoden
+Schwellbrunn	Gde. im Bez. Hinterland, Kt. Appenzell Ausserrhoden
+Stein	Gde. im Bez. Hinterland, Kt. Appenzell Ausserrhoden
+Urnäsch	Gde. im Bez. Hinterland, Kt. Appenzell Ausserrhoden
+Waldstatt	Gde. im Bez. Hinterland, Kt. Appenzell Ausserrhoden
+Bühler	Gde. im Bez. Mittelland, Kt. Appenzell Ausserrhoden
+Gais	Gde. im Bez. Mittelland, Kt. Appenzell Ausserrhoden
+Speicher	Gde. im Bez. Mittelland, Kt. Appenzell Ausserrhoden
+Teufen	Gde. im Bez. Mittelland, Kt. Appenzell Ausserrhoden
+Trogen	Gde. im Bez. Mittelland, Kt. Appenzell Ausserrhoden
+Grub	Gde. im Bez. Vorderland, Kt. Appenzell Ausserrhoden
+Heiden	Gde. im Bez. Vorderland, Kt. Appenzell Ausserrhoden
+Lutzenberg	Gde. im Bez. Vorderland, Kt. Appenzell Ausserrhoden
+Rehetobel	Gde. im Bez. Vorderland, Kt. Appenzell Ausserrhoden
+Reute	Gde. im Bez. Vorderland, Kt. Appenzell Ausserrhoden
+Wald	Gde. im Bez. Vorderland, Kt. Appenzell Ausserrhoden
+Walzenhausen	Gde. im Bez. Vorderland, Kt. Appenzell Ausserrhoden
+Wolfhalden	Gde. im Bez. Vorderland, Kt. Appenzell Ausserrhoden
+Appenzell	Gde. im Kanton Appenzell Innerrhoden, Kt. Appenzell Innerrhoden
+Gonten	Gde. im Kanton Appenzell Innerrhoden, Kt. Appenzell Innerrhoden
+Rüte	Gde. im Kanton Appenzell Innerrhoden, Kt. Appenzell Innerrhoden
+Schlatt-Haslen	Gde. im Kanton Appenzell Innerrhoden, Kt. Appenzell Innerrhoden
+Schwende	Gde. im Kanton Appenzell Innerrhoden, Kt. Appenzell Innerrhoden
+Oberegg	Gde. im Kanton Appenzell Innerrhoden, Kt. Appenzell Innerrhoden
+Häggenschwil	Gde. im Kr. St.Gallen, Kt. St.Gallen
+Muolen	Gde. im Kr. St.Gallen, Kt. St.Gallen
+St.Gallen	Gde. im Kr. St.Gallen, Kt. St.Gallen
+Wittenbach	Gde. im Kr. St.Gallen, Kt. St.Gallen
+Berg	Gde. im Kr. Rorschach, Kt. St.Gallen
+Eggersriet	Gde. im Kr. St.Gallen, Kt. St.Gallen
+Goldach	Gde. im Kr. Rorschach, Kt. St.Gallen
+Mörschwil	Gde. im Kr. Rorschach, Kt. St.Gallen
+Rorschach	Gde. im Kr. Rorschach, Kt. St.Gallen
+Rorschacherberg	Gde. im Kr. Rorschach, Kt. St.Gallen
+Steinach	Gde. im Kr. Rorschach, Kt. St.Gallen
+Tübach	Gde. im Kr. Rorschach, Kt. St.Gallen
+Untereggen	Gde. im Kr. Rorschach, Kt. St.Gallen
+Au	Gde. im Kr. Rheintal, Kt. St.Gallen
+Balgach	Gde. im Kr. Rheintal, Kt. St.Gallen
+Berneck	Gde. im Kr. Rheintal, Kt. St.Gallen
+Diepoldsau	Gde. im Kr. Rheintal, Kt. St.Gallen
+Rheineck	Gde. im Kr. Rheintal, Kt. St.Gallen
+St.Margrethen	Gde. im Kr. Rheintal, Kt. St.Gallen
+Thal	Gde. im Kr. Rorschach, Kt. St.Gallen
+Widnau	Gde. im Kr. Rheintal, Kt. St.Gallen
+Altstätten	Gde. im Kr. Rheintal, Kt. St.Gallen
+Eichberg	Gde. im Kr. Rheintal, Kt. St.Gallen
+Marbach	Gde. im Kr. Rheintal, Kt. St.Gallen
+Oberriet	Gde. im Kr. Rheintal, Kt. St.Gallen
+Rebstein	Gde. im Kr. Rheintal, Kt. St.Gallen
+Rüthi	Gde. im Kr. Rheintal, Kt. St.Gallen
+Buchs	Gde. im Kr. Werdenberg, Kt. St.Gallen
+Gams	Gde. im Kr. Werdenberg, Kt. St.Gallen
+Grabs	Gde. im Kr. Werdenberg, Kt. St.Gallen
+Sennwald	Gde. im Kr. Werdenberg, Kt. St.Gallen
+Sevelen	Gde. im Kr. Werdenberg, Kt. St.Gallen
+Wartau	Gde. im Kr. Werdenberg, Kt. St.Gallen
+Bad Ragaz	Gde. im Kr. Sarganserland, Kt. St.Gallen
+Flums	Gde. im Kr. Sarganserland, Kt. St.Gallen
+Mels	Gde. im Kr. Sarganserland, Kt. St.Gallen
+Pfäfers	Gde. im Kr. Sarganserland, Kt. St.Gallen
+Quarten	Gde. im Kr. Sarganserland, Kt. St.Gallen
+Sargans	Gde. im Kr. Sarganserland, Kt. St.Gallen
+Vilters-Wangs	Gde. im Kr. Sarganserland, Kt. St.Gallen
+Walenstadt	Gde. im Kr. Sarganserland, Kt. St.Gallen
+Amden	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Benken	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Kaltbrunn	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Rieden	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Schänis	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Weesen	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Ernetschwil	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Eschenbach	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Goldingen	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Gommiswald	Gde. im Kr. See-Gaster, Kt. St.Gallen
+St.Gallenkappel	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Schmerikon	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Uznach	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Rapperswil-Jona	Gde. im Kr. See-Gaster, Kt. St.Gallen
+Ebnat-Kappel	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Stein	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Nesslau-Krummenau	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Wildhaus-Alt St.Johann	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Hemberg	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Krinau	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Lichtensteig	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Oberhelfenschwil	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Wattwil	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Neckertal	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Bütschwil	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Kirchberg	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Lütisburg	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Mosnang	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Degersheim	Gde. im Kr. Wil, Kt. St.Gallen
+Flawil	Gde. im Kr. Wil, Kt. St.Gallen
+Ganterschwil	Gde. im Kr. Toggenburg, Kt. St.Gallen
+Jonschwil	Gde. im Kr. Wil, Kt. St.Gallen
+Oberuzwil	Gde. im Kr. Wil, Kt. St.Gallen
+Uzwil	Gde. im Kr. Wil, Kt. St.Gallen
+Bronschhofen	Gde. im Kr. Wil, Kt. St.Gallen
+Niederbüren	Gde. im Kr. Wil, Kt. St.Gallen
+Niederhelfenschwil	Gde. im Kr. Wil, Kt. St.Gallen
+Oberbüren	Gde. im Kr. Wil, Kt. St.Gallen
+Wil	Gde. im Kr. Wil, Kt. St.Gallen
+Zuzwil	Gde. im Kr. Wil, Kt. St.Gallen
+Andwil	Gde. im Kr. St.Gallen, Kt. St.Gallen
+Gaiserwald	Gde. im Kr. St.Gallen, Kt. St.Gallen
+Gossau	Gde. im Kr. St.Gallen, Kt. St.Gallen
+Waldkirch	Gde. im Kr. St.Gallen, Kt. St.Gallen
+Alvaschein	Gde. im Bez. Albula, Kt. Graubünden
+Mon	Gde. im Bez. Albula, Kt. Graubünden
+Mutten	Gde. im Bez. Albula, Kt. Graubünden
+Stierva	Gde. im Bez. Albula, Kt. Graubünden
+Tiefencastel	Gde. im Bez. Albula, Kt. Graubünden
+VazObervaz	Gde. im Bez. Albula, Kt. Graubünden
+Alvaneu	Gde. im Bez. Albula, Kt. Graubünden
+BrienzBrinzauls	Gde. im Bez. Albula, Kt. Graubünden
+LantschLenz	Gde. im Bez. Albula, Kt. Graubünden
+Schmitten	Gde. im Bez. Albula, Kt. Graubünden
+Surava	Gde. im Bez. Albula, Kt. Graubünden
+BergünBravuogn	Gde. im Bez. Albula, Kt. Graubünden
+Filisur	Gde. im Bez. Albula, Kt. Graubünden
+Bivio	Gde. im Bez. Albula, Kt. Graubünden
+Cunter	Gde. im Bez. Albula, Kt. Graubünden
+Marmorera	Gde. im Bez. Albula, Kt. Graubünden
+Mulegns	Gde. im Bez. Albula, Kt. Graubünden
+Riom-Parsonz	Gde. im Bez. Albula, Kt. Graubünden
+Salouf	Gde. im Bez. Albula, Kt. Graubünden
+Savognin	Gde. im Bez. Albula, Kt. Graubünden
+Sur	Gde. im Bez. Albula, Kt. Graubünden
+Tinizong-Rona	Gde. im Bez. Albula, Kt. Graubünden
+Brusio	Gde. im Bez. Bernina, Kt. Graubünden
+Poschiavo	Gde. im Bez. Bernina, Kt. Graubünden
+Castrisch	Gde. im Bez. Surselva, Kt. Graubünden
+Falera	Gde. im Bez. Surselva, Kt. Graubünden
+Ilanz	Gde. im Bez. Surselva, Kt. Graubünden
+Laax	Gde. im Bez. Surselva, Kt. Graubünden
+Ladir	Gde. im Bez. Surselva, Kt. Graubünden
+Luven	Gde. im Bez. Surselva, Kt. Graubünden
+Pitasch	Gde. im Bez. Surselva, Kt. Graubünden
+Riein	Gde. im Bez. Surselva, Kt. Graubünden
+Ruschein	Gde. im Bez. Surselva, Kt. Graubünden
+Sagogn	Gde. im Bez. Surselva, Kt. Graubünden
+Schluein	Gde. im Bez. Surselva, Kt. Graubünden
+Schnaus	Gde. im Bez. Surselva, Kt. Graubünden
+Sevgein	Gde. im Bez. Surselva, Kt. Graubünden
+Valendas	Gde. im Bez. Surselva, Kt. Graubünden
+Versam	Gde. im Bez. Surselva, Kt. Graubünden
+Cumbel	Gde. im Bez. Surselva, Kt. Graubünden
+Duvin	Gde. im Bez. Surselva, Kt. Graubünden
+Degen	Gde. im Bez. Surselva, Kt. Graubünden
+Lumbrein	Gde. im Bez. Surselva, Kt. Graubünden
+Morissen	Gde. im Bez. Surselva, Kt. Graubünden
+St.Martin	Gde. im Bez. Surselva, Kt. Graubünden
+Suraua	Gde. im Bez. Surselva, Kt. Graubünden
+Vals	Gde. im Bez. Surselva, Kt. Graubünden
+Vignogn	Gde. im Bez. Surselva, Kt. Graubünden
+Vella	Gde. im Bez. Surselva, Kt. Graubünden
+Vrin	Gde. im Bez. Surselva, Kt. Graubünden
+Andiast	Gde. im Bez. Surselva, Kt. Graubünden
+Obersaxen	Gde. im Bez. Surselva, Kt. Graubünden
+Pigniu	Gde. im Bez. Surselva, Kt. Graubünden
+Rueun	Gde. im Bez. Surselva, Kt. Graubünden
+Siat	Gde. im Bez. Surselva, Kt. Graubünden
+WaltensburgVuorz	Gde. im Bez. Surselva, Kt. Graubünden
+Mundaun	Gde. im Bez. Surselva, Kt. Graubünden
+Almens	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Fürstenau	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Paspels	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Pratval	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Rodels	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Rothenbrunnen	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Scharans	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Sils im Domleschg	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Safien	Gde. im Bez. Surselva, Kt. Graubünden
+Tenna	Gde. im Bez. Surselva, Kt. Graubünden
+Cazis	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Flerden	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Masein	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Thusis	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Tschappina	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Urmein	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Tomils	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Avers	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Hinterrhein	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Nufenen	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Splügen	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Sufers	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Andeer	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Casti-Wergenstein	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Donat	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Lohn	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Mathon	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Rongellen	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Zillis-Reischen	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Ferrera	Gde. im Bez. Hinterrhein, Kt. Graubünden
+Bonaduz	Gde. im Bez. Imboden, Kt. Graubünden
+DomatEms	Gde. im Bez. Imboden, Kt. Graubünden
+Rhäzüns	Gde. im Bez. Imboden, Kt. Graubünden
+Felsberg	Gde. im Bez. Imboden, Kt. Graubünden
+Flims	Gde. im Bez. Imboden, Kt. Graubünden
+Tamins	Gde. im Bez. Imboden, Kt. Graubünden
+Trin	Gde. im Bez. Imboden, Kt. Graubünden
+Ardez	Gde. im Bez. Inn, Kt. Graubünden
+Guarda	Gde. im Bez. Inn, Kt. Graubünden
+Lavin	Gde. im Bez. Inn, Kt. Graubünden
+Susch	Gde. im Bez. Inn, Kt. Graubünden
+Tarasp	Gde. im Bez. Inn, Kt. Graubünden
+Zernez	Gde. im Bez. Inn, Kt. Graubünden
+Ramosch	Gde. im Bez. Inn, Kt. Graubünden
+Samnaun	Gde. im Bez. Inn, Kt. Graubünden
+Tschlin	Gde. im Bez. Inn, Kt. Graubünden
+Ftan	Gde. im Bez. Inn, Kt. Graubünden
+Scuol	Gde. im Bez. Inn, Kt. Graubünden
+Sent	Gde. im Bez. Inn, Kt. Graubünden
+Bever	Gde. im Bez. Maloja, Kt. Graubünden
+CelerinaSchlarigna	Gde. im Bez. Maloja, Kt. Graubünden
+Madulain	Gde. im Bez. Maloja, Kt. Graubünden
+Pontresina	Gde. im Bez. Maloja, Kt. Graubünden
+La Punt-Chamues-ch	Gde. im Bez. Maloja, Kt. Graubünden
+Samedan	Gde. im Bez. Maloja, Kt. Graubünden
+St.Moritz	Gde. im Bez. Maloja, Kt. Graubünden
+S-chanf	Gde. im Bez. Maloja, Kt. Graubünden
+Sils im EngadinSegl	Gde. im Bez. Maloja, Kt. Graubünden
+Silvaplana	Gde. im Bez. Maloja, Kt. Graubünden
+Zuoz	Gde. im Bez. Maloja, Kt. Graubünden
+Bregaglia	Gde. im Bez. Maloja, Kt. Graubünden
+Arvigo	Gde. im Bez. Moesa, Kt. Graubünden
+Braggio	Gde. im Bez. Moesa, Kt. Graubünden
+Buseno	Gde. im Bez. Moesa, Kt. Graubünden
+Castaneda	Gde. im Bez. Moesa, Kt. Graubünden
+Cauco	Gde. im Bez. Moesa, Kt. Graubünden
+Rossa	Gde. im Bez. Moesa, Kt. Graubünden
+Santa Maria in Calanca	Gde. im Bez. Moesa, Kt. Graubünden
+Selma	Gde. im Bez. Moesa, Kt. Graubünden
+Lostallo	Gde. im Bez. Moesa, Kt. Graubünden
+Mesocco	Gde. im Bez. Moesa, Kt. Graubünden
+Soazza	Gde. im Bez. Moesa, Kt. Graubünden
+Cama	Gde. im Bez. Moesa, Kt. Graubünden
+Grono	Gde. im Bez. Moesa, Kt. Graubünden
+Leggia	Gde. im Bez. Moesa, Kt. Graubünden
+Roveredo	Gde. im Bez. Moesa, Kt. Graubünden
+San Vittore	Gde. im Bez. Moesa, Kt. Graubünden
+Verdabbio	Gde. im Bez. Moesa, Kt. Graubünden
+Val Müstair	Gde. im Bez. Inn, Kt. Graubünden
+Davos	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Fideris	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Furna	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Jenaz	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Klosters-Serneus	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Conters im Prättigau	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Küblis	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Saas	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Luzein	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+St.Antönien	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Chur	Gde. im Bez. Plessur, Kt. Graubünden
+Churwalden	Gde. im Bez. Plessur, Kt. Graubünden
+Arosa	Gde. im Bez. Plessur, Kt. Graubünden
+Calfreisen	Gde. im Bez. Plessur, Kt. Graubünden
+Castiel	Gde. im Bez. Plessur, Kt. Graubünden
+Langwies	Gde. im Bez. Plessur, Kt. Graubünden
+Lüen	Gde. im Bez. Plessur, Kt. Graubünden
+Maladers	Gde. im Bez. Plessur, Kt. Graubünden
+Molinis	Gde. im Bez. Plessur, Kt. Graubünden
+Peist	Gde. im Bez. Plessur, Kt. Graubünden
+St.Peter-Pagig	Gde. im Bez. Plessur, Kt. Graubünden
+Tschiertschen-Praden	Gde. im Bez. Plessur, Kt. Graubünden
+Haldenstein	Gde. im Bez. Landquart, Kt. Graubünden
+Igis	Gde. im Bez. Landquart, Kt. Graubünden
+Mastrils	Gde. im Bez. Landquart, Kt. Graubünden
+Trimmis	Gde. im Bez. Landquart, Kt. Graubünden
+Untervaz	Gde. im Bez. Landquart, Kt. Graubünden
+Zizers	Gde. im Bez. Landquart, Kt. Graubünden
+Fläsch	Gde. im Bez. Landquart, Kt. Graubünden
+Jenins	Gde. im Bez. Landquart, Kt. Graubünden
+Maienfeld	Gde. im Bez. Landquart, Kt. Graubünden
+Malans	Gde. im Bez. Landquart, Kt. Graubünden
+Grüsch	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Schiers	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+Seewis im Prättigau	Gde. im Bez. Prättigau-Davos, Kt. Graubünden
+BreilBrigels	Gde. im Bez. Surselva, Kt. Graubünden
+DisentisMustér	Gde. im Bez. Surselva, Kt. Graubünden
+Medel	Gde. im Bez. Surselva, Kt. Graubünden
+Schlans	Gde. im Bez. Surselva, Kt. Graubünden
+Sumvitg	Gde. im Bez. Surselva, Kt. Graubünden
+Tujetsch	Gde. im Bez. Surselva, Kt. Graubünden
+Trun	Gde. im Bez. Surselva, Kt. Graubünden
+Aarau	Gde. im Bez. Aarau, Kt. Aargau
+Biberstein	Gde. im Bez. Aarau, Kt. Aargau
+Buchs	Gde. im Bez. Aarau, Kt. Aargau
+Densbüren	Gde. im Bez. Aarau, Kt. Aargau
+Erlinsbach	Gde. im Bez. Aarau, Kt. Aargau
+Gränichen	Gde. im Bez. Aarau, Kt. Aargau
+Hirschthal	Gde. im Bez. Aarau, Kt. Aargau
+Küttigen	Gde. im Bez. Aarau, Kt. Aargau
+Muhen	Gde. im Bez. Aarau, Kt. Aargau
+Oberentfelden	Gde. im Bez. Aarau, Kt. Aargau
+Suhr	Gde. im Bez. Aarau, Kt. Aargau
+Unterentfelden	Gde. im Bez. Aarau, Kt. Aargau
+Baden	Gde. im Bez. Baden, Kt. Aargau
+Bellikon	Gde. im Bez. Baden, Kt. Aargau
+Bergdietikon	Gde. im Bez. Baden, Kt. Aargau
+Birmenstorf	Gde. im Bez. Baden, Kt. Aargau
+Ennetbaden	Gde. im Bez. Baden, Kt. Aargau
+Fislisbach	Gde. im Bez. Baden, Kt. Aargau
+Freienwil	Gde. im Bez. Baden, Kt. Aargau
+Gebenstorf	Gde. im Bez. Baden, Kt. Aargau
+Killwangen	Gde. im Bez. Baden, Kt. Aargau
+Künten	Gde. im Bez. Baden, Kt. Aargau
+Mägenwil	Gde. im Bez. Baden, Kt. Aargau
+Mellingen	Gde. im Bez. Baden, Kt. Aargau
+Neuenhof	Gde. im Bez. Baden, Kt. Aargau
+Niederrohrdorf	Gde. im Bez. Baden, Kt. Aargau
+Oberrohrdorf	Gde. im Bez. Baden, Kt. Aargau
+Obersiggenthal	Gde. im Bez. Baden, Kt. Aargau
+Remetschwil	Gde. im Bez. Baden, Kt. Aargau
+Spreitenbach	Gde. im Bez. Baden, Kt. Aargau
+Stetten	Gde. im Bez. Baden, Kt. Aargau
+Turgi	Gde. im Bez. Baden, Kt. Aargau
+Untersiggenthal	Gde. im Bez. Baden, Kt. Aargau
+Wettingen	Gde. im Bez. Baden, Kt. Aargau
+Wohlenschwil	Gde. im Bez. Baden, Kt. Aargau
+Würenlingen	Gde. im Bez. Baden, Kt. Aargau
+Würenlos	Gde. im Bez. Baden, Kt. Aargau
+Ehrendingen	Gde. im Bez. Baden, Kt. Aargau
+Arni	Gde. im Bez. Bremgarten, Kt. Aargau
+Berikon	Gde. im Bez. Bremgarten, Kt. Aargau
+Bremgarten	Gde. im Bez. Bremgarten, Kt. Aargau
+Büttikon	Gde. im Bez. Bremgarten, Kt. Aargau
+Dottikon	Gde. im Bez. Bremgarten, Kt. Aargau
+Eggenwil	Gde. im Bez. Bremgarten, Kt. Aargau
+Fischbach-Göslikon	Gde. im Bez. Bremgarten, Kt. Aargau
+Hägglingen	Gde. im Bez. Bremgarten, Kt. Aargau
+Hermetschwil-Staffeln	Gde. im Bez. Bremgarten, Kt. Aargau
+Jonen	Gde. im Bez. Bremgarten, Kt. Aargau
+Niederwil	Gde. im Bez. Bremgarten, Kt. Aargau
+Oberlunkhofen	Gde. im Bez. Bremgarten, Kt. Aargau
+Oberwil-Lieli	Gde. im Bez. Bremgarten, Kt. Aargau
+Rudolfstetten-Friedlisberg	Gde. im Bez. Bremgarten, Kt. Aargau
+Sarmenstorf	Gde. im Bez. Bremgarten, Kt. Aargau
+Tägerig	Gde. im Bez. Bremgarten, Kt. Aargau
+Uezwil	Gde. im Bez. Bremgarten, Kt. Aargau
+Unterlunkhofen	Gde. im Bez. Bremgarten, Kt. Aargau
+Villmergen	Gde. im Bez. Bremgarten, Kt. Aargau
+Widen	Gde. im Bez. Bremgarten, Kt. Aargau
+Wohlen	Gde. im Bez. Bremgarten, Kt. Aargau
+Zufikon	Gde. im Bez. Bremgarten, Kt. Aargau
+Islisberg	Gde. im Bez. Bremgarten, Kt. Aargau
+Auenstein	Gde. im Bez. Brugg, Kt. Aargau
+Birr	Gde. im Bez. Brugg, Kt. Aargau
+Birrhard	Gde. im Bez. Brugg, Kt. Aargau
+Bözen	Gde. im Bez. Brugg, Kt. Aargau
+Brugg	Gde. im Bez. Brugg, Kt. Aargau
+Effingen	Gde. im Bez. Brugg, Kt. Aargau
+Elfingen	Gde. im Bez. Brugg, Kt. Aargau
+Gallenkirch	Gde. im Bez. Brugg, Kt. Aargau
+Habsburg	Gde. im Bez. Brugg, Kt. Aargau
+Hausen	Gde. im Bez. Brugg, Kt. Aargau
+Linn	Gde. im Bez. Brugg, Kt. Aargau
+Lupfig	Gde. im Bez. Brugg, Kt. Aargau
+Mandach	Gde. im Bez. Brugg, Kt. Aargau
+Mönthal	Gde. im Bez. Brugg, Kt. Aargau
+Mülligen	Gde. im Bez. Brugg, Kt. Aargau
+Oberbözberg	Gde. im Bez. Brugg, Kt. Aargau
+Oberflachs	Gde. im Bez. Brugg, Kt. Aargau
+Remigen	Gde. im Bez. Brugg, Kt. Aargau
+Riniken	Gde. im Bez. Brugg, Kt. Aargau
+Rüfenach	Gde. im Bez. Brugg, Kt. Aargau
+Scherz	Gde. im Bez. Brugg, Kt. Aargau
+Schinznach-Bad	Gde. im Bez. Brugg, Kt. Aargau
+Schinznach-Dorf	Gde. im Bez. Brugg, Kt. Aargau
+Thalheim	Gde. im Bez. Brugg, Kt. Aargau
+Unterbözberg	Gde. im Bez. Brugg, Kt. Aargau
+Veltheim	Gde. im Bez. Brugg, Kt. Aargau
+Villigen	Gde. im Bez. Brugg, Kt. Aargau
+Villnachern	Gde. im Bez. Brugg, Kt. Aargau
+Windisch	Gde. im Bez. Brugg, Kt. Aargau
+Beinwil am See	Gde. im Bez. Kulm, Kt. Aargau
+Beinwil	Gde. im Bez. Kulm, Kt. Aargau
+Birrwil	Gde. im Bez. Kulm, Kt. Aargau
+Burg	Gde. im Bez. Kulm, Kt. Aargau
+Dürrenäsch	Gde. im Bez. Kulm, Kt. Aargau
+Gontenschwil	Gde. im Bez. Kulm, Kt. Aargau
+Holziken	Gde. im Bez. Kulm, Kt. Aargau
+Leimbach	Gde. im Bez. Kulm, Kt. Aargau
+Leutwil	Gde. im Bez. Kulm, Kt. Aargau
+Menziken	Gde. im Bez. Kulm, Kt. Aargau
+Oberkulm	Gde. im Bez. Kulm, Kt. Aargau
+Reinach	Gde. im Bez. Kulm, Kt. Aargau
+Schlossrued	Gde. im Bez. Kulm, Kt. Aargau
+Schmiedrued	Gde. im Bez. Kulm, Kt. Aargau
+Schöftland	Gde. im Bez. Kulm, Kt. Aargau
+Teufenthal	Gde. im Bez. Kulm, Kt. Aargau
+Unterkulm	Gde. im Bez. Kulm, Kt. Aargau
+Zetzwil	Gde. im Bez. Kulm, Kt. Aargau
+Eiken	Gde. im Bez. Laufenburg, Kt. Aargau
+Frick	Gde. im Bez. Laufenburg, Kt. Aargau
+Gansingen	Gde. im Bez. Laufenburg, Kt. Aargau
+Gipf-Oberfrick	Gde. im Bez. Laufenburg, Kt. Aargau
+Herznach	Gde. im Bez. Laufenburg, Kt. Aargau
+Hornussen	Gde. im Bez. Laufenburg, Kt. Aargau
+Kaisten	Gde. im Bez. Laufenburg, Kt. Aargau
+Laufenburg	Gde. im Bez. Laufenburg, Kt. Aargau
+Münchwilen	Gde. im Bez. Laufenburg, Kt. Aargau
+Oberhof	Gde. im Bez. Laufenburg, Kt. Aargau
+Oeschgen	Gde. im Bez. Laufenburg, Kt. Aargau
+Schwaderloch	Gde. im Bez. Laufenburg, Kt. Aargau
+Sisseln	Gde. im Bez. Laufenburg, Kt. Aargau
+Ueken	Gde. im Bez. Laufenburg, Kt. Aargau
+Wittnau	Gde. im Bez. Laufenburg, Kt. Aargau
+Wölflinswil	Gde. im Bez. Laufenburg, Kt. Aargau
+Zeihen	Gde. im Bez. Laufenburg, Kt. Aargau
+Mettauertal	Gde. im Bez. Laufenburg, Kt. Aargau
+Ammerswil	Gde. im Bez. Lenzburg, Kt. Aargau
+Boniswil	Gde. im Bez. Lenzburg, Kt. Aargau
+Brunegg	Gde. im Bez. Lenzburg, Kt. Aargau
+Dintikon	Gde. im Bez. Lenzburg, Kt. Aargau
+Egliswil	Gde. im Bez. Lenzburg, Kt. Aargau
+Fahrwangen	Gde. im Bez. Lenzburg, Kt. Aargau
+Hallwil	Gde. im Bez. Lenzburg, Kt. Aargau
+Hendschiken	Gde. im Bez. Lenzburg, Kt. Aargau
+Holderbank	Gde. im Bez. Lenzburg, Kt. Aargau
+Hunzenschwil	Gde. im Bez. Lenzburg, Kt. Aargau
+Lenzburg	Gde. im Bez. Lenzburg, Kt. Aargau
+Meisterschwanden	Gde. im Bez. Lenzburg, Kt. Aargau
+Möriken-Wildegg	Gde. im Bez. Lenzburg, Kt. Aargau
+Niederlenz	Gde. im Bez. Lenzburg, Kt. Aargau
+Othmarsingen	Gde. im Bez. Lenzburg, Kt. Aargau
+Rupperswil	Gde. im Bez. Lenzburg, Kt. Aargau
+Schafisheim	Gde. im Bez. Lenzburg, Kt. Aargau
+Seengen	Gde. im Bez. Lenzburg, Kt. Aargau
+Seon	Gde. im Bez. Lenzburg, Kt. Aargau
+Staufen	Gde. im Bez. Lenzburg, Kt. Aargau
+Abtwil	Gde. im Bez. Muri, Kt. Aargau
+Aristau	Gde. im Bez. Muri, Kt. Aargau
+Auw	Gde. im Bez. Muri, Kt. Aargau
+Beinwil	Gde. im Bez. Muri, Kt. Aargau
+Benzenschwil	Gde. im Bez. Muri, Kt. Aargau
+Besenbüren	Gde. im Bez. Muri, Kt. Aargau
+Bettwil	Gde. im Bez. Muri, Kt. Aargau
+Boswil	Gde. im Bez. Muri, Kt. Aargau
+Bünzen	Gde. im Bez. Muri, Kt. Aargau
+Buttwil	Gde. im Bez. Muri, Kt. Aargau
+Dietwil	Gde. im Bez. Muri, Kt. Aargau
+Geltwil	Gde. im Bez. Muri, Kt. Aargau
+Kallern	Gde. im Bez. Muri, Kt. Aargau
+Merenschwand	Gde. im Bez. Muri, Kt. Aargau
+Mühlau	Gde. im Bez. Muri, Kt. Aargau
+Muri	Gde. im Bez. Muri, Kt. Aargau
+Oberrüti	Gde. im Bez. Muri, Kt. Aargau
+Rottenschwil	Gde. im Bez. Muri, Kt. Aargau
+Sins	Gde. im Bez. Muri, Kt. Aargau
+Waltenschwil	Gde. im Bez. Muri, Kt. Aargau
+Hellikon	Gde. im Bez. Rheinfelden, Kt. Aargau
+Kaiseraugst	Gde. im Bez. Rheinfelden, Kt. Aargau
+Magden	Gde. im Bez. Rheinfelden, Kt. Aargau
+Möhlin	Gde. im Bez. Rheinfelden, Kt. Aargau
+Mumpf	Gde. im Bez. Rheinfelden, Kt. Aargau
+Obermumpf	Gde. im Bez. Rheinfelden, Kt. Aargau
+Olsberg	Gde. im Bez. Rheinfelden, Kt. Aargau
+Rheinfelden	Gde. im Bez. Rheinfelden, Kt. Aargau
+Schupfart	Gde. im Bez. Rheinfelden, Kt. Aargau
+Stein	Gde. im Bez. Rheinfelden, Kt. Aargau
+Wallbach	Gde. im Bez. Rheinfelden, Kt. Aargau
+Wegenstetten	Gde. im Bez. Rheinfelden, Kt. Aargau
+Zeiningen	Gde. im Bez. Rheinfelden, Kt. Aargau
+Zuzgen	Gde. im Bez. Rheinfelden, Kt. Aargau
+Aarburg	Gde. im Bez. Zofingen, Kt. Aargau
+Attelwil	Gde. im Bez. Zofingen, Kt. Aargau
+Bottenwil	Gde. im Bez. Zofingen, Kt. Aargau
+Brittnau	Gde. im Bez. Zofingen, Kt. Aargau
+Kirchleerau	Gde. im Bez. Zofingen, Kt. Aargau
+Kölliken	Gde. im Bez. Zofingen, Kt. Aargau
+Moosleerau	Gde. im Bez. Zofingen, Kt. Aargau
+Murgenthal	Gde. im Bez. Zofingen, Kt. Aargau
+Oftringen	Gde. im Bez. Zofingen, Kt. Aargau
+Reitnau	Gde. im Bez. Zofingen, Kt. Aargau
+Rothrist	Gde. im Bez. Zofingen, Kt. Aargau
+Safenwil	Gde. im Bez. Zofingen, Kt. Aargau
+Staffelbach	Gde. im Bez. Zofingen, Kt. Aargau
+Strengelbach	Gde. im Bez. Zofingen, Kt. Aargau
+Uerkheim	Gde. im Bez. Zofingen, Kt. Aargau
+Vordemwald	Gde. im Bez. Zofingen, Kt. Aargau
+Wiliberg	Gde. im Bez. Zofingen, Kt. Aargau
+Zofingen	Gde. im Bez. Zofingen, Kt. Aargau
+Baldingen	Gde. im Bez. Zurzach, Kt. Aargau
+Böbikon	Gde. im Bez. Zurzach, Kt. Aargau
+Böttstein	Gde. im Bez. Zurzach, Kt. Aargau
+Döttingen	Gde. im Bez. Zurzach, Kt. Aargau
+Endingen	Gde. im Bez. Zurzach, Kt. Aargau
+Fisibach	Gde. im Bez. Zurzach, Kt. Aargau
+Full-Reuenthal	Gde. im Bez. Zurzach, Kt. Aargau
+Kaiserstuhl	Gde. im Bez. Zurzach, Kt. Aargau
+Klingnau	Gde. im Bez. Zurzach, Kt. Aargau
+Koblenz	Gde. im Bez. Zurzach, Kt. Aargau
+Leibstadt	Gde. im Bez. Zurzach, Kt. Aargau
+Lengnau	Gde. im Bez. Zurzach, Kt. Aargau
+Leuggern	Gde. im Bez. Zurzach, Kt. Aargau
+Mellikon	Gde. im Bez. Zurzach, Kt. Aargau
+Rekingen	Gde. im Bez. Zurzach, Kt. Aargau
+Rietheim	Gde. im Bez. Zurzach, Kt. Aargau
+Rümikon	Gde. im Bez. Zurzach, Kt. Aargau
+Schneisingen	Gde. im Bez. Zurzach, Kt. Aargau
+Siglistorf	Gde. im Bez. Zurzach, Kt. Aargau
+Tegerfelden	Gde. im Bez. Zurzach, Kt. Aargau
+Unterendingen	Gde. im Bez. Zurzach, Kt. Aargau
+Wislikofen	Gde. im Bez. Zurzach, Kt. Aargau
+Bad Zurzach	Gde. im Bez. Zurzach, Kt. Aargau
+Arbon	Gde. im Bez. Arbon, Kt. Thurgau
+Dozwil	Gde. im Bez. Arbon, Kt. Thurgau
+Egnach	Gde. im Bez. Arbon, Kt. Thurgau
+Hefenhofen	Gde. im Bez. Arbon, Kt. Thurgau
+Horn	Gde. im Bez. Arbon, Kt. Thurgau
+Kesswil	Gde. im Bez. Arbon, Kt. Thurgau
+Roggwil	Gde. im Bez. Arbon, Kt. Thurgau
+Romanshorn	Gde. im Bez. Arbon, Kt. Thurgau
+Salmsach	Gde. im Bez. Arbon, Kt. Thurgau
+Sommeri	Gde. im Bez. Arbon, Kt. Thurgau
+Uttwil	Gde. im Bez. Arbon, Kt. Thurgau
+Amriswil	Gde. im Bez. Arbon, Kt. Thurgau
+Bischofszell	Gde. im Bez. Weinfelden, Kt. Thurgau
+Erlen	Gde. im Bez. Weinfelden, Kt. Thurgau
+Hauptwil-Gottshaus	Gde. im Bez. Weinfelden, Kt. Thurgau
+Hohentannen	Gde. im Bez. Weinfelden, Kt. Thurgau
+Kradolf-Schönenberg	Gde. im Bez. Weinfelden, Kt. Thurgau
+Sulgen	Gde. im Bez. Weinfelden, Kt. Thurgau
+Zihlschlacht-Sitterdorf	Gde. im Bez. Weinfelden, Kt. Thurgau
+Basadingen-Schlattingen	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Diessenhofen	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Schlatt	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Aadorf	Gde. im Bez. Münchwilen, Kt. Thurgau
+Felben-Wellhausen	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Frauenfeld	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Gachnang	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Hüttlingen	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Matzingen	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Neunforn	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Stettfurt	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Thundorf	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Uesslingen-Buch	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Warth-Weiningen	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Altnau	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Bottighofen	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Ermatingen	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Gottlieben	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Güttingen	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Kemmental	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Kreuzlingen	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Langrickenbach	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Lengwil	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Münsterlingen	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Tägerwilen	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Wäldi	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Affeltrangen	Gde. im Bez. Weinfelden, Kt. Thurgau
+Bettwiesen	Gde. im Bez. Münchwilen, Kt. Thurgau
+Bichelsee-Balterswil	Gde. im Bez. Münchwilen, Kt. Thurgau
+Braunau	Gde. im Bez. Münchwilen, Kt. Thurgau
+Eschlikon	Gde. im Bez. Münchwilen, Kt. Thurgau
+Fischingen	Gde. im Bez. Münchwilen, Kt. Thurgau
+Lommis	Gde. im Bez. Münchwilen, Kt. Thurgau
+Münchwilen	Gde. im Bez. Münchwilen, Kt. Thurgau
+Rickenbach	Gde. im Bez. Münchwilen, Kt. Thurgau
+Schönholzerswilen	Gde. im Bez. Weinfelden, Kt. Thurgau
+Sirnach	Gde. im Bez. Münchwilen, Kt. Thurgau
+Tobel-Tägerschen	Gde. im Bez. Münchwilen, Kt. Thurgau
+Wängi	Gde. im Bez. Münchwilen, Kt. Thurgau
+Wilen	Gde. im Bez. Münchwilen, Kt. Thurgau
+Wuppenau	Gde. im Bez. Weinfelden, Kt. Thurgau
+Berlingen	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Eschenz	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Herdern	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Homburg	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Hüttwilen	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Mammern	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Müllheim	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Pfyn	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Raperswilen	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Salenstein	Gde. im Bez. Kreuzlingen, Kt. Thurgau
+Steckborn	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Wagenhausen	Gde. im Bez. Frauenfeld, Kt. Thurgau
+Amlikon-Bissegg	Gde. im Bez. Weinfelden, Kt. Thurgau
+Berg	Gde. im Bez. Weinfelden, Kt. Thurgau
+Birwinken	Gde. im Bez. Weinfelden, Kt. Thurgau
+Bürglen	Gde. im Bez. Weinfelden, Kt. Thurgau
+Bussnang	Gde. im Bez. Weinfelden, Kt. Thurgau
+Märstetten	Gde. im Bez. Weinfelden, Kt. Thurgau
+Weinfelden	Gde. im Bez. Weinfelden, Kt. Thurgau
+Wigoltingen	Gde. im Bez. Weinfelden, Kt. Thurgau
+Arbedo-Castione	Gde. im Bez. Bellinzona, Kt. Ticino
+Bellinzona	Gde. im Bez. Bellinzona, Kt. Ticino
+Cadenazzo	Gde. im Bez. Bellinzona, Kt. Ticino
+Camorino	Gde. im Bez. Bellinzona, Kt. Ticino
+Giubiasco	Gde. im Bez. Bellinzona, Kt. Ticino
+Gnosca	Gde. im Bez. Bellinzona, Kt. Ticino
+Gorduno	Gde. im Bez. Bellinzona, Kt. Ticino
+Gudo	Gde. im Bez. Bellinzona, Kt. Ticino
+Isone	Gde. im Bez. Bellinzona, Kt. Ticino
+Lumino	Gde. im Bez. Bellinzona, Kt. Ticino
+Moleno	Gde. im Bez. Bellinzona, Kt. Ticino
+Monte Carasso	Gde. im Bez. Bellinzona, Kt. Ticino
+Pianezzo	Gde. im Bez. Bellinzona, Kt. Ticino
+Preonzo	Gde. im Bez. Bellinzona, Kt. Ticino
+SantAntonino	Gde. im Bez. Bellinzona, Kt. Ticino
+SantAntonio	Gde. im Bez. Bellinzona, Kt. Ticino
+Sementina	Gde. im Bez. Bellinzona, Kt. Ticino
+Ludiano	Gde. im Bez. Blenio, Kt. Ticino
+Malvaglia	Gde. im Bez. Blenio, Kt. Ticino
+Semione	Gde. im Bez. Blenio, Kt. Ticino
+Acquarossa	Gde. im Bez. Blenio, Kt. Ticino
+Blenio	Gde. im Bez. Blenio, Kt. Ticino
+Airolo	Gde. im Bez. Leventina, Kt. Ticino
+Anzonico	Gde. im Bez. Leventina, Kt. Ticino
+Bedretto	Gde. im Bez. Leventina, Kt. Ticino
+Bodio	Gde. im Bez. Leventina, Kt. Ticino
+Calpiogna	Gde. im Bez. Leventina, Kt. Ticino
+Campello	Gde. im Bez. Leventina, Kt. Ticino
+Cavagnago	Gde. im Bez. Leventina, Kt. Ticino
+Chironico	Gde. im Bez. Leventina, Kt. Ticino
+Dalpe	Gde. im Bez. Leventina, Kt. Ticino
+Faido	Gde. im Bez. Leventina, Kt. Ticino
+Giornico	Gde. im Bez. Leventina, Kt. Ticino
+Mairengo	Gde. im Bez. Leventina, Kt. Ticino
+Osco	Gde. im Bez. Leventina, Kt. Ticino
+Personico	Gde. im Bez. Leventina, Kt. Ticino
+Pollegio	Gde. im Bez. Leventina, Kt. Ticino
+Prato	Gde. im Bez. Leventina, Kt. Ticino
+Quinto	Gde. im Bez. Leventina, Kt. Ticino
+Sobrio	Gde. im Bez. Leventina, Kt. Ticino
+Ascona	Gde. im Bez. Locarno, Kt. Ticino
+Brione	Gde. im Bez. Locarno, Kt. Ticino
+Brione sopra Minusio	Gde. im Bez. Locarno, Kt. Ticino
+Brissago	Gde. im Bez. Locarno, Kt. Ticino
+Cavigliano	Gde. im Bez. Locarno, Kt. Ticino
+Corippo	Gde. im Bez. Locarno, Kt. Ticino
+Frasco	Gde. im Bez. Locarno, Kt. Ticino
+Gordola	Gde. im Bez. Locarno, Kt. Ticino
+Gresso	Gde. im Bez. Locarno, Kt. Ticino
+Lavertezzo	Gde. im Bez. Locarno, Kt. Ticino
+Locarno	Gde. im Bez. Locarno, Kt. Ticino
+Losone	Gde. im Bez. Locarno, Kt. Ticino
+Mergoscia	Gde. im Bez. Locarno, Kt. Ticino
+Minusio	Gde. im Bez. Locarno, Kt. Ticino
+Mosogno	Gde. im Bez. Locarno, Kt. Ticino
+Muralto	Gde. im Bez. Locarno, Kt. Ticino
+Orselina	Gde. im Bez. Locarno, Kt. Ticino
+Ronco sopra Ascona	Gde. im Bez. Locarno, Kt. Ticino
+Sonogno	Gde. im Bez. Locarno, Kt. Ticino
+Tegna	Gde. im Bez. Locarno, Kt. Ticino
+Tenero-Contra	Gde. im Bez. Locarno, Kt. Ticino
+Vergeletto	Gde. im Bez. Locarno, Kt. Ticino
+Verscio	Gde. im Bez. Locarno, Kt. Ticino
+Vogorno	Gde. im Bez. Locarno, Kt. Ticino
+Onsernone	Gde. im Bez. Locarno, Kt. Ticino
+Isorno	Gde. im Bez. Locarno, Kt. Ticino
+Cugnasco-Gerra	Gde. im Bez. Locarno, Kt. Ticino
+Agno	Gde. im Bez. Lugano, Kt. Ticino
+Aranno	Gde. im Bez. Lugano, Kt. Ticino
+Arogno	Gde. im Bez. Lugano, Kt. Ticino
+Astano	Gde. im Bez. Lugano, Kt. Ticino
+Bedano	Gde. im Bez. Lugano, Kt. Ticino
+Bedigliora	Gde. im Bez. Lugano, Kt. Ticino
+Bioggio	Gde. im Bez. Lugano, Kt. Ticino
+Bissone	Gde. im Bez. Lugano, Kt. Ticino
+Bogno	Gde. im Bez. Lugano, Kt. Ticino
+Brusino Arsizio	Gde. im Bez. Lugano, Kt. Ticino
+Cademario	Gde. im Bez. Lugano, Kt. Ticino
+Cadempino	Gde. im Bez. Lugano, Kt. Ticino
+Cadro	Gde. im Bez. Lugano, Kt. Ticino
+Canobbio	Gde. im Bez. Lugano, Kt. Ticino
+Carabietta	Gde. im Bez. Lugano, Kt. Ticino
+Carona	Gde. im Bez. Lugano, Kt. Ticino
+Caslano	Gde. im Bez. Lugano, Kt. Ticino
+Certara	Gde. im Bez. Lugano, Kt. Ticino
+Cimadera	Gde. im Bez. Lugano, Kt. Ticino
+Comano	Gde. im Bez. Lugano, Kt. Ticino
+Croglio	Gde. im Bez. Lugano, Kt. Ticino
+Cureglia	Gde. im Bez. Lugano, Kt. Ticino
+Curio	Gde. im Bez. Lugano, Kt. Ticino
+Grancia	Gde. im Bez. Lugano, Kt. Ticino
+Gravesano	Gde. im Bez. Lugano, Kt. Ticino
+Lamone	Gde. im Bez. Lugano, Kt. Ticino
+Lugano	Gde. im Bez. Lugano, Kt. Ticino
+Magliaso	Gde. im Bez. Lugano, Kt. Ticino
+Manno	Gde. im Bez. Lugano, Kt. Ticino
+Maroggia	Gde. im Bez. Lugano, Kt. Ticino
+Massagno	Gde. im Bez. Lugano, Kt. Ticino
+Melano	Gde. im Bez. Lugano, Kt. Ticino
+Melide	Gde. im Bez. Lugano, Kt. Ticino
+Mezzovico-Vira	Gde. im Bez. Lugano, Kt. Ticino
+Miglieglia	Gde. im Bez. Lugano, Kt. Ticino
+Monteggio	Gde. im Bez. Lugano, Kt. Ticino
+Morcote	Gde. im Bez. Lugano, Kt. Ticino
+Muzzano	Gde. im Bez. Lugano, Kt. Ticino
+Neggio	Gde. im Bez. Lugano, Kt. Ticino
+Novaggio	Gde. im Bez. Lugano, Kt. Ticino
+Origlio	Gde. im Bez. Lugano, Kt. Ticino
+Paradiso	Gde. im Bez. Lugano, Kt. Ticino
+Ponte Capriasca	Gde. im Bez. Lugano, Kt. Ticino
+Ponte Tresa	Gde. im Bez. Lugano, Kt. Ticino
+Porza	Gde. im Bez. Lugano, Kt. Ticino
+Pura	Gde. im Bez. Lugano, Kt. Ticino
+Rovio	Gde. im Bez. Lugano, Kt. Ticino
+Savosa	Gde. im Bez. Lugano, Kt. Ticino
+Sessa	Gde. im Bez. Lugano, Kt. Ticino
+Sonvico	Gde. im Bez. Lugano, Kt. Ticino
+Sorengo	Gde. im Bez. Lugano, Kt. Ticino
+Capriasca	Gde. im Bez. Lugano, Kt. Ticino
+Torricella-Taverne	Gde. im Bez. Lugano, Kt. Ticino
+Valcolla	Gde. im Bez. Lugano, Kt. Ticino
+Vernate	Gde. im Bez. Lugano, Kt. Ticino
+Vezia	Gde. im Bez. Lugano, Kt. Ticino
+Vico Morcote	Gde. im Bez. Lugano, Kt. Ticino
+Collina dOro	Gde. im Bez. Lugano, Kt. Ticino
+Alto Malcantone	Gde. im Bez. Lugano, Kt. Ticino
+Monteceneri	Gde. im Bez. Lugano, Kt. Ticino
+Balerna	Gde. im Bez. Mendrisio, Kt. Ticino
+Besazio	Gde. im Bez. Mendrisio, Kt. Ticino
+Castel San Pietro	Gde. im Bez. Mendrisio, Kt. Ticino
+Chiasso	Gde. im Bez. Mendrisio, Kt. Ticino
+Coldrerio	Gde. im Bez. Mendrisio, Kt. Ticino
+Ligornetto	Gde. im Bez. Mendrisio, Kt. Ticino
+Mendrisio	Gde. im Bez. Mendrisio, Kt. Ticino
+Meride	Gde. im Bez. Mendrisio, Kt. Ticino
+Morbio Inferiore	Gde. im Bez. Mendrisio, Kt. Ticino
+Novazzano	Gde. im Bez. Mendrisio, Kt. Ticino
+Riva San Vitale	Gde. im Bez. Mendrisio, Kt. Ticino
+Stabio	Gde. im Bez. Mendrisio, Kt. Ticino
+Vacallo	Gde. im Bez. Mendrisio, Kt. Ticino
+Breggia	Gde. im Bez. Mendrisio, Kt. Ticino
+Biasca	Gde. im Bez. Riviera, Kt. Ticino
+Claro	Gde. im Bez. Riviera, Kt. Ticino
+Cresciano	Gde. im Bez. Riviera, Kt. Ticino
+Iragna	Gde. im Bez. Riviera, Kt. Ticino
+Lodrino	Gde. im Bez. Riviera, Kt. Ticino
+Osogna	Gde. im Bez. Riviera, Kt. Ticino
+BoscoGurin	Gde. im Bez. Vallemaggia, Kt. Ticino
+Campo	Gde. im Bez. Vallemaggia, Kt. Ticino
+Cerentino	Gde. im Bez. Vallemaggia, Kt. Ticino
+Cevio	Gde. im Bez. Vallemaggia, Kt. Ticino
+Linescio	Gde. im Bez. Vallemaggia, Kt. Ticino
+Maggia	Gde. im Bez. Vallemaggia, Kt. Ticino
+Lavizzara	Gde. im Bez. Vallemaggia, Kt. Ticino
+Avegno Gordevio	Gde. im Bez. Vallemaggia, Kt. Ticino
+Centovalli	Gde. im Bez. Locarno, Kt. Ticino
+Gambarogno	Gde. im Bez. Locarno, Kt. Ticino
+Aigle	Gde. im District dAigle, Kt. Vaud
+Bex	Gde. im District dAigle, Kt. Vaud
+Chessel	Gde. im District dAigle, Kt. Vaud
+Corbeyrier	Gde. im District dAigle, Kt. Vaud
+Gryon	Gde. im District dAigle, Kt. Vaud
+Lavey-Morcles	Gde. im District dAigle, Kt. Vaud
+Leysin	Gde. im District dAigle, Kt. Vaud
+Noville	Gde. im District dAigle, Kt. Vaud
+Ollon	Gde. im District dAigle, Kt. Vaud
+Ormont-Dessous	Gde. im District dAigle, Kt. Vaud
+Ormont-Dessus	Gde. im District dAigle, Kt. Vaud
+Rennaz	Gde. im District dAigle, Kt. Vaud
+Roche	Gde. im District dAigle, Kt. Vaud
+Villeneuve	Gde. im District dAigle, Kt. Vaud
+Yvorne	Gde. im District dAigle, Kt. Vaud
+Apples	Gde. im Bez. Morges, Kt. Vaud
+Aubonne	Gde. im Bez. Morges, Kt. Vaud
+Ballens	Gde. im Bez. Morges, Kt. Vaud
+Berolle	Gde. im Bez. Morges, Kt. Vaud
+Bière	Gde. im Bez. Morges, Kt. Vaud
+Bougy-Villars	Gde. im Bez. Morges, Kt. Vaud
+Féchy	Gde. im Bez. Morges, Kt. Vaud
+Gimel	Gde. im Bez. Morges, Kt. Vaud
+Longirod	Gde. im Bez. Nyon, Kt. Vaud
+Marchissy	Gde. im Bez. Nyon, Kt. Vaud
+Mollens	Gde. im Bez. Morges, Kt. Vaud
+Montherod	Gde. im Bez. Morges, Kt. Vaud
+Saint-George	Gde. im Bez. Nyon, Kt. Vaud
+Saint-Livres	Gde. im Bez. Morges, Kt. Vaud
+Saint-Oyens	Gde. im Bez. Morges, Kt. Vaud
+Saubraz	Gde. im Bez. Morges, Kt. Vaud
+Avenches	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Cudrefin	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Faoug	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Vully-les-Lacs	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Bettens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Bournens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Boussens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+La Chaux	Gde. im Bez. Morges, Kt. Vaud
+Chavannes-le-Veyron	Gde. im Bez. Morges, Kt. Vaud
+Chevilly	Gde. im Bez. Morges, Kt. Vaud
+Cossonay	Gde. im Bez. Morges, Kt. Vaud
+Cottens	Gde. im Bez. Morges, Kt. Vaud
+Cuarnens	Gde. im Bez. Morges, Kt. Vaud
+Daillens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Dizy	Gde. im Bez. Morges, Kt. Vaud
+Eclépens	Gde. im Bez. Morges, Kt. Vaud
+Ferreyres	Gde. im Bez. Morges, Kt. Vaud
+Gollion	Gde. im Bez. Morges, Kt. Vaud
+Grancy	Gde. im Bez. Morges, Kt. Vaud
+LIsle	Gde. im Bez. Morges, Kt. Vaud
+Lussery-Villars	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Mauraz	Gde. im Bez. Morges, Kt. Vaud
+Mex	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Moiry	Gde. im Bez. Morges, Kt. Vaud
+Mont-la-Ville	Gde. im Bez. Morges, Kt. Vaud
+Montricher	Gde. im Bez. Morges, Kt. Vaud
+Orny	Gde. im Bez. Morges, Kt. Vaud
+Pampigny	Gde. im Bez. Morges, Kt. Vaud
+Penthalaz	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Penthaz	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Pompaples	Gde. im Bez. Morges, Kt. Vaud
+La Sarraz	Gde. im Bez. Morges, Kt. Vaud
+Senarclens	Gde. im Bez. Morges, Kt. Vaud
+Sévery	Gde. im Bez. Morges, Kt. Vaud
+Sullens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Vufflens-la-Ville	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Assens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Bercher	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Bioley-Orjulaz	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Bottens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Bretigny-sur-Morrens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Cugy	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Echallens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Essertines-sur-Yverdon	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Etagnières	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Fey	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Froideville	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Morrens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Oulens-sous-Echallens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Pailly	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Penthéréaz	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Poliez-Pittet	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Rueyres	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Saint-Barthélemy	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Villars-le-Terroir	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Vuarrens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Montilliez	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Goumoëns	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Bonvillars	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Bullet	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Champagne	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Concise	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Corcelles-près-Concise	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Fiez	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Fontaines-sur-Grandson	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Giez	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Grandevent	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Grandson	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Mauborget	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Mutrux	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Novalles	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Onnens	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Provence	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Sainte-Croix	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Tévenon	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Belmont-sur-Lausanne	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Cheseaux-sur-Lausanne	Gde. im Bez. Lausanne, Kt. Vaud
+Crissier	Gde. im Bez. lOuest lausannois, Kt. Vaud
+Epalinges	Gde. im Bez. Lausanne, Kt. Vaud
+Jouxtens-Mézery	Gde. im Bez. Lausanne, Kt. Vaud
+Lausanne	Gde. im Bez. Lausanne, Kt. Vaud
+Le Mont-sur-Lausanne	Gde. im Bez. Lausanne, Kt. Vaud
+Paudex	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Prilly	Gde. im Bez. lOuest lausannois, Kt. Vaud
+Pully	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Renens	Gde. im Bez. lOuest lausannois, Kt. Vaud
+Romanel-sur-Lausanne	Gde. im Bez. Lausanne, Kt. Vaud
+Chexbres	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Forel	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Lutry	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Puidoux	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Rivaz	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Saint-Saphorin	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Savigny	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Bourg-en-Lavaux	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Aclens	Gde. im Bez. Morges, Kt. Vaud
+Bremblens	Gde. im Bez. Morges, Kt. Vaud
+Buchillon	Gde. im Bez. Morges, Kt. Vaud
+Bussigny-près-Lausanne	Gde. im Bez. lOuest lausannois, Kt. Vaud
+Bussy-Chardonney	Gde. im Bez. Morges, Kt. Vaud
+Chavannes-près-Renens	Gde. im Bez. lOuest lausannois, Kt. Vaud
+Chigny	Gde. im Bez. Morges, Kt. Vaud
+Clarmont	Gde. im Bez. Morges, Kt. Vaud
+Denens	Gde. im Bez. Morges, Kt. Vaud
+Denges	Gde. im Bez. Morges, Kt. Vaud
+Echandens	Gde. im Bez. Morges, Kt. Vaud
+Echichens	Gde. im Bez. Morges, Kt. Vaud
+Ecublens	Gde. im Bez. lOuest lausannois, Kt. Vaud
+Etoy	Gde. im Bez. Morges, Kt. Vaud
+Lavigny	Gde. im Bez. Morges, Kt. Vaud
+Lonay	Gde. im Bez. Morges, Kt. Vaud
+Lully	Gde. im Bez. Morges, Kt. Vaud
+Lussy-sur-Morges	Gde. im Bez. Morges, Kt. Vaud
+Morges	Gde. im Bez. Morges, Kt. Vaud
+Préverenges	Gde. im Bez. Morges, Kt. Vaud
+Reverolle	Gde. im Bez. Morges, Kt. Vaud
+Romanel-sur-Morges	Gde. im Bez. Morges, Kt. Vaud
+Saint-Prex	Gde. im Bez. Morges, Kt. Vaud
+Saint-Sulpice	Gde. im Bez. lOuest lausannois, Kt. Vaud
+Tolochenaz	Gde. im Bez. Morges, Kt. Vaud
+Vaux-sur-Morges	Gde. im Bez. Morges, Kt. Vaud
+Villars-Sainte-Croix	Gde. im Bez. lOuest lausannois, Kt. Vaud
+Villars-sous-Yens	Gde. im Bez. Morges, Kt. Vaud
+Vufflens-le-Château	Gde. im Bez. Morges, Kt. Vaud
+Vullierens	Gde. im Bez. Morges, Kt. Vaud
+Yens	Gde. im Bez. Morges, Kt. Vaud
+Boulens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Brenles	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Bussy-sur-Moudon	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Chapelle-sur-Moudon	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Chavannes-sur-Moudon	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Chesalles-sur-Moudon	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Correvon	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Cremin	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Curtilles	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Denezy	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Dompierre	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Forel-sur-Lucens	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Hermenches	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Lovatens	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Lucens	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Martherenges	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Moudon	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Neyruz-sur-Moudon	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Ogens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Peyres-Possens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Prévonloup	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Rossenges	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Saint-Cierges	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Sarzens	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Syens	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Thierrens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Villars-le-Comte	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Vucherens	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Arnex-sur-Nyon	Gde. im Bez. Nyon, Kt. Vaud
+Arzier	Gde. im Bez. Nyon, Kt. Vaud
+Bassins	Gde. im Bez. Nyon, Kt. Vaud
+Begnins	Gde. im Bez. Nyon, Kt. Vaud
+Bogis-Bossey	Gde. im Bez. Nyon, Kt. Vaud
+Borex	Gde. im Bez. Nyon, Kt. Vaud
+Chavannes-de-Bogis	Gde. im Bez. Nyon, Kt. Vaud
+Chavannes-des-Bois	Gde. im Bez. Nyon, Kt. Vaud
+Chéserex	Gde. im Bez. Nyon, Kt. Vaud
+Coinsins	Gde. im Bez. Nyon, Kt. Vaud
+Commugny	Gde. im Bez. Nyon, Kt. Vaud
+Coppet	Gde. im Bez. Nyon, Kt. Vaud
+Crans-près-Céligny	Gde. im Bez. Nyon, Kt. Vaud
+Crassier	Gde. im Bez. Nyon, Kt. Vaud
+Duillier	Gde. im Bez. Nyon, Kt. Vaud
+Eysins	Gde. im Bez. Nyon, Kt. Vaud
+Founex	Gde. im Bez. Nyon, Kt. Vaud
+Genolier	Gde. im Bez. Nyon, Kt. Vaud
+Gingins	Gde. im Bez. Nyon, Kt. Vaud
+Givrins	Gde. im Bez. Nyon, Kt. Vaud
+Gland	Gde. im Bez. Nyon, Kt. Vaud
+Grens	Gde. im Bez. Nyon, Kt. Vaud
+Mies	Gde. im Bez. Nyon, Kt. Vaud
+Nyon	Gde. im Bez. Nyon, Kt. Vaud
+Prangins	Gde. im Bez. Nyon, Kt. Vaud
+La Rippe	Gde. im Bez. Nyon, Kt. Vaud
+Saint-Cergue	Gde. im Bez. Nyon, Kt. Vaud
+Signy-Avenex	Gde. im Bez. Nyon, Kt. Vaud
+Tannay	Gde. im Bez. Nyon, Kt. Vaud
+Trélex	Gde. im Bez. Nyon, Kt. Vaud
+Le Vaud	Gde. im Bez. Nyon, Kt. Vaud
+Vich	Gde. im Bez. Nyon, Kt. Vaud
+LAbergement	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Agiez	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Arnex-sur-Orbe	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Ballaigues	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Baulmes	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Bavois	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Bofflens	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Bretonnières	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Chavornay	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Les Clées	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Corcelles-sur-Chavornay	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Croy	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Juriens	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Lignerolle	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Montcherand	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Orbe	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+La Praz	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Premier	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Rances	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Romainmôtier-Envy	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Sergey	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Valeyres-sous-Rances	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Vallorbe	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Vaulion	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Vuiteboeuf	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Bussigny-sur-Oron	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Carrouge	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Châtillens	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Chesalles-sur-Oron	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Corcelles-le-Jorat	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Les Cullayes	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Ecoteaux	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Essertes	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Ferlens	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Maracon	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Mézières	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Montpreveyres	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Oron-la-Ville	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Oron-le-Châtel	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Palézieux	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Ropraz	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Servion	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Les Tavernes	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Les Thioleyres	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Vuibroye	Gde. im Bez. Lavaux-Oron, Kt. Vaud
+Vulliens	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Jorat-Menthue	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Champtauroz	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Chevroux	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Corcelles-près-Payerne	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Grandcour	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Henniez	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Missy	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Payerne	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Trey	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Treytorrens	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Villarzel	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Valbroye	Gde. im Bez. la Broye-Vully, Kt. Vaud
+Château-dOex	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Rossinière	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Rougemont	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Allaman	Gde. im Bez. Morges, Kt. Vaud
+Bursinel	Gde. im Bez. Nyon, Kt. Vaud
+Bursins	Gde. im Bez. Nyon, Kt. Vaud
+Burtigny	Gde. im Bez. Nyon, Kt. Vaud
+Dully	Gde. im Bez. Nyon, Kt. Vaud
+Essertines-sur-Rolle	Gde. im Bez. Nyon, Kt. Vaud
+Gilly	Gde. im Bez. Nyon, Kt. Vaud
+Luins	Gde. im Bez. Nyon, Kt. Vaud
+Mont-sur-Rolle	Gde. im Bez. Nyon, Kt. Vaud
+Perroy	Gde. im Bez. Nyon, Kt. Vaud
+Rolle	Gde. im Bez. Nyon, Kt. Vaud
+Tartegnin	Gde. im Bez. Nyon, Kt. Vaud
+Vinzel	Gde. im Bez. Nyon, Kt. Vaud
+LAbbaye	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Le Chenit	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Le Lieu	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Blonay	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Chardonne	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Corseaux	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Corsier-sur-Vevey	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Jongny	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Montreux	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Saint-Légier-La Chiésaz	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+La Tour-de-Peilz	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Vevey	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Veytaux	Gde. im Bez. la Riviera-Pays-dEnhaut, Kt. Vaud
+Belmont-sur-Yverdon	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Bioley-Magnoux	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Chamblon	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Champvent	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Chanéaz	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Chavannes-le-Chêne	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Chêne-Pâquier	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Cheseaux-Noréaz	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Cronay	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Cuarny	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Démoret	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Donneloye	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Ependes	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Essert-Pittet	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Essert-sous-Champvent	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Mathod	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Molondin	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Montagny-près-Yverdon	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Oppens	Gde. im Bez. Gros-de-Vaud, Kt. Vaud
+Orges	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Orzens	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Pomy	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Prahins	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Rovray	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Suchy	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Suscévaz	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Treycovagnes	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Ursins	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Valeyres-sous-Montagny	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Valeyres-sous-Ursins	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Villars-Epeney	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Villars-sous-Champvent	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Vugelles-La Mothe	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Yverdon-les-Bains	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Yvonand	Gde. im Bez. Jura-Nord vaudois, Kt. Vaud
+Birgisch	Gde. im Bez. Brig, Kt. Valais  Wallis
+Brig-Glis	Gde. im Bez. Brig, Kt. Valais  Wallis
+Eggerberg	Gde. im Bez. Brig, Kt. Valais  Wallis
+Mund	Gde. im Bez. Brig, Kt. Valais  Wallis
+Naters	Gde. im Bez. Brig, Kt. Valais  Wallis
+Ried-Brig	Gde. im Bez. Brig, Kt. Valais  Wallis
+Simplon	Gde. im Bez. Brig, Kt. Valais  Wallis
+Termen	Gde. im Bez. Brig, Kt. Valais  Wallis
+Zwischbergen	Gde. im Bez. Brig, Kt. Valais  Wallis
+Ardon	Gde. im Bez. Conthey, Kt. Valais  Wallis
+Chamoson	Gde. im Bez. Conthey, Kt. Valais  Wallis
+Conthey	Gde. im Bez. Conthey, Kt. Valais  Wallis
+Nendaz	Gde. im Bez. Conthey, Kt. Valais  Wallis
+Vétroz	Gde. im Bez. Conthey, Kt. Valais  Wallis
+Bagnes	Gde. im District dEntremont, Kt. Valais  Wallis
+Bourg-Saint-Pierre	Gde. im District dEntremont, Kt. Valais  Wallis
+Liddes	Gde. im District dEntremont, Kt. Valais  Wallis
+Orsières	Gde. im District dEntremont, Kt. Valais  Wallis
+Sembrancher	Gde. im District dEntremont, Kt. Valais  Wallis
+Vollèges	Gde. im District dEntremont, Kt. Valais  Wallis
+Bellwald	Gde. im Bez. Goms, Kt. Valais  Wallis
+Binn	Gde. im Bez. Goms, Kt. Valais  Wallis
+Blitzingen	Gde. im Bez. Goms, Kt. Valais  Wallis
+Ernen	Gde. im Bez. Goms, Kt. Valais  Wallis
+Fiesch	Gde. im Bez. Goms, Kt. Valais  Wallis
+Fieschertal	Gde. im Bez. Goms, Kt. Valais  Wallis
+Lax	Gde. im Bez. Goms, Kt. Valais  Wallis
+Niederwald	Gde. im Bez. Goms, Kt. Valais  Wallis
+Grafschaft	Gde. im Bez. Goms, Kt. Valais  Wallis
+Münster-Geschinen	Gde. im Bez. Goms, Kt. Valais  Wallis
+Reckingen-Gluringen	Gde. im Bez. Goms, Kt. Valais  Wallis
+Obergoms	Gde. im Bez. Goms, Kt. Valais  Wallis
+Les Agettes	Gde. im District dHérens, Kt. Valais  Wallis
+Ayent	Gde. im District dHérens, Kt. Valais  Wallis
+Evolène	Gde. im District dHérens, Kt. Valais  Wallis
+Hérémence	Gde. im District dHérens, Kt. Valais  Wallis
+Saint-Martin	Gde. im District dHérens, Kt. Valais  Wallis
+Vex	Gde. im District dHérens, Kt. Valais  Wallis
+Mont-Noble	Gde. im District dHérens, Kt. Valais  Wallis
+Agarn	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Albinen	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Ergisch	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Erschmatt	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Inden	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Leuk	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Leukerbad	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Oberems	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Salgesch	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Turtmann	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Unterems	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Varen	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Guttet-Feschel	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Gampel-Bratsch	Gde. im Bez. Leuk, Kt. Valais  Wallis
+Bovernier	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Charrat	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Fully	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Isérables	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Leytron	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Martigny	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Martigny-Combe	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Riddes	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Saillon	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Saxon	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Trient	Gde. im Bez. Martigny, Kt. Valais  Wallis
+Champéry	Gde. im Bez. Monthey, Kt. Valais  Wallis
+Collombey-Muraz	Gde. im Bez. Monthey, Kt. Valais  Wallis
+Monthey	Gde. im Bez. Monthey, Kt. Valais  Wallis
+Port-Valais	Gde. im Bez. Monthey, Kt. Valais  Wallis
+Saint-Gingolph	Gde. im Bez. Monthey, Kt. Valais  Wallis
+Troistorrents	Gde. im Bez. Monthey, Kt. Valais  Wallis
+Val-dIlliez	Gde. im Bez. Monthey, Kt. Valais  Wallis
+Vionnaz	Gde. im Bez. Monthey, Kt. Valais  Wallis
+Vouvry	Gde. im Bez. Monthey, Kt. Valais  Wallis
+Betten	Gde. im Bez. Raron, Kt. Valais  Wallis
+Bister	Gde. im Bez. Raron, Kt. Valais  Wallis
+Bitsch	Gde. im Bez. Raron, Kt. Valais  Wallis
+Grengiols	Gde. im Bez. Raron, Kt. Valais  Wallis
+Martisberg	Gde. im Bez. Raron, Kt. Valais  Wallis
+Riederalp	Gde. im Bez. Raron, Kt. Valais  Wallis
+Ausserberg	Gde. im Bez. Raron, Kt. Valais  Wallis
+Blatten	Gde. im Bez. Raron, Kt. Valais  Wallis
+Bürchen	Gde. im Bez. Raron, Kt. Valais  Wallis
+Eischoll	Gde. im Bez. Raron, Kt. Valais  Wallis
+Ferden	Gde. im Bez. Raron, Kt. Valais  Wallis
+Kippel	Gde. im Bez. Raron, Kt. Valais  Wallis
+Niedergesteln	Gde. im Bez. Raron, Kt. Valais  Wallis
+Raron	Gde. im Bez. Raron, Kt. Valais  Wallis
+Unterbäch	Gde. im Bez. Raron, Kt. Valais  Wallis
+Wiler	Gde. im Bez. Raron, Kt. Valais  Wallis
+Mörel-Filet	Gde. im Bez. Raron, Kt. Valais  Wallis
+Steg-Hohtenn	Gde. im Bez. Raron, Kt. Valais  Wallis
+Collonges	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Dorénaz	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Evionnaz	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Finhaut	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Massongex	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Mex	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Saint-Maurice	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Salvan	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Vernayaz	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Vérossaz	Gde. im Bez. Saint-Maurice, Kt. Valais  Wallis
+Chalais	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Chermignon	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Chippis	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Grône	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Icogne	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Lens	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Miège	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Mollens	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Montana	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Randogne	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Saint-Léonard	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Sierre	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Venthône	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Veyras	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Anniviers	Gde. im Bez. Sierre, Kt. Valais  Wallis
+Arbaz	Gde. im Bez. Sion, Kt. Valais  Wallis
+Grimisuat	Gde. im Bez. Sion, Kt. Valais  Wallis
+Salins	Gde. im Bez. Sion, Kt. Valais  Wallis
+Savièse	Gde. im Bez. Sion, Kt. Valais  Wallis
+Sion	Gde. im Bez. Sion, Kt. Valais  Wallis
+Veysonnaz	Gde. im Bez. Sion, Kt. Valais  Wallis
+Baltschieder	Gde. im Bez. Visp, Kt. Valais  Wallis
+Eisten	Gde. im Bez. Visp, Kt. Valais  Wallis
+Embd	Gde. im Bez. Visp, Kt. Valais  Wallis
+Grächen	Gde. im Bez. Visp, Kt. Valais  Wallis
+Lalden	Gde. im Bez. Visp, Kt. Valais  Wallis
+Randa	Gde. im Bez. Visp, Kt. Valais  Wallis
+Saas-Almagell	Gde. im Bez. Visp, Kt. Valais  Wallis
+Saas-Balen	Gde. im Bez. Visp, Kt. Valais  Wallis
+Saas-Fee	Gde. im Bez. Visp, Kt. Valais  Wallis
+Saas-Grund	Gde. im Bez. Visp, Kt. Valais  Wallis
+St.Niklaus	Gde. im Bez. Visp, Kt. Valais  Wallis
+Stalden	Gde. im Bez. Visp, Kt. Valais  Wallis
+Staldenried	Gde. im Bez. Visp, Kt. Valais  Wallis
+Täsch	Gde. im Bez. Visp, Kt. Valais  Wallis
+Törbel	Gde. im Bez. Visp, Kt. Valais  Wallis
+Visp	Gde. im Bez. Visp, Kt. Valais  Wallis
+Visperterminen	Gde. im Bez. Visp, Kt. Valais  Wallis
+Zeneggen	Gde. im Bez. Visp, Kt. Valais  Wallis
+Zermatt	Gde. im Bez. Visp, Kt. Valais  Wallis
+Auvernier	Gde. im Bez. Boudry, Kt. Neuchâtel
+Bevaix	Gde. im Bez. Boudry, Kt. Neuchâtel
+Bôle	Gde. im Bez. Boudry, Kt. Neuchâtel
+Boudry	Gde. im Bez. Boudry, Kt. Neuchâtel
+Brot-Dessous	Gde. im Bez. Boudry, Kt. Neuchâtel
+Colombier	Gde. im Bez. Boudry, Kt. Neuchâtel
+Corcelles-Cormondrèche	Gde. im Bez. Boudry, Kt. Neuchâtel
+Cortaillod	Gde. im Bez. Boudry, Kt. Neuchâtel
+Fresens	Gde. im Bez. Boudry, Kt. Neuchâtel
+Gorgier	Gde. im Bez. Boudry, Kt. Neuchâtel
+Montalchez	Gde. im Bez. Boudry, Kt. Neuchâtel
+Peseux	Gde. im Bez. Boudry, Kt. Neuchâtel
+Rochefort	Gde. im Bez. Boudry, Kt. Neuchâtel
+Saint-Aubin-Sauges	Gde. im Bez. Boudry, Kt. Neuchâtel
+Vaumarcus	Gde. im Bez. Boudry, Kt. Neuchâtel
+La Chaux-de-Fonds	Gde. im Bez. la Chaux-de-Fonds, Kt. Neuchâtel
+Les Planchettes	Gde. im Bez. la Chaux-de-Fonds, Kt. Neuchâtel
+La Sagne	Gde. im Bez. la Chaux-de-Fonds, Kt. Neuchâtel
+Les Brenets	Gde. im Bez. Locle, Kt. Neuchâtel
+La Brévine	Gde. im Bez. Locle, Kt. Neuchâtel
+Brot-Plamboz	Gde. im Bez. Locle, Kt. Neuchâtel
+Le Cerneux-Péquignot	Gde. im Bez. Locle, Kt. Neuchâtel
+La Chaux-du-Milieu	Gde. im Bez. Locle, Kt. Neuchâtel
+Le Locle	Gde. im Bez. Locle, Kt. Neuchâtel
+Les Ponts-de-Martel	Gde. im Bez. Locle, Kt. Neuchâtel
+Cornaux	Gde. im Bez. Neuchâtel, Kt. Neuchâtel
+Cressier	Gde. im Bez. Neuchâtel, Kt. Neuchâtel
+Enges	Gde. im Bez. Neuchâtel, Kt. Neuchâtel
+Hauterive	Gde. im Bez. Neuchâtel, Kt. Neuchâtel
+Le Landeron	Gde. im Bez. Neuchâtel, Kt. Neuchâtel
+Lignières	Gde. im Bez. Neuchâtel, Kt. Neuchâtel
+Neuchâtel	Gde. im Bez. Neuchâtel, Kt. Neuchâtel
+Saint-Blaise	Gde. im Bez. Neuchâtel, Kt. Neuchâtel
+La Tène	Gde. im Bez. Neuchâtel, Kt. Neuchâtel
+Boudevilliers	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Cernier	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Chézard-Saint-Martin	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Coffrane	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Dombresson	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Engollon	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Fenin-Vilars-Saules	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Fontainemelon	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Fontaines	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Les Geneveys-sur-Coffrane	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Les Hauts-Geneveys	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Montmollin	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Le Pâquier	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Savagnier	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Valangin	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+Villiers	Gde. im Bez. Val-de-Ruz, Kt. Neuchâtel
+La Côte-aux-Fées	Gde. im Bez. Val-de-Travers, Kt. Neuchâtel
+Les Verrières	Gde. im Bez. Val-de-Travers, Kt. Neuchâtel
+Val-de-Travers	Gde. im Bez. Val-de-Travers, Kt. Neuchâtel
+Aire-la-Ville	Gde. im Kt. Genf
+Anières	Gde. im Kt. Genf
+Avully	Gde. im Kt. Genf
+Avusy	Gde. im Kt. Genf
+Bardonnex	Gde. im Kt. Genf
+Bellevue	Gde. im Kt. Genf
+Bernex	Gde. im Kt. Genf
+Carouge	Gde. im Kt. Genf
+Cartigny	Gde. im Kt. Genf
+Céligny	Gde. im Kt. Genf
+Chancy	Gde. im Kt. Genf
+Chêne-Bougeries	Gde. im Kt. Genf
+Chêne-Bourg	Gde. im Kt. Genf
+Choulex	Gde. im Kt. Genf
+Collex-Bossy	Gde. im Kt. Genf
+Collonge-Bellerive	Gde. im Kt. Genf
+Cologny	Gde. im Kt. Genf
+Confignon	Gde. im Kt. Genf
+Corsier	Gde. im Kt. Genf
+Dardagny	Gde. im Kt. Genf
+Genève	Gde. im Kt. Genf
+Genthod	Gde. im Kt. Genf
+Le Grand-Saconnex	Gde. im Kt. Genf
+Gy	Gde. im Kt. Genf
+Hermance	Gde. im Kt. Genf
+Jussy	Gde. im Kt. Genf
+Laconnex	Gde. im Kt. Genf
+Lancy	Gde. im Kt. Genf
+Meinier	Gde. im Kt. Genf
+Meyrin	Gde. im Kt. Genf
+Onex	Gde. im Kt. Genf
+Perly-Certoux	Gde. im Kt. Genf
+Plan-les-Ouates	Gde. im Kt. Genf
+Pregny-Chambésy	Gde. im Kt. Genf
+Presinge	Gde. im Kt. Genf
+Puplinge	Gde. im Kt. Genf
+Russin	Gde. im Kt. Genf
+Satigny	Gde. im Kt. Genf
+Soral	Gde. im Kt. Genf
+Thônex	Gde. im Kt. Genf
+Troinex	Gde. im Kt. Genf
+Vandoeuvres	Gde. im Kt. Genf
+Vernier	Gde. im Kt. Genf
+Versoix	Gde. im Kt. Genf
+Veyrier	Gde. im Kt. Genf
+Bassecourt	Gde. im Bez. Delémont, Kt. Jura
+Boécourt	Gde. im Bez. Delémont, Kt. Jura
+Bourrignon	Gde. im Bez. Delémont, Kt. Jura
+Châtillon	Gde. im Bez. Delémont, Kt. Jura
+Corban	Gde. im Bez. Delémont, Kt. Jura
+Courchapoix	Gde. im Bez. Delémont, Kt. Jura
+Courfaivre	Gde. im Bez. Delémont, Kt. Jura
+Courrendlin	Gde. im Bez. Delémont, Kt. Jura
+Courroux	Gde. im Bez. Delémont, Kt. Jura
+Courtételle	Gde. im Bez. Delémont, Kt. Jura
+Delémont	Gde. im Bez. Delémont, Kt. Jura
+Develier	Gde. im Bez. Delémont, Kt. Jura
+Ederswiler	Gde. im Bez. Delémont, Kt. Jura
+Glovelier	Gde. im Bez. Delémont, Kt. Jura
+Mervelier	Gde. im Bez. Delémont, Kt. Jura
+Mettembert	Gde. im Bez. Delémont, Kt. Jura
+Montsevelier	Gde. im Bez. Delémont, Kt. Jura
+Movelier	Gde. im Bez. Delémont, Kt. Jura
+Pleigne	Gde. im Bez. Delémont, Kt. Jura
+Rebeuvelier	Gde. im Bez. Delémont, Kt. Jura
+Rossemaison	Gde. im Bez. Delémont, Kt. Jura
+Saulcy	Gde. im Bez. Delémont, Kt. Jura
+Soulce	Gde. im Bez. Delémont, Kt. Jura
+Soyhières	Gde. im Bez. Delémont, Kt. Jura
+Undervelier	Gde. im Bez. Delémont, Kt. Jura
+Vermes	Gde. im Bez. Delémont, Kt. Jura
+Vicques	Gde. im Bez. Delémont, Kt. Jura
+Vellerat	Gde. im Bez. Delémont, Kt. Jura
+Le Bémont	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Les Bois	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Les Breuleux	Gde. im Bez. Franches-Montagnes, Kt. Jura
+La Chaux-des-Breuleux	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Les Enfers	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Les Genevez	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Lajoux	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Montfaucon	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Muriaux	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Le Noirmont	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Saignelégier	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Saint-Brais	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Soubey	Gde. im Bez. Franches-Montagnes, Kt. Jura
+Alle	Gde. im Bez. Porrentruy, Kt. Jura
+Beurnevésin	Gde. im Bez. Porrentruy, Kt. Jura
+Boncourt	Gde. im Bez. Porrentruy, Kt. Jura
+Bonfol	Gde. im Bez. Porrentruy, Kt. Jura
+Bressaucourt	Gde. im Bez. Porrentruy, Kt. Jura
+Bure	Gde. im Bez. Porrentruy, Kt. Jura
+Coeuve	Gde. im Bez. Porrentruy, Kt. Jura
+Cornol	Gde. im Bez. Porrentruy, Kt. Jura
+Courchavon	Gde. im Bez. Porrentruy, Kt. Jura
+Courgenay	Gde. im Bez. Porrentruy, Kt. Jura
+Courtedoux	Gde. im Bez. Porrentruy, Kt. Jura
+Damphreux	Gde. im Bez. Porrentruy, Kt. Jura
+Fahy	Gde. im Bez. Porrentruy, Kt. Jura
+Fontenais	Gde. im Bez. Porrentruy, Kt. Jura
+Grandfontaine	Gde. im Bez. Porrentruy, Kt. Jura
+Lugnez	Gde. im Bez. Porrentruy, Kt. Jura
+Porrentruy	Gde. im Bez. Porrentruy, Kt. Jura
+Rocourt	Gde. im Bez. Porrentruy, Kt. Jura
+Vendlincourt	Gde. im Bez. Porrentruy, Kt. Jura
+Basse-Allaine	Gde. im Bez. Porrentruy, Kt. Jura
+Clos du Doubs	Gde. im Bez. Porrentruy, Kt. Jura
+Haute-Ajoie	Gde. im Bez. Porrentruy, Kt. Jura
+La Baroche	Gde. im Bez. Porrentruy, Kt. Jura
