@@ -23,7 +23,7 @@ def server_error(request, template_name='500.html'):
 
 def _get_dictionaries(request):
     """
-    get all dictionaries that the user may access and didn't disable
+    Get all dictionaries that the user may access and didn't disable.
     
     requires:
     request.POST
@@ -44,16 +44,16 @@ def _get_dictionaries(request):
 
 def _search(request, searchterm, limit=settings.CROISEE_QUERYMAX):
     """
-    search after a searchterm
+    Search after a searchterm and return a dict of information.
     
     wildcards allowed: * % ? _
     
     returns: dict
-        dictionaries : queryset of Dictionaries
-        results      : list of matching Words
-        resultcount  : number of matches
-        searchterm   : cleaned searchterm
-        found        : found anything at all? (bool)
+        :dictionaries : queryset of Dictionaries
+        :results      : list of matching Words
+        :resultcount  : number of matches
+        :searchterm   : cleaned searchterm
+        :found        : found anything at all? (bool)
         
     If the word contains no wildcards and is unknown,
     it is given back in results with the description 
@@ -93,14 +93,14 @@ def _search(request, searchterm, limit=settings.CROISEE_QUERYMAX):
 
 def _find_word(text, start_y, start_x, direction='h', stopchar='.', newline='\n'):
     """
-    find a word in a text, starting at position y, x (0-based)
+    Find a word in a text, starting at position y, x (0-based).
     
     params:
-    text             : puzzle characters
-    start_y, start_x : coordinates of the first letter of the word in the text (0-based)
-    direction        : h or v
-    stopchar         : character that marks a block (word divider) in the puzzle text
-    newline          : character that marks a new line in the puzzle text
+    :text             : puzzle characters
+    :start_y, start_x : coordinates of the first letter of the word in the text (0-based)
+    :direction        : h or v
+    :stopchar         : character that marks a block (word divider) in the puzzle text
+    :newline          : character that marks a new line in the puzzle text
     
     returns:
     found word or None on error or if the word doesn’t start at the given coordinates
@@ -125,13 +125,13 @@ def _find_word(text, start_y, start_x, direction='h', stopchar='.', newline='\n'
 
 def _find_word_by_num(text, nums, num, direction='h'):
     """
-    find a word in a text by its question number
+    Find a word in a text by its question number.
     
     params:
-    text : puzzle characters
-    nums : request string of question numbers like 'y.x.num,y.x.num' (0-based)
-    num  : question number of word to look for (0-based)
-    direction: h or v
+    :text: puzzle characters
+    :nums: request string of question numbers like 'y.x.num,y.x.num' (0-based)
+    :num:  question number of word to look for (0-based)
+    :direction: h or v
     
     returns:
     see `_find_word`
@@ -147,7 +147,7 @@ def _find_word_by_num(text, nums, num, direction='h'):
 
 def index(request, *args, **kwargs):
     """
-    index view
+    Index view
     """
     context = {
         'MEDIA_URL':    settings.MEDIA_URL,
@@ -162,7 +162,7 @@ def index(request, *args, **kwargs):
 
 def grid(request, *args, **kwargs):
     """
-    grid view
+    Grid view
     """
     puzzle = None
     
@@ -195,7 +195,7 @@ def grid(request, *args, **kwargs):
 
 def save(request, *args, **kwargs):
     """
-    save grid
+    Save grid view.
 
     TODO: combine with grid view, use proper form (validation)
     """
@@ -287,10 +287,10 @@ def save(request, *args, **kwargs):
 
 def ajax_clozequery(request, **kwargs):
     """
-    search for one word
+    Search for one word and return HTML.
     
     kwargs:
-    cloze: the pattern to look for
+    :cloze: the pattern to look for
     
     returns rendered ajax_query.html (result list)
     """
@@ -301,13 +301,14 @@ def ajax_clozequery(request, **kwargs):
 
 def ajax_crossquery(request, **kwargs):
     """
-    do a query for several words, separated by slashes
+    Query for several words, separated by slashes, and return HTML.
+    
+    If words are in format "word,0", the number says which letter of both words must match (0-based),
+    i.e. "P___ON,1" and "JQ____,5" match at "Y".
+    Only matching words are returned.
     
     kwargs:
-    horizontal, vertical: crossing cloze patterns
-    
-    if words are in format "word,0", the number says which letter of both words must match (0-based),
-    i.e. "P___ON,1" and "JQ____,5" match at "Y".
+    :horizontal, vertical: crossing cloze patterns
 
     returns rendered ajax_query.html (double result list)
     """
