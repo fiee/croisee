@@ -1,0 +1,30 @@
+{% extends "root.html" %}{% load i18n %}
+
+{% block title %}{% trans "Word List" %}{% endblock %}
+
+{% block maincontent %}
+<h2>{{ dictionary.name }} ({{ dictionary.language }})</h2>
+<p>{{ dictionary.description }}</p>
+{% if object_list %}
+{% if is_paginated %}{% include "snippets/pagination.html" %}{% endif %}
+<table class="dictionary">
+  <tr>
+    <th>{% trans "Word" %}</th>
+    <th>{% trans "Description" %}</th>
+    <th>{% trans "Priority" %}</th>
+    <th>{% trans "Actions" %}</th>
+  </tr>
+{% for w in object_list %}
+  <tr>
+    <td><a href="./edit/{{ w.id }}/" title="{% trans "Edit" %}" class="word">{{ w.word }}</a></td>
+    <td>{{ w.description }}</td>
+    <td>{{ w.priority }}</td>
+    <td>[ delete ]</td>
+  </tr>
+{% endfor %}
+</table>
+{% else %}
+<p>{% trans "No words found or no access to this dictionary!" %}</p>
+{% endif %}
+{% if is_paginated %}{% include "snippets/pagination.html" %}{% endif %}
+{% endblock %}
