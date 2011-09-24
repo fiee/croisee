@@ -1,9 +1,9 @@
 {% extends "root.html" %}
-{% load cache i18n %}
+{% load i18n %}
 
 {% block title %}{% trans "403 Access Denied" %}{% endblock %}
 
 {% block maincontent %}
 <h2>{% trans "403 Access Denied" %}</h2>
-<p>{% trans "An internal error occurred. Try again. If it still doesn't work, try again later - we got the message and will try to fix it." %}</p>
+<p>{% trans "We're sorry, but you are not authorized to view this page." %}</p>
 {% endblock %}
