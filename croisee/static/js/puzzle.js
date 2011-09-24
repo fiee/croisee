@@ -274,7 +274,8 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
     }
     num--;
     insertpos--;
-    if ((num<0) || (insertpos<0)) {
+    if (insertpos < 0) insertpos = 0;
+    if (num<0) {
       console.log('error in renumber_puzzle:',insertpos,num);
       return false;
     }
