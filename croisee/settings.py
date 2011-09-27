@@ -200,6 +200,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles', # Django 1.3
     'gunicorn', # not with fcgi
     'south',
+    'registration',
+    'guardian',
     #'tagging',
     PROJECT_NAME,
 ]
@@ -279,6 +281,7 @@ CROISEE_GRIDDEF_Y =  12 # default lines in puzzle grid
 CROISEE_QUERYMAX  = 100 # maximum query results
 CROISEE_XQUERYMAX = 1024 # maximum cross query results
 CROISEE_PERSONALDICT_NAME = _(u'personal dictionary') # name of personal dictionary
+CROISEE_DEFAULT_OWNER_ID = 1
 
 # ==============================================================================
 # third party
@@ -290,6 +293,13 @@ CROISEE_PERSONALDICT_NAME = _(u'personal dictionary') # name of personal diction
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
 LOGIN_REDIRECT_URL = '/'
+ANONYMOUS_USER_ID = -1 # guardian
+ACCOUNT_ACTIVATION_DAYS = 7 # registration
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # default
+    'guardian.backends.ObjectPermissionBackend',
+)
 
 # admin_tools
 ADMIN_TOOLS_MENU = '%s.menu.CustomMenu' % PROJECT_NAME
