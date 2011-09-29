@@ -2,7 +2,6 @@
 from django.contrib import admin
 from models import *
 
-
 class WordInline(admin.TabularInline):
     model = Word
 
@@ -38,6 +37,18 @@ class WordlistUploadAdmin(admin.ModelAdmin):
         obj.owner = request.user
         obj.save()
 
+class PuzzleAdmin(admin.ModelAdmin):
+    list_display = ('code', 'title', 'language', 'owner', 'public', 'width', 'height')
+    list_display_links = ('code',)
+    list_filter = ('public', 'owner', 'language', )
+    list_editable = ('title', 'public', 'language',)
+    search_fields = ('title', 'text', 'questions')
+    
+    def save_model(self, request, obj, form, change):
+        obj.owner = request.user
+        obj.save()
+
 admin.site.register(Word, WordAdmin)
 admin.site.register(Dictionary, DictionaryAdmin)
 admin.site.register(WordlistUpload, WordlistUploadAdmin)
+admin.site.register(Puzzle, PuzzleAdmin)
