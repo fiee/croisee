@@ -2,7 +2,9 @@
 Description of model and form fields
 ------------------------------------
 
-All internal numbering is 0-based, even if we display 1-based.
+All internal numbering is 0-based.
+
+Directions are "horizontal" and "vertical", represented by "h" and "v".
 
 Puzzle
 ======
@@ -18,6 +20,7 @@ That means that we need some interpretation of the saved data.
   Numbers mark the start of words and relate to questions. Each "number" is
   a tuple of row, column and word number, separated by stops (.) and chained
   with commas (,), e.g. "2.3.4,2.4.5".
+  *Beware*, the word number is 1-based, like displayed!
 :questions:
   Questions for/descriptions of the words in the puzzle, one question per line.
   Each line starts with the question number and direction, followed by the
