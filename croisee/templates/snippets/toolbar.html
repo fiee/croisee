@@ -1,24 +1,26 @@
 {% load i18n %}
 <div id="puzzle_toolbar" class="toolbar">
   <ul>
-    <li><a class="button" accesskey="2" title="{% trans "New Puzzle" %} [2]" id="tb_new_puzzle" href="{% url croisee-grid %}"><span class="ui-icon ui-icon-star"></span></a></li>
-    <li><a class="button" accesskey="3" title="{% trans "Save Puzzle" %} [3]" id="tb_save_puzzle" href="{% url croisee-save %}"><span class="ui-icon ui-icon-disk"></span></a></li>
-    <li><a class="button" accesskey="7" title="{% trans "Clear Puzzle" %} [7]" id="tb_clear_puzzle" href="{% url croisee-grid %}"><span class="ui-icon ui-icon-trash"></span></a></li>
+    <li><a class="button" accesskey="n" title="{% trans "New Puzzle" %} [n]" id="tb_new_puzzle" href="{% url croisee-puzzle-new %}"><span class="ui-icon ui-icon-star"></span></a></li>
+    <li><a class="button" accesskey="s" title="{% trans "Save Puzzle" %} [s]" id="tb_save_puzzle" href="{% url croisee-puzzle-save %}"><span class="ui-icon ui-icon-disk"></span></a></li>
+    <li><a class="button" accesskey="o" title="{% trans "Load Puzzle" %} [o]" id="tb_load_puzzle" href="{% url croisee-puzzle-new %}"><span class="ui-icon ui-icon-folder-open"></span></a></li>
+    <li><a class="button" accesskey="q" title="{% trans "Clear Puzzle" %} [q]" id="tb_clear_puzzle" href="{% url croisee-puzzle-new %}"><span class="ui-icon ui-icon-trash"></span></a></li>
+    <li><a class="button" title="{% trans "Delete Puzzle" %}" id="tb_delete_puzzle" href="{% url croisee-puzzle-delete slug="abc" %}"><span class="ui-icon ui-icon-trash"></span></a></li>
     <!--
     <li><a class="button" title="{% trans "Adapt Puzzle Size" %}" href="{#% url croisee-adapt %#}"><span class="ui-icon ui-icon-arrow-2-se-nw"></span></a></li>
     <li><a class="button" title="{% trans "Move Puzzle Contents" %}" href="{#% url croisee-move %#}"><span class="ui-icon ui-icon-arrow-4-diag"></span></a></li>
     -->
     <li>
-    <form action="/{{cloze_action}}" method="post" name="cloze_search" id="cloze_search">
+    <form action="#" method="post" name="cloze_search" id="cloze_search_form">
       {% csrf_token %}
       <label for="searchterm" class="hidden">{% trans "Search for:" %}</label>
-      <input type="text" accesskey="S" name="cloze_searchterm" id="cloze_searchterm" value="{{ searchterm }}" title="{% trans "You can use “_” and “*” as wildcards for single or several characters." %}"/>
-      <a class="button" accesskey="4" id="cloze_search_submit" title="{% trans "Search" %} [4]"><span class="ui-icon ui-icon-search"></span></a>
+      <input type="text" accesskey="F" name="cloze_searchterm" id="cloze_searchterm_id" value="{{ searchterm }}" title="{% trans "You can use “_” and “*” as wildcards for single or several characters." %}"/>
+      <a class="button" accesskey="f" id="cloze_search_submit" title="{% trans "Search" %} [f]"><span class="ui-icon ui-icon-search"></span></a>
     </form> 
     </li>
 
     <li><a class="button" title="{% trans "Dictionaries" %}" id="tb_dicts"><span class="ui-icon ui-icon-note"></span></a></li>
-    <li><a class="button" accesskey="6" title="{% trans "Help" %} [6]" id="tb_help"><span class="ui-icon ui-icon-help"></span></a></li>
+    <li><a class="button" accesskey="h" title="{% trans "Help" %} [h]" id="tb_help"><span class="ui-icon ui-icon-help"></span></a></li>
   </ul>
 </div>
 
@@ -45,15 +47,15 @@
 
 <div id="dialog_new_puzzle" class="hidden" title="{% trans "New Puzzle" %}">
   {# ask for dimensions to create grid #}
-  <form action="/grid/" name="create_grid" method="post">
+  <form action="{% url croisee-puzzle-new %}" name="new_puzzle" id="new_puzzle_form" method="post">
     {% csrf_token %}
     <div class="formline ui-widget">
-      <span class="label"><label for="maxcol">{% trans "Rows:" %}</label></span> 
-      <input type="text" name="new_maxcol" id="new_maxcol" length="3" maxlength="2" value="{{defaultx}}" class="ui-widget-content numeric" />
+      <span class="label"><label for="width">{% trans "Rows:" %}</label></span> 
+      <input type="text" name="width" id="width_id" length="3" maxlength="2" value="{{default_x}}" class="ui-widget-content numeric" />
     </div>
     <div class="formline ui-widget">
-      <span class="label"><label for="maxrow">{% trans "Lines:" %}</label></span> 
-      <input type="text" name="new_maxrow" id="new_maxrow" length="3" maxlength="2" value="{{defaulty}}" class="ui-widget-content numeric" />
+      <span class="label"><label for="height">{% trans "Lines:" %}</label></span> 
+      <input type="text" name="height" id="height_id" length="3" maxlength="2" value="{{default_y}}" class="ui-widget-content numeric" />
     </div>
     <div class="formline ui-widget">
       <input type="submit" value="{% trans "Create" %}" />

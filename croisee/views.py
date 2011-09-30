@@ -1,184 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from django.conf import settings
-from django.db.models import Q
-from django.http import Http404, HttpResponseForbidden
-from django.utils.translation import ugettext_lazy as _
-from django.shortcuts import render, redirect, get_object_or_404
-from django.template import RequestContext
-from django.views.generic import View, TemplateView, ListView
-from croisee.models import Dictionary, Word, Puzzle, cleanword
-from croisee.middleware import Http403
 from datetime import datetime
 from hashlib import md5
 import logging
+from django.conf import settings
+from django.contrib.auth.models import User
+#from django.core.urlresolvers import reverse
+from django.db.models import Q
+from django.http import Http404, HttpResponseForbidden, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.template import RequestContext
+from django.utils.translation import ugettext_lazy as _
+from django.views.generic import ListView, TemplateView
+from django.views.generic.edit import DeleteView, CreateView, SingleObjectTemplateResponseMixin, ModelFormMixin, ProcessFormView
+from djangorestframework.views import View
+from croisee.models import Dictionary, Word, Puzzle, cleanword
+from croisee.forms import PuzzleForm
+from croisee.middleware import Http403
+
 logger = logging.getLogger(settings.PROJECT_NAME)
-
-def server_error(request, template_name='500.html'):
-    """
-    500 error handler.
-
-    Templates: `500.html`
-    Context: None
-    """
-    # see http://ericholscher.com/blog/2009/sep/23/pretty-django-error-pages/
-    return render(request, template_name)
-
-def _get_dictionaries(request):
-    """
-    Get all dictionaries that the user may access and didn't disable.
-    
-    requires:
-    request.POST
-    
-    returns: tuple
-        queryset of dictionaries,
-        list of disabled dictionary ids 
-    """
-    dictionaries = Dictionary.objects.filter(Q(public=True)|Q(owner=request.user.id)) # public or own
-    if request.method != 'POST':
-        return (dictionaries, [])
-    disabled_dicts = []
-    for d in dictionaries:
-        if 'dic_%d' % d.id not in request.POST:
-            d.disabled = True
-            disabled_dicts.append(d.id)
-    return (dictionaries, disabled_dicts)
-
-def _search(request, searchterm, limit=settings.CROISEE_QUERYMAX):
-    """
-    Search after a searchterm and return a dict of information.
-    
-    wildcards allowed: * % ? _
-    
-    returns: dict
-        :dictionaries : queryset of Dictionaries
-        :results      : list of matching Words
-        :resultcount  : number of matches
-        :searchterm   : cleaned searchterm
-        :found        : found anything at all? (bool)
-        
-    If the word contains no wildcards and is unknown,
-    it is given back in results with the description 
-    being the word in title case!
-    """
-    dictionaries = _get_dictionaries(request)
-    context = {
-        'dictionaries': dictionaries[0],
-        'results':      [],
-        'resultcount':  0,
-        'searchterm':   '',
-        'found': True,
-    }
-    try:
-        searchterm = cleanword(searchterm, False).upper()
-        internal = searchterm.replace('?','_').replace('*','%').replace('%','%%')
-        if not ('_' in internal or '%%' in internal): # without wildcards = no search needed
-            if request.user.is_staff: # TODO: we need better permission handling!
-                context['results'] = Word.objects.filter(word=internal).exclude(dictionary__id__in=dictionaries[1])[:limit]
-            else:
-                context['results'] = Word.objects.filter(word=internal, dictionary__public=True).exclude(dictionary__id__in=dictionaries[1])[:limit]
-            if not context['results']: # new word
-                context['results'] = [ Word(word=internal, description=searchterm.title()) ]
-                context['found'] = False
-        else:
-            if request.user.is_staff:
-                context['results'] = Word.objects.extra(where=['word LIKE "'+internal+'"']).exclude(dictionary__id__in=dictionaries[1])[:limit]
-            else:
-                context['results'] = Word.objects.extra(where=['word LIKE "'+internal+'"']).filter(dictionary__public=(not request.user.is_staff)).exclude(dictionary__id__in=dictionaries[1])[:limit]
-        # TODO: dictionaries in selected (hu??)
-        context['resultcount'] = len(context['results'])
-        context['found'] = (context['found'] and (context['resultcount']>0))
-        context['searchterm'] = searchterm
-    except (KeyError, Word.DoesNotExist), ex:
-        pass
-    return context
-
-def _find_word(text, start_y, start_x, direction='h', stopchar='.', newline='\n'):
-    """
-    Find a word in a text, starting at position y, x (0-based).
-    
-    params:
-    :text             : puzzle characters
-    :start_y, start_x : coordinates of the first letter of the word in the text (0-based)
-    :direction        : h or v
-    :stopchar         : character that marks a block (word divider) in the puzzle text
-    :newline          : character that marks a new line in the puzzle text
-    
-    returns:
-    found word or None on error or if the word doesn’t start at the given coordinates
-    """
-    lines = [line for line in text.split(newline) if line]
-    try:
-        if direction=='h':
-            if start_x > 0 and lines[start_y][start_x-1] <> stopchar:
-                # word doesn’t start here
-                print u"word doesn’t start at",start_x,start_y,direction
-                return None
-            return lines[start_y][start_x:].split(stopchar)[0]
-        elif direction=='v':
-            if start_y > 0 and lines[start_y-1][start_x] <> stopchar:
-                # word doesn’t start here
-                print u"word doesn’t start at",start_x,start_y,direction
-                return None
-            return ''.join([line[start_x] for line in lines[start_y:]]).split(stopchar)[0]
-    except IndexError, e:
-        logger.warning(u'IndexError in _find_word with x=%d, y=%d, dir=%s: %s' % (start_x, start_y, direction, e))
-    return None
-
-def _find_word_by_num(text, nums, num, direction='h'):
-    """
-    Find a word in a text by its question number.
-    
-    params:
-    :text: puzzle characters
-    :nums: request string of question numbers like 'y.x.num,y.x.num' (0-based)
-    :num:  question number of word to look for (0-based)
-    :direction: h or v
-    
-    returns:
-    see `_find_word`
-    """
-    # split by comma, split by dot, get coordinates by num
-    #y,x = dict(map(lambda t: (int(t[2]), (int(t[0]), int(t[1]))),(e.split('.') for e in nums.strip(' ,').split(','))))[int(num)]
-    try:
-        y,x = [ e.split('.')[0:2] for e in nums.strip(' ,').split(',') if int(e.split('.')[2])-1 == int(num) ][0]
-    except IndexError, e:
-        logger.error(u'Can’t find word no.%s with "%s"\n%s' % (num, nums, e))
-        return None
-    return _find_word(text, int(y), int(x), direction).strip()
-
-def grid(request, *args, **kwargs):
-    """
-    Grid view
-    """
-    puzzle = None
-    
-    if (request.method == 'POST'):
-        maxcol = max(min(int(request.POST.get('new_maxcol', settings.CROISEE_GRIDMIN_X)), settings.CROISEE_GRIDMAX_X), settings.CROISEE_GRIDMIN_X)
-        maxrow = max(min(int(request.POST.get('new_maxrow', settings.CROISEE_GRIDMIN_Y)), settings.CROISEE_GRIDMAX_Y), settings.CROISEE_GRIDMIN_Y)
-        p_text = request.POST.get('chars', '').upper()
-        p_nums = request.POST.get('nums', '')
-        
-        puzzle = {
-            'maxcol':   maxcol,
-            'maxrow':   maxrow,
-            'maxnum':   0,
-            'text':     p_text,
-            'nums':     p_nums,
-            'questions': '',
-        }
-        
-    context = {
-        'MEDIA_URL':    settings.MEDIA_URL,
-        'posted':       (request.method == 'POST'),
-        'puzzle':       puzzle,
-        'defaultx':     settings.CROISEE_GRIDDEF_X,
-        'defaulty':     settings.CROISEE_GRIDDEF_Y,
-        'dictionaries': _get_dictionaries(request)[0],
-        'cloze_action': 'ajax/DUMMY/',
-    }
-    return render(request, 'grid.html', context)
 
 
 def save(request, *args, **kwargs):
@@ -199,14 +39,14 @@ def save(request, *args, **kwargs):
     except ValueError, e:
         maxnum = 0
     try:
-        maxcol = max(min(int(post.get('maxcol', settings.CROISEE_GRIDMIN_X)), settings.CROISEE_GRIDMAX_X), settings.CROISEE_GRIDMIN_X)
-        maxrow = max(min(int(post.get('maxrow', settings.CROISEE_GRIDMIN_Y)), settings.CROISEE_GRIDMAX_Y), settings.CROISEE_GRIDMIN_Y)
+        maxcol = max(min(int(post.get('width', settings.CROISEE_GRIDMIN_X)), settings.CROISEE_GRIDMAX_X), settings.CROISEE_GRIDMIN_X)
+        maxrow = max(min(int(post.get('height', settings.CROISEE_GRIDMIN_Y)), settings.CROISEE_GRIDMAX_Y), settings.CROISEE_GRIDMIN_Y)
     except ValueError, e:
         logger.warning('ValueError in save: %s' % e)
         maxcol = settings.CROISEE_GRIDMIN_X
         maxrow = settings.CROISEE_GRIDMIN_Y
 
-    p_text = post.get('chars', '').upper().replace('/', '\n') # complete text of puzzle
+    p_text = post.get('text', '').upper().replace('/', '\n') # complete text of puzzle
     #logger.info('\n'+p_text.replace('.', '#').replace(' ', u'·'))
     #logger.info(post.get('nums', ''))
 
@@ -215,8 +55,8 @@ def save(request, *args, **kwargs):
         'maxrow':   maxrow,
         'maxnum':   maxnum,
         'text':     p_text, #.replace('\n', '/'),
-        'nums':     post.get('nums', ''),
-        'hash':     post.get('hash', ''),
+        'nums':     post.get('numbers', ''),
+        'hash':     post.get('code', ''),
         'questions': post.get('questions', ''),
     }
 
@@ -273,16 +113,22 @@ def save(request, *args, **kwargs):
     }
     return render(request, 'grid.html', context)
 
-class PuzzleView(TemplateView):
-    model = Puzzle
-    template_name = 'grid.html'
+
+class DictionaryMixin(object):
+    """
+    Mixin for View-based classes to handle dictionary access and lookups
+    """
     
-    def _get_dictionaries(self):
+    def get_dictionaries(self, ignore_post=False):
         """
         Get all dictionaries that the user may access and didn't disable.
+        Return a tuple of dictionaries (queryset) and disabled dictionaries (list of IDs).
         
-        requires:
-        list of 'dic_#' in request.POST
+        The basic set of dictionaries are all public ones and all owned by the user.
+        If `request.method` is 'POST', then look for a list of 'dic_#' and disable
+        all dictionaries that aren’t in there. (Because they come from a set of
+        checkboxes and show only up if enabled.)
+        If `ignore_post` is True, don’t care about `request.method`.
         
         returns: tuple
             queryset of dictionaries,
@@ -290,7 +136,7 @@ class PuzzleView(TemplateView):
         """
         if not hasattr(self, 'dictionaries'):
             self.dictionaries = Dictionary.objects.filter(Q(public=True)|Q(owner=self.request.user.id)) # public or own
-        if self.request.method == 'POST':
+        if not ignore_post and self.request.method == 'POST':
             self.disabled_dictionaries = []
             for d in self.dictionaries:
                 if 'dic_%d' % d.id not in self.request.POST:
@@ -300,11 +146,12 @@ class PuzzleView(TemplateView):
             self.disabled_dictionaries = []
         return (self.dictionaries, self.disabled_dictionaries)
     
-    def _search(self, searchterm, limit=settings.CROISEE_QUERYMAX):
+    def search(self, searchterm, limit=settings.CROISEE_QUERYMAX):
         """
         Search after a searchterm and return a dict of information.
+        Limit the list of results to a maximum of `limit`.
         
-        wildcards allowed: * % ? _
+        Wildcards allowed: * % ? _
         
         returns: dict
             :dictionaries : queryset of Dictionaries
@@ -318,7 +165,7 @@ class PuzzleView(TemplateView):
         being the word in title case!
         """
         if not hasattr(self, 'dictionaries'):
-            self._get_dictionaries()
+            self.get_dictionaries()
         context = {
             'dictionaries': self.dictionaries,
             'results':      [],
@@ -351,9 +198,9 @@ class PuzzleView(TemplateView):
             pass
         return context
     
-    def _find_word(self, text, start_y, start_x, direction='h', stopchar='.', newline='\n'):
+    def find_word(self, text, start_y, start_x, direction='h', stopchar='.', newline='\n'):
         """
-        Find a word in a text, starting at position y, x (0-based).
+        Return the word from `text`, starting at position y, x (0-based).
         
         params:
         :text             : puzzle characters
@@ -363,7 +210,7 @@ class PuzzleView(TemplateView):
         :newline          : character that marks a new line in the puzzle text
         
         returns:
-        found word or None on error or if the word doesn’t start at the given coordinates
+        found word or None on error or if no word starts at the given coordinates
         """
         lines = [line for line in text.split(newline) if line]
         try:
@@ -383,13 +230,13 @@ class PuzzleView(TemplateView):
             logger.warning(u'IndexError in _find_word with x=%d, y=%d, dir=%s: %s' % (start_x, start_y, direction, e))
         return None
     
-    def _find_word_by_num(self, text, nums, num, direction='h'):
+    def find_word_by_num(self, text, numbers, num, direction='h'):
         """
-        Find a word in a text by its question number.
+        Return the word from `text` by its question number.
         
         params:
         :text: puzzle characters
-        :nums: request string of question numbers like 'y.x.num,y.x.num' (0-based)
+        :numbers: request string of question numbers like 'y.x.num,y.x.num' (0-based)
         :num:  question number of word to look for (0-based)
         :direction: h or v
         
@@ -397,45 +244,203 @@ class PuzzleView(TemplateView):
         see `_find_word`
         """
         # split by comma, split by dot, get coordinates by num
-        #y,x = dict(map(lambda t: (int(t[2]), (int(t[0]), int(t[1]))),(e.split('.') for e in nums.strip(' ,').split(','))))[int(num)]
         try:
-            y,x = [ e.split('.')[0:2] for e in nums.strip(' ,').split(',') if int(e.split('.')[2])-1 == int(num) ][0]
+            #y,x = dict(map(lambda t: (int(t[2]), (int(t[0]), int(t[1]))),(e.split('.') for e in nums.strip(' ,').split(','))))[int(num)]
+            y,x = [ e.split('.')[0:2] for e in numbers.strip(' ,').split(',') if int(e.split('.')[2])-1 == int(num) ][0]
         except IndexError, e:
-            logger.error(u'Can’t find word no.%s with "%s"\n%s' % (num, nums, e))
+            logger.error(u'Can’t find word no.%s with "%s"\n%s' % (num, numbers, e))
             return None
         return _find_word(text, int(y), int(x), direction).strip()
 
-    def _get_puzzle(self, hash_id=None):
-        if not hash_id and 'hash' in self.kwargs:
-            hash_id = self.kwargs['hash']
-        self.puzzle = Puzzle.get(code=hash_id)
-        if not self.puzzle.public and self.puzzle.owner != self.request.user and not self.request.user.is_superuser:
-            # TODO: proper permissions handling
-            raise Http403
-        return self.puzzle
-
-    def get_context_data(self, **kwargs):
-        """
-        A lot of request handling happens here. Is that good?
-        """
-        context = super(PuzzleView, self).get_context_data(**kwargs)
-        context['MEDIA_URL'] = settings.MEDIA_URL
-        context['posted'] = (self.request.method == 'POST')
-        context['cloze_action'] = ''
-        context['defaultx'] = settings.CROISEE_GRIDDEF_X
-        context['defaulty'] = settings.CROISEE_GRIDDEF_Y
-        if self.request.method == 'POST' and 'cloze_searchterm' in self.request.POST:
-            context.update(self._search(self.request.POST['cloze_searchterm']))
-        else:
-            context['dictionaries'] = self._get_dictionaries()[0]
-        if 'hash' in self.kwargs:
-            context['puzzle'] = self._get_puzzle()
-        return context    
-
-class IndexView(PuzzleView):
+class IndexView(TemplateView):
     template_name = 'index.html'
 
-class AjaxClozeQueryView(PuzzleView): 
+class DeletePuzzleView(DeleteView):
+    model = Puzzle
+    form_class = PuzzleForm
+    template_name = 'grid.html'
+    success_url = '/puzzle/' #reverse('croisee-puzzle-new')
+    slug_field = 'code' # but code must come in 'slug' kwarg!
+    #context_object_name = 'puzzle'
+    # TODO: permissions
+
+class NewPuzzleView(CreateView, DictionaryMixin):
+    model = Puzzle
+    form_class = PuzzleForm
+    template_name = 'grid.html'
+    #success_url = '' # default: get_absolute_url
+    slug_field = 'code' # but code must come in 'slug' kwarg!
+    #context_object_name = 'puzzle'
+
+    def new_hash_id(self):
+        """
+        Create a new MD5 hash id from remote IP and current time.
+        """
+        return md5('%s/%s' % (self.request.META.get('REMOTE_ADDR', '127.0.0.1'), datetime.strftime(datetime.now(), '%Y-%m-%dT%H:%M:%S'))).hexdigest()
+    
+    def get_user(self):
+        if isinstance(self.request.user, type(User)):
+            return self.request.user
+        else:
+            return User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
+
+    def get_initial(self):
+        return {
+                'width': settings.CROISEE_GRIDMIN_X,
+                'height': settings.CROISEE_GRIDMIN_Y,
+                'code': self.new_hash_id(),
+                'title': '',
+                'text': '',
+                'numbers': '',
+                'questions': '',
+                'owner': self.get_user(),
+                'language': settings.LANGUAGE_CODE,
+                }
+
+    def get_form_kwargs(self):
+        """
+        Returns the keyword arguments for instanciating the form.
+        """
+        if not self.object and self.request.method=='POST':
+            self.get_object()
+        return super(NewPuzzleView, self).get_form_kwargs()
+
+    def get_object(self, queryset=None):
+        """
+        Return a new puzzle object.
+        Override get_object from SingleObjectMixin.
+        """
+        self.object = Puzzle(**self.get_initial())
+        return self.object
+
+    def get_context_data(self, **kwargs):
+        context = super(NewPuzzleView, self).get_context_data(**kwargs)
+        context['default_x'] = settings.CROISEE_GRIDDEF_X
+        context['default_y'] = settings.CROISEE_GRIDDEF_Y
+        context['dictionaries'] = self.get_dictionaries()[0]
+        return context    
+
+
+class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMixin, ProcessFormView):
+    model = Puzzle
+    form_class = PuzzleForm
+    template_name = 'grid.html'
+    #success_url = '' # default: get_absolute_url
+    slug_field = 'code' # but code must come in 'slug' kwarg!
+    #context_object_name = 'puzzle'
+
+    def new_hash_id(self):
+        """
+        Create a new MD5 hash id from remote IP and current time.
+        """
+        return md5('%s/%s' % (self.request.META.get('REMOTE_ADDR', '127.0.0.1'), datetime.strftime(datetime.now(), '%Y-%m-%dT%H:%M:%S'))).hexdigest()
+        
+    def get_object(self, queryset=None):
+        if 'slug' in self.kwargs:
+            hash_id = self.kwargs['slug']
+        else:
+            hash_id = self.request.POST.get('code', None)
+        if hasattr(self, 'object') and ((not hash_id) or hash_id == self.object.code):
+            return self.object
+        user = self.get_user()
+        owner = user
+        if owner != self.request.user and not self.request.user.is_active:
+            # an unknown or anonymous user cannot become an owner
+            owner = User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
+        try:
+            self.object = Puzzle.objects.get(code=hash_id)
+        except Puzzle.DoesNotExist, e:
+            logger.info('puzzle "%s" not found, creating new puzzle' % hash_id)
+            hash_id = self.request.POST.get('code', self.new_hash_id())
+            self.object = Puzzle(
+                public = True, #(not self.request.user.is_active),
+                code = hash_id,
+                owner = owner,
+                createdby = user,
+                createdon = datetime.now(),
+                height = max(min(int(self.request.POST.get('width', settings.CROISEE_GRIDMIN_Y)), settings.CROISEE_GRIDMAX_Y), settings.CROISEE_GRIDMIN_Y),
+                width = max(min(int(self.request.POST.get('height', settings.CROISEE_GRIDMIN_X)), settings.CROISEE_GRIDMAX_X), settings.CROISEE_GRIDMIN_X),
+                text = self.request.POST.get('text', '').upper(),
+                numbers = self.request.POST.get('numbers', ''),
+                questions = self.request.POST.get('questions', ''),
+            )
+        if (not self.object.public) and (self.object.owner != self.request.user) and (not self.request.user.is_superuser):
+            # TODO: proper permissions handling
+            logger.warning('user "%s" must not access puzzle "%s", owned by "%s"!' % (self.request.user, hash_id, self.object.owner))
+            raise Http403
+        self.object.lastchangedby = user
+        self.object.lastchangedon = datetime.now()
+        return self.object
+    
+    def get_user(self):
+        if isinstance(self.request.user, type(User)):
+            return self.request.user
+        else:
+            return User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
+    
+    def _save_puzzle(self, **kwargs):
+        # TODO: permissions
+        if not hasattr(self, 'object'):
+            self.get_object()
+        self.object.lastchangedby = self.get_user()
+        self.object.lastchangedon = datetime.now()
+        logger.info('save_puzzle: %s' % self.object)
+        return self.object.save(**kwargs)
+
+    def form_invalid(self, form):
+        logger.warn('form is invalid!\n%s' % form.errors)
+        return super(PuzzleView, self).form_invalid(form)
+
+    def form_valid(self, form):
+        """
+        Beware, doesn’t call super() to avoid multiple saving!
+        
+        TODO: compare with get_object
+        """
+        new_object = form.save(commit=False)
+        for field in ('title', 'text', 'questions', 'numbers', 'width', 'height'):
+            #logger.info('setting %s to:\n%s' % (field, getattr(new_object, field)))
+            setattr(self.object, field, getattr(new_object, field))
+        self.object.lastchangedby = self.get_user()
+        self.object.lastchangedon = datetime.now() # is this necessary?
+        logger.info('form_valid: %s' % self.object)
+        self.object.save()
+        # TODO: saving questions to personal dictionary
+        return self.render_to_response(self.get_context_data(form=form)) #HttpResponseRedirect(self.get_success_url())
+
+    def get_form_kwargs(self):
+        """
+        Returns the keyword arguments for instanciating the form.
+        """
+        if (not hasattr(self, 'object') or not self.object) and self.request.method=='POST':
+            self.get_object()
+        return super(PuzzleView, self).get_form_kwargs()
+
+    def get_context_data(self, **kwargs):
+        context = super(PuzzleView, self).get_context_data(**kwargs)
+        #context['posted'] = (self.request.method == 'POST')
+        context['default_x'] = settings.CROISEE_GRIDDEF_X
+        context['default_y'] = settings.CROISEE_GRIDDEF_Y
+        context['dictionaries'] = self.get_dictionaries()[0]
+        return context    
+    
+    def get(self, request, *args, **kwargs):
+        if 'slug' in kwargs:
+            self.get_object()
+        return super(PuzzleView, self).get(request, *args, **kwargs)
+
+#    def post(self, request, *args, **kwargs):
+#        self._save_puzzle()
+#        return super(PuzzleView, self).post(request, *args, **kwargs)
+
+class SavePuzzleView(PuzzleView):
+
+    def post(self, request, *args, **kwargs):
+        self._save_puzzle()
+        return self.get(request, *args, **kwargs)
+    
+
+class AjaxClozeQueryView(TemplateView, DictionaryMixin): 
     """
     Search for one word and return HTML.
     
@@ -448,7 +453,7 @@ class AjaxClozeQueryView(PuzzleView):
 
     def get_context_data(self, **kwargs):
         context = super(AjaxClozeQueryView, self).get_context_data(**kwargs)
-        results = (self._search(self.kwargs['cloze']),)
+        results = (self.search(self.kwargs['cloze']),)
         results[0]['name'] = _('results')
         results[0]['direction'] = 'horizontal'
         context['results'] = results
@@ -457,7 +462,7 @@ class AjaxClozeQueryView(PuzzleView):
     def post(self, request, *args, **kwargs):
         return self.get(request, *args, **kwargs)
 
-class AjaxCrossQueryView(PuzzleView): 
+class AjaxCrossQueryView(TemplateView, DictionaryMixin): 
     """
     Query for several words, separated by slashes, and return HTML.
     
@@ -485,7 +490,7 @@ class AjaxCrossQueryView(PuzzleView):
             vl = None
         if hl is not None and vl is not None and len(horiz)>hl and len(vert)>vl:
             # if we got valid positionals
-            results = (self._search(horiz, 1024), self._search(vert, 1024)) # "no" limit
+            results = (self.search(horiz, 1024), self.search(vert, 1024)) # "no" limit
             hres = set()
             vres = set()
             for h in results[0]['results']:
@@ -498,7 +503,7 @@ class AjaxCrossQueryView(PuzzleView):
             results[0]['resultcount'] = len(hres)
             results[1]['resultcount'] = len(vres)
         else:
-            results = (self._search(horiz), self._search(vert)) # default limit
+            results = (self.search(horiz), self.search(vert)) # default limit
         results[0]['direction'] = 'horizontal'
         results[1]['direction'] = 'vertical'
         results[0]['name'] = _('horizontal')
@@ -508,6 +513,7 @@ class AjaxCrossQueryView(PuzzleView):
 
     def post(self, request, *args, **kwargs):
         return self.get(request, *args, **kwargs)
+
 
 class WordListView(ListView):
     model = Word
