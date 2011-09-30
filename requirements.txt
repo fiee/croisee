@@ -4,3 +4,4 @@ Django
 south
 django-registration
 django-guardian
+djangorestframework

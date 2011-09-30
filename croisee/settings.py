@@ -200,6 +200,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles', # Django 1.3
     'gunicorn', # not with fcgi
     'south',
+    'djangorestframework', # RESTful API - optional, just comment
     'registration',
     'guardian',
     #'tagging',
