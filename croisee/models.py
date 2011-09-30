@@ -77,6 +77,8 @@ class Dictionary(models.Model):
     def __unicode__(self):
         return "%s (%s)" % (self.name, self.language)
 
+    def get_absolute_url(self):
+        return '/dictionary/%d/' % self.id
 
 
 class Word(models.Model):
@@ -100,6 +102,9 @@ class Word(models.Model):
     def save(self, *args, **kwargs):
         self.word = cleanword(self.word)
         super(Word, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return '/dictionary/%d/%s/' % (self.dictionary.id, self.word)
 
 
 class WordlistUpload(models.Model):
@@ -212,3 +217,5 @@ class Puzzle(models.Model):
     def __unicode__(self):
         return "%s (%s)" % (self.code, self.title)
     
+    def get_absolute_url(self):
+        return '/puzzle/%s/' % self.code
