@@ -1,5 +1,4 @@
-{% extends "root.html" %}
-{% load i18n range_tags %}
+{% extends "root.html" %}{% load i18n range_tags %}
 
 {% block title %}{% trans "Puzzle Grid" %}{% endblock %}
 
@@ -8,24 +7,31 @@
 {% endblock %}
 
 {% block maincontent %}
-{% include "snippets/toolbar.html" %}
+{% include "snippets/toolbar.html" %}<div class="clear"></div>
 {% if puzzle %}
-<form action="/grid/save/" name="puzzle" id="puzzle_form" method="post" autocomplete="off">
+<form action="/puzzle/{{puzzle.code}}/" name="puzzle" id="puzzle_form" method="post" autocomplete="off">
 {% csrf_token %}
-<input type="hidden" name="maxcol" id="maxcol" value="{{puzzle.maxcol}}" />
-<input type="hidden" name="maxrow" id="maxrow" value="{{puzzle.maxrow}}" />
-<input type="hidden" name="maxnum" id="maxnum" value="{{puzzle.maxnum}}" />
-<input type="hidden" name="chars" id="chars" value="{{puzzle.text}}" />
-<input type="hidden" name="nums" id="nums" value="{{puzzle.nums}}" />
-<input type="hidden" name="questions" id="questions" value="{{puzzle.questions}}" />
-<input type="hidden" name="hash" id="hash" value="{{puzzle.hash}}" />
+<div class="ui-widget" title="{% trans "Short description of this puzzle" %}">
+  <label for="title">{% trans "Title" %}</label>
+  <input type="text" name="title" id="title_id" length="60" maxlength="255" value="{{puzzle.title}}" />
+</div>
+<input type="hidden" name="width" id="width_id" value="{{puzzle.width}}" />
+<input type="hidden" name="height" id="height_id" value="{{puzzle.height}}" />
+<input type="hidden" name="maxnum" id="maxnum_id" value="{{puzzle.maxnum}}" />
+<input type="hidden" name="text" id="text_id" value="{{puzzle.text}}" />
+<input type="hidden" name="numbers" id="numbers_id" value="{{puzzle.numbers}}" />
+<input type="hidden" name="questions" id="questions_id" value="{{puzzle.questions}}" />
+<input type="hidden" name="code" id="code_id" value="{{puzzle.code}}" />
+<input type="hidden" name="owner" id="owner_id" value="{{puzzle.owner.id}}" />
+<input type="hidden" name="language" id="language_id" value="{{puzzle.language}}" />
+<input type="hidden" name="public" id="public_id" value="{{puzzle.public}}" />
 <div class="hidden" id="dicts"></div>
 </form>
 <form action="#" name="grid" id="grid_form" method="post" autocomplete="off">
 <table class="puzzle">
-	{% for row in puzzle.maxrow|get_range %}
+	{% for row in puzzle.width|get_range %}
 	<tr id="row_{{row}}">
-		{% for cell in puzzle.maxcol|get_range %}
+		{% for cell in puzzle.height|get_range %}
 		<td id="cell_{{row}}_{{cell}}" class="puzzlecell">
 			<div id="num_{{row}}_{{cell}}" class="puzzlenum"></div>
 			<input type="text" name="char_{{row}}_{{cell}}" id="char_{{row}}_{{cell}}" class="puzzlechar" length="1" maxlength="1" value="" />

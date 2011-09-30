@@ -18,7 +18,7 @@ function chars2text(maxcol, maxrow) {
     }
     text += line_sep;
   }
-  $('input#chars').val(text);
+  $('input#text_id').val(text);
   return text;
 }
 
@@ -26,7 +26,7 @@ function text2chars() {
   /*
    * spread single chars from puzzle text into character cells
    */
-  var lines = $('input#chars').val();
+  var lines = $('input#text_id').val();
   if (!lines) { return false; }
   lines = lines.split(line_sep);
   for (var y=0; y <= lines.length; y++) {
@@ -44,7 +44,7 @@ function spread_nums() {
    * spread word start numbers from hidden input into grid
    * return object { num : [y,x,num] }
    */
-  var nums = $('input#nums').val();
+  var nums = $('input#numbers_id').val();
   var dict = {};
   if (!nums) { return dict; }
   nums = nums.split(',');
@@ -66,12 +66,12 @@ function fill_questions(maxcol, maxrow, dict) {
    * 
    * dict from spread_nums
    */
-  var quests = $('input#questions').val() || ''; 
+  var quests = $('input#questions_id').val() || ''; 
   quests = quests.split('\n');
   if (DEBUG) console.log('fill_questions H, V, dict', quests, dict);
   var ok = [];
   for (var i=0; i < quests.length; i++) {
-    if (quests[i]) {
+    if (quests[i]>'') {
       var qst = quests[i].split('::'); // num::dir::word
       if (DEBUG) console.log('fill questions:', i, qst);
       qst[0] = Number(qst[0]);
@@ -87,7 +87,7 @@ function fill_questions(maxcol, maxrow, dict) {
   /* fill missing questions with solution word */
   for (num in dict) {
     var t = dict[num];
-    if (DEBUG) console.log(t);
+    if (DEBUG) console.log('fill_questions', num, t);
     if ($.inArray('h_'+num, ok)==-1) add_question(t[1], t[0], maxcol, maxrow, 'h', num);
     if ($.inArray('v_'+num, ok)==-1) add_question(t[1], t[0], maxcol, maxrow, 'v', num);
   }
@@ -242,8 +242,8 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
      * reset (boolean): if true, unset the number // TODO: obsolete, just check content?
      * 
      */
-    var oldnums = $('input#nums').val();
-    var oldquestions = $('input#questions').val();
+    var oldnums = $('input#numbers_id').val();
+    var oldquestions = $('input#questions_id').val();
     var insertpos = 0; // list position of inserted number
     var id = '#num_' + y + '_' + x; // id of new numbered field (i.e. of number div)
     if (reset || $(id).html()) {
@@ -279,8 +279,8 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
       console.log('error in renumber_puzzle:',insertpos,num);
       return false;
     }
-    $('input#maxnum').val(num);
-    $('input#nums').val(nums.join(','));
+    $('input#maxnum_id').val(num);
+    $('input#numbers_id').val(nums.join(','));
     
     /* question fields */
     if (reset) { // remove question
@@ -378,7 +378,7 @@ function add_question(x, y, maxcol, maxrow, direction, num, word, lookup) {
     }, 'html');
   }
 
-  if (num > Number($('input#maxnum').val())) $('input#maxnum').val(num);
+  if (num > Number($('input#maxnum_id').val())) $('input#maxnum_id').val(num);
   if (DEBUG) console.log('add_question',x,y,direction,num,word);
   return clone;
 }
@@ -387,7 +387,7 @@ function copy_questions_to_save() {
   /*
    * collect questions fields and add them to the submission
    */
-    var maxnum = $('input#maxnum').val() || 0;
+    var maxnum = $('input#maxnum_id').val() || 0;
     var sols_v = [];
     var quests = [];
     $('#questions_form input.question').each(function(index){
@@ -397,8 +397,8 @@ function copy_questions_to_save() {
         quests.push(val);
       }
     });
-    $('input#questions').val(quests.join('\n'));
-    if (DEBUG) console.log('copy questions:', $('input#questions').val());
+    $('input#questions_id').val(quests.join('\n'));
+    if (DEBUG) console.log('copy questions:', $('input#questions_id').val());
     return maxnum;
 }
 
@@ -430,7 +430,7 @@ function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
   });
   /* enable copy of searchterm to cloze search */
   $('span.searchterm').click(function(event){
-    $('input#cloze_searchterm').val($(this).html());
+    $('input#cloze_searchterm_id').val($(this).html());
   });
 }
 
@@ -438,10 +438,10 @@ function searchhandler(event){
   /*
    * handler for search field
    */
-  var word = $('input#cloze_searchterm').val();
+  var word = $('input#cloze_searchterm_id').val();
   word = word.toUpperCase().replace(/[^A-Z\*_]/g, '');
   var query = '/ajax/' + word + '/';
-  $('input#cloze_searchterm').val(word);
+  $('input#cloze_searchterm_id').val(word);
   if (!word) { return false; }
   $.post(query, check_dictionaries(), function(data){
       $('#result').html(data); // display results
@@ -455,8 +455,8 @@ function clear_grid(){
   $('input.puzzlechar').val('');
   $('div.puzzlenum').html('');
   $('td.puzzlecell').removeClass('blocked focus');
-  $('input#chars').val('');
-  $('input#maxnum').val(0);
+  $('input#text_id').val('');
+  $('input#maxnum_id').val(0);
 }
 
 function set_focus(x, y){
@@ -477,8 +477,8 @@ function init_puzzle(maxcol, maxrow) {
 function ___INIT___(){} // bookmark for jQuery’s anonymous init function
 
 $(function(){
-    var maxcol = Number($('input#maxcol').val())-1;
-    var maxrow = Number($('input#maxrow').val())-1;
+    var maxcol = Number($('form#puzzle_form input#width_id').val())-1;
+    var maxrow = Number($('form#puzzle_form input#height_id').val())-1;
     
     init_puzzle(maxcol, maxrow);
     
@@ -524,7 +524,7 @@ $(function(){
     /* enable ajax processing of cloze search */
     $('#cloze_search_submit').click(searchhandler);
     /* disable submit on return key */
-    $('form#cloze_search').submit(searchhandler);
+    $('form#cloze_search_form').submit(searchhandler);
 
     /* enable dictionary button */
     $('#tb_dicts').click(function(event){
