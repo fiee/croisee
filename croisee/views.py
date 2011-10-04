@@ -21,99 +21,6 @@ from croisee.middleware import Http403
 logger = logging.getLogger(settings.PROJECT_NAME)
 
 
-def save(request, *args, **kwargs):
-    """
-    Save grid view.
-
-    TODO: combine with grid view, use proper form (validation)
-    """
-    if request.method != 'POST':
-        return redirect('%s-index' % settings.PROJECT_NAME)
-
-    post = {}
-    for key in request.POST:
-        post[key.encode('ascii')] = request.POST[key]
-
-    try:
-        maxnum = int(post.get('maxnum', 0))
-    except ValueError, e:
-        maxnum = 0
-    try:
-        maxcol = max(min(int(post.get('width', settings.CROISEE_GRIDMIN_X)), settings.CROISEE_GRIDMAX_X), settings.CROISEE_GRIDMIN_X)
-        maxrow = max(min(int(post.get('height', settings.CROISEE_GRIDMIN_Y)), settings.CROISEE_GRIDMAX_Y), settings.CROISEE_GRIDMIN_Y)
-    except ValueError, e:
-        logger.warning('ValueError in save: %s' % e)
-        maxcol = settings.CROISEE_GRIDMIN_X
-        maxrow = settings.CROISEE_GRIDMIN_Y
-
-    p_text = post.get('text', '').upper().replace('/', '\n') # complete text of puzzle
-    #logger.info('\n'+p_text.replace('.', '#').replace(' ', u'·'))
-    #logger.info(post.get('nums', ''))
-
-    puzzle = {
-        'maxcol':   maxcol,
-        'maxrow':   maxrow,
-        'maxnum':   maxnum,
-        'text':     p_text, #.replace('\n', '/'),
-        'nums':     post.get('numbers', ''),
-        'hash':     post.get('code', ''),
-        'questions': post.get('questions', ''),
-    }
-
-    # if a user is logged in, check if her words and questions are already in the database;
-    # if not, save them to her personal dictionary
-    if request.user.is_active:
-        dictionaries = Dictionary.objects.filter(Q(public=True)|Q(owner=request.user.id)) # list of all allowed dictionaries
-        personal_dict, is_new = Dictionary.objects.get_or_create(owner=request.user, name=settings.CROISEE_PERSONALDICT_NAME)
-        if is_new:
-            personal_dict.description = _(u'personal dictionary of user %s, do not rename!') % request.user.username
-            personal_dict.save()
-            logger.info(_(u'Personal dictionary for user %(username)s was created as %(dictname)s.') % 
-                        {'username':request.user.username, 'dictname':settings.CROISEE_PERSONALDICT_NAME})
-        for qu in puzzle['questions'].split('\n'):
-            parts = qu.strip().split('::') # questions are in the format "1::h::Word"
-            if (not qu) or (not parts) or len(parts)!=3: continue # ignore empty or incomplete lines
-            (num, dir, question) = parts
-            up_question = question.upper()
-            if len(question)>3 and question != up_question: # we ignore questions that are too short or the same as the word
-                word = _find_word_by_num(p_text, puzzle['nums'], num, dir) # find the word for the question
-                if word and (up_question != word.upper()) and not '_' in word and not ' ' in word:
-                    # TODO: lookup is expensive! convert to background task!
-                    if request.user.is_staff:
-                        results = Word.objects.filter(word=word)
-                    else:
-                        results = Word.objects.filter(word=word, dictionary__public=True)[:settings.CROISEE_QUERYMAX]
-                    is_new = True
-                    for res in results:
-                        if res.description.upper() == up_question:
-                            is_new = False
-                    if is_new or len(results)==0:
-                        new_word, is_new = Word.objects.get_or_create(word=word, dictionary=personal_dict)
-                        new_word.description=question
-                        new_word.save()
-                        if is_new:
-                            logger.info(_(u'Word %(word)s with question “%(question)s” was saved to your personal dictionary.') % 
-                                        {'word':word, 'question':question})
-                        else:
-                            logger.info(_(u'Word “%(word)s” with question “%(question)s” was updated in your personal dictionary.') % 
-                                        {'word':word, 'question':question})
-
-    # TODO: save puzzle to database, redirect to hash url
-    if not puzzle['hash']:
-        puzzle['hash'] = md5('%s/%s' % (request.META.get('REMOTE_ADDR', '127.0.0.1'), datetime.strftime(datetime.now(), '%Y-%m-%dT%H:%M:%S'))).hexdigest() 
-        
-    context = {
-        'MEDIA_URL':    settings.MEDIA_URL,
-        'posted':       (request.method == 'POST'),
-        'puzzle':       puzzle,
-        'defaultx':     settings.CROISEE_GRIDDEF_X,
-        'defaulty':     settings.CROISEE_GRIDDEF_Y,
-        'dictionaries': _get_dictionaries(request)[0],
-        'cloze_action': 'ajax/DUMMY/',
-    }
-    return render(request, 'grid.html', context)
-
-
 class DictionaryMixin(object):
     """
     Mixin for View-based classes to handle dictionary access and lookups
@@ -198,6 +105,28 @@ class DictionaryMixin(object):
             pass
         return context
     
+    def ensure_personal_dictionary(self, create=True):
+        """
+        Return the user’s personal dictionary, if user is active.
+        If it doesn’t exist (and create is True), create it.
+        """
+        user = self.request.user
+        if not user.is_active:
+            return None
+        if not (hasattr(self, 'personal_dictionary') and isinstance(self.personal_dictionary, Dictionary)):
+            if not create:
+                self.personal_dictionary = Dictionary.objects.get(owner=user, name=user.username)
+            else:
+                self.personal_dictionary, is_new = Dictionary.objects.get_or_create(owner=user, name=user.username)
+                if is_new:
+                    self.personal_dictionary.description = _(u'personal dictionary of user %s, do not rename!') % user.username
+                    self.personal_dictionary.public = False
+                    # TODO: language?
+                    self.personal_dictionary.save()
+                    logger.info(_(u'Personal dictionary for user %(username)s was created.') % 
+                                {'username': user.username})
+        return self.personal_dictionary
+    
     def find_word(self, text, start_y, start_x, direction='h', stopchar='.', newline='\n'):
         """
         Return the word from `text`, starting at position y, x (0-based).
@@ -241,7 +170,7 @@ class DictionaryMixin(object):
         :direction: h or v
         
         returns:
-        see `_find_word`
+        see `find_word`
         """
         # split by comma, split by dot, get coordinates by num
         try:
@@ -250,7 +179,55 @@ class DictionaryMixin(object):
         except IndexError, e:
             logger.error(u'Can’t find word no.%s with "%s"\n%s' % (num, numbers, e))
             return None
-        return _find_word(text, int(y), int(x), direction).strip()
+        ret = self.find_word(text, int(y), int(x), direction)
+        if ret:
+            return ret.strip()
+        else:
+            return None
+
+    def save_words(self, text, questions, numbers):
+        """
+        Save new words/questions from the puzzle to the database.
+        Return the number of new or changed words.
+        
+        If a user is logged in, check if her words and questions are already in the database;
+        if not, save them to her personal dictionary.
+        """
+        user = self.request.user
+        word_count = 0
+        if user.is_active and self.ensure_personal_dictionary():
+            # iterate questions
+            for qu in questions.split('\n'):
+                parts = qu.strip().split('::') # questions are in the format "1::h::Word"
+                if (not qu) or (not parts) or len(parts)!=3: continue # ignore empty or incomplete lines
+                (num, dir, question) = parts
+                up_question = question.upper()
+                if len(question)>3 and question != up_question: # we ignore questions that are too short or the same as the word
+                    word = self.find_word_by_num(text, numbers, num, dir) # find the word for the question
+                    if word and (up_question != word.upper()) and not '_' in word and not ' ' in word:
+                        # TODO: lookup is expensive! convert to background task!
+                        if user.is_staff: # TODO: permissions
+                            results = Word.objects.filter(word=word)
+                        else:
+                            results = Word.objects.filter(word=word, dictionary__public=True)[:settings.CROISEE_QUERYMAX]
+                        is_new = True
+                        for res in results:
+                            if res.description.upper() == up_question:
+                                is_new = False
+                        if is_new or len(results)==0:
+                            new_word, is_new = Word.objects.get_or_create(word=word, dictionary=self.personal_dictionary)
+                            new_word.description=question
+                            new_word.save()
+                            word_count += 1
+                            if is_new:
+                                logger.info(_(u'Word %(word)s with question “%(question)s” was saved to your personal dictionary.') % 
+                                            {'word':word, 'question':question})
+                            else:
+                                logger.info(_(u'Word “%(word)s” with question “%(question)s” was updated in your personal dictionary.') % 
+                                            {'word':word, 'question':question})
+        else:
+            logger.info(_(u'Don’t save any words, since user %s is not active.') % user.username)
+        return word_count
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -378,12 +355,13 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
         else:
             return User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
     
-    def _save_puzzle(self, **kwargs):
+    def save_puzzle(self, **kwargs):
         # TODO: permissions
-        if not hasattr(self, 'object'):
+        if not (hasattr(self, 'object') and isinstance(self.object, Puzzle)):
             self.get_object()
         self.object.lastchangedby = self.get_user()
         self.object.lastchangedon = datetime.now()
+        self.save_words(self.object.text, self.object.questions, self.object.numbers) # TODO: background task?
         logger.info('save_puzzle: %s' % self.object)
         return self.object.save(**kwargs)
 
@@ -401,11 +379,8 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
         for field in ('title', 'text', 'questions', 'numbers', 'width', 'height'):
             #logger.info('setting %s to:\n%s' % (field, getattr(new_object, field)))
             setattr(self.object, field, getattr(new_object, field))
-        self.object.lastchangedby = self.get_user()
-        self.object.lastchangedon = datetime.now() # is this necessary?
         logger.info('form_valid: %s' % self.object)
-        self.object.save()
-        # TODO: saving questions to personal dictionary
+        self.save_puzzle()
         return self.render_to_response(self.get_context_data(form=form)) #HttpResponseRedirect(self.get_success_url())
 
     def get_form_kwargs(self):
@@ -430,7 +405,7 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
         return super(PuzzleView, self).get(request, *args, **kwargs)
 
 #    def post(self, request, *args, **kwargs):
-#        self._save_puzzle()
+#        self.save_puzzle()
 #        return super(PuzzleView, self).post(request, *args, **kwargs)
 
 class SavePuzzleView(PuzzleView):
@@ -534,11 +509,11 @@ class WordListView(ListView):
             else:
                 self.dictionary = d
         elif self.request.user.is_active:
-            personal_dict, is_new = Dictionary.objects.get_or_create(owner=self.request.user, name=settings.CROISEE_PERSONALDICT_NAME)
+            self.personal_dictionary, is_new = Dictionary.objects.get_or_create(owner=self.request.user, name=settings.CROISEE_PERSONALDICT_NAME)
             if is_new:
-                personal_dict.description = _(u'personal dictionary of user %s, do not rename!') % self.request.user.username
-                personal_dict.save()
-            self.dictionary = personal_dict
+                self.personal_dictionary.description = _(u'personal dictionary of user %s, do not rename!') % self.request.user.username
+                self.personal_dictionary.save()
+            self.dictionary = self.personal_dictionary
         else:
             self.dictionary = None
             raise Http404
