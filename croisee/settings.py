@@ -281,7 +281,6 @@ CROISEE_GRIDDEF_X =  12 # default rows in puzzle grid
 CROISEE_GRIDDEF_Y =  12 # default lines in puzzle grid
 CROISEE_QUERYMAX  = 100 # maximum query results
 CROISEE_XQUERYMAX = 1024 # maximum cross query results
-CROISEE_PERSONALDICT_NAME = _(u'personal dictionary') # name of personal dictionary
 CROISEE_DEFAULT_OWNER_ID = 1
 
 # ==============================================================================
