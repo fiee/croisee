@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-22 19:03+0200\n"
-"PO-Revision-Date: 2011-09-22 19:05+0100\n"
+"POT-Creation-Date: 2011-10-05 11:31+0200\n"
+"PO-Revision-Date: 2011-10-05 11:35+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "Language: de\n"
@@ -21,246 +21,249 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: models.py:64
-#: models.py:93
+#: models.py:95
 msgid "Dictionary"
 msgstr "Wörterbuch"
 
 #: models.py:65
-#: templates/snippets/toolbar.html:20
+#: templates/snippets/toolbar.html:22
 msgid "Dictionaries"
 msgstr "Wörterbücher"
 
 #: models.py:69
-#: models.py:112
+#: models.py:117
 msgid "Name"
 msgstr "Name"
 
 #: models.py:69
-#: models.py:112
+#: models.py:117
 msgid "A short descriptive name"
 msgstr "Ein kurzer, aussagekräftiger Name"
 
 #: models.py:70
-#: models.py:114
+#: models.py:119
 msgid "public?"
 msgstr "öffentlich?"
 
 #: models.py:70
-#: models.py:114
+#: models.py:119
 msgid "May everyone use this dictionary?"
 msgstr "Darf dieses Wörterbuch von jedermann benutzt werden?"
 
 #: models.py:71
-#: models.py:115
+#: models.py:120
 msgid "Language"
 msgstr "Sprache"
 
 #: models.py:73
-#: models.py:117
+#: models.py:122
 msgid "Language of (most of) the words in this dictionary"
 msgstr "Sprache der (meisten) Wörter in diesem Wörterbuch"
 
 #: models.py:74
-#: models.py:94
-#: models.py:118
+#: models.py:96
+#: models.py:123
+#: templates/dictionary_word_list.html:13
 msgid "Description"
 msgstr "Beschreibung"
 
 #: models.py:75
-#: models.py:119
+#: models.py:124
 msgid "Owner"
 msgstr "Besitzer"
 
-#: models.py:87
-#: models.py:92
+#: models.py:89
+#: models.py:94
+#: templates/dictionary_word_list.html:12
 msgid "Word"
 msgstr "Wort"
 
-#: models.py:88
+#: models.py:90
 msgid "Words"
 msgstr "Wörter"
 
-#: models.py:92
+#: models.py:94
 msgid "a word fitting a crossword puzzle; will become uppercased; no numbers, hyphens etc."
 msgstr "ein Kreuzworträtsel-Wort; wird in Großbuchstaben umgewandelt; keine Zahlen, Bindestriche usw."
 
-#: models.py:94
+#: models.py:96
 msgid "Meaning of the word within the context of the selected dictionary"
 msgstr "Bedeutung des Wortes im Kontext des ausgewählten Wörterbuchs"
 
-#: models.py:95
+#: models.py:97
+#: templates/dictionary_word_list.html:14
 msgid "Priority"
 msgstr "Priorität"
 
-#: models.py:95
+#: models.py:97
 msgid "0 is neutral, you can increase or decrease the priority"
 msgstr "0 ist neutral, Sie können die Priorität erhöhen oder verringern"
 
-#: models.py:109
+#: models.py:114
 msgid "wordlist file (.txt)"
 msgstr "Wortlisten-Datei (*.txt)"
 
-#: models.py:110
+#: models.py:115
 msgid "Select a .txt file containing a single word per line to upload as a new dictionary."
 msgstr "Wählen Sie eine Textdatei, die pro Zeile ein einzelnes Wort enthält, um sie als neues Wörterbuch hochzuladen."
 
-#: models.py:111
+#: models.py:116
 msgid "Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name."
 msgstr "Wählen Sie ein Wörterbuch, dem diese Wörter hinzugefügt werden sollen. Lassen Sie dieses Feld frei, um ein neues Wörterbuch mit dem angegebenen Namen zu erzeugen."
 
-#: models.py:113
+#: models.py:118
 msgid "only unique"
 msgstr "eindeutig"
 
-#: models.py:113
+#: models.py:118
 msgid "Import only words that are not contained in any other dictionary?"
 msgstr "Nur Wörter importieren, die nicht in einem andern Wörterbuch enthalten sind?"
 
-#: models.py:122
+#: models.py:127
 msgid "wordlist upload"
 msgstr "Wortlisten-Upload"
 
-#: models.py:123
+#: models.py:128
 msgid "wordlist uploads"
 msgstr "Wortlisten-Uploads"
 
-#: models.py:181
+#: models.py:186
 msgid "default crossword puzzle with black squares"
 msgstr "Standard-Kreuzworträtsel mit schwarzen Blöcken"
 
-#: models.py:182
+#: models.py:187
 msgid "crossword puzzle with bars (no squares)"
 msgstr "Kreuzworträtsel mit Balken (keine Blöcke)"
 
-#: models.py:183
+#: models.py:188
 msgid "Swedish crossword puzzle (questions in squares)"
 msgstr "Schwedenrätsel (Fragen in Blöcken)"
 
-#: models.py:190
+#: models.py:195
 msgid "title"
 msgstr "Titel"
 
-#: models.py:190
+#: models.py:195
 msgid "title or short description of this puzzle"
 msgstr "Titel oder kurze Beschreibung dieses Rätsels"
 
-#: models.py:191
+#: models.py:196
 msgid "code"
 msgstr "Kürzel"
 
-#: models.py:191
+#: models.py:196
 msgid "auto-generated URL code of this puzzle"
 msgstr "automatisch erzeugter URL-Code dieses Rätsels"
 
-#: models.py:192
+#: models.py:197
 msgid "public"
 msgstr "öffentlich"
 
-#: models.py:192
+#: models.py:197
 msgid "Is this puzzle publicly viewable?"
 msgstr "Ist dieses Rätsel öffentlich sichtbar?"
 
-#: models.py:193
+#: models.py:198
 msgid "language"
 msgstr "Sprache"
 
-#: models.py:193
+#: models.py:198
 msgid "main language of this puzzle"
 msgstr "Hauptsprache dieses Rätsels"
 
-#: models.py:195
+#: models.py:200
 msgid "owner"
 msgstr "Eigentümer"
 
-#: models.py:195
+#: models.py:200
 msgid "owner of the puzzle"
 msgstr "Eigentümer des Rätsels"
 
-#: models.py:196
+#: models.py:201
 msgid "created by"
 msgstr "angelegt von"
 
-#: models.py:196
+#: models.py:201
 msgid "user that saved the puzzle for the first time (may be anonymous)"
 msgstr "Benutzer, der das Rätsel zum ersten Mal gespeichert hat (kann anonym sein)"
 
-#: models.py:197
+#: models.py:202
 msgid "last changed by"
 msgstr "zuletzt geändert von"
 
-#: models.py:197
+#: models.py:202
 msgid "user that saved the puzzle the latest time"
 msgstr "Benutzer, der das Rätsel zum letzten Mal gespeichert hat"
 
-#: models.py:198
+#: models.py:203
 msgid "created on"
 msgstr "angelegt am"
 
-#: models.py:198
+#: models.py:203
 msgid "timestamp of creation (first save)"
 msgstr "Zeitstempel der ersten Speicherung"
 
-#: models.py:199
+#: models.py:204
 msgid "last changed on"
 msgstr "zuletzt geändert am"
 
-#: models.py:199
+#: models.py:204
 msgid "timestamp of last change"
 msgstr "Zeitstempel der letzten Änderung"
 
-#: models.py:201
+#: models.py:206
 msgid "type"
 msgstr "Art"
 
-#: models.py:201
+#: models.py:206
 msgid "type of this puzzle"
 msgstr "Art dieses Rätsels"
 
-#: models.py:202
+#: models.py:207
 msgid "width"
 msgstr "Breite"
 
-#: models.py:202
+#: models.py:207
 msgid "width of the puzzle (number of characters)"
 msgstr "Breite des Rätsels (Anzahl der Zeichen)"
 
-#: models.py:203
+#: models.py:208
 msgid "height"
 msgstr "Höhe"
 
-#: models.py:203
+#: models.py:208
 msgid "height of the puzzle (number of characters)"
 msgstr "Höhe des Rätsels (Anzahl der Zeichen)"
 
-#: models.py:204
+#: models.py:209
 msgid "text"
 msgstr "Text"
 
-#: models.py:204
+#: models.py:209
 msgid "characters of the puzzle (solution)"
 msgstr "Buchstaben des Rätsels (Lösung)"
 
-#: models.py:205
+#: models.py:210
 msgid "numbers"
 msgstr "Zahlen"
 
-#: models.py:205
+#: models.py:210
 msgid "list of coordinates of word start numbers"
 msgstr "Liste von Koordinaten der Wortanfangsnummern"
 
-#: models.py:206
+#: models.py:211
 msgid "questions"
 msgstr "Fragen"
 
-#: models.py:206
+#: models.py:211
 msgid "list of questions"
 msgstr "Liste der Fragen"
 
-#: models.py:209
+#: models.py:214
 msgid "crossword puzzle"
 msgstr "Kreuzworträtsel"
 
-#: models.py:210
+#: models.py:215
 msgid "crossword puzzles"
 msgstr "Kreuzworträtsel"
 
@@ -268,48 +271,50 @@ msgstr "Kreuzworträtsel"
 msgid "STRING_NOT_SET"
 msgstr "ZEICHENKETTE_NICHT_DEFINIERT"
 
-#: settings.py:266
+#: settings.py:270
 #, python-format
 msgid "Please create a %s file with random characters to generate your secret key!"
 msgstr "Bitte erzeugen Sie eine Datei %s mit zufälligen Zeichen, um Ihren geheimen Schlüssel zu erzeugen!"
 
-#: settings.py:280
-msgid "personal dictionary"
-msgstr "Persönliches Wörterbuch"
-
-#: views.py:236
+#: views.py:122
+#: views.py:514
 #, python-format
 msgid "personal dictionary of user %s, do not rename!"
 msgstr "Persönliches Wörterbuch von Benutzer %s, nicht umbenennen!"
 
-#: views.py:238
+#: views.py:126
 #, python-format
-msgid "Personal dictionary for user %(username)s was created as %(dictname)s."
-msgstr "Persönliches Wörterbuch für Benutzer %(username)s wurde angelegt als „%(dictname)s“."
+msgid "Personal dictionary for user %(username)s was created."
+msgstr "Persönliches Wörterbuch für Benutzer %(username)s wurde angelegt."
 
-#: views.py:262
+#: views.py:223
 #, python-format
 msgid "Word %(word)s with question “%(question)s” was saved to your personal dictionary."
 msgstr "Wort „%(word)s“ mit der Frage „%(question)s“ wurde in Ihrem persönlichen Wörterbuch gespeichert."
 
-#: views.py:265
+#: views.py:226
 #, python-format
 msgid "Word “%(word)s” with question “%(question)s” was updated in your personal dictionary."
 msgstr "Wort „%(word)s“ mit der Frage „%(question)s“ wurde in Ihrem persönlichen Wörterbuch aktualisiert."
 
-#: views.py:293
+#: views.py:229
+#, python-format
+msgid "Don’t save any words, since user %s is not active."
+msgstr "Speichere keine Wörter, da Benutzer %s nicht aktiv ist."
+
+#: views.py:432
 #: templates/ajax_query.html:6
-#: templates/snippets/resultlist.html:22
+#: templates/snippets/resultlist.html:20
 msgid "results"
 msgstr "Suchergebnisse"
 
-#: views.py:334
-#: templates/grid.html:48
+#: views.py:484
+#: templates/grid.html:54
 msgid "horizontal"
 msgstr "waagerecht"
 
-#: views.py:335
-#: templates/grid.html:51
+#: views.py:485
+#: templates/grid.html:57
 msgid "vertical"
 msgstr "senkrecht"
 
@@ -319,9 +324,8 @@ msgid "403 Access Denied"
 msgstr "403 Zugriff verweigert"
 
 #: templates/403.html:8
-#: templates/500.html:8
-msgid "An internal error occurred. Try again. If it still doesn't work, try again later - we got the message and will try to fix it."
-msgstr "Es ist ein interner Fehler aufgetreten. Versuchen Sie es noch einmal. Wenn es dann immer noch nicht geht, versuchen Sie es später noch einmal – wir haben die Meldung erhalten und werden versuchen, das Problem zu beheben."
+msgid "We're sorry, but you are not authorized to view this page."
+msgstr "Sie sind leider nicht berechntigs, diese Seite anzusehen."
 
 #: templates/404.html:4
 #: templates/404.html.py:7
@@ -337,46 +341,75 @@ msgstr "Die Adresse, die Sie versucht haben zu erreichen, gibt es nicht oder fun
 msgid "500 Server Error"
 msgstr "500 Server-Fehler"
 
+#: templates/500.html:8
+msgid "An internal error occurred. Try again. If it still doesn't work, try again later - we got the message and will try to fix it."
+msgstr "Es ist ein interner Fehler aufgetreten. Versuchen Sie es noch einmal. Wenn es dann immer noch nicht geht, versuchen Sie es später noch einmal – wir haben die Meldung erhalten und werden versuchen, das Problem zu beheben."
+
 #: templates/ajax_query.html:10
-#: templates/snippets/resultlist.html:8
-#: templates/snippets/resultlist.html:26
+#: templates/snippets/resultlist.html:7
+#: templates/snippets/resultlist.html:24
 msgid "Look up in Wikipedia"
 msgstr "In der Wikipedia nachschlagen"
 
 #: templates/ajax_query.html:12
-#: templates/snippets/resultlist.html:28
+#: templates/snippets/resultlist.html:26
 msgid "insert in grid"
 msgstr "ins Gitter einfügen"
 
 #: templates/ajax_query.html:15
-#: templates/snippets/resultlist.html:9
-#: templates/snippets/resultlist.html:31
+#: templates/snippets/resultlist.html:8
+#: templates/snippets/resultlist.html:29
 msgid "in"
 msgstr "in"
 
-#: templates/grid.html:4
+#: templates/dictionary_word_list.html:3
+msgid "Word List"
+msgstr "Wortliste"
+
+#: templates/dictionary_word_list.html:15
+msgid "Actions"
+msgstr "Aktionen"
+
+#: templates/dictionary_word_list.html:19
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: templates/dictionary_word_list.html:27
+msgid "No words found or no access to this dictionary!"
+msgstr "Keine Wörter gefunden oder kein Zugriff auf dieses Wörterbuch!"
+
+#: templates/grid.html:3
 msgid "Puzzle Grid"
 msgstr "Rätsel-Gitter"
 
-#: templates/grid.html:56
+#: templates/grid.html:14
+msgid "Short description of this puzzle"
+msgstr "Titel oder kurze Beschreibung dieses Rätsels"
+
+#: templates/grid.html:15
+msgid "Title"
+msgstr "Titel"
+
+#: templates/grid.html:62
 msgid "Create a new crossword puzzle by clicking on the star button!"
 msgstr "Beginnen Sie ein neues Kreuzworträtsel, indem Sie auf den Stern-Button klicken!"
 
-#: templates/grid.html:57
+#: templates/grid.html:63
 msgid "Hint: Searching works only if you activate at least one dictionary."
 msgstr "Achtung: Die Suche funktioniert nur, wenn Sie mindestens ein Wörterbuch aktivieren."
 
-#: templates/grid.html:62
+#: templates/grid.html:68
 msgid "Please select at least one dictionary!"
 msgstr "Bitte wählen Sie mindestens ein Wörterbuch aus!"
 
-#: templates/grid.html:63
-#: templates/snippets/resultlist.html:5
-#: templates/snippets/resultlist.html:17
+#: templates/grid.html:69
+#: templates/snippets/resultlist.html:4
+#: templates/snippets/resultlist.html:15
 msgid "Search Results"
 msgstr "Suchergebnisse"
 
 #: templates/index.html:4
+#: templates/registration/password_change_form.html:6
 #: templates/snippets/menu.html:7
 msgid "Home"
 msgstr "Startseite"
@@ -387,7 +420,7 @@ msgid ""
 "<h3>What’s this?</h3>\n"
 "<p>The <em>fiëé croisée</em> project aims to become a semi-automatic crossword puzzle generator. \n"
 "Even if there's still a long way to go, it’s already a valuable help in creating crossword puzzles.</p>\n"
-"<p>Proceed to the <strong><a href=\"/grid/\" class=\"button\">puzzle grid</a></strong> page and create a new puzzle.\n"
+"<p>Proceed to the <strong><a href=\"/puzzle/\" class=\"button\">puzzle grid</a></strong> page and create a new puzzle.\n"
 "At the moment you can just print the page from the browser, but soon you’ll be able to export complete layout data for T<sub>E</sub>X or order your print-ready puzzle as PDF.</p>\n"
 "<p>More details come with the source code at <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
 msgstr ""
@@ -395,7 +428,7 @@ msgstr ""
 "<h3>Was ist das?</h3>\n"
 "<p>Das Projekt <em>fiëé croisée</em> entwickelt einen halbautomatischen Kreuzworträtsel-Generator.\n"
 "Obwohl es noch einen weiten Weg vor sich hat, ist es bereits eine wertvolle Hilfe beim Erstellen von Kreuzworträtseln.</p>\n"
-"<p>Gehen Sie weiter zum <strong><a href=\"/grid/\" class=\"button\">Rätsel-Gitter</a></strong> und beginnen Sie ein neues Kreuzworträtsel.\n"
+"<p>Gehen Sie weiter zum <strong><a href=\"/puzzle/\" class=\"button\">Rätsel-Gitter</a></strong> und beginnen Sie ein neues Kreuzworträtsel.\n"
 "Im Moment können Sie nur die Seite im Browser ausdrucken, aber bald können Sie fertige Layout-Daten für T<sub>E</sub>X exportieren oder ein druckfertiges Kreuzworträtsel als PDF bestellen.</p>\n"
 "<p>Mehr Details finden Sie mit dem Quellcode auf <a href=\"http://github.com/fiee/croisee/\">GitHub</a>.</p>\n"
 
@@ -415,17 +448,93 @@ msgstr "fiëé croisée Site-Admin"
 msgid "fiëé croisée Administration"
 msgstr "fiëé croisée Administration"
 
+#: templates/registration/login.html:2
+#: templates/registration/login.html:13
+#: templates/registration/login.html:31
+#: templates/snippets/menu.html:15
+msgid "Login"
+msgstr "Anmelden"
+
+#: templates/registration/login.html:7
+#: templates/registration/password_change_form.html:15
+msgid "Sorry, that's not a valid username or password"
+msgstr "Benutzername oder Kennwort sind falsch."
+
+#: templates/registration/login.html:17
+msgid "Please login using your username and password"
+msgstr "Bitte melden Sie sich mit Ihrem Benutzernamen und Kennwort an."
+
+#: templates/registration/login.html:20
+msgid "User name:"
+msgstr "Benutzername:"
+
+#: templates/registration/login.html:25
+msgid "Password:"
+msgstr "Kennwort:"
+
+#: templates/registration/logout.html:6
+msgid "You have logged off."
+msgstr "Sie sind nun abgemeldet."
+
+#: templates/registration/password_change_done.html:4
+#: templates/registration/password_change_done.html:8
+msgid "Password change successful"
+msgstr "Passwort erfolgreich geändert"
+
+#: templates/registration/password_change_done.html:10
+msgid "Your password was changed."
+msgstr "Ihr Passwort wurde geändert."
+
+#: templates/registration/password_change_form.html:5
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: templates/registration/password_change_form.html:5
+msgid "Change password"
+msgstr "Kennwort ändern"
+
+#: templates/registration/password_change_form.html:5
+msgid "Log out"
+msgstr "Abmelden"
+
+#: templates/registration/password_change_form.html:6
+#: templates/registration/password_change_form.html:9
+#: templates/registration/password_change_form.html:25
+#: templates/snippets/menu.html:10
+msgid "Password change"
+msgstr "Passwort ändern"
+
+#: templates/registration/password_change_form.html:27
+msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "Bitte geben Sie aus Sicherheitsgründen erst Ihr altes Kennwort und darunter dann zweimal (um sicherzustellen, dass Sie es korrekt eingegeben haben) das neue Kennwort ein."
+
+#: templates/registration/password_change_form.html:30
+msgid "Old password"
+msgstr "Altes Kennwort"
+
+#: templates/registration/password_change_form.html:38
+msgid "New password"
+msgstr "Neues Kennwort"
+
+#: templates/registration/password_change_form.html:46
+msgid "Password (again)"
+msgstr "Kennwort (wiederholen)"
+
+#: templates/registration/password_change_form.html:55
+msgid "Change my password"
+msgstr "Mein Kennwort ändern"
+
 #: templates/snippets/clozeform.html:4
 msgid "Cloze Search"
 msgstr "Lückentext-Suche"
 
 #: templates/snippets/clozeform.html:7
-#: templates/snippets/toolbar.html:14
+#: templates/snippets/toolbar.html:16
 msgid "Search for:"
 msgstr "Suche nach:"
 
 #: templates/snippets/clozeform.html:9
-#: templates/snippets/toolbar.html:16
+#: templates/snippets/toolbar.html:18
 msgid "Search"
 msgstr "Suchen"
 
@@ -434,12 +543,12 @@ msgid "You can use <q>_</q> and <q>*</q> as wildcards for single or several char
 msgstr "Sie können <q>_</q> und <q>*</q> als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
 
 #: templates/snippets/dictionaries.html:2
-#: templates/snippets/toolbar.html:64
+#: templates/snippets/toolbar.html:66
 msgid "Available Dictionaries"
 msgstr "Verfügbare Wörterbücher"
 
 #: templates/snippets/dictionaries.html:13
-#: templates/snippets/toolbar.html:79
+#: templates/snippets/toolbar.html:81
 msgid "No dictionaries found"
 msgstr "Keine Wörterbücher gefunden"
 
@@ -451,25 +560,17 @@ msgstr "Über fiëé croisée"
 msgid "Logout"
 msgstr "Abmelden"
 
-#: templates/snippets/menu.html:10
-msgid "Password change"
-msgstr "Passwort ändern"
-
 #: templates/snippets/menu.html:12
 msgid "Administration"
 msgstr "Verwaltung"
 
-#: templates/snippets/menu.html:15
-msgid "Login"
-msgstr "Anmelden"
-
 #: templates/snippets/menu.html:24
-#: templates/snippets/toolbar.html:21
+#: templates/snippets/toolbar.html:23
 msgid "Help"
 msgstr "Hilfe"
 
 #: templates/snippets/menu.html:26
-#: templates/snippets/toolbar.html:27
+#: templates/snippets/toolbar.html:29
 msgid "Keys"
 msgstr "Tasten"
 
@@ -477,12 +578,32 @@ msgstr "Tasten"
 msgid "Donations"
 msgstr "Spenden"
 
-#: templates/snippets/resultlist.html:11
+#: templates/snippets/pagination.html:6
+msgid "First"
+msgstr "Anfang"
+
+#: templates/snippets/pagination.html:7
+msgid "Previous"
+msgstr "Zurück"
+
+#: templates/snippets/pagination.html:13
+msgid "Next"
+msgstr "Weiter"
+
+#: templates/snippets/pagination.html:14
+msgid "Last"
+msgstr "Ende"
+
+#: templates/snippets/pagination.html:19
+msgid "New Item"
+msgstr "Neuer Eintrag"
+
+#: templates/snippets/resultlist.html:10
 msgid "No matching words found"
 msgstr "Keine passenden Wörter gefunden"
 
 #: templates/snippets/toolbar.html:4
-#: templates/snippets/toolbar.html.py:46
+#: templates/snippets/toolbar.html.py:48
 msgid "New Puzzle"
 msgstr "Neues Rätsel"
 
@@ -491,81 +612,92 @@ msgid "Save Puzzle"
 msgstr "Rätsel speichern"
 
 #: templates/snippets/toolbar.html:6
+msgid "Load Puzzle"
+msgstr "Rätsel laden"
+
+#: templates/snippets/toolbar.html:7
 msgid "Clear Puzzle"
 msgstr "Rätsel leeren"
 
 #: templates/snippets/toolbar.html:8
+msgid "Delete Puzzle"
+msgstr "Rätsel löschen"
+
+#: templates/snippets/toolbar.html:10
 msgid "Adapt Puzzle Size"
 msgstr "Rätselgröße anpassen"
 
-#: templates/snippets/toolbar.html:9
+#: templates/snippets/toolbar.html:11
 msgid "Move Puzzle Contents"
 msgstr "Inhalte verschieben"
 
-#: templates/snippets/toolbar.html:15
+#: templates/snippets/toolbar.html:17
 msgid "You can use “_” and “*” as wildcards for single or several characters."
 msgstr "Sie können „_“ und „*“ als Joker-Zeichen für einzelne oder mehrere Buchstaben verwenden."
 
-#: templates/snippets/toolbar.html:29
+#: templates/snippets/toolbar.html:31
 msgid "move cursor"
 msgstr "Einfügemarke bewegen"
 
-#: templates/snippets/toolbar.html:30
+#: templates/snippets/toolbar.html:32
 msgid "place character and move right"
 msgstr "Buchstabe setzen und nach rechts weiter"
 
-#: templates/snippets/toolbar.html:31
+#: templates/snippets/toolbar.html:33
 msgid "place character and move down"
 msgstr "Buchstabe setzen und nach unten weiter"
 
-#: templates/snippets/toolbar.html:32
+#: templates/snippets/toolbar.html:34
 msgid "space"
 msgstr "Leertaste"
 
-#: templates/snippets/toolbar.html:32
+#: templates/snippets/toolbar.html:34
 msgid "block field"
 msgstr "Feld blockieren"
 
-#: templates/snippets/toolbar.html:33
+#: templates/snippets/toolbar.html:35
 msgid "backspace"
 msgstr "Rückwärts-Löschtaste"
 
-#: templates/snippets/toolbar.html:33
+#: templates/snippets/toolbar.html:35
 msgid "delete character"
 msgstr "Zeichen löschen"
 
-#: templates/snippets/toolbar.html:34
+#: templates/snippets/toolbar.html:36
 msgid "set or reset number"
 msgstr "Zahl setzen oder entfernen"
 
-#: templates/snippets/toolbar.html:35
+#: templates/snippets/toolbar.html:37
 msgid "query dictionary for matching words"
 msgstr "Wörterbuchabfrage nach passenden Wörtern"
 
-#: templates/snippets/toolbar.html:39
+#: templates/snippets/toolbar.html:41
 msgid "Clean Puzzle"
 msgstr "Rätsel leeren"
 
-#: templates/snippets/toolbar.html:42
+#: templates/snippets/toolbar.html:44
 msgid "Are you sure you want to delete all contents of your current puzzle?"
 msgstr "Sind Sie sicher, dass Sie alle Inhalte des aktuellen Rätsels löschen möchten?"
 
-#: templates/snippets/toolbar.html:51
+#: templates/snippets/toolbar.html:53
 msgid "Rows:"
 msgstr "Spalten:"
 
-#: templates/snippets/toolbar.html:55
+#: templates/snippets/toolbar.html:57
 msgid "Lines:"
 msgstr "Zeilen:"
 
-#: templates/snippets/toolbar.html:59
+#: templates/snippets/toolbar.html:61
 msgid "Create"
 msgstr "Erzeugen"
 
-#: templates/snippets/toolbar.html:66
-#: templates/snippets/toolbar.html.py:68
+#: templates/snippets/toolbar.html:68
+#: templates/snippets/toolbar.html.py:70
 msgid "check/uncheck all dictionaries"
 msgstr "an-/abwählen aller Wörterbücher"
+
+#~ msgid "personal dictionary"
+#~ msgstr "Persönliches Wörterbuch"
 
 #~ msgid "Cloze"
 #~ msgstr "Lückentext"
@@ -644,9 +776,6 @@ msgstr "an-/abwählen aller Wörterbücher"
 
 #~ msgid "Reload"
 #~ msgstr "Neu laden"
-
-#~ msgid "Edit"
-#~ msgstr "Bearbeiten"
 
 #~ msgid "Delete"
 #~ msgstr "Löschen"
@@ -972,9 +1101,6 @@ msgstr "an-/abwählen aller Wörterbücher"
 
 #~ msgid "View on site"
 #~ msgstr "Auf der Webseite anzeigen"
-
-#~ msgid "Change Template"
-#~ msgstr "Template ändern"
 
 #~ msgid "Region empty"
 #~ msgstr "Region leer"
