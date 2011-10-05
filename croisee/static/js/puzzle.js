@@ -243,7 +243,6 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
      * 
      */
     var oldnums = $('input#numbers_id').val();
-    var oldquestions = $('input#questions_id').val();
     var insertpos = 0; // list position of inserted number
     var id = '#num_' + y + '_' + x; // id of new numbered field (i.e. of number div)
     if (reset || $(id).html()) {
@@ -253,7 +252,7 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
         reset = true;
     }
     else {
-        $(id).html('#');
+        $(id).html('#'); // gets replaced by number later
         reset = false;
     }
     var nums = []; // list of coordinates with numbers
@@ -262,10 +261,11 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
         for (cx = 0; cx <= maxcol; cx++) {
             var nf_id = '#num_' + cy + '_' + cx;
             var nf = $(nf_id);
-            if (nf.html()) { // if number field contains anything
+            var content = nf.html();
+            if (content) { // if number field contains anything, nf.html() doesn’t work here, if it’s '#'!
                 nf.html(num);
                 nums.push(cy+'.'+cx+'.'+num);
-                if (oldnums.indexOf(cy+'.'+cx+'.')==-1) {
+                if ((content=='#')||(oldnums.indexOf(cy+'.'+cx+'.')==-1)) {
                   insertpos = num;
                 }
                 num++;
@@ -274,17 +274,18 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
     }
     num--;
     insertpos--;
+    if (DEBUG) console.log('renumber_puzzle | x=',x,'y=',y,'num=',num,'insertpos=',insertpos,'nums=',nums);
     if (insertpos < 0) insertpos = 0;
     if (num<0) {
-      console.log('error in renumber_puzzle:',insertpos,num);
+      console.log('ERROR in renumber_puzzle:',insertpos,'/',num);
       return false;
     }
     $('input#maxnum_id').val(num);
     $('input#numbers_id').val(nums.join(','));
-    
+
     /* question fields */
     if (reset) { // remove question
-      if (DEBUG) console.log('renumber, removing question at',insertpos,num);
+      if (DEBUG) console.log('renumber, removing question at',insertpos,'/',num);
       $('#question_h_'+insertpos).remove();
       $('#question_v_'+insertpos).remove();
       // decrease following numbers
@@ -304,7 +305,7 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
         }
       });
     } else { // add question
-      if (DEBUG) console.log('renumber, adding question at',insertpos,num);
+      if (DEBUG) console.log('renumber, adding question at',insertpos,'/',num);
       // increase following numbers
       $.each(['h','v'], function(index,dir) {
         for (var i=num; i>=insertpos; i--){
