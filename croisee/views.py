@@ -272,6 +272,7 @@ class NewPuzzleView(CreateView, DictionaryMixin):
                 'questions': '',
                 'owner': self.get_user(),
                 'language': settings.LANGUAGE_CODE,
+                'public': True,
                 }
 
     def get_form_kwargs(self):
