@@ -33,6 +33,9 @@ Features
 * public
   * find words that match a specified pattern (e.g. PY?H?N or ?YT*)
   * work in a puzzle grid (custom size 4-20 lines/rows)
+  * save puzzles and retrieve them under a url code
+* active users
+  * questions get automatically saved to personal dictionary
 * admin
   * manage words and their descriptions in several dictionaries
   * import word lists
@@ -120,15 +123,14 @@ Roadmap
 
 I'm planning to implement the following features in about this order:
 
-* safe puzzles, even for unregistered users, using a link code (maybe provide a list of public puzzles)
 * export grid and solution as text / HTML / LaTeX (cwpuzzle_) / ConTeXt_ / PDF / InDesign tagged text
 * enable user registration (`django registration`_)
 * safe puzzles for registered users as private/public
-* handle personal dictionaries (incl. export)
+* export of dictionaries
 * list of / search for public puzzles, use tagging
 * delete anonymous puzzles after e.g. 1 month
 * allow adopting of anonymous puzzles by users
-* import text files
+* import text files (JSON, YAML?)
 * different types of crossword grids (fat lines instead of blocked cells, uneven outline...)
 * mark letters for extra solution (competition word)
 * automate filling the grid (algorithm?)
