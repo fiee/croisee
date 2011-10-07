@@ -501,6 +501,12 @@ $(function(){
       chars2text(maxcol, maxrow);
       document.forms['puzzle'].submit();
     });
+    /* enable load button */
+    $('#tb_load_puzzle').click(function(event){
+      // TODO: dialog
+      window.location.href='/puzzle/list';
+      return true;
+    });
     /* enable clear button */
     $('#tb_clear_puzzle').click(function(event){
       $('#dialog_clear_confirm').dialog({

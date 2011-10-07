@@ -490,6 +490,18 @@ class AjaxCrossQueryView(TemplateView, DictionaryMixin):
     def post(self, request, *args, **kwargs):
         return self.get(request, *args, **kwargs)
 
+class PuzzleListView(ListView, DictionaryMixin):
+    model = Puzzle
+    template_name = 'puzzle_list.html'
+    paginate_by = 50
+
+    def get_context_data(self, **kwargs):
+        context = super(PuzzleListView, self).get_context_data(**kwargs)
+        context['dictionaries'] = self.get_dictionaries(True)[0]
+        return context    
+
+    def get_queryset(self):
+        return Puzzle.objects.filter(Q(public=True)|Q(owner=self.request.user.id))
 
 class WordListView(ListView, DictionaryMixin):
     model = Word

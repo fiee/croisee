@@ -1,0 +1,31 @@
+{% extends "root.html" %}{% load i18n %}
+
+{% block title %}{% trans "Puzzle List" %}{% endblock %}
+
+{% block maincontent %}
+<h2>{% trans "Available Puzzles" %}</h2>
+{% if object_list %}
+{% if is_paginated %}{% include "snippets/pagination.html" %}{% endif %}
+<table class="puzzlelist" style="width:100%;">
+  <tr>
+    <th>{% trans "Link code" %}</th>
+    <th>{% trans "Description" %}</th>
+    <th>{% trans "Language" %}</th>
+    <th>{% trans "Owner" %}</th>
+    <th>{% trans "Actions" %}</th>
+  </tr>
+{% for p in object_list %}
+  <tr>
+    <td><a href="{% url croisee-puzzle-get p.code %}" title="{% trans "Open" %}">{{ p.code }}</a></td>
+    <td>{{ p.title }}</td>
+    <td>{{ p.language }}</td>
+    <td>{{ p.owner }}</td>
+    <td><!-- [ delete ] --></td>
+  </tr>
+{% endfor %}
+</table>
+{% else %}
+<p>{% trans "No puzzles found for you!" %}</p>
+{% endif %}
+{% if is_paginated %}{% include "snippets/pagination.html" %}{% endif %}
+{% endblock %}
