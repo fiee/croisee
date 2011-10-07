@@ -11,9 +11,15 @@
 {% if puzzle %}
 <form action="/puzzle/{{puzzle.code}}/" name="puzzle" id="puzzle_form" method="post" autocomplete="off">
 {% csrf_token %}
-<div class="ui-widget" title="{% trans "Short description of this puzzle" %}">
+<div class="ui-widget">
   <label for="title">{% trans "Title" %}</label>
-  <input type="text" name="title" id="title_id" length="60" maxlength="255" value="{{puzzle.title}}" />
+  <input type="text" name="title" id="title_id" length="60" maxlength="255" value="{{puzzle.title}}"  title="{% trans "Short description of this puzzle" %}"/>
+  {% if user.is_active %}
+  <label for="public">{% trans "Public?" %}</label>
+  <input type="checkbox" name="public" id="public_id" {% if puzzle.public %}checked="checked"{% endif %} title="{% trans "Should this puzzle be publicly viewable?" %}"/>
+  {% else %}
+  <input type="hidden" name="public" id="public_id" value="True" />
+  {% endif %}
 </div>
 <input type="hidden" name="width" id="width_id" value="{{puzzle.width}}" />
 <input type="hidden" name="height" id="height_id" value="{{puzzle.height}}" />
@@ -24,7 +30,6 @@
 <input type="hidden" name="code" id="code_id" value="{{puzzle.code}}" />
 <input type="hidden" name="owner" id="owner_id" value="{{puzzle.owner.id}}" />
 <input type="hidden" name="language" id="language_id" value="{{puzzle.language}}" />
-<input type="hidden" name="public" id="public_id" value="{{puzzle.public}}" />
 <div class="hidden" id="dicts"></div>
 </form>
 <form action="#" name="grid" id="grid_form" method="post" autocomplete="off">
