@@ -491,7 +491,7 @@ class AjaxCrossQueryView(TemplateView, DictionaryMixin):
         return self.get(request, *args, **kwargs)
 
 
-class WordListView(ListView):
+class WordListView(ListView, DictionaryMixin):
     model = Word
     template_name = 'dictionary_word_list.html'
     paginate_by = 50
@@ -510,7 +510,7 @@ class WordListView(ListView):
             else:
                 self.dictionary = d
         elif self.request.user.is_active:
-            self.personal_dictionary, is_new = Dictionary.objects.get_or_create(owner=self.request.user, name=settings.CROISEE_PERSONALDICT_NAME)
+            self.personal_dictionary, is_new = Dictionary.objects.get_or_create(owner=self.request.user, name=self.request.user)
             if is_new:
                 self.personal_dictionary.description = _(u'personal dictionary of user %s, do not rename!') % self.request.user.username
                 self.personal_dictionary.save()
@@ -523,6 +523,7 @@ class WordListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(WordListView, self).get_context_data(**kwargs)
         context['dictionary'] = self.dictionary or self._get_dictionary()
+        context['dictionaries'] = self.get_dictionaries(True)[0]
         return context    
 
     def get_queryset(self):

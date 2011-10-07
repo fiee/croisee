@@ -19,6 +19,27 @@
     </ul>
   </li>
   {% block navigation %}
+  {% if not puzzle %}
+  <li>
+    <a href="{% url croisee-puzzle-new %}">{% trans "Puzzle" %}</a>
+    <ul>
+      <li>{% trans "Open..." %}</li>
+    </ul>
+  </li>
+  {% endif %}
+  {% if dictionaries %}
+  <li>
+    <a>{% trans "Dictionary" %}</a>
+    <ul>
+      {% for d in dictionaries %}{% if d.name != user.username %}
+      <li><a href="{% url croisee-dictionary d.id %}">{{ d.name }} ({{ d.language }})</a></li>
+      {% endif %}{% empty %}
+      <li class="error">{% trans "No dictionaries found" %}</li>
+      {% endfor %}
+      <li><a href="{% url croisee-dictionary-personal %}">{% trans "Personal Dictionary" %}</a></li>
+    </ul>
+  </li>
+  {% endif %}
   <li>
     <a>{% trans "Language" %}</a>
     <ul>

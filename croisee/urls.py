@@ -62,14 +62,14 @@ urlpatterns += patterns('',
 #    url(r'^puzzle/(?P<slug>)[a-z\d]{24,}/(?P<action>(get|save|delete)/)?$', 
 #        PuzzleView.as_view(), 
 #        name='%s-puzzle' % settings.PROJECT_NAME),
-#    # show personal dictionary  
-#    url(r'^dictionary/$', 
-#        WordListView.as_view(), 
-#        name='%s-dictionary-personal' % settings.PROJECT_NAME),
-#    # show other dictionary  
-#    url(r'^dictionary/(?P<object_id>\d+)/$', 
-#        WordListView.as_view(), 
-#        name='%s-dictionary' % settings.PROJECT_NAME),
+    # show personal dictionary  
+    url(r'^dictionary/$', 
+        WordListView.as_view(), 
+        name='%s-dictionary-personal' % settings.PROJECT_NAME),
+    # show other dictionary  
+    url(r'^dictionary/(?P<object_id>\d+)/$', 
+        WordListView.as_view(), 
+        name='%s-dictionary' % settings.PROJECT_NAME),
 )
 
 handler500 = TemplateView.as_view(template_name='500.html')
