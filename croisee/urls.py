@@ -19,6 +19,7 @@ js_info_dict = {
 
 urlpatterns = patterns('',
     url(r'^/?$', IndexView.as_view(), name='%s-index' % settings.PROJECT_NAME),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
 )
 

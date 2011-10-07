@@ -157,8 +157,8 @@ DATABASES = {
 
 TIME_ZONE = 'Europe/Zurich'
 LANGUAGE_CODE = 'de'
-#LANGUAGES = (('en', _(u'English')),
-#             ('de', _(u'German')))
+LANGUAGES = (('en', _(u'English')),
+             ('de', _(u'German')))
 USE_I18N = True
 USE_L10N = True
 

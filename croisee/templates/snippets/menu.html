@@ -19,6 +19,12 @@
     </ul>
   </li>
   {% block navigation %}
+  <li>
+    <a>{% trans "Language" %}</a>
+    <ul>
+      <li>{% include "snippets/setlanguage.html" %}</li>
+    </ul>
+  </li>
   <!--
   <li>{# Menu Help #}
     <a>{% trans "Help" %}</a>
