@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-05 11:31+0200\n"
+"POT-Creation-Date: 2011-10-07 21:02+0200\n"
 "PO-Revision-Date: 2011-09-09 14:51+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
@@ -44,7 +44,7 @@ msgstr "public?"
 msgid "May everyone use this dictionary?"
 msgstr "May everyone use this dictionary?"
 
-#: models.py:71 models.py:120
+#: models.py:71 models.py:120 templates/snippets/menu.html:23
 msgid "Language"
 msgstr "Language"
 
@@ -278,6 +278,14 @@ msgstr ""
 msgid "STRING_NOT_SET"
 msgstr "STRING_NOT_SET"
 
+#: settings.py:160
+msgid "English"
+msgstr "English"
+
+#: settings.py:161
+msgid "German"
+msgstr "German"
+
 #: settings.py:270
 #, python-format
 msgid ""
@@ -285,7 +293,7 @@ msgid ""
 msgstr ""
 "Please create a %s file with random characters to generate your secret key!"
 
-#: views.py:122 views.py:514
+#: views.py:122 views.py:515
 #, python-format
 msgid "personal dictionary of user %s, do not rename!"
 msgstr ""
@@ -314,16 +322,16 @@ msgstr ""
 msgid "Don’t save any words, since user %s is not active."
 msgstr ""
 
-#: views.py:432 templates/ajax_query.html:6
+#: views.py:433 templates/ajax_query.html:6
 #: templates/snippets/resultlist.html:20
 msgid "results"
 msgstr "results"
 
-#: views.py:484 templates/grid.html:54
+#: views.py:485 templates/grid.html:59
 msgid "horizontal"
 msgstr "horizontal"
 
-#: views.py:485 templates/grid.html:57
+#: views.py:486 templates/grid.html:62
 msgid "vertical"
 msgstr "vertical"
 
@@ -395,27 +403,36 @@ msgstr ""
 msgid "Puzzle Grid"
 msgstr "Puzzle Grid"
 
-#: templates/grid.html:14
-msgid "Short description of this puzzle"
-msgstr ""
-
 #: templates/grid.html:15
 msgid "Title"
 msgstr ""
 
-#: templates/grid.html:62
+#: templates/grid.html:16
+msgid "Short description of this puzzle"
+msgstr ""
+
+#: templates/grid.html:18
+#, fuzzy
+msgid "Public?"
+msgstr "public?"
+
+#: templates/grid.html:19
+msgid "Should this puzzle be publicly viewable?"
+msgstr ""
+
+#: templates/grid.html:67
 msgid "Create a new crossword puzzle by clicking on the star button!"
 msgstr "Create a new crossword puzzle by clicking on the star button!"
 
-#: templates/grid.html:63
+#: templates/grid.html:68
 msgid "Hint: Searching works only if you activate at least one dictionary."
 msgstr "Hint: Searching works only if you activate at least one dictionary."
 
-#: templates/grid.html:68
+#: templates/grid.html:73
 msgid "Please select at least one dictionary!"
 msgstr "Please select at least one dictionary!"
 
-#: templates/grid.html:69 templates/snippets/resultlist.html:4
+#: templates/grid.html:74 templates/snippets/resultlist.html:4
 #: templates/snippets/resultlist.html:15
 msgid "Search Results"
 msgstr "Search Results"
@@ -593,15 +610,15 @@ msgstr "Logout"
 msgid "Administration"
 msgstr "Administration"
 
-#: templates/snippets/menu.html:24 templates/snippets/toolbar.html:23
+#: templates/snippets/menu.html:30 templates/snippets/toolbar.html:23
 msgid "Help"
 msgstr "Help"
 
-#: templates/snippets/menu.html:26 templates/snippets/toolbar.html:29
+#: templates/snippets/menu.html:32 templates/snippets/toolbar.html:29
 msgid "Keys"
 msgstr "Keys"
 
-#: templates/snippets/menu.html:27
+#: templates/snippets/menu.html:33
 msgid "Donations"
 msgstr "Donations"
 
@@ -629,6 +646,10 @@ msgstr ""
 msgid "No matching words found"
 msgstr "No matching words found"
 
+#: templates/snippets/setlanguage.html:11
+msgid "Change"
+msgstr "Change"
+
 #: templates/snippets/toolbar.html:4 templates/snippets/toolbar.html.py:48
 msgid "New Puzzle"
 msgstr "New Puzzle"
@@ -646,7 +667,7 @@ msgstr "Save Puzzle"
 msgid "Clear Puzzle"
 msgstr "Clear Puzzle"
 
-#: templates/snippets/toolbar.html:8
+#: templates/snippets/toolbar.html:9
 #, fuzzy
 msgid "Delete Puzzle"
 msgstr "Clear Puzzle"
@@ -780,12 +801,6 @@ msgstr ""
 
 #~ msgid "center"
 #~ msgstr "center"
-
-#~ msgid "English"
-#~ msgstr "English"
-
-#~ msgid "German"
-#~ msgstr "German"
 
 #~ msgid "TIME_FORMAT"
 #~ msgstr "G:i"
@@ -946,9 +961,6 @@ msgstr ""
 
 #~ msgid "Back"
 #~ msgstr "Back"
-
-#~ msgid "Change"
-#~ msgstr "Change"
 
 #~ msgid "%(end_recurring_date)s"
 #~ msgstr "%(end_recurring_date)s"
