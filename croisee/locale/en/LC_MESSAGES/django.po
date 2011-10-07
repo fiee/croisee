@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 21:02+0200\n"
+"POT-Creation-Date: 2011-10-07 21:33+0200\n"
 "PO-Revision-Date: 2011-09-09 14:51+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: models.py:64 models.py:95
+#: models.py:64 models.py:95 templates/snippets/menu.html:32
 msgid "Dictionary"
 msgstr "Dictionary"
 
@@ -44,7 +44,7 @@ msgstr "public?"
 msgid "May everyone use this dictionary?"
 msgstr "May everyone use this dictionary?"
 
-#: models.py:71 models.py:120 templates/snippets/menu.html:23
+#: models.py:71 models.py:120 templates/snippets/menu.html:44
 msgid "Language"
 msgstr "Language"
 
@@ -594,7 +594,8 @@ msgstr ""
 msgid "Available Dictionaries"
 msgstr "Available Dictionaries"
 
-#: templates/snippets/dictionaries.html:13 templates/snippets/toolbar.html:81
+#: templates/snippets/dictionaries.html:13 templates/snippets/menu.html:37
+#: templates/snippets/toolbar.html:81
 msgid "No dictionaries found"
 msgstr "No dictionaries found"
 
@@ -610,15 +611,28 @@ msgstr "Logout"
 msgid "Administration"
 msgstr "Administration"
 
-#: templates/snippets/menu.html:30 templates/snippets/toolbar.html:23
+#: templates/snippets/menu.html:24
+msgid "Puzzle"
+msgstr "Puzzle"
+
+#: templates/snippets/menu.html:26
+msgid "Open..."
+msgstr ""
+
+#: templates/snippets/menu.html:39
+#, fuzzy
+msgid "Personal Dictionary"
+msgstr "Dictionary"
+
+#: templates/snippets/menu.html:51 templates/snippets/toolbar.html:23
 msgid "Help"
 msgstr "Help"
 
-#: templates/snippets/menu.html:32 templates/snippets/toolbar.html:29
+#: templates/snippets/menu.html:53 templates/snippets/toolbar.html:29
 msgid "Keys"
 msgstr "Keys"
 
-#: templates/snippets/menu.html:33
+#: templates/snippets/menu.html:54
 msgid "Donations"
 msgstr "Donations"
 
@@ -744,18 +758,11 @@ msgstr "Create"
 msgid "check/uncheck all dictionaries"
 msgstr ""
 
-#, fuzzy
-#~ msgid "personal dictionary"
-#~ msgstr "Dictionary"
-
 #~ msgid "Cloze"
 #~ msgstr "Cloze"
 
 #~ msgid "Cross fit"
 #~ msgstr "Cross fit"
-
-#~ msgid "Puzzle"
-#~ msgstr "Puzzle"
 
 #~ msgid "New"
 #~ msgstr "New"
