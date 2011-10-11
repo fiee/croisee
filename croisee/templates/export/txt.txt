@@ -1,0 +1,16 @@
+{% load i18n %}
+title={{puzzle.title}}
+code={{puzzle.code}}
+owner={{puzzle.owner}}
+language={{puzzle.language}}
+width={{puzzle.width}}
+height={{puzzle.height}}
+
+text=
+{{puzzle.text}}
+
+questions=
+{{puzzle.questions}}
+
+numbers=
+{{puzzle.numbers}}

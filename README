@@ -35,6 +35,7 @@ Features
   * work in a puzzle grid (custom size 4-20 lines/rows)
   * save puzzles and retrieve them under a url code
   * load public puzzles
+  * export public puzzles as ConTeXt or plain text files
   * list words in dictionaries
 * active users
   * questions get automatically saved to personal dictionary
@@ -127,7 +128,7 @@ Roadmap
 I'm planning to implement the following features in about this order:
 
 * enable user registration (`django registration`_)
-* export grid and solution as text / HTML / LaTeX (cwpuzzle_) / ConTeXt_ / PDF / InDesign tagged text
+* export grid and solution as text (done) / HTML / LaTeX (cwpuzzle_) / ConTeXt_ (done) / PDF / InDesign markup
 * export of dictionaries
 * edit personal dictionary (or all for admins)
 * use tagging for puzzles

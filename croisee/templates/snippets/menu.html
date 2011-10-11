@@ -19,15 +19,30 @@
     </ul>
   </li>
   {% block navigation %}
-  {% if not puzzle %}
   <li>
     <a href="{% url croisee-puzzle-new %}">{% trans "Puzzle" %}</a>
     <ul>
+      {% if not puzzle %}
       <li><a href="{% url croisee-puzzle-list %}">{% trans "Open..." %}</a></li>
+      {% else %}
+      <li><a>{% trans "Export as..." %}</a>
+        <ul>
+          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="html" %}">HTML</a></li>
+          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="txt" %}">TXT</a></li>
+          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="json" %}">JSON</a></li>
+          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="yaml" %}">YAML</a></li>
+          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="context" %}">ConTeXt</a></li>
+          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="latex" %}">LaTeX (cwpuzzle)</a></li>
+          <!--
+          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="idml" %}">InDesign (idml)</a></li>
+          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="pdf" %}">PDF</a></li>
+          -->
+        </ul>
+      </li>
+      {% endif %}
     </ul>
   </li>
-  {% endif %}
-  {% if dictionaries %}
+  {% if dictionaries and user.is_active %}
   <li>
     <a>{% trans "Dictionary" %}</a>
     <ul>
@@ -52,6 +67,7 @@
     <ul>
       <li><a id="menu_help"><span class="ui-icon ui-icon-help"></span>{% trans "Keys" %}</a></li>
       <li><a href=""><span class="ui-icon ui-icon-heart"></span>{% trans "Donations" %}</a></li>
+      {# TODO: export formats #}
     </ul>
   </li>
   -->

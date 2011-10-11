@@ -1,0 +1,58 @@
+{% load i18n %}\def\I{\relax} % needed to trick Django’s templating system
+\setupbodyfont[ss,8pt]
+\language[{{language}}]
+\setuplayout[header=10mm,footer=10mm,topspace=0mm]
+\setupTABLE[column][width=1cm,height=1cm,style=bold]
+%\setupheader[location=high]
+\setuppagenumbering[state=stop,location=high]
+\definecolor[blocked][s=.8]
+\definecolor[puzzlebackground][s=1.0]
+\definecolor[puzzleforeground][c=1.0,m=0,y=0,k=0] % number
+\definecolor[puzzleframe][s=0.0]
+\definecolor[solutionbackground][s=0.0]
+\definecolor[solutionforeground][s=1.0]
+\definecolor[solutionframe][s=1.0]
+\definecolumnset[twocols][n=2]
+\setupitemize[n,packed]
+
+\starttext
+{% for block in blocks %}
+\setupTABLE[{{ block.0 }}][{{ block.1 }}][background=color,backgroundcolor=blocked]{% endfor %}
+
+\subject{\I {% trans "Puzzle" %} }
+{
+\bTABLE[background=color,backgroundcolor=puzzlebackground,color=puzzleforeground,framecolor=puzzleframe]{% for line in cells %}
+\bTR{% for cell in line %}\bTD {{ cell.1 }}\eTD{% endfor %}\eTR{% endfor %}
+\eTABLE
+}
+
+\blank[big]
+
+\startcolumnset[twocols]
+
+\subsubject{\I {% trans "horizontal" %} }
+
+\startitemize[n]
+{% for qu in questions.h %}\sym{\I {{qu.num}}} {{ qu.text }}{% endfor %}
+\stopitemize
+
+\column
+\subsubject{\I {% trans "vertical" %} }
+
+\startitemize[n]
+{% for qu in questions.v %}\sym{\I {{qu.num}}} {{ qu.text }}{% endfor %}
+\stopitemize
+
+\stopcolumnset
+
+%\setupTABLE[column][width=1em,height=1em,align={middle,lohi}]
+\subject{\I {% trans "Solution" %} }
+{
+\setupTABLE[column][width=2em,height=2em,align={middle,lohi}]
+\bTABLE[background=color,backgroundcolor=solutionbackground,color=solutionforeground,framecolor=solutionframe]{% for line in cells %}
+\bTR{% for cell in line %}\bTD {{ cell.0 }}\eTD{% endfor %}\eTR{% endfor %}
+\eTABLE
+
+}
+
+\stoptext

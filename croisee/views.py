@@ -503,6 +503,64 @@ class PuzzleListView(ListView, DictionaryMixin):
     def get_queryset(self):
         return Puzzle.objects.filter(Q(public=True)|Q(owner=self.request.user.id))
 
+class PuzzleExportView(PuzzleView):
+    model = Puzzle
+    template_name = 'export/context.tex'
+    slug_field = 'code' # but code must come in 'slug' kwarg!
+    
+    FORMAT_MAP = {
+        # format/template name : (extension, mimetype)
+        'html': ('html', 'text/html; charset=utf-8'),
+        'txt': ('txt', 'text/plain; charset=utf-8'),
+        'json': ('json', 'text/json; charset=utf-8'),
+        'yaml': ('yaml', 'text/yaml; charset=utf-8'),
+        'context': ('tex', 'text/context; charset=utf-8'),
+        'latex': ('tex', 'text/latex; charset=utf-8'),
+        'pdf': ('pdf', 'application/pdf'),
+        'idml': ('idml', 'text/xml+idml; charset=utf-16BE'),
+    }
+
+    def get_context_data(self, **kwargs):
+        context = super(PuzzleExportView, self).get_context_data(**kwargs)
+        lines = context['puzzle'].text.split('\n')
+        numdict = dict( [('%s.%s' % (y,x), int(num)) for (y,x,num) in [ t.split('.') for t in context['puzzle'].numbers.strip(' ,').split(',') ] ] )
+        blocks = [] # positions of black boxes
+        cells = [] # content and number of cells
+        questions = {'h':[], 'v':[]}
+        for y in range(0, len(lines)-1):
+            cells.append([])
+            for x in range(0, len(lines[y])-1):
+                char = lines[y][x]
+                if char == '.':
+                    blocks.append((x+1,y+1))
+                    char = ''
+                try:
+                    num = numdict['%d.%d' % (y,x)]
+                except KeyError:
+                    num = ''
+                cells[y].append((char,num))
+        for qu in context['puzzle'].questions.split('\n'):
+            num, dir, text = qu.split('::')
+            questions[dir].append({'num':int(num)+1, 'text':text})
+        context['blocks'] = blocks
+        context['cells'] = cells
+        context['language'] = context['puzzle'].language
+        context['questions'] = questions
+        #del context['puzzle']
+        return context    
+    
+    def get(self, request, *args, **kwargs):
+        format = self.FORMAT_MAP[kwargs['format']]
+        self.template_name = 'export/%s.%s' % (kwargs['format'], format[0])
+        response = super(PuzzleExportView, self).get(request, *args, **kwargs)
+        response['Content-Type']=format[1]
+        response['Content-Disposition'] = 'attachment; filename=puzzle_%s.%s' % (self.object.code[:5], format[0])
+        if kwargs['format'] == 'pdf':
+            # TODO: ConTeXt or ReportLab?
+            pass
+        return response
+    
+
 class WordListView(ListView, DictionaryMixin):
     model = Word
     template_name = 'dictionary_word_list.html'
