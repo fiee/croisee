@@ -531,14 +531,15 @@ class PuzzleExportView(PuzzleView):
             cells.append([])
             for x in range(0, len(lines[y])-1):
                 char = lines[y][x]
-                if char == '.':
+                blocked = (char=='.')
+                if blocked:
                     blocks.append((x+1,y+1))
                     char = ''
                 try:
                     num = numdict['%d.%d' % (y,x)]
                 except KeyError:
                     num = ''
-                cells[y].append((char,num))
+                cells[y].append({'char':char, 'num':num, 'blocked':blocked})
         for qu in context['puzzle'].questions.split('\n'):
             num, dir, text = qu.split('::')
             questions[dir].append({'num':int(num)+1, 'text':text})

@@ -22,7 +22,7 @@
 \subject{\I {% trans "Puzzle" %} }
 {
 \bTABLE[background=color,backgroundcolor=puzzlebackground,color=puzzleforeground,framecolor=puzzleframe]{% for line in cells %}
-\bTR{% for cell in line %}\bTD {{ cell.1 }}\eTD{% endfor %}\eTR{% endfor %}
+\bTR{% for cell in line %}\bTD {{ cell.num }}\eTD{% endfor %}\eTR{% endfor %}
 \eTABLE
 }
 
@@ -50,7 +50,7 @@
 {
 \setupTABLE[column][width=2em,height=2em,align={middle,lohi}]
 \bTABLE[background=color,backgroundcolor=solutionbackground,color=solutionforeground,framecolor=solutionframe]{% for line in cells %}
-\bTR{% for cell in line %}\bTD {{ cell.0 }}\eTD{% endfor %}\eTR{% endfor %}
+\bTR{% for cell in line %}\bTD {{ cell.char }}\eTD{% endfor %}\eTR{% endfor %}
 \eTABLE
 
 }
