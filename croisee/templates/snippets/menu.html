@@ -27,10 +27,12 @@
       {% else %}
       <li><a>{% trans "Export as..." %}</a>
         <ul>
-          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="html" %}">HTML</a></li>
           <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="txt" %}">TXT</a></li>
+          <!--
+          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="html" %}">HTML</a></li>
           <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="json" %}">JSON</a></li>
           <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="yaml" %}">YAML</a></li>
+          -->
           <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="context" %}">ConTeXt</a></li>
           <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="latex" %}">LaTeX (cwpuzzle)</a></li>
           <!--
