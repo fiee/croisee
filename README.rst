@@ -16,15 +16,15 @@ It's a Django_ application, to be run on Apache/mod_wsgi or Nginx_ with Django v
 The provided fabfile (fabric_ deployment) is for an Debian server 
 and documented at http://github.com/fiee/generic_django_project
 
-Additionally you need a `settings_webserver.py` that gets copied as `settings_local.py`.
+Additionally you need a ``settings_webserver.py`` that gets copied as ``settings_local.py``.
 It can contain every kind of local settings, at least the database password.
 
 
 Setup
 -----
 
-If you don’t need a public API, comment "djangorestframework" in `settings.py` (INSTALLED_APPS)
-and `requirements.txt`.
+If you don’t need a public API, comment "djangorestframework" in ``settings.py`` (INSTALLED_APPS)
+and ``requirements.txt``.
 
 
 Features
@@ -56,8 +56,8 @@ Using the search field in the toolbar you can look up words that contain defined
 
 You can use _ and ? as wildcards for single letters, * and % for an undefined number of letters (including none).
 
-E.g. if you look up `_Y__O_` you get PYTHON and SYMBOL (depending on dictionaries, of course);
-if you look up `RAM*`, you get e.g. RAM, RAMBLE, RAMADAN etc. Of course you can mix wildcards at will.
+E.g. if you look up ``_Y__O_`` you get PYTHON and SYMBOL (depending on dictionaries, of course);
+if you look up ``RAM*``, you get e.g. RAM, RAMBLE, RAMADAN etc. Of course you can mix wildcards at will.
 
 All letters get uppercased, German umlauts get converted from Ä, Ö, Ü to AE, OE, UE; other international
 characters get de-accented. (If your language needs other conversions, please contact the developer.)
@@ -98,25 +98,25 @@ Admin
 Make a wordlist
 ---------------
 
-#. use the provided wordlists for German, English and Esperanto 
+1. use the provided wordlists for German, English and Esperanto 
   (derived from ispell_ dictionaries); you can upload them directly
-#. use a dictionary from aspell:
+2. use a dictionary from aspell_:
 
  aspell dump master > mydict.txt
 
-#. get some long text, e.g. from `Project Gutenberg`_
-#. write your own
+3. get some long text, e.g. from `Project Gutenberg`_
+4. write your own
 
 * The wordlist file is expected in UTF-8 encoding.
 * Format is "(word)\t(description)\t(priority)\n". Description and priority are optional (default to word and 0).
-* run `make-wordlist.py` on it (or several), result is `wordlist.txt`
+* run ``make-wordlist.py`` on it (or several), result is ``wordlist.txt``.
 
 
 Make a dictionary
 -----------------
 
 * upload a wordlist file to your croisee installation (Wordlist Upload); that may take a while
-* fix the descriptions and priorities, if you like
+* fix descriptions and priorities, if you like
 
 
 Development
@@ -183,7 +183,7 @@ License
 
 GPLv3, see http://www.gnu.org/copyleft/gpl.html
 
-Feel free to ask after different, additional licensing.
+Feel free to ask for different, additional licensing.
 
 I don't plan to release my edited dictionaries, because in them's the most work.
 
@@ -235,3 +235,6 @@ Dependencies
 .. _ConTeXt: http://wiki.contextgarden.net
 .. _cwpuzzle: http://ctan.org/tex-archive/macros/latex/contrib/gene/crossword
 .. _Project Gutenberg: http://www.gutenberg.org
+
+.. _ispell: http://ficus-www.cs.ucla.edu/geoff/ispell.html
+.. _aspell: http://aspell.net/
