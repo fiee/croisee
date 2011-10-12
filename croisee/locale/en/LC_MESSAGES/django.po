@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 21:50+0200\n"
+"POT-Creation-Date: 2011-10-12 14:59+0200\n"
 "PO-Revision-Date: 2011-09-09 14:51+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: models.py:64 models.py:95 templates/snippets/menu.html:32
+#: models.py:64 models.py:95 templates/snippets/menu.html:49
 msgid "Dictionary"
 msgstr "Dictionary"
 
@@ -45,7 +45,7 @@ msgid "May everyone use this dictionary?"
 msgstr "May everyone use this dictionary?"
 
 #: models.py:71 models.py:120 templates/puzzle_list.html:13
-#: templates/snippets/menu.html:44
+#: templates/snippets/menu.html:61
 msgid "Language"
 msgstr "Language"
 
@@ -294,7 +294,7 @@ msgid ""
 msgstr ""
 "Please create a %s file with random characters to generate your secret key!"
 
-#: views.py:122 views.py:527
+#: views.py:122 views.py:586
 #, python-format
 msgid "personal dictionary of user %s, do not rename!"
 msgstr ""
@@ -328,11 +328,13 @@ msgstr ""
 msgid "results"
 msgstr "results"
 
-#: views.py:485 templates/grid.html:59
+#: views.py:485 templates/grid.html:59 templates/export/context.tex:33
+#: templates/export/latex.tex:15
 msgid "horizontal"
 msgstr "horizontal"
 
-#: views.py:486 templates/grid.html:62
+#: views.py:486 templates/grid.html:62 templates/export/context.tex:40
+#: templates/export/latex.tex:19
 msgid "vertical"
 msgstr "vertical"
 
@@ -512,6 +514,14 @@ msgstr "fiëé croisée Site Admin"
 msgid "fiëé croisée Administration"
 msgstr "fiëé croisée Administration"
 
+#: templates/export/context.tex:22 templates/snippets/menu.html:23
+msgid "Puzzle"
+msgstr "Puzzle"
+
+#: templates/export/context.tex:49
+msgid "Solution"
+msgstr ""
+
 #: templates/registration/login.html:2 templates/registration/login.html:13
 #: templates/registration/login.html:31 templates/snippets/menu.html:15
 msgid "Login"
@@ -617,7 +627,7 @@ msgstr ""
 msgid "Available Dictionaries"
 msgstr "Available Dictionaries"
 
-#: templates/snippets/dictionaries.html:13 templates/snippets/menu.html:37
+#: templates/snippets/dictionaries.html:13 templates/snippets/menu.html:54
 #: templates/snippets/toolbar.html:81
 msgid "No dictionaries found"
 msgstr "No dictionaries found"
@@ -634,28 +644,28 @@ msgstr "Logout"
 msgid "Administration"
 msgstr "Administration"
 
-#: templates/snippets/menu.html:24
-msgid "Puzzle"
-msgstr "Puzzle"
-
 #: templates/snippets/menu.html:26
 msgid "Open..."
 msgstr ""
 
-#: templates/snippets/menu.html:39
+#: templates/snippets/menu.html:28
+msgid "Export as..."
+msgstr ""
+
+#: templates/snippets/menu.html:56
 #, fuzzy
 msgid "Personal Dictionary"
 msgstr "Dictionary"
 
-#: templates/snippets/menu.html:51 templates/snippets/toolbar.html:23
+#: templates/snippets/menu.html:68 templates/snippets/toolbar.html:23
 msgid "Help"
 msgstr "Help"
 
-#: templates/snippets/menu.html:53 templates/snippets/toolbar.html:29
+#: templates/snippets/menu.html:70 templates/snippets/toolbar.html:29
 msgid "Keys"
 msgstr "Keys"
 
-#: templates/snippets/menu.html:54
+#: templates/snippets/menu.html:71
 msgid "Donations"
 msgstr "Donations"
 
