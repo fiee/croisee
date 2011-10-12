@@ -98,14 +98,14 @@ Admin
 Make a wordlist
 ---------------
 
-# use the provided wordlists for German, English and Esperanto 
+#. use the provided wordlists for German, English and Esperanto 
   (derived from ispell_ dictionaries); you can upload them directly
-# use a dictionary from aspell:
+#. use a dictionary from aspell:
 
  aspell dump master > mydict.txt
 
-# get some long text, e.g. from `Project Gutenberg`_
-# write your own
+#. get some long text, e.g. from `Project Gutenberg`_
+#. write your own
 
 * The wordlist file is expected in UTF-8 encoding.
 * Format is "(word)\t(description)\t(priority)\n". Description and priority are optional (default to word and 0).
@@ -222,8 +222,9 @@ Dependencies
 .. _gunicorn: http://gunicorn.org/
 
 .. _Django: http://www.djangoproject.com
-.. _django-registration: https://bitbucket.org/ubernostrum/django-registration/
-.. _django-mptt: https://github.com/django-mptt/django-mptt/
+.. _django registration: https://bitbucket.org/ubernostrum/django-registration/
+.. _django guardian: http://packages.python.org/django-guardian/
+.. _django mptt: https://github.com/django-mptt/django-mptt/
 .. _djangorestframework: http://django-rest-framework.org/
 
 .. _YUI grids css: http://developer.yahoo.com/yui/grids/
