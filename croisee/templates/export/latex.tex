@@ -1,0 +1,29 @@
+{% load i18n tex_tags %}% see the docs for Gerd Neugebauer’s cwpuzzle.sty at http://ctan.org/tex-archive/macros/latex/contrib/gene/crossword
+\documentclass[a4paper]{article}
+\usepackage{cwpuzzle}
+\usepackage[utf8]{inputenc}
+{% if language == "de" %}\usepackage{german}{% endif %}
+
+\begin{document}
+
+\PuzzleUnsolved
+
+\begin{Puzzle}{{puzzle.width|braced}}{{puzzle.height|braced}}%
+{% for line in cells %}{% for cell in line %} |{% if cell.blocked %}*{% else %}{% if cell.num %}[{{ cell.num }}]{% endif %}{{ cell.char }}{% endif %}{% endfor %} |.
+{% endfor %}\end{Puzzle}
+
+\begin{PuzzleClues}{% trans "horizontal"|braced %}
+{% for qu in questions.h %} \Clue{{qu.num|braced}}{}{{ qu.text|texquote|braced }}
+{% endfor %}\end{PuzzleClues}
+
+\begin{PuzzleClues}{% trans "vertical"|braced %}
+{% for qu in questions.v %} \Clue{{qu.num|braced}}{}{{ qu.text|texquote|braced }}
+{% endfor %}\end{PuzzleClues}
+
+\PuzzleSolution
+
+\begin{Puzzle}{{puzzle.width|braced}}{{puzzle.height|braced}}%
+{% for line in cells %}{% for cell in line %} |{% if cell.blocked %}*{% else %}{% if cell.num %}[{{ cell.num }}]{% endif %}{{ cell.char }}{% endif %}{% endfor %} |.
+{% endfor %}\end{Puzzle}
+
+\end{document}
