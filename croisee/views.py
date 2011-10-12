@@ -542,7 +542,7 @@ class PuzzleExportView(PuzzleView):
                 cells[y].append({'char':char, 'num':num, 'blocked':blocked})
         for qu in context['puzzle'].questions.split('\n'):
             num, dir, text = qu.split('::')
-            questions[dir].append({'num':int(num)+1, 'text':text})
+            questions[dir].append({'num':int(num)+1, 'text':text.strip()})
         context['blocks'] = blocks
         context['cells'] = cells
         context['language'] = context['puzzle'].language
