@@ -99,7 +99,7 @@ Make a wordlist
 ---------------
 
 1. use the provided wordlists for German, English and Esperanto 
-  (derived from ispell_ dictionaries); you can upload them directly
+   (derived from ispell_ dictionaries); you can upload them directly
 2. use a dictionary from aspell_:
 
  aspell dump master > mydict.txt
@@ -196,6 +196,7 @@ Author(s)
 ---------
 
 * Henning Hraban Ramm, `fiëé visuëlle`_, <hraban@fiee.net>, http://www.fiee.net
+* Heiko Oberdiek: enhancement of LaTeX template, http://www.listserv.dfn.de/cgi-bin/wa?A2=ind1110&L=tex-d-l&T=0&P=3297
 * inspiration and code snippets by several other people & projects
 
 

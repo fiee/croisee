@@ -1,10 +1,42 @@
 {% load i18n tex_tags %}% see the docs for Gerd Neugebauer’s cwpuzzle.sty at http://ctan.org/tex-archive/macros/latex/contrib/gene/crossword
-\documentclass[a4paper]{article}
-\usepackage{cwpuzzle}
+% setup parameters courtesy of Heiko Oberdiek (TeX-D-L mailing list, 2011-10-12)
+\nofiles % no auxiliary files
+\documentclass[ngerman,12pt,a4paper]{article}
+\usepackage[hmargin=2cm,vmargin=2cm]{geometry}
+\usepackage[large]{cwpuzzle}
 \usepackage[utf8]{inputenc}
-{% if language == "de" %}\usepackage{german}{% endif %}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{ngerman}
+\usepackage{array}
+\pagestyle{empty}
+{% if language == "de" %}\usepackage{ngerman}{% endif %}
+
+\renewcommand*{\PuzzleNumberFont}{\sffamily\small}
+\setlength{\PuzzleUnitlength}{30pt}
+
+\newdimen\MyTempDimen
+\newenvironment*{MyPuzzleClues}[1]{%
+ \def\Clue##1##2##3{%
+   \ClueNumber{##1}&\ClueText{##3}\tabularnewline
+ }%
+ \ClueInit
+ \settowidth{\MyTempDimen}{\ClueNumber{99} \ClueNumber{99} \quad}%
+ \setlength{\MyTempDimen}{-\MyTempDimen}%
+ \addtolength{\MyTempDimen}{\linewidth}%
+ \tabular[t]{@{}r@{ }p{.5\MyTempDimen}@{}}%
+ \multicolumn{2}{@{}c@{}}{\ClueHead{#1}}\tabularnewline
+}{%
+ \endtabular
+ \ignorespacesafterend
+}
+\newcommand*{\ClueNumber}[1]{\textsf{#1}}
+\newcommand*{\ClueText}[1]{#1}
+\newcommand*{\ClueHead}[1]{\textbf{#1}}
+\newcommand*{\ClueInit}{\normalsize}
 
 \begin{document}
+\centering
 
 \PuzzleUnsolved
 
@@ -12,15 +44,17 @@
 {% for line in cells %}{% for cell in line %} |{% if cell.blocked %}*{% else %}{% if cell.num %}[{{ cell.num }}]{% endif %}{{ cell.char }}{% endif %}{% endfor %} |.
 {% endfor %}\end{Puzzle}
 
-\begin{PuzzleClues}{% trans "horizontal"|braced %}
+\begin{MyPuzzleClues}{% trans "horizontal"|braced %}
 {% for qu in questions.h %} \Clue{{qu.num|braced}}{}{{ qu.text|texquote|braced }}
 {% endfor %}\end{PuzzleClues}
-
-\begin{PuzzleClues}{% trans "vertical"|braced %}
+\hfill
+\begin{MyPuzzleClues}{% trans "vertical"|braced %}
 {% for qu in questions.v %} \Clue{{qu.num|braced}}{}{{ qu.text|texquote|braced }}
 {% endfor %}\end{PuzzleClues}
 
 \PuzzleSolution
+
+\sffamily\huge
 
 \begin{Puzzle}{{puzzle.width|braced}}{{puzzle.height|braced}}%
 {% for line in cells %}{% for cell in line %} |{% if cell.blocked %}*{% else %}{% if cell.num %}[{{ cell.num }}]{% endif %}{{ cell.char }}{% endif %}{% endfor %} |.
