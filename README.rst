@@ -3,17 +3,17 @@ fiëé croisée
 
 I like making crossword puzzles. But it needs *a lot* of time without the right tools. 
 
-So this is some kind of fill-in sheet with attached dictionary to look for matching words. At the moment.
+At the moment this is some kind of fill-in sheet with attached dictionary to look for matching words.
 
-I hope it will become a tool that makes creating crossword puzzles just fun.
+I hope it will evolve in a tool that makes creating and sharing crossword puzzles just fun.
 
 
 Installation
 ------------
 
-It's a Django_ application, to be run on Apache/mod_wsgi or Nginx_ with Django via gunicorn_ or FCGI.
+It’s a Django_ application, to be run on Apache/mod_wsgi or Nginx_ with Django via gunicorn_ or FCGI.
 
-The provided fabfile (fabric_ deployment) is for an Debian server 
+The provided fabfile (fabric_ deployment) is for a Debian server 
 and documented at http://github.com/fiee/generic_django_project
 
 Additionally you need a ``settings_webserver.py`` that gets copied as ``settings_local.py``.
@@ -23,7 +23,7 @@ It can contain every kind of local settings, at least the database password.
 Setup
 -----
 
-If you don’t need a public API, comment "djangorestframework" in ``settings.py`` (INSTALLED_APPS)
+If you don’t need a public API, comment “djangorestframework” in ``settings.py`` (INSTALLED_APPS)
 and ``requirements.txt``.
 
 
@@ -31,20 +31,28 @@ Features
 --------
 
 * public
-  * find words that match a specified pattern (e.g. PY?H?N or ?YT*)
+
+  * find words that match a specified pattern (e.g. ``PY?H?N`` or ``?YT*``)
   * work in a puzzle grid (custom size 4-20 lines/rows)
   * save puzzles and retrieve them under a url code
   * load public puzzles
-  * export public puzzles as ConTeXt or plain text files
+  * export public puzzles as ConTeXt_, LaTeX (cwpuzzle_) or plain text files
   * list words in dictionaries
+
 * active users
+
   * questions get automatically saved to personal dictionary
   * save puzzles as private
+
 * admin
+
   * manage words and their descriptions in several dictionaries
   * import word lists
+
 * api
+
   * optional RESTful API with djangorestframework_
+
 
 User
 ====
@@ -62,7 +70,7 @@ if you look up ``RAM*``, you get e.g. RAM, RAMBLE, RAMADAN etc. Of course you ca
 All letters get uppercased, German umlauts get converted from Ä, Ö, Ü to AE, OE, UE; other international
 characters get de-accented. (If your language needs other conversions, please contact the developer.)
 
-Searching works only if you activate at least one dictionary fist.
+Searching works only if you activate at least one dictionary first.
 
 Query results are limited to 100 answers.
 
@@ -70,21 +78,22 @@ Query results are limited to 100 answers.
 Puzzle Grid
 -----------
 
-Here's how to make your own crossword puzzle:
+Here’s how to make your own crossword puzzle:
 
-Click the "star" button to create a grid in your favourite size (12x12 is good).
+Click the “star” button to create a grid in your favourite size (12x12 is good).
 
 You can move around in the grid with the arrow keys (tab, shift-tab, backspace, delete work also).
 If you write letters, the cursor will move right to the next cell; if you press shift, it will move downward.
+Please write slowly, otherwise the key handler swallows characters.
 
-Write some words into the grid "by heart" - in an empty grid, you'd get thousands of possible words.
+Write some words into the grid “by heart” - in an empty grid, you’d get thousands of possible words.
 
-Perhaps write only one letter in the corners - that's how I mostly start.
-Press ? (question mark) in any square, and after a short delay you'll get two lists of words that match in this place horizontally and vertically.
+Perhaps write only one letter in the corners - that’s how I mostly start.
+Press ? (question mark) in any square, and after a short delay you’ll get two lists of words that match in this place horizontally and vertically.
 
 You can click on the words in the result list to place them in the grid. The list will adapt automatically to the new situation.
 
-To mark cells as "blockers", press space (and again to remove the block).
+To mark cells as “blockers”, press space (and again to remove the block).
 
 To set a number as start-of-word mark, press # (number sign). The numbering works automatically.
 A question field is added to the horizontal and/or vertical list, it gets filled with the first solution from your selected dictionaries.
@@ -108,15 +117,15 @@ Make a wordlist
 4. write your own
 
 * The wordlist file is expected in UTF-8 encoding.
-* Format is "(word)\t(description)\t(priority)\n". Description and priority are optional (default to word and 0).
+* Format is “(word)\t(description)\t(priority)\n”. Description and priority are optional (default to word and 0).
 * run ``make-wordlist.py`` on it (or several), result is ``wordlist.txt``.
 
 
 Make a dictionary
 -----------------
 
-* upload a wordlist file to your croisee installation (Wordlist Upload); that may take a while
-* fix descriptions and priorities, if you like
+* upload a wordlist file to your croisee installation (Wordlist Upload); that may take a while.
+* fix descriptions and priorities, if you like.
 
 
 Development
@@ -125,7 +134,7 @@ Development
 Roadmap
 -------
 
-I'm planning to implement the following features in about this order:
+I’m planning to implement the following features in about this order:
 
 * enable user registration (`django registration`_)
 * export grid and solution as text (done) / HTML / LaTeX (cwpuzzle_, done) / ConTeXt_ (done) / PDF / InDesign markup
@@ -146,7 +155,7 @@ I'm planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
-* word numbers are rather small in Mozilla (and probably other browsers than Safari)
+* word numbers are rather small in Mozilla (and probably other browsers than WebKit-based)
 * admin: if adding to an existing dict, disable other fields
 * clean up redundant template/view code
 * still not really a reusable app (to be integrated in `fiëé cérébrale`_)
@@ -160,7 +169,7 @@ Internal workflow (how it *should* work)
 ----------------------------------------
 
 If you save a puzzle for the first time, a new hash code is generated from your IP address and the local datetime.
-The puzzle’s address is becoming something like "/puzzle/abcdef123456/".
+The puzzle’s address is becoming something like “/puzzle/abcdef123456/”.
 
 as anonymous user
 ^^^^^^^^^^^^^^^^^
@@ -185,11 +194,11 @@ GPLv3, see http://www.gnu.org/copyleft/gpl.html
 
 Feel free to ask for different, additional licensing.
 
-I don't plan to release my edited dictionaries, because in them's the most work.
+I don’t plan to release my edited dictionaries, because in them’s the most work.
 
 Everything related to `fiëé visuëlle`_ (logo, names) is copyrighted and contained only for the sake of completeness.
 That means you must not use the fiëé logo, fiëé favicon or any name containing fiëé in public, 
-except in a descriptive manner, where it is encouraged (e.g. "this is derived from / based on").
+except in a descriptive manner, where it is encouraged (e.g. “this is derived from / based on”).
 
 
 Author(s)
