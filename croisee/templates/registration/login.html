@@ -1,0 +1,36 @@
+{% extends "root.html" %}{% load i18n %}
+{% block title %}{% trans "Login" %}{% endblock %}
+
+{% block rightcol %}
+  {% if form.errors %}
+  <ul class="messages">
+      <li class="error"><span class="ui-icon ui-icon-alert"></span>{% trans "Sorry, that's not a valid username or password" %}</li>
+  </ul>
+  {% endif %}
+{% endblock%}
+
+{% block main_content %}
+  <h2>{% trans "Login" %}</h2>
+
+  <form action="/accounts/login/" method="post" class="login ui-dialog-content">
+  {% csrf_token %}
+  <p>{% trans "Please login using your username and password" %}</p>
+
+  <p class="field_wrapper">
+    <label for="username">{% trans "User name:" %}</label>
+    <span class="field"><input type="text" name="username" value="" id="username" /></span>
+  </p>
+
+  <p class="field_wrapper">
+    <label for="password">{% trans "Password:" %}</label>
+    <input type="password" name="password" value="" id="password" />
+  </p>
+
+  <p class="field_wrapper">
+    <input type="hidden" name="next" value="{{ next|escape }}" />
+    <input type="submit" value="{% trans "Login" %}" />
+  </p>
+  
+  </form>
+
+{% endblock %}
