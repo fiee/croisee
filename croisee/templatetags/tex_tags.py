@@ -4,7 +4,7 @@ import re
 
 register = template.Library()
 
-reTeXSpecials = re.compile(r'([&%|{}\[\]])', re.I|re.M)
+reTeXSpecials = re.compile(r'([&%|{}~\$\[\]])', re.I|re.M)
 
 @stringfilter
 def texquote(input):
