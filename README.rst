@@ -155,7 +155,6 @@ I’m planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
-* height and width of a new puzzle is mixed up in JavaScript code; only square grids work well
 * only German keyboards work well; seems we use key codes instead of character codes
 * word numbers are rather small in Mozilla (and probably other browsers than WebKit-based)
 * admin: if adding to an existing dict, disable other fields

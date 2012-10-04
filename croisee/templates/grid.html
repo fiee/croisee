@@ -34,9 +34,9 @@
 </form>
 <form action="#" name="grid" id="grid_form" method="post" autocomplete="off">
 <table class="puzzle">
-	{% for row in puzzle.width|get_range %}
+	{% for row in puzzle.height|get_range %}
 	<tr id="row_{{row}}">
-		{% for cell in puzzle.height|get_range %}
+		{% for cell in puzzle.width|get_range %}
 		<td id="cell_{{row}}_{{cell}}" class="puzzlecell">
 			<div id="num_{{row}}_{{cell}}" class="puzzlenum"></div>
 			<input type="text" name="char_{{row}}_{{cell}}" id="char_{{row}}_{{cell}}" class="puzzlechar" length="1" maxlength="1" value="" />
