@@ -117,7 +117,7 @@ Make a wordlist
 4. write your own
 
 * The wordlist file is expected in UTF-8 encoding.
-* Format is “(word)\t(description)\t(priority)\n”. Description and priority are optional (default to word and 0).
+* Format is “(word)\\t(description)\\t(priority)\\n”. Description and priority are optional (default to word and 0).
 * run ``make-wordlist.py`` on it (or several), result is ``wordlist.txt``.
 
 
@@ -155,14 +155,18 @@ I’m planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
+* height and width of a new puzzle is mixed up in JavaScript code; only square grids work well
+* only German keyboards work well; seems we use key codes instead of character codes
 * word numbers are rather small in Mozilla (and probably other browsers than WebKit-based)
 * admin: if adding to an existing dict, disable other fields
 * clean up redundant template/view code
+* update libraries and optimize JS code
 * still not really a reusable app (to be integrated in `fiëé cérébrale`_)
 * still no tests!
 * add Sphinx_ documentation
 * add setup.py
 * bind anonymous puzzles to one session to avoid puzzles being edited by several anonymous users at the same time
+* add sample `settings_local.py`
 
 
 Internal workflow (how it *should* work)
@@ -234,7 +238,6 @@ Dependencies
 .. _Django: http://www.djangoproject.com
 .. _django registration: https://bitbucket.org/ubernostrum/django-registration/
 .. _django guardian: http://packages.python.org/django-guardian/
-.. _django mptt: https://github.com/django-mptt/django-mptt/
 .. _djangorestframework: http://django-rest-framework.org/
 
 .. _YUI grids css: http://developer.yahoo.com/yui/grids/
