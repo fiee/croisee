@@ -10,12 +10,8 @@ import time
 # globals
 env.prj_name = 'croisee' # no spaces!
 env.sudoers_group = 'wheel'
-env.use_photologue = False # django-photologue gallery module
-env.use_feincms = False
-env.use_medialibrary = False # feincms.medialibrary or similar
 env.use_daemontools = False  # not available for hardy heron!
 env.use_supervisor = True
-env.use_celery = False
 env.webserver = 'nginx' # nginx or apache2 (directory name below /etc!)
 env.dbserver = 'mysql' # mysql or postgresql
 
@@ -27,7 +23,7 @@ def localhost():
     env.user = 'hraban' # You must create and sudo-enable the user first!
     env.path = '/Users/%(user)s/workspace/%(prj_name)s' % env # User home on OSX, TODO: check local OS
     env.virtualhost_path = env.path
-    env.pysp = '%(virtualhost_path)s/lib/python2.6/site-packages' % env
+    env.pysp = '%(virtualhost_path)s/lib/python2.7/site-packages' % env
     env.tmppath = '/var/tmp/django_cache/%(prj_name)s' % env
 
 def webserver():
@@ -36,15 +32,14 @@ def webserver():
     env.user = env.prj_name
     env.path = '/var/www/%(prj_name)s' % env
     env.virtualhost_path = env.path
-    env.pysp = '%(virtualhost_path)s/lib/python2.5/site-packages' % env
+    env.pysp = '%(virtualhost_path)s/lib/python2.7/site-packages' % env
     env.tmppath = '/var/tmp/django_cache/%(prj_name)s' % env
    
 # tasks
 
 def test():
     "Run the test suite and bail out if it fails"
-    local("cd %(path)s; python manage.py test" % env) #, fail="abort")
-    
+    local("cd %(path)s; python manage.py test" % env) #, fail="abort") 
     
 def setup():
     """
@@ -54,7 +49,7 @@ def setup():
     require('hosts', provided_by=[localhost,webserver])
     require('path')
     # install Python environment
-    sudo('apt-get install -y build-essential python-dev python-setuptools python-imaging python-virtualenv python-yaml')
+    sudo('apt-get install -y build-essential python-dev python-setuptools python-virtualenv python-yaml')
     # install some version control systems, since we need Django modules in development
     sudo('apt-get install -y git-core') # subversion git-core mercurial
         
@@ -69,11 +64,6 @@ def setup():
         sudo('pip install supervisor')
         sudo('echo; if [ ! -f /etc/supervisord.conf ]; then echo_supervisord_conf > /etc/supervisord.conf; fi', pty=True) # configure that!
         sudo('echo; if [ ! -d /etc/supervisor ]; then mkdir /etc/supervisor; fi', pty=True)
-    if env.use_celery:
-        sudo('apt-get install -y rabbitmq-server') # needs additional deb-repository!
-        if env.use_daemontools:
-            sudo('mkdir -p /etc/service/%(prj_name)s-celery' % env, pty=True)
-        # for supervisor, put celery's "program" block into supervisor.ini!
     
     # install webserver and database server
     sudo('apt-get remove -y apache2 apache2-mpm-prefork apache2-utils') # is mostly pre-installed
@@ -100,16 +90,7 @@ def setup():
         run('virtualenv .') # activate with 'source ~/www/bin/activate'
         with settings(warn_only=True):
             run('mkdir -m a+w logs; mkdir releases; mkdir shared; mkdir packages; mkdir backup;', pty=True)
-            if env.use_photologue:
-                run('mkdir photologue', pty=True)
-                #run('pip install -E . -U django-photologue' % env, pty=True)
-            if env.use_medialibrary:
-                run('mkdir medialibrary', pty=True)
             run('cd releases; ln -s . current; ln -s . previous;', pty=True)
-    if env.use_feincms:
-        with cd(env.pysp):
-            run('git clone git://github.com/django-mptt/django-mptt.git; echo django-mptt > mptt.pth;', pty=True)
-            run('git clone git://github.com/matthiask/feincms.git; echo feincms > feincms.pth;', pty=True)
     setup_user()
     deploy('first')
     
@@ -195,8 +176,6 @@ def install_site():
             sudo('cp supervisor.ini /etc/supervisor/%(prj_name)s.ini' % env, pty=True)
         else: # delete old config file
             sudo('echo; if [ -f /etc/supervisor/%(prj_name)s.ini ]; then supervisorctl %(prj_name)s:appserver stop rm /etc/supervisor/%(prj_name)s.ini; fi' % env, pty=True)
-        if env.use_celery:
-            sudo('cp service-run-celeryd.sh /etc/service/%(prj_name)s-celery/run; chmod a+x /etc/service/%(prj_name)s-celery/run;' % env, pty=True)
         # try logrotate
         with settings(warn_only=True):        
             sudo('cp logrotate.conf /etc/logrotate.d/website-%(prj_name)s' % env, pty=True)
@@ -217,10 +196,8 @@ def symlink_current_release():
         # copy South migrations from previous release, if there are any
         run('cd releases/previous/%(prj_name)s; if [ -d migrations ]; then cp -r migrations ../../current/%(prj_name)s/; fi' % env, pty=True)
         # collect static files
-        with cd('releases/current/%(prj_name)s' % env):
+        with cd('releases/current'):
             run('%(path)s/bin/python manage.py collectstatic -v0 --noinput' % env, pty=True)
-            if env.use_photologue:
-                run('cd static; rm -rf photologue; ln -s %(path)s/photologue photologue;' % env, pty=True)
     
 def migrate(param=''):
     "Update the database"
@@ -228,9 +205,9 @@ def migrate(param=''):
     require('path')
     env.southparam = '--auto'
     if param=='first':
-        run('cd %(path)s/releases/current/%(prj_name)s; %(path)s/bin/python manage.py syncdb --noinput' % env, pty=True)
+        run('cd %(path)s/releases/current; %(path)s/bin/python manage.py syncdb --noinput' % env, pty=True)
         env.southparam = '--initial'
-    #with cd('%(path)s/releases/current/%(prj_name)s' % env):
+    #with cd('%(path)s/releases/current' % env):
     #    run('%(path)s/bin/python manage.py schemamigration %(prj_name)s %(southparam)s && %(path)s/bin/python manage.py migrate %(prj_name)s' % env)
     #    # TODO: should also migrate other apps! get migrations from previous releases
     
@@ -245,8 +222,6 @@ def restart_webserver():
                 sudo('kill `cat %(path)s/logs/django.pid`' % env, pty=True) # kill process, daemontools will start it again, see service-run.sh
             if env.use_supervisor:
                 sudo('supervisorctl restart %(prj_name)s:appserver' % env, pty=True)
-                if env.use_celery:
-                    sudo('supervisorctl restart %(prj_name)s:celery' % env, pty=True)
             #require('prj_name')
-            #run('cd %(path)s; bin/python releases/current/%(prj_name)s/manage.py runfcgi method=threaded maxchildren=6 maxspare=4 minspare=2 host=127.0.0.1 port=%(port)s pidfile=./logs/django.pid' % env)
+            #run('cd %(path)s; bin/python releases/current/manage.py runfcgi method=threaded maxchildren=6 maxspare=4 minspare=2 host=127.0.0.1 port=%(port)s pidfile=./logs/django.pid' % env)
         sudo('/etc/init.d/%(webserver)s reload' % env, pty=True)
