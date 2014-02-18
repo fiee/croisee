@@ -5,13 +5,14 @@
 	<title>fiëé croisée :: {% block title %}{% endblock %}</title>
 	<link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
 	<link rel="icon" href="{{ STATIC_URL }}favicon.ico" type="image/ico" />
-  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.7.2/build/cssgrids/grids-min.css">
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.1/build/cssgrids/cssgrids-min.css">
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen,projection" />
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/print.css" type="text/css" media="print" />
-  <link type="text/css" href="{{ STATIC_URL }}css/smoothness/jquery-ui-1.8.24.custom.css" rel="stylesheet" />
+  <link type="text/css" href="{{ STATIC_URL }}css/smoothness/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" ></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-migrate-1.2.1.js" ></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js" ></script>
-  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.8.24.custom.min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.min.js"></script>
   <script type="text/javascript" src="{% url django.views.i18n.javascript_catalog %}"></script>
   <script type="text/javascript">
     /* see https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax */
