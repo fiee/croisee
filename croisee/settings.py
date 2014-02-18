@@ -124,6 +124,8 @@ USE_ETAGS = True
 # PLEASE CHANGE THIS IF YOU CLONE croisée!
 YOUR_DOMAIN = 'fiee.net'
 
+ALLOWED_HOSTS = ['croisee.'+YOUR_DOMAIN, 'croisee.'+YOUR_DOMAIN+'.', '127.0.0.1']
+
 ADMINS = (
     ('Henning Hraban Ramm', 'hraban@%s' % YOUR_DOMAIN),
 )
