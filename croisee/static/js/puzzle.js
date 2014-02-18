@@ -546,10 +546,10 @@ $(function(){
     /* enable check/uncheck all dictionaries */
     $('#dic_all').toggle(
       function(){
-        $('#dialog_dicts input.dictionary-checkbox').attr('checked', true);
+        $('#dialog_dicts input.dictionary-checkbox').prop('checked', true);
       },
       function(){
-        $('#dialog_dicts input.dictionary-checkbox').attr('checked', false);
+        $('#dialog_dicts input.dictionary-checkbox').prop('checked', false);
       }
     );
         
