@@ -20,24 +20,24 @@
   </li>
   {% block navigation %}
   <li>
-    <a href="{% url croisee-puzzle-new %}">{% trans "Puzzle" %}</a>
+    <a href="{% url 'croisee-puzzle-new' %}">{% trans "Puzzle" %}</a>
     <ul>
       {% if not puzzle %}
-      <li><a href="{% url croisee-puzzle-list %}">{% trans "Open..." %}</a></li>
+      <li><a href="{% url 'croisee-puzzle-list' %}">{% trans "Open..." %}</a></li>
       {% else %}
       <li><a>{% trans "Export as..." %}</a>
         <ul>
-          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="txt" %}">TXT</a></li>
+          <li><a href="{% url 'croisee-puzzle-export' slug=puzzle.code format="txt" %}">TXT</a></li>
           <!--
-          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="html" %}">HTML</a></li>
-          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="json" %}">JSON</a></li>
-          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="yaml" %}">YAML</a></li>
+          <li><a href="{% url 'croisee-puzzle-export' slug=puzzle.code format="html" %}">HTML</a></li>
+          <li><a href="{% url 'croisee-puzzle-export' slug=puzzle.code format="json" %}">JSON</a></li>
+          <li><a href="{% url 'croisee-puzzle-export' slug=puzzle.code format="yaml" %}">YAML</a></li>
           -->
-          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="context" %}">ConTeXt</a></li>
-          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="latex" %}">LaTeX (cwpuzzle)</a></li>
+          <li><a href="{% url 'croisee-puzzle-export' slug=puzzle.code format="context" %}">ConTeXt</a></li>
+          <li><a href="{% url 'croisee-puzzle-export' slug=puzzle.code format="latex" %}">LaTeX (cwpuzzle)</a></li>
           <!--
-          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="idml" %}">InDesign (idml)</a></li>
-          <li><a href="{% url croisee-puzzle-export slug=puzzle.code format="pdf" %}">PDF</a></li>
+          <li><a href="{% url 'croisee-puzzle-export' slug=puzzle.code format="idml" %}">InDesign (idml)</a></li>
+          <li><a href="{% url 'croisee-puzzle-export' slug=puzzle.code format="pdf" %}">PDF</a></li>
           -->
         </ul>
       </li>
@@ -49,11 +49,11 @@
     <a>{% trans "Dictionary" %}</a>
     <ul>
       {% for d in dictionaries %}{% if d.name != user.username %}
-      <li><a href="{% url croisee-dictionary d.id %}">{{ d.name }} ({{ d.language }})</a></li>
+      <li><a href="{% url 'croisee-dictionary' d.id %}">{{ d.name }} ({{ d.language }})</a></li>
       {% endif %}{% empty %}
       <li class="error">{% trans "No dictionaries found" %}</li>
       {% endfor %}
-      <li><a href="{% url croisee-dictionary-personal %}">{% trans "Personal Dictionary" %}</a></li>
+      <li><a href="{% url 'croisee-dictionary-personal' %}">{% trans "Personal Dictionary" %}</a></li>
     </ul>
   </li>
   {% endif %}

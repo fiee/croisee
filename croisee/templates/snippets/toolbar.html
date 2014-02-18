@@ -1,14 +1,14 @@
 {% load i18n %}
 <div id="puzzle_toolbar" class="toolbar">
   <ul>
-    <li><a class="button" accesskey="n" title="{% trans "New Puzzle" %} [n]" id="tb_new_puzzle" href="{% url croisee-puzzle-new %}"><span class="ui-icon ui-icon-star"></span></a></li>
-    <li><a class="button" accesskey="s" title="{% trans "Save Puzzle" %} [s]" id="tb_save_puzzle" href="{% url croisee-puzzle-save %}"><span class="ui-icon ui-icon-disk"></span></a></li>
-    <li><a class="button" accesskey="o" title="{% trans "Load Puzzle" %} [o]" id="tb_load_puzzle" href="{% url croisee-puzzle-list %}"><span class="ui-icon ui-icon-folder-open"></span></a></li>
-    <li><a class="button" accesskey="q" title="{% trans "Clear Puzzle" %} [q]" id="tb_clear_puzzle" href="{% url croisee-puzzle-new %}"><span class="ui-icon ui-icon-trash"></span></a></li>
+    <li><a class="button" accesskey="n" title="{% trans "New Puzzle" %} [n]" id="tb_new_puzzle" href="{% url 'croisee-puzzle-new' %}"><span class="ui-icon ui-icon-star"></span></a></li>
+    <li><a class="button" accesskey="s" title="{% trans "Save Puzzle" %} [s]" id="tb_save_puzzle" href="{% url 'croisee-puzzle-save' %}"><span class="ui-icon ui-icon-disk"></span></a></li>
+    <li><a class="button" accesskey="o" title="{% trans "Load Puzzle" %} [o]" id="tb_load_puzzle" href="{% url 'croisee-puzzle-list' %}"><span class="ui-icon ui-icon-folder-open"></span></a></li>
+    <li><a class="button" accesskey="q" title="{% trans "Clear Puzzle" %} [q]" id="tb_clear_puzzle" href="{% url 'croisee-puzzle-new' %}"><span class="ui-icon ui-icon-trash"></span></a></li>
     <!--
-    <li><a class="button" title="{% trans "Delete Puzzle" %}" id="tb_delete_puzzle" href="{% url croisee-puzzle-delete slug="abc" %}"><span class="ui-icon ui-icon-trash"></span></a></li>
-    <li><a class="button" title="{% trans "Adapt Puzzle Size" %}" href="{#% url croisee-adapt %#}"><span class="ui-icon ui-icon-arrow-2-se-nw"></span></a></li>
-    <li><a class="button" title="{% trans "Move Puzzle Contents" %}" href="{#% url croisee-move %#}"><span class="ui-icon ui-icon-arrow-4-diag"></span></a></li>
+    <li><a class="button" title="{% trans "Delete Puzzle" %}" id="tb_delete_puzzle" href="{% url 'croisee-puzzle-delete' slug="abc" %}"><span class="ui-icon ui-icon-trash"></span></a></li>
+    <li><a class="button" title="{% trans "Adapt Puzzle Size" %}" href="{#% url 'croisee-adapt' %#}"><span class="ui-icon ui-icon-arrow-2-se-nw"></span></a></li>
+    <li><a class="button" title="{% trans "Move Puzzle Contents" %}" href="{#% url 'croisee-move' %#}"><span class="ui-icon ui-icon-arrow-4-diag"></span></a></li>
     -->
     <li>
     <form action="#" method="post" name="cloze_search" id="cloze_search_form">
@@ -47,7 +47,7 @@
 
 <div id="dialog_new_puzzle" class="hidden" title="{% trans "New Puzzle" %}">
   {# ask for dimensions to create grid #}
-  <form action="{% url croisee-puzzle-new %}" name="new_puzzle" id="new_puzzle_form" method="post">
+  <form action="{% url 'croisee-puzzle-new' %}" name="new_puzzle" id="new_puzzle_form" method="post">
     {% csrf_token %}
     <div class="formline ui-widget">
       <span class="label"><label for="width">{% trans "Rows:" %}</label></span> 

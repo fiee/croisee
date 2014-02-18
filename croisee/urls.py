@@ -1,6 +1,6 @@
 import os
 from django.conf import settings
-from django.conf.urls.defaults import *
+from django.conf.urls import patterns, include, url
 from django.contrib import admin
 try:
     from djangorestframework.views import ListOrCreateModelView, InstanceModelView
@@ -25,17 +25,18 @@ urlpatterns = patterns('',
 
 # serve static content in debug mode
 if settings.DEBUG:
+    from django.conf.urls.static import static
     urlpatterns += patterns('',
-        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
             'show_indexes' : True
         }),
-        (r'^(?P<path>favicon.*)$', 'django.views.static.serve', {
+        url(r'^(?P<path>favicon.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
-            'mimetype': 'application/x-favicon',
+            'content_type': 'application/x-favicon',
         }),
-        (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    )
+        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += patterns('',
     url(r'^admin/', include(admin.site.urls)),

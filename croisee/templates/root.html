@@ -13,7 +13,7 @@
   <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-migrate-1.2.1.js" ></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js" ></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.min.js"></script>
-  <script type="text/javascript" src="{% url django.views.i18n.javascript_catalog %}"></script>
+  <script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
   <script type="text/javascript">
     /* see https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax */
     $(document).ajaxSend(function(event, xhr, settings) {

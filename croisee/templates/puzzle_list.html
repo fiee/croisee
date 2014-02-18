@@ -16,7 +16,7 @@
   </tr>
 {% for p in object_list %}
   <tr>
-    <td><a href="{% url croisee-puzzle-get p.code %}" title="{% trans "Open" %}">{{ p.code }}</a></td>
+    <td><a href="{% url 'croisee-puzzle-get' p.code %}" title="{% trans "Open" %}">{{ p.code }}</a></td>
     <td>{{ p.title }}</td>
     <td>{{ p.language }}</td>
     <td>{{ p.owner }}</td>

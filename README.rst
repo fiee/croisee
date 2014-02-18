@@ -215,8 +215,8 @@ Author(s)
 Dependencies
 ------------
 
-* Python_ 2.5+
-* Django_ 1.3+
+* Python_ 2.7
+* Django_ 1.6+
 * `django registration`_
 * `django guardian`_
 * Fabric_ 0.9+ (optional, for easy deployment)

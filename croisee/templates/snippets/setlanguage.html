@@ -1,12 +1,12 @@
-{% load i18n %}{# see https://docs.djangoproject.com/en/1.3/topics/i18n/internationalization/#the-set-language-redirect-view #}
-<form action="/i18n/setlang/" name="setlanguage" id="setlanguage_form" method="post">
+{% load i18n %}{# see https://docs.djangoproject.com/en/1.6/topics/i18n/translation/#the-set-language-redirect-view #}
+<form action="{% url 'set_language' %}" name="setlanguage" id="setlanguage_form" method="post">
 {% csrf_token %}
 <!-- <input name="next" type="hidden" value="/next/page/" /> -->
 <select name="language">
 {% get_language_info_list for LANGUAGES as languages %}
 {% for language in languages %}
-<option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
+<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>{{ language.name_local }} ({{ language.code }})</option>
 {% endfor %}
 </select>
-<input type="submit" value="{% trans "Change" %}" />
+<input type="submit" value="{% trans "Change" %}" title="{% trans "Beware, this resets your puzzle!" %}"/>
 </form>

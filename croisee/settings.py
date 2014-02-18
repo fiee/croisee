@@ -5,13 +5,13 @@ import os, sys
 # docs say: don't import translation in settings, but it works...
 _ = lambda s: s
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 PROJECT_NAME = os.path.split(PROJECT_ROOT)[-1]
 
 rel = lambda p: os.path.normpath(os.path.join(PROJECT_ROOT, p)) # this is release and virtualenv dependent
 rootrel = lambda p: os.path.normpath(os.path.join('/var/www', PROJECT_NAME, p)) # this is not
 
-sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT,'lib/python2.5/site-packages')]
+sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT,'lib/python2.7/site-packages')]
 
 # ==============================================================================
 # debug settings
@@ -107,19 +107,25 @@ LOGGING = {
 # cache settings
 # ==============================================================================
 
-CACHE_BACKEND = 'file:///var/tmp/django_cache/%s' % PROJECT_NAME
-CACHE_MIDDLEWARE_KEY_PREFIX = '' # %s_' % PROJECT_NAME
-CACHE_MIDDLEWARE_SECONDS = 600
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_cache/%s' % PROJECT_NAME,
+        'TIMEOUT': 600,
+    }
+}
+
 USE_ETAGS = True
 
 # ==============================================================================
 # email and error-notify settings
 # ==============================================================================
 
+# PLEASE CHANGE THIS IF YOU CLONE croisée!
 YOUR_DOMAIN = 'fiee.net'
 
 ADMINS = (
-    ('Henning Hraban Ramm', 'hraban@fiee.net'),
+    ('Henning Hraban Ramm', 'hraban@%s' % YOUR_DOMAIN),
 )
 
 MANAGERS = ADMINS
@@ -155,7 +161,7 @@ DATABASES = {
 # i18n and url settings
 # ==============================================================================
 
-TIME_ZONE = 'Europe/Zurich'
+TIME_ZONE = 'Europe/Berlin'
 LANGUAGE_CODE = 'de'
 LANGUAGES = (('en', _(u'English')),
              ('de', _(u'German')))
@@ -170,15 +176,33 @@ SITE_ID = 1
 
 ROOT_URLCONF = '%s.urls' % PROJECT_NAME
 
-MEDIA_ROOT = rel('media')
-MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = '/django_admin_media/'
+# Python dotted path to the WSGI application used by Django's runserver.
+WSGI_APPLICATION = '%s.wsgi.application' % PROJECT_NAME
 
-# setup Django 1.3 staticfiles
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/home/media/media.lawrence.com/media/"
+# don’t use /media/! FeinCMS’ media library uses MEDIA_ROOT/medialibrary
+MEDIA_ROOT = rootrel('')
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+MEDIA_URL = '/'
+
+
+# setup Django 1.3+ staticfiles
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 STATIC_ROOT = rel('static_collection')
 STATICFILES_DIRS = (rel('static'), ) #'.../feincms/media',
-ADMIN_MEDIA_PREFIX = '%sadmin/' % STATIC_URL
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
+ADMIN_MEDIA_PREFIX = '%sadmin/' % STATIC_URL # Don’t know if that’s still used
 
 # ==============================================================================
 # application and middleware settings
@@ -189,15 +213,15 @@ INSTALLED_APPS = [
     #'admin_tools.theming',
     #'admin_tools.menu',
     #'admin_tools.dashboard',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.messages',
-    'django.contrib.admin',
+    'django.contrib.staticfiles', # Django 1.3
     #'django.contrib.humanize',
     #'django.contrib.sitemaps',
-    'django.contrib.staticfiles', # Django 1.3
     'gunicorn', # not with fcgi
     'south',
     'djangorestframework', # RESTful API - optional, just comment
@@ -214,17 +238,16 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    #'django.middleware.csrf.CsrfResponseMiddleware', # Deprecated in Django 1.3
     '%s.middleware.Http403Middleware' % PROJECT_NAME,
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.http.ConditionalGetMiddleware',
     'django.middleware.doc.XViewMiddleware', # for local IPs
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware', # last
 ]
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    #'django.core.context_processors.auth', # Django 1.2
     'django.contrib.auth.context_processors.auth', # Django 1.3
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
