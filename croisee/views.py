@@ -13,7 +13,7 @@ from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import DeleteView, CreateView, SingleObjectTemplateResponseMixin, ModelFormMixin, ProcessFormView
-from djangorestframework.views import View
+from rest_framework.views import View
 from croisee.models import Dictionary, Word, Puzzle, cleanword
 from croisee.forms import PuzzleForm
 from croisee.middleware import Http403

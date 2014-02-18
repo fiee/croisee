@@ -1,4 +1,4 @@
-from djangorestframework.resources import ModelResource
+from rest_framework.resources import ModelResource
 from croisee.models import Puzzle, Dictionary
 
 class PuzzleResource(ModelResource):

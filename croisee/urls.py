@@ -3,7 +3,7 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 try:
-    from djangorestframework.views import ListOrCreateModelView, InstanceModelView
+    from rest_framework.views import ListOrCreateModelView, InstanceModelView
     from croisee.resources import PuzzleResource, DictionaryResource
     REST_API = True
 except ImportError:

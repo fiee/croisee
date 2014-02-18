@@ -23,7 +23,7 @@ It can contain every kind of local settings, at least the database password.
 Setup
 -----
 
-If you don’t need a public API, comment “djangorestframework” in ``settings.py`` (INSTALLED_APPS)
+If you don’t need a public API, comment “rest_framework” in ``settings.py`` (INSTALLED_APPS)
 and ``requirements.txt``.
 
 
@@ -51,7 +51,7 @@ Features
 
 * api
 
-  * optional RESTful API with djangorestframework_
+  * optional RESTful API with djangorestframework (rest_framework)_
 
 
 User
