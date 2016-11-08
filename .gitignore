@@ -17,3 +17,8 @@ temp
 logs/
 migrations/
 static_collection/
+include
+bin
+lib
+.Python
+pip-selfcheck.json
