@@ -101,7 +101,7 @@ def setup():
 
     with settings(user=env.adminuser):
         # install Python environment and version control
-        sudo('apt-get install -y build-essential python-dev python-setuptools python-virtualenv libyaml-dev python-yaml git-core')
+        sudo('apt-get install -y build-essential python3-dev python3-setuptools python3-virtualenv libyaml-dev python3-yaml git-core')
         # If you need Django modules in development, install more version control systems
         # sudo('apt-get install -y subversion git-core mercurial', pty=False)
 
@@ -283,7 +283,7 @@ def local_setup():
                 os.path.isdir(os.path.join(env.prj_path, 'lib')) and
                 os.path.isdir(os.path.join(env.prj_path, 'include'))):
             with settings(warn_only=True):
-                local('/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenv . && source bin/activate')
+                local('/Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenv . && source bin/activate')
         local('source bin/activate && pip install -U -r ./requirements/%(requirements)s.txt' % env)
 
     check_dotenv(local=True)
@@ -379,6 +379,7 @@ def install_site():
     with cd('%(prj_path)s/releases/%(release)s' % env):
         with settings(user=env.adminuser, pty=True):
             run('cp server-setup/%(webserver)s.conf /etc/%(webserver)s/sites-available/%(prj_name)s' % env)
+            run('ln -s /etc/%(webserver)s/sites-available/%(prj_name)s /etc/%(webserver)s/sites-enabled/%(prj_name)s' % env)
             if env.use_daemontools:  # activate new service runner
                 run('cp server-setup/service-run.sh /etc/service/%(prj_name)s/run; chmod a+x /etc/service/%(prj_name)s/run;' % env)
             else:  # delete old service dir
@@ -401,9 +402,7 @@ def install_site():
                 run('cp server-setup/logrotate.conf /etc/logrotate.d/website-%(prj_name)s' % env)
                 if env.use_celery:
                     run('cp server-setup/logrotate-celery.conf /etc/logrotate.d/celery' % env)
-                run('cp server-setup/letsencrypt.conf /etc/letsencrypt/configs/%(cryptdomain)s.conf' % env)
-        with settings(warn_only=True):
-            run('cd /etc/%(webserver)s/sites-enabled/; ln -s ../sites-available/%(prj_name)s %(prj_name)s' % env)
+                run('cp server-setup/letsencrypt.conf /etc/letsencrypt/configs/%(cryptdomain)s.conf' % env)            
 
 
 def install_requirements():
