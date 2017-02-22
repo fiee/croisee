@@ -1,8 +1,0 @@
-gunicorn # not with fcgi
-#flup # for fcgi
-Django
-south
-django-registration
-django-guardian
-djangorestframework
-markdown # needed by djangorestframework, but not listed as requirement

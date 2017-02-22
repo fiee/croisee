@@ -1,0 +1,22 @@
+mysqlclient
+# psycopg2 # for PostgreSQL
+pyOpenSSL
+pycrypto
+# python-dateutil
+pytz
+# reportlab
+PyYAML # for fixtures
+
+django
+django-guardian
+django-registration
+django-tagging
+django-dotenv
+djangorestframework
+
+gunicorn
+eventlet # for gunicorn
+setproctitle # for gunicorn
+
+#python-memcached # for memcached cache (you must install that separately)
+

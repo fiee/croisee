@@ -10,7 +10,7 @@ SITEDIR=/var/www/${SITE}
 DJANGODIR=${SITEDIR}/releases/current/${SITE}
 PYTHON=${SITEDIR}/bin/python
 LOGDIR=${SITEDIR}/logs
-PIDFILE=${SITEDIR}/logs/django.pid
+PIDFILE=${SITEDIR}/run/django.pid
 LOGS="outlog=${LOGDIR}/info.log errlog=${LOGDIR}/error.log"
 
 # activate virtualenv

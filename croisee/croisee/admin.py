@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+from __future__ import absolute_import
 from django.contrib import admin
-from models import *
+from croisee import models
+
 
 class WordInline(admin.TabularInline):
-    model = Word
+    model = models.Word
+
 
 class DictionaryAdmin(admin.ModelAdmin):
     list_display = ('name','language','description','public','owner')
@@ -19,6 +23,7 @@ class DictionaryAdmin(admin.ModelAdmin):
         obj.owner = request.user
         obj.save()
 
+
 class WordAdmin(admin.ModelAdmin):
     list_display = ('word','description','dictionary','priority')
     list_display_links = ['word',]
@@ -26,6 +31,7 @@ class WordAdmin(admin.ModelAdmin):
     list_editable = ('description','priority')
     search_fields = ('word','description')
     ordering = ('word',)
+
 
 class WordlistUploadAdmin(admin.ModelAdmin):
     exclude = ('owner',)
@@ -36,6 +42,7 @@ class WordlistUploadAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         obj.owner = request.user
         obj.save()
+
 
 class PuzzleAdmin(admin.ModelAdmin):
     list_display = ('code', 'title', 'language', 'owner', 'public', 'width', 'height')
@@ -48,7 +55,8 @@ class PuzzleAdmin(admin.ModelAdmin):
         obj.owner = request.user
         obj.save()
 
-admin.site.register(Word, WordAdmin)
-admin.site.register(Dictionary, DictionaryAdmin)
-admin.site.register(WordlistUpload, WordlistUploadAdmin)
-admin.site.register(Puzzle, PuzzleAdmin)
+
+admin.site.register(models.Word, WordAdmin)
+admin.site.register(models.Dictionary, DictionaryAdmin)
+admin.site.register(models.WordlistUpload, WordlistUploadAdmin)
+admin.site.register(models.Puzzle, PuzzleAdmin)

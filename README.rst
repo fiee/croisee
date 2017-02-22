@@ -11,7 +11,8 @@ I hope it will evolve in a tool that makes creating and sharing crossword puzzle
 Installation
 ------------
 
-It’s a Django_ application, to be run on Apache/mod_wsgi or Nginx_ with Django via gunicorn_ or FCGI.
+It’s a Django_ application, to be run on Nginx_ with Django via gunicorn_.
+(Outdated configuration files for Apache and FCGI are included.)
 
 The provided fabfile (fabric_ deployment) is for a Debian server 
 and documented at http://github.com/fiee/generic_django_project
@@ -137,7 +138,7 @@ Roadmap
 I’m planning to implement the following features in about this order:
 
 * enable user registration (`django registration`_)
-* export grid and solution as text (done) / HTML / LaTeX (cwpuzzle_, done) / ConTeXt_ (done) / PDF / InDesign markup
+* export grid and solution as text (done) / HTML / LaTeX (cwpuzzle_, done) / ConTeXt_ (done) / PDF / InDesign IDML
 * export of dictionaries
 * edit personal dictionary (or all for admins)
 * use tagging for puzzles
@@ -215,12 +216,11 @@ Author(s)
 Dependencies
 ------------
 
-* Python_ 2.7
-* Django_ 1.6+
+* Python_ 2.7/3.5
+* Django_ 1.9+
 * `django registration`_
 * `django guardian`_
 * Fabric_ 0.9+ (optional, for easy deployment)
-* South_ (not really)
 * jQuery_, `jQuery UI`_
 * djangorestframework_ (optional)
 

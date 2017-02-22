@@ -5,6 +5,8 @@ Crossword tool - wordlist
 
 Make a wordlist from a text (in utf-8 encoding)
 """
+from __future__ import unicode_literals
+from __future__ import print_function
 import os, sys, locale
 import re
 import sets
@@ -47,14 +49,14 @@ if __name__ == '__main__':
     text = ''
     while len(args)>0:
         path = os.path.abspath(args.pop())
-        print u"reading %s" % path
+        print("reading %s" % path)
         sourcefile = file(path, 'rU')
         sourcetext = unicode(''.join(sourcefile.readlines()), 'utf-8')
         sourcefile.close()
         text += sourcetext
 
     text = clean_text(text)
-    text = u'\n'.join(sorted(text_to_set(text), key=lowercase))
+    text = '\n'.join(sorted(text_to_set(text), key=lowercase))
     targetfile.write(text.encode('utf-8'))
     targetfile.close()
     

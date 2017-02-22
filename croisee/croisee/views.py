@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
+from __future__ import unicode_literals
 from datetime import datetime
 from hashlib import md5
 import logging
@@ -100,7 +102,7 @@ class DictionaryMixin(object):
             context['resultcount'] = len(context['results'])
             context['found'] = (context['found'] and (context['resultcount']>0))
             context['searchterm'] = searchterm
-        except (KeyError, Word.DoesNotExist), e:
+        except (KeyError, Word.DoesNotExist) as e:
             # We silently ignore wrong postings or empty results
             pass
         return context
@@ -144,19 +146,19 @@ class DictionaryMixin(object):
         lines = [line for line in text.split(newline) if line]
         try:
             if direction=='h':
-                if start_x > 0 and lines[start_y][start_x-1] <> stopchar:
+                if start_x > 0 and lines[start_y][start_x-1] != stopchar:
                     # word doesn’t start here
-                    print u"word doesn’t start at",start_x,start_y,direction
+                    logger.warning("word doesn’t start at x%d y%d %s" % (start_x,start_y,direction))
                     return None
                 return lines[start_y][start_x:].split(stopchar)[0]
             elif direction=='v':
-                if start_y > 0 and lines[start_y-1][start_x] <> stopchar:
+                if start_y > 0 and lines[start_y-1][start_x] != stopchar:
                     # word doesn’t start here
-                    print u"word doesn’t start at",start_x,start_y,direction
+                    logger.warning("word doesn’t start at x%d y%d %s" % (start_x,start_y,direction))
                     return None
                 return ''.join([line[start_x] for line in lines[start_y:]]).split(stopchar)[0]
-        except IndexError, e:
-            logger.warning(u'IndexError in _find_word with x=%d, y=%d, dir=%s: %s' % (start_x, start_y, direction, e))
+        except IndexError as e:
+            logger.warning('IndexError in _find_word with x=%d, y=%d, dir=%s: %s' % (start_x, start_y, direction, e))
         return None
     
     def find_word_by_num(self, text, numbers, num, direction='h'):
@@ -176,8 +178,8 @@ class DictionaryMixin(object):
         try:
             #y,x = dict(map(lambda t: (int(t[2]), (int(t[0]), int(t[1]))),(e.split('.') for e in nums.strip(' ,').split(','))))[int(num)]
             y,x = [ e.split('.')[0:2] for e in numbers.strip(' ,').split(',') if int(e.split('.')[2])-1 == int(num) ][0]
-        except IndexError, e:
-            logger.error(u'Can’t find word no.%s with "%s"\n%s' % (num, numbers, e))
+        except IndexError as e:
+            logger.error('Can’t find word no.%s with "%s"\n%s' % (num, numbers, e))
             return None
         ret = self.find_word(text, int(y), int(x), direction)
         if ret:
@@ -229,8 +231,10 @@ class DictionaryMixin(object):
             logger.info(_(u'Don’t save any words, since user %s is not active.') % user.username)
         return word_count
 
+
 class IndexView(TemplateView):
     template_name = 'index.html'
+
 
 class DeletePuzzleView(DeleteView):
     model = Puzzle
@@ -240,6 +244,7 @@ class DeletePuzzleView(DeleteView):
     slug_field = 'code' # but code must come in 'slug' kwarg!
     #context_object_name = 'puzzle'
     # TODO: permissions
+
 
 class NewPuzzleView(CreateView, DictionaryMixin):
     model = Puzzle
@@ -253,7 +258,8 @@ class NewPuzzleView(CreateView, DictionaryMixin):
         """
         Create a new MD5 hash id from remote IP and current time.
         """
-        return md5('%s/%s' % (self.request.META.get('REMOTE_ADDR', '127.0.0.1'), datetime.strftime(datetime.now(), '%Y-%m-%dT%H:%M:%S'))).hexdigest()
+        id = '%s/%s' % (self.request.META.get('REMOTE_ADDR', '127.0.0.1'), datetime.strftime(datetime.now(), '%Y-%m-%dT%H:%M:%S'))
+        return md5(id.encode('ASCII', errors='ignore')).hexdigest()
     
     def get_user(self):
         if isinstance(self.request.user, type(User)):
@@ -311,7 +317,8 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
         """
         Create a new MD5 hash id from remote IP and current time.
         """
-        return md5('%s/%s' % (self.request.META.get('REMOTE_ADDR', '127.0.0.1'), datetime.strftime(datetime.now(), '%Y-%m-%dT%H:%M:%S'))).hexdigest()
+        id = '%s/%s' % (self.request.META.get('REMOTE_ADDR', '127.0.0.1'), datetime.strftime(datetime.now(), '%Y-%m-%dT%H:%M:%S'))
+        return md5(id.encode('ASCII', errors='ignore')).hexdigest()
         
     def get_object(self, queryset=None):
         if 'slug' in self.kwargs:
@@ -327,7 +334,7 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
             owner = User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
         try:
             self.object = Puzzle.objects.get(code=hash_id)
-        except Puzzle.DoesNotExist, e:
+        except Puzzle.DoesNotExist as e:
             logger.info('puzzle "%s" not found, creating new puzzle' % hash_id)
             hash_id = self.request.POST.get('code', self.new_hash_id())
             self.object = Puzzle(
@@ -409,6 +416,7 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
 #        self.save_puzzle()
 #        return super(PuzzleView, self).post(request, *args, **kwargs)
 
+
 class SavePuzzleView(PuzzleView):
 
     def post(self, request, *args, **kwargs):
@@ -437,6 +445,7 @@ class AjaxClozeQueryView(TemplateView, DictionaryMixin):
 
     def post(self, request, *args, **kwargs):
         return self.get(request, *args, **kwargs)
+
 
 class AjaxCrossQueryView(TemplateView, DictionaryMixin): 
     """
@@ -472,8 +481,10 @@ class AjaxCrossQueryView(TemplateView, DictionaryMixin):
             for h in results[0]['results']:
                 for v in results[1]['results']:
                     if h.word[hl] == v.word[vl]:
-                        hres.add(h)
-                        vres.add(v)
+                        if h.id:
+                            hres.add(h)
+                        if v.id:
+                            vres.add(v)
             results[0]['results'] = list(hres)[:settings.CROISEE_QUERYMAX] # default limit
             results[1]['results'] = list(vres)[:settings.CROISEE_QUERYMAX] # default limit
             results[0]['resultcount'] = len(hres)
@@ -490,6 +501,7 @@ class AjaxCrossQueryView(TemplateView, DictionaryMixin):
     def post(self, request, *args, **kwargs):
         return self.get(request, *args, **kwargs)
 
+
 class PuzzleListView(ListView, DictionaryMixin):
     model = Puzzle
     template_name = 'puzzle_list.html'
@@ -502,6 +514,7 @@ class PuzzleListView(ListView, DictionaryMixin):
 
     def get_queryset(self):
         return Puzzle.objects.filter(Q(public=True)|Q(owner=self.request.user.id))
+
 
 class PuzzleExportView(PuzzleView):
     model = Puzzle
