@@ -6,10 +6,10 @@ import dotenv
 #from croisee import settings
 PROJECT_NAME = 'croisee'
 rootrel = lambda p: os.path.normpath(os.path.join('/var/www', PROJECT_NAME, p))
-dotenv.load_dotenv(rootrel('.env'))
+dotenv.read_dotenv(rootrel('.env'))
 
 bind = 'unix:%s' % rootrel('run/django.socket')
-bind = '127.0.0.1:8'+str(os.getuid())[1:]
+# bind = '127.0.0.1:8'+str(os.getuid())[1:]
 workers = 2
 #worker_class = 'eventlet'
 #max_requests = 2048
