@@ -53,7 +53,7 @@ def webserver():
     env.virtualhost_path = env.prj_path
     env.pysp = '%(virtualhost_path)s/lib/python2.7/site-packages' % env
     env.tmppath = '/var/tmp/django_cache/%(prj_name)s' % env
-    env.cryptdomain = 'www.project_name.de'
+    env.cryptdomain = 'croisee.fiee.net'
     if not _is_host_up(env.hosts[0], 22):
         import sys
         sys.exit(1)
@@ -379,7 +379,6 @@ def install_site():
     with cd('%(prj_path)s/releases/%(release)s' % env):
         with settings(user=env.adminuser, pty=True):
             run('cp server-setup/%(webserver)s.conf /etc/%(webserver)s/sites-available/%(prj_name)s' % env)
-            run('ln -s /etc/%(webserver)s/sites-available/%(prj_name)s /etc/%(webserver)s/sites-enabled/%(prj_name)s' % env)
             if env.use_daemontools:  # activate new service runner
                 run('cp server-setup/service-run.sh /etc/service/%(prj_name)s/run; chmod a+x /etc/service/%(prj_name)s/run;' % env)
             else:  # delete old service dir
@@ -403,6 +402,8 @@ def install_site():
                 if env.use_celery:
                     run('cp server-setup/logrotate-celery.conf /etc/logrotate.d/celery' % env)
                 run('cp server-setup/letsencrypt.conf /etc/letsencrypt/configs/%(cryptdomain)s.conf' % env)            
+    with settings(user=env.adminuser, warn_only=True, pty=True):
+        run('ln -s /etc/%(webserver)s/sites-available/%(prj_name)s /etc/%(webserver)s/sites-enabled/%(prj_name)s' % env)
 
 
 def install_requirements():
