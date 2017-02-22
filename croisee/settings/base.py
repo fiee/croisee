@@ -7,13 +7,11 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 import sys
 from django.core.exceptions import ImproperlyConfigured
-
-
-# def _(s):
-#    return s
 # translation needed for date and time format setup
 from django.utils.translation import ugettext_lazy as _
-
+import dotenv
+import logging
+logging.captureWarnings(True)  # dotenv uses warnings
 
 def get_env_variable(var_name):
     """Get the environment variable or return exception."""
@@ -37,6 +35,9 @@ def rel(p):
 def rootrel(p):
     # this is not
     return os.path.normpath(os.path.join('/var/www', PROJECT_NAME, p))
+
+
+dotenv.read_dotenv(rootrel('.env'))
 
 
 # sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT, 'lib/python2.7/site-packages')]
