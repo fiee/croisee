@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-23 14:05+0100\n"
-"PO-Revision-Date: 2017-02-23 14:16+0100\n"
+"POT-Creation-Date: 2017-02-23 22:45+0100\n"
+"PO-Revision-Date: 2017-02-23 22:46+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Poedit 1.8.7\n"
 
-#: croisee/models.py:71 croisee/models.py:102 templates/snippets/menu.html:49
+#: croisee/models.py:71 croisee/models.py:102 templates/snippets/menu.html:50
 msgid "Dictionary"
 msgstr "Wörterbuch"
 
@@ -44,7 +44,7 @@ msgid "May everyone use this dictionary?"
 msgstr "Darf dieses Wörterbuch von jedermann benutzt werden?"
 
 #: croisee/models.py:78 croisee/models.py:127 templates/puzzle_list.html:13
-#: templates/snippets/menu.html:61
+#: templates/snippets/menu.html:62
 msgid "Language"
 msgstr "Sprache"
 
@@ -415,7 +415,7 @@ msgstr "Bearbeiten"
 msgid "No words found or no access to this dictionary!"
 msgstr "Keine Wörter gefunden oder kein Zugriff auf dieses Wörterbuch!"
 
-#: templates/export/context.tex:22 templates/snippets/menu.html:23
+#: templates/export/context.tex:22 templates/snippets/menu.html:24
 msgid "Puzzle"
 msgstr "Rätsel"
 
@@ -464,8 +464,7 @@ msgstr "Bitte wählen Sie mindestens ein Wörterbuch aus!"
 msgid "Search Results"
 msgstr "Suchergebnisse"
 
-#: templates/index.html:4 templates/registration/password_change_form.html:6
-#: templates/snippets/menu.html:7
+#: templates/index.html:4 templates/snippets/menu.html:7
 msgid "Home"
 msgstr "Startseite"
 
@@ -630,7 +629,7 @@ msgid "Login"
 msgstr "Anmelden"
 
 #: templates/registration/login.html:7
-#: templates/registration/password_change_form.html:15
+#: templates/registration/password_change_form.html:9
 msgid "Sorry, that's not a valid username or password"
 msgstr "Benutzername oder Kennwort sind falsch."
 
@@ -638,9 +637,29 @@ msgstr "Benutzername oder Kennwort sind falsch."
 msgid "Please login using your username and password"
 msgstr "Bitte melden Sie sich mit Ihrem Benutzernamen und Kennwort an."
 
+#: templates/registration/login.html:24
+msgid "Lost password?"
+msgstr "Passwort vergessen?"
+
+#: templates/registration/login.html:25
+msgid "No account yet?"
+msgstr "Noch kein Benutzerkonto?"
+
+#: templates/registration/login.html:26
+msgid ""
+"If you don’t have an account yet, you can <a href=\"/accounts/register/"
+"\">register</a> one."
+msgstr ""
+"Wenn Sie noch kein Benutzerkonto haben, können Sie eines <a href=\"/accounts/"
+"register/\">registrieren</a> ."
+
 #: templates/registration/logout.html:6
 msgid "You have logged off."
 msgstr "Sie sind nun abgemeldet."
+
+#: templates/registration/logout.html:11
+msgid "Login again"
+msgstr "Noch einmal anmelden"
 
 #: templates/registration/password_change_done.html:4
 #: templates/registration/password_change_done.html:8
@@ -651,26 +670,13 @@ msgstr "Passwort erfolgreich geändert"
 msgid "Your password was changed."
 msgstr "Ihr Passwort wurde geändert."
 
-#: templates/registration/password_change_form.html:5
-msgid "Documentation"
-msgstr "Dokumentation"
-
-#: templates/registration/password_change_form.html:5
-msgid "Change password"
-msgstr "Kennwort ändern"
-
-#: templates/registration/password_change_form.html:5
-msgid "Log out"
-msgstr "Abmelden"
-
-#: templates/registration/password_change_form.html:6
-#: templates/registration/password_change_form.html:9
-#: templates/registration/password_change_form.html:25
+#: templates/registration/password_change_form.html:3
+#: templates/registration/password_change_form.html:19
 #: templates/snippets/menu.html:10
 msgid "Password change"
 msgstr "Passwort ändern"
 
-#: templates/registration/password_change_form.html:27
+#: templates/registration/password_change_form.html:21
 msgid ""
 "Please enter your old password, for security's sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
@@ -679,21 +685,113 @@ msgstr ""
 "dann zweimal (um sicherzustellen, dass Sie es korrekt eingegeben haben) das "
 "neue Kennwort ein."
 
-#: templates/registration/password_change_form.html:30
+#: templates/registration/password_change_form.html:24
 msgid "Old password"
 msgstr "Altes Kennwort"
 
-#: templates/registration/password_change_form.html:38
+#: templates/registration/password_change_form.html:32
 msgid "New password"
 msgstr "Neues Kennwort"
 
-#: templates/registration/password_change_form.html:46
+#: templates/registration/password_change_form.html:40
 msgid "Password (again)"
 msgstr "Kennwort (wiederholen)"
 
-#: templates/registration/password_change_form.html:55
+#: templates/registration/password_change_form.html:49
+#: templates/registration/password_reset_confirm.html:18
 msgid "Change my password"
 msgstr "Mein Kennwort ändern"
+
+#: templates/registration/password_reset_complete.html:8
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "Ihr Passwort wurde zurückgesetzt. Sie können sich nun anmelden."
+
+#: templates/registration/password_reset_complete.html:10
+msgid "Log in"
+msgstr "Anmelden"
+
+#: templates/registration/password_reset_confirm.html:11
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+"Bitte geben Sie Ihr neues Passwort zweimal ein, damit wir überprüfen können, "
+"ob es richtig eingetippt wurde."
+
+#: templates/registration/password_reset_confirm.html:15
+msgid "New password:"
+msgstr "Neues Kennwort:"
+
+#: templates/registration/password_reset_confirm.html:17
+msgid "Confirm password:"
+msgstr "Kennwort bestätigen:"
+
+#: templates/registration/password_reset_confirm.html:23
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+"Der Link zum Zurücksetzen Ihres Passworts ist ungültig, wahrscheinlich weil "
+"er schon einmal benutzt wurde. Bitte setzen Sie Ihr Passwort erneut zurück."
+
+#: templates/registration/password_reset_done.html:8
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"Wir haben Ihnen soeben eine E-Mail mit dem Link zum Passwort-Reset gesendet. "
+"Diese sollte bald bei Ihnen eintreffen."
+
+#: templates/registration/password_reset_done.html:10
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"Wenn Sie keine E-Mail erhalten haben, stellen Sie bitte sicher dass die hier "
+"eingegebene E-Mail Adresse mit der Ihres Kontos übereinstimmt und überprüfen "
+"Sie auch Ihren Spam-Ordner."
+
+#: templates/registration/password_reset_email.html:2
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+"Sie erhalten diese E-Mail, weil Sie ein Passwort-Reset für Ihr Benutzerkonto "
+"bei %(site_name)s angefordert haben."
+
+#: templates/registration/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Bitte öffnen Sie folgende Seite, um Ihr neues Passwort einzugeben:"
+
+#: templates/registration/password_reset_email.html:8
+msgid "Your username, in case you've forgotten:"
+msgstr "Ihr Benutzername, falls Sie ihn vergessen haben:"
+
+#: templates/registration/password_reset_email.html:10
+msgid "Thanks for using our site!"
+msgstr "Vielen Dank, dass Sie unseren Service nutzen!"
+
+#: templates/registration/password_reset_email.html:12
+#, python-format
+msgid "The %(site_name)s team"
+msgstr "Das Team von %(site_name)s"
+
+#: templates/registration/password_reset_form.html:9
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+"Kennwort vergessen? Geben Sie einfach Ihre E-Mail-Adresse ein, und wir "
+"senden Ihnen Anweisungen zum Zurücksetzen Ihres Kennworts."
+
+#: templates/registration/password_reset_form.html:13
+msgid "Email address:"
+msgstr "E-Mail-Adresse:"
+
+#: templates/registration/password_reset_form.html:13
+msgid "Reset my password"
+msgstr "Mein Kennwort zurücksetzen"
 
 #: templates/registration/registration_complete.html:2
 #: templates/registration/registration_complete.html:5
@@ -720,6 +818,10 @@ msgstr "Bitte legen Sie Ihr Benutzerkonto an."
 #: templates/registration/registration_form.html:15
 msgid "Register"
 msgstr "Registrierung"
+
+#: templates/registration/registration_form.html:18
+msgid "Do you already have an account?"
+msgstr "Haben Sie bereits ein Benutzerkonto?"
 
 #: templates/root.html:62
 msgid "fiëé croisée is a free service of fiëé visuëlle."
@@ -749,7 +851,7 @@ msgstr ""
 msgid "Available Dictionaries"
 msgstr "Verfügbare Wörterbücher"
 
-#: templates/snippets/dictionaries.html:13 templates/snippets/menu.html:54
+#: templates/snippets/dictionaries.html:13 templates/snippets/menu.html:55
 #: templates/snippets/toolbar.html:81
 msgid "No dictionaries found"
 msgstr "Keine Wörterbücher gefunden"
@@ -766,27 +868,31 @@ msgstr "Abmelden"
 msgid "Administration"
 msgstr "Verwaltung"
 
-#: templates/snippets/menu.html:26
+#: templates/snippets/menu.html:16
+msgid "Register Account"
+msgstr "Neues Benutzerkonto registrieren"
+
+#: templates/snippets/menu.html:27
 msgid "Open..."
 msgstr "Öffnen..."
 
-#: templates/snippets/menu.html:28
+#: templates/snippets/menu.html:29
 msgid "Export as..."
 msgstr "Exportieren als..."
 
-#: templates/snippets/menu.html:56
+#: templates/snippets/menu.html:57
 msgid "Personal Dictionary"
 msgstr "Persönliches Wörterbuch"
 
-#: templates/snippets/menu.html:68 templates/snippets/toolbar.html:23
+#: templates/snippets/menu.html:69 templates/snippets/toolbar.html:23
 msgid "Help"
 msgstr "Hilfe"
 
-#: templates/snippets/menu.html:70 templates/snippets/toolbar.html:29
+#: templates/snippets/menu.html:71 templates/snippets/toolbar.html:29
 msgid "Keys"
 msgstr "Tasten"
 
-#: templates/snippets/menu.html:71
+#: templates/snippets/menu.html:72
 msgid "Donations"
 msgstr "Spenden"
 
@@ -916,6 +1022,9 @@ msgstr "Erzeugen"
 #: templates/snippets/toolbar.html:68 templates/snippets/toolbar.html:70
 msgid "check/uncheck all dictionaries"
 msgstr "an-/abwählen aller Wörterbücher"
+
+#~ msgid "Documentation"
+#~ msgstr "Dokumentation"
 
 #~ msgid "STRING_NOT_SET"
 #~ msgstr "ZEICHENKETTE_NICHT_DEFINIERT"
