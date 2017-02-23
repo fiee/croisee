@@ -11,9 +11,11 @@
   {% include "snippets/form_edit.html" %}
 
   <p class="field_wrapper formline">
-    <input type="hidden" name="next" value="{{ next|escape }}" />
+    <input type="hidden" name="next" value="{{ next }}" />
     <input type="submit" value="{% trans "Register" %}" />
   </p>
+  
+  <p><a href="/accounts/login">{% trans "Dou you already have an account?" %}</a></p>
   
   </form>
 

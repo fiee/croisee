@@ -1,8 +1,12 @@
 {% extends "registration/login.html" %}
 {% load i18n %}
 
-{% block rightcol %}
+{% block sidebar %}
 <ul class="messages">
     <li class="info"><span class="ui-icon ui-icon-notice"></span>{% trans "You have logged off." %}</li>
 </ul>
+{% endblock %}
+
+{% block maincontent %}
+  <p><a href="/accounts/login">{% trans "Login again" %}</a></p>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "root.html" %}{% load i18n %}
 {% block title %}{% trans "Login" %}{% endblock %}
 
-{% block rightcol %}
+{% block sidebar %}
   {% if form.errors %}
   <ul class="messages">
       <li class="error"><span class="ui-icon ui-icon-alert"></span>{% trans "Sorry, that's not a valid username or password" %}</li>
@@ -13,15 +13,17 @@
   <h2>{% trans "Login" %}</h2>
   <p>{% trans "Please login using your username and password" %}</p>
 
-  <form action="/accounts/login/" method="post" class="login ui-dialog-content">
+  <form action="/accounts/login/" method="post" id="login-form" class="login ui-dialog-content">
 
     {% include "snippets/form_edit.html" %}
 
   <p class="field_wrapper ">
-    <input type="hidden" name="next" value="{{ next|escape }}" />
+    <input type="hidden" name="next" value="{{ next }}" />
     <input type="submit" value="{% trans "Login" %}" />
   </p>
-  
+  <p><a href="/accounts/password/reset/">{% trans "Lost password?" %}</a></p>
+  <p><a href="/accounts/register/">{% trans "No account yet?" %}</a></p>
+  <p>{% blocktrans %}If you don’t have an account yet, you can <a href="/accounts/register/">register</a> one.{% endblocktrans %}</p>
   </form>
 
 {% endblock %}

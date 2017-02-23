@@ -137,7 +137,7 @@ Roadmap
 
 I’m planning to implement the following features in about this order:
 
-* enable user registration (`django registration`_)
+* move from jQuery to Vue.js
 * export grid and solution as text (done) / HTML / LaTeX (cwpuzzle_, done) / ConTeXt_ (done) / PDF / InDesign IDML
 * export of dictionaries
 * edit personal dictionary (or all for admins)
