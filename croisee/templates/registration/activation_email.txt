@@ -6,7 +6,7 @@ Someone registered an account as {{user}} with your email address at our free cr
 
 We hope it was you, then please click the following link within {{expiration_days}} days to activate your account:
 {% endblocktrans %}
-{{activation_key}}
+https://croisee.fiee.net/accounts/activate/{{activation_key}}
 
 {% blocktrans %}
 If it wasn’t you, then please just delete this message. No harm was done.
