@@ -1,0 +1,16 @@
+{% extends "root.html" %}{% load i18n %}
+{% block title %}{% trans "Account Activation" %}{% endblock %}
+
+{% block maincontent %}
+    <h2>{% trans "Welcome!" %}</h2>
+    <p>{% blocktrans %}
+    Success! Your account is now active. That means, you can store private puzzles and use your own dictionary. Have fun!
+    {% endblocktrans %}</p>
+    <p>{% blocktrans %}
+    Please be aware that we cannot warrant the safety of your data.
+    While we do backups regularly and try to secure our server agains attacks,
+    this free service has not a high priority and might even get switched off
+    if we’re short of server resources.
+    {% endblocktrans %}</p>
+{% endblock %}
+

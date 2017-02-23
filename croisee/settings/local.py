@@ -13,7 +13,6 @@ rel = lambda p: os.path.join(PROJECT_ROOT, p)
 rootrel = lambda p: os.path.join(PROJECT_ROOT, '..', p)
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 CACHES = {
     'default': {

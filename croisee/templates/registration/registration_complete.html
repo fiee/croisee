@@ -1,0 +1,10 @@
+{% extends "root.html" %}{% load i18n %}
+{% block title %}{% trans "Registration" %}{% endblock %}
+
+{% block maincontent %}
+    <h2>{% trans "Registration" %}</h2>
+    <p>{% blocktrans %}
+    Thank you for your registration. We have sent you an email with an activation link.
+    {% endblocktrans %}</p>
+{% endblock %}
+

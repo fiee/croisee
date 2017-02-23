@@ -44,6 +44,7 @@ if settings.DEBUG:
 
 urlpatterns += [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.hmac.urls')),
     url(r'^ajax/(?P<cloze>[A-Z\*\?_%]+)/$', 
         views.AjaxClozeQueryView.as_view(), 
         name='%s-ajax_clozequery' % settings.PROJECT_NAME),  

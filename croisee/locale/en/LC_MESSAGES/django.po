@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 14:59+0200\n"
+"POT-Creation-Date: 2017-02-23 14:05+0100\n"
 "PO-Revision-Date: 2011-09-09 14:51+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
@@ -20,57 +20,58 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: models.py:64 models.py:95 templates/snippets/menu.html:49
+#: croisee/models.py:71 croisee/models.py:102 templates/snippets/menu.html:49
 msgid "Dictionary"
 msgstr "Dictionary"
 
-#: models.py:65 templates/snippets/toolbar.html:22
+#: croisee/models.py:72 templates/snippets/toolbar.html:22
 msgid "Dictionaries"
 msgstr "Dictionaries"
 
-#: models.py:69 models.py:117
+#: croisee/models.py:76 croisee/models.py:124
 msgid "Name"
 msgstr "Name"
 
-#: models.py:69 models.py:117
+#: croisee/models.py:76 croisee/models.py:124
 msgid "A short descriptive name"
 msgstr "A short descriptive name"
 
-#: models.py:70 models.py:119
+#: croisee/models.py:77 croisee/models.py:126
 msgid "public?"
 msgstr "public?"
 
-#: models.py:70 models.py:119
+#: croisee/models.py:77 croisee/models.py:126
 msgid "May everyone use this dictionary?"
 msgstr "May everyone use this dictionary?"
 
-#: models.py:71 models.py:120 templates/puzzle_list.html:13
+#: croisee/models.py:78 croisee/models.py:127 templates/puzzle_list.html:13
 #: templates/snippets/menu.html:61
 msgid "Language"
 msgstr "Language"
 
-#: models.py:73 models.py:122
+#: croisee/models.py:80 croisee/models.py:129
 msgid "Language of (most of) the words in this dictionary"
 msgstr "Language of (most of) the words in this dictionary"
 
-#: models.py:74 models.py:96 models.py:123
+#: croisee/models.py:81 croisee/models.py:103 croisee/models.py:130
 #: templates/dictionary_word_list.html:13 templates/puzzle_list.html:12
 msgid "Description"
 msgstr "Description"
 
-#: models.py:75 models.py:124 templates/puzzle_list.html:14
+#: croisee/models.py:82 croisee/models.py:131 templates/puzzle_list.html:14
 msgid "Owner"
 msgstr "Owner"
 
-#: models.py:89 models.py:94 templates/dictionary_word_list.html:12
+#: croisee/models.py:96 croisee/models.py:101
+#: templates/dictionary_word_list.html:12
 msgid "Word"
 msgstr "Word"
 
-#: models.py:90
+#: croisee/models.py:97
 msgid "Words"
 msgstr "Words"
 
-#: models.py:94
+#: croisee/models.py:101
 msgid ""
 "a word fitting a crossword puzzle; will become uppercased; no numbers, "
 "hyphens etc."
@@ -78,23 +79,23 @@ msgstr ""
 "a word fitting a crossword puzzle; will become uppercased; no numbers, "
 "hyphens etc."
 
-#: models.py:96
+#: croisee/models.py:103
 msgid "Meaning of the word within the context of the selected dictionary"
 msgstr "Meaning of the word within the context of the selected dictionary"
 
-#: models.py:97 templates/dictionary_word_list.html:14
+#: croisee/models.py:104 templates/dictionary_word_list.html:14
 msgid "Priority"
 msgstr "Priority"
 
-#: models.py:97
+#: croisee/models.py:104
 msgid "0 is neutral, you can increase or decrease the priority"
 msgstr "0 is neutral, you can increase or decrease the priority"
 
-#: models.py:114
+#: croisee/models.py:121
 msgid "wordlist file (.txt)"
 msgstr "wordlist file (.txt)"
 
-#: models.py:115
+#: croisee/models.py:122
 msgid ""
 "Select a .txt file containing a single word per line to upload as a new "
 "dictionary."
@@ -102,7 +103,7 @@ msgstr ""
 "Select a .txt file containing a single word per line to upload as a new "
 "dictionary."
 
-#: models.py:116
+#: croisee/models.py:123
 msgid ""
 "Select a dictionary to add these words to. leave this empty to create a new "
 "dictionary from the supplied name."
@@ -110,235 +111,241 @@ msgstr ""
 "Select a dictionary to add these words to. leave this empty to create a new "
 "dictionary from the supplied name."
 
-#: models.py:118
+#: croisee/models.py:125
 msgid "only unique"
 msgstr "only unique"
 
-#: models.py:118
+#: croisee/models.py:125
 msgid "Import only words that are not contained in any other dictionary?"
 msgstr "Import only words that are not contained in any other dictionary?"
 
-#: models.py:127
+#: croisee/models.py:134
 msgid "wordlist upload"
 msgstr "wordlist upload"
 
-#: models.py:128
+#: croisee/models.py:135
 msgid "wordlist uploads"
 msgstr "wordlist uploads"
 
-#: models.py:186
+#: croisee/models.py:194
 msgid "default crossword puzzle with black squares"
 msgstr ""
 
-#: models.py:187
+#: croisee/models.py:195
 msgid "crossword puzzle with bars (no squares)"
 msgstr ""
 
-#: models.py:188
+#: croisee/models.py:196
 msgid "Swedish crossword puzzle (questions in squares)"
 msgstr ""
 
-#: models.py:195
+#: croisee/models.py:204
 msgid "title"
 msgstr ""
 
-#: models.py:195
+#: croisee/models.py:204
 msgid "title or short description of this puzzle"
 msgstr ""
 
-#: models.py:196
+#: croisee/models.py:205
 msgid "code"
 msgstr ""
 
-#: models.py:196
+#: croisee/models.py:205
 msgid "auto-generated URL code of this puzzle"
 msgstr ""
 
-#: models.py:197
+#: croisee/models.py:206
 #, fuzzy
 msgid "public"
 msgstr "public?"
 
-#: models.py:197
+#: croisee/models.py:206
 msgid "Is this puzzle publicly viewable?"
 msgstr ""
 
-#: models.py:198
+#: croisee/models.py:207
 #, fuzzy
 msgid "language"
 msgstr "Language"
 
-#: models.py:198
+#: croisee/models.py:207
 msgid "main language of this puzzle"
 msgstr ""
 
-#: models.py:200
+#: croisee/models.py:209
 #, fuzzy
 msgid "owner"
 msgstr "Owner"
 
-#: models.py:200
+#: croisee/models.py:209
 msgid "owner of the puzzle"
 msgstr ""
 
-#: models.py:201
+#: croisee/models.py:210
 #, fuzzy
 msgid "created by"
 msgstr "Create"
 
-#: models.py:201
+#: croisee/models.py:210
 msgid "user that saved the puzzle for the first time (may be anonymous)"
 msgstr ""
 
-#: models.py:202
+#: croisee/models.py:211
 #, fuzzy
 msgid "last changed by"
 msgstr "Password change"
 
-#: models.py:202
+#: croisee/models.py:211
 msgid "user that saved the puzzle the latest time"
 msgstr ""
 
-#: models.py:203
+#: croisee/models.py:212
 #, fuzzy
 msgid "created on"
 msgstr "Create"
 
-#: models.py:203
+#: croisee/models.py:212
 msgid "timestamp of creation (first save)"
 msgstr ""
 
-#: models.py:204
+#: croisee/models.py:213
 #, fuzzy
 msgid "last changed on"
 msgstr "Password change"
 
-#: models.py:204
+#: croisee/models.py:213
 msgid "timestamp of last change"
 msgstr ""
 
-#: models.py:206
+#: croisee/models.py:215
 msgid "type"
 msgstr ""
 
-#: models.py:206
+#: croisee/models.py:215
 msgid "type of this puzzle"
 msgstr ""
 
-#: models.py:207
+#: croisee/models.py:216
 msgid "width"
 msgstr ""
 
-#: models.py:207
+#: croisee/models.py:216
 msgid "width of the puzzle (number of characters)"
 msgstr ""
 
-#: models.py:208
+#: croisee/models.py:217
 #, fuzzy
 msgid "height"
 msgstr "right"
 
-#: models.py:208
+#: croisee/models.py:217
 msgid "height of the puzzle (number of characters)"
 msgstr ""
 
-#: models.py:209
+#: croisee/models.py:218
 msgid "text"
 msgstr ""
 
-#: models.py:209
+#: croisee/models.py:218
 msgid "characters of the puzzle (solution)"
 msgstr ""
 
-#: models.py:210
+#: croisee/models.py:219
 msgid "numbers"
 msgstr ""
 
-#: models.py:210
+#: croisee/models.py:219
 msgid "list of coordinates of word start numbers"
 msgstr ""
 
-#: models.py:211
+#: croisee/models.py:220
 #, fuzzy
 msgid "questions"
 msgstr "Question"
 
-#: models.py:211
+#: croisee/models.py:220
 msgid "list of questions"
 msgstr ""
 
-#: models.py:214
+#: croisee/models.py:223
 msgid "crossword puzzle"
 msgstr ""
 
-#: models.py:215
+#: croisee/models.py:224
 msgid "crossword puzzles"
 msgstr ""
 
-#: settings.py:24
-msgid "STRING_NOT_SET"
-msgstr "STRING_NOT_SET"
-
-#: settings.py:160
-msgid "English"
-msgstr "English"
-
-#: settings.py:161
-msgid "German"
-msgstr "German"
-
-#: settings.py:270
-#, python-format
-msgid ""
-"Please create a %s file with random characters to generate your secret key!"
-msgstr ""
-"Please create a %s file with random characters to generate your secret key!"
-
-#: views.py:122 views.py:586
+#: croisee/views.py:124 croisee/views.py:599
 #, python-format
 msgid "personal dictionary of user %s, do not rename!"
 msgstr ""
 
-#: views.py:126
+#: croisee/views.py:128
 #, python-format
 msgid "Personal dictionary for user %(username)s was created."
 msgstr ""
 
-#: views.py:223
+#: croisee/views.py:225
 #, python-format
 msgid ""
 "Word %(word)s with question “%(question)s” was saved to your personal "
 "dictionary."
 msgstr ""
 
-#: views.py:226
+#: croisee/views.py:228
 #, python-format
 msgid ""
 "Word “%(word)s” with question “%(question)s” was updated in your personal "
 "dictionary."
 msgstr ""
 
-#: views.py:229
+#: croisee/views.py:231
 #, python-format
 msgid "Don’t save any words, since user %s is not active."
 msgstr ""
 
-#: views.py:433 templates/ajax_query.html:6
+#: croisee/views.py:441 templates/ajax_query.html:6
 #: templates/snippets/resultlist.html:20
 msgid "results"
 msgstr "results"
 
-#: views.py:485 templates/grid.html:59 templates/export/context.tex:33
-#: templates/export/latex.tex:15
+#: croisee/views.py:496 templates/export/context.tex:33
+#: templates/export/latex.tex:47 templates/grid.html:59
 msgid "horizontal"
 msgstr "horizontal"
 
-#: views.py:486 templates/grid.html:62 templates/export/context.tex:40
-#: templates/export/latex.tex:19
+#: croisee/views.py:497 templates/export/context.tex:40
+#: templates/export/latex.tex:51 templates/grid.html:62
 msgid "vertical"
 msgstr "vertical"
 
-#: templates/403.html:4 templates/403.html.py:7
+#: settings/base.py:21
+#, python-format
+msgid "Set the %s environment variable."
+msgstr ""
+
+#: settings/base.py:204
+msgid "English"
+msgstr "English"
+
+#: settings/base.py:205
+msgid "German"
+msgstr "German"
+
+#: settings/base.py:211
+msgid "d/m/Y"
+msgstr ""
+
+#: settings/base.py:212
+msgid "d/m/Y H:m"
+msgstr ""
+
+#: settings/base.py:213
+msgid "H:m"
+msgstr ""
+
+#: templates/403.html:4 templates/403.html:7
 msgid "403 Access Denied"
 msgstr "403 Access Denied"
 
@@ -346,7 +353,7 @@ msgstr "403 Access Denied"
 msgid "We're sorry, but you are not authorized to view this page."
 msgstr ""
 
-#: templates/404.html:4 templates/404.html.py:7
+#: templates/404.html:4 templates/404.html:7
 msgid "404 Page Not Found"
 msgstr "404 Page Not Found"
 
@@ -358,7 +365,7 @@ msgstr ""
 "The address you tried to receive doesn't exist or doesn't work. We received "
 "an error message and try to fix it, if it's an error on our site."
 
-#: templates/500.html:4 templates/500.html.py:7
+#: templates/500.html:4 templates/500.html:7
 msgid "500 Server Error"
 msgstr "500 Server Error"
 
@@ -369,6 +376,14 @@ msgid ""
 msgstr ""
 "An internal error occurred. Try again. If it still doesn't work, try again "
 "later - we got the message and will try to fix it."
+
+#: templates/admin/base_site.html:4
+msgid "fiëé croisée Site Admin"
+msgstr "fiëé croisée Site Admin"
+
+#: templates/admin/base_site.html:7
+msgid "fiëé croisée Administration"
+msgstr "fiëé croisée Administration"
 
 #: templates/ajax_query.html:10 templates/snippets/resultlist.html:7
 #: templates/snippets/resultlist.html:24
@@ -400,6 +415,14 @@ msgstr "Edit"
 
 #: templates/dictionary_word_list.html:27
 msgid "No words found or no access to this dictionary!"
+msgstr ""
+
+#: templates/export/context.tex:22 templates/snippets/menu.html:23
+msgid "Puzzle"
+msgstr "Puzzle"
+
+#: templates/export/context.tex:49
+msgid "Solution"
 msgstr ""
 
 #: templates/grid.html:3
@@ -498,32 +521,81 @@ msgstr ""
 msgid "No puzzles found for you!"
 msgstr ""
 
-#: templates/root.html:58
-msgid "fiëé croisée is a free service of fiëé visuëlle."
-msgstr "fiëé croisée is a free service of fiëé visuëlle."
+#: templates/registration/activate.html:2
+#: templates/registration/activation_complete.html:2
+msgid "Account Activation"
+msgstr ""
 
-#: templates/root.html:59
-msgid "If you like it, would you please donate for further development?"
-msgstr "If you like it, would you please donate for further development?"
+#: templates/registration/activate.html:6
+msgid "Activation failed"
+msgstr ""
 
-#: templates/admin/base_site.html:4
-msgid "fiëé croisée Site Admin"
-msgstr "fiëé croisée Site Admin"
+#: templates/registration/activate.html:7
+msgid ""
+"\n"
+"    Sorry, the activation of your account failed. Maybe you activated it "
+"already?\n"
+"    If you waited for a few days after signing up, then the link might be "
+"outdated.\n"
+"    Otherwise probably something’s wrong with our system.\n"
+"    "
+msgstr ""
 
-#: templates/admin/base_site.html:7
-msgid "fiëé croisée Administration"
-msgstr "fiëé croisée Administration"
+#: templates/registration/activation_complete.html:5
+#, fuzzy
+#| msgid "userwelcome"
+msgid "Welcome!"
+msgstr "userwelcome"
 
-#: templates/export/context.tex:22 templates/snippets/menu.html:23
-msgid "Puzzle"
-msgstr "Puzzle"
+#: templates/registration/activation_complete.html:6
+msgid ""
+"\n"
+"    Success! Your account is now active. That means, you can store private "
+"puzzles and use your own dictionary. Have fun!\n"
+"    "
+msgstr ""
 
-#: templates/export/context.tex:49
-msgid "Solution"
+#: templates/registration/activation_complete.html:9
+msgid ""
+"\n"
+"    Please be aware that we cannot warrant the safety of your data.\n"
+"    While we do backups regularly and try to secure our server agains "
+"attacks,\n"
+"    this free service has not a high priority and might even get switched "
+"off\n"
+"    if we’re short of server resources.\n"
+"    "
+msgstr ""
+
+#: templates/registration/activation_email.txt:2
+#, python-format
+msgid ""
+"\n"
+"Welcome!\n"
+"\n"
+"Someone registered an account as %(user)s with your email address at our "
+"free crossword puzzle generator [fiëé croisée] at https://croisee.fiee.net\n"
+"\n"
+"We hope it was you, then please click the following link within "
+"%(expiration_days)s days to activate your account:\n"
+msgstr ""
+
+#: templates/registration/activation_email.txt:11
+msgid ""
+"\n"
+"If it wasn’t you, then please just delete this message. No harm was done.\n"
+"\n"
+"Best regards,\n"
+"Hraban of fiëé visuëlle\n"
+"https://www.fiee.net\n"
+msgstr ""
+
+#: templates/registration/activation_email_subject.txt:1
+msgid "Your account registration"
 msgstr ""
 
 #: templates/registration/login.html:2 templates/registration/login.html:13
-#: templates/registration/login.html:31 templates/snippets/menu.html:15
+#: templates/registration/login.html:22 templates/snippets/menu.html:15
 msgid "Login"
 msgstr "Login"
 
@@ -532,18 +604,9 @@ msgstr "Login"
 msgid "Sorry, that's not a valid username or password"
 msgstr ""
 
-#: templates/registration/login.html:17
+#: templates/registration/login.html:14
 msgid "Please login using your username and password"
 msgstr ""
-
-#: templates/registration/login.html:20
-msgid "User name:"
-msgstr ""
-
-#: templates/registration/login.html:25
-#, fuzzy
-msgid "Password:"
-msgstr "Password change"
 
 #: templates/registration/logout.html:6
 msgid "You have logged off."
@@ -602,6 +665,35 @@ msgstr "Password change"
 #: templates/registration/password_change_form.html:55
 msgid "Change my password"
 msgstr ""
+
+#: templates/registration/registration_complete.html:2
+#: templates/registration/registration_complete.html:5
+#: templates/registration/registration_form.html:2
+#: templates/registration/registration_form.html:5
+#, fuzzy
+#| msgid "Administration"
+msgid "Registration"
+msgstr "Administration"
+
+#: templates/registration/registration_complete.html:6
+msgid ""
+"\n"
+"    Thank you for your registration. We have sent you an email with an "
+"activation link.\n"
+"    "
+msgstr ""
+
+#: templates/registration/registration_form.html:6
+msgid "Please create your user account."
+msgstr ""
+
+#: templates/registration/registration_form.html:15
+msgid "Register"
+msgstr ""
+
+#: templates/root.html:62
+msgid "fiëé croisée is a free service of fiëé visuëlle."
+msgstr "fiëé croisée is a free service of fiëé visuëlle."
 
 #: templates/snippets/clozeform.html:4
 msgid "Cloze Search"
@@ -697,7 +789,11 @@ msgstr "No matching words found"
 msgid "Change"
 msgstr "Change"
 
-#: templates/snippets/toolbar.html:4 templates/snippets/toolbar.html.py:48
+#: templates/snippets/setlanguage.html:11
+msgid "Beware, this resets your puzzle!"
+msgstr ""
+
+#: templates/snippets/toolbar.html:4 templates/snippets/toolbar.html:48
 msgid "New Puzzle"
 msgstr "New Puzzle"
 
@@ -787,9 +883,26 @@ msgstr "Lines:"
 msgid "Create"
 msgstr "Create"
 
-#: templates/snippets/toolbar.html:68 templates/snippets/toolbar.html.py:70
+#: templates/snippets/toolbar.html:68 templates/snippets/toolbar.html:70
 msgid "check/uncheck all dictionaries"
 msgstr ""
+
+#~ msgid "STRING_NOT_SET"
+#~ msgstr "STRING_NOT_SET"
+
+#~ msgid ""
+#~ "Please create a %s file with random characters to generate your secret "
+#~ "key!"
+#~ msgstr ""
+#~ "Please create a %s file with random characters to generate your secret "
+#~ "key!"
+
+#~ msgid "If you like it, would you please donate for further development?"
+#~ msgstr "If you like it, would you please donate for further development?"
+
+#, fuzzy
+#~ msgid "Password:"
+#~ msgstr "Password change"
 
 #~ msgid "Cloze"
 #~ msgstr "Cloze"
@@ -1025,6 +1138,3 @@ msgstr ""
 
 #~ msgid "monatlich"
 #~ msgstr "monthly"
-
-#~ msgid "userwelcome"
-#~ msgstr "userwelcome"

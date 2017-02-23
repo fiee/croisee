@@ -1,0 +1,21 @@
+{% extends "root.html" %}{% load i18n %}
+{% block title %}{% trans "Registration" %}{% endblock %}
+
+{% block maincontent %}
+  <h2>{% trans "Registration" %}</h2>
+   <p>{% trans "Please create your user account." %}</p>
+ 
+  <form action="/accounts/register/" method="post" class="login ui-dialog-content">
+  {% csrf_token %}
+
+  {% include "snippets/form_edit.html" %}
+
+  <p class="field_wrapper formline">
+    <input type="hidden" name="next" value="{{ next|escape }}" />
+    <input type="submit" value="{% trans "Register" %}" />
+  </p>
+  
+  </form>
+
+  
+{% endblock %}

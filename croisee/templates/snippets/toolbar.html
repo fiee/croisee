@@ -15,7 +15,7 @@
       {% csrf_token %}
       <label for="searchterm" class="hidden">{% trans "Search for:" %}</label>
       <input type="text" accesskey="F" name="cloze_searchterm" id="cloze_searchterm_id" value="{{ searchterm }}" title="{% trans "You can use “_” and “*” as wildcards for single or several characters." %}"/>
-      <a class="button" accesskey="f" id="cloze_search_submit" title="{% trans "Search" %} [f]"><span class="ui-icon ui-icon-search"></span></a>
+      <a class="button button_search" accesskey="f" id="cloze_search_submit" title="{% trans "Search" %} [f]"><span class="ui-icon ui-icon-search"></span></a>
     </form> 
     </li>
 
@@ -51,11 +51,11 @@
     {% csrf_token %}
     <div class="formline ui-widget">
       <span class="label"><label for="width">{% trans "Rows:" %}</label></span> 
-      <input type="text" name="width" id="width_id" length="3" maxlength="2" value="{{default_x}}" class="ui-widget-content numeric" />
+      <input type="integer" name="width" id="width_id" length="3" maxlength="2" value="{{default_x}}" class="ui-widget-content numeric" />
     </div>
     <div class="formline ui-widget">
       <span class="label"><label for="height">{% trans "Lines:" %}</label></span> 
-      <input type="text" name="height" id="height_id" length="3" maxlength="2" value="{{default_y}}" class="ui-widget-content numeric" />
+      <input type="integer" name="height" id="height_id" length="3" maxlength="2" value="{{default_y}}" class="ui-widget-content numeric" />
     </div>
     <div class="formline ui-widget">
       <input type="submit" value="{% trans "Create" %}" />

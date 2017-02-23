@@ -7,135 +7,88 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 14:59+0200\n"
-"PO-Revision-Date: 2011-09-16 11:06+0100\n"
+"POT-Creation-Date: 2017-02-23 14:05+0100\n"
+"PO-Revision-Date: 2017-02-23 14:06+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: Germany\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Poedit 1.8.7\n"
 
-#: static/js/puzzle.js:199
-#, perl-format
+#: static/js/puzzle.js:198
+#, javascript-format
 msgid "No search necessary for %s/%s"
 msgstr "Keine Suche nötig für %s/%s"
 
-#: static_collection/admin/js/SelectFilter2.js:77
-msgid "Clear all"
-msgstr "Alles leeren"
+#: static/js/puzzle.js:426
+msgid "Code error! Word is neither horizontal nor vertical!"
+msgstr "Code-Fehler! Wort ist weder horizontal noch vertikal!"
 
-#: static_collection/admin/js/actions.js:18
-msgid "%(sel)s of %(cnt)s selected"
-msgid_plural "%(sel)s of %(cnt)s selected"
-msgstr[0] "%(sel)s von %(cnt)s ausgewählt"
-msgstr[1] "%(sel)s von %(cnt)s ausgewählt"
+#~ msgid "Clear all"
+#~ msgstr "Alles leeren"
 
-#: static_collection/admin/js/actions.js:109
-msgid ""
-"You have unsaved changes on individual editable fields. If you run an "
-"action, your unsaved changes will be lost."
-msgstr ""
-"Sie haben ungesicherte Änderungen in einzelnen Eingabefeldern. Wenn Sie eine "
-"Aktion ausführen, gehen Ihre ungesicherten Änderungen verloren."
+#~ msgid "%(sel)s of %(cnt)s selected"
+#~ msgid_plural "%(sel)s of %(cnt)s selected"
+#~ msgstr[0] "%(sel)s von %(cnt)s ausgewählt"
+#~ msgstr[1] "%(sel)s von %(cnt)s ausgewählt"
 
-#: static_collection/admin/js/actions.js:121
-#: static_collection/admin/js/actions.min.js:6
-msgid ""
-"You have selected an action, but you haven't saved your changes to "
-"individual fields yet. Please click OK to save. You'll need to re-run the "
-"action."
-msgstr ""
-"Sie haben eine Aktion ausgewählt, aber Sie haben ihre Änderungen an "
-"einzelnen Eingabefeldern noch nicht gespeichert. Bitte klicken Sie auf „Ok“, "
-"um zu speichern. Sie müssen die Aktion danach noch einmal ausführen."
+#~ msgid "You have unsaved changes on individual editable fields. If you run an action, your unsaved changes will be lost."
+#~ msgstr "Sie haben ungesicherte Änderungen in einzelnen Eingabefeldern. Wenn Sie eine Aktion ausführen, gehen Ihre ungesicherten Änderungen verloren."
 
-#: static_collection/admin/js/actions.js:123
-#: static_collection/admin/js/actions.min.js:6
-msgid ""
-"You have selected an action, and you haven't made any changes on individual "
-"fields. You're probably looking for the Go button rather than the Save "
-"button."
-msgstr ""
-"Sie haben eine Aktion ausgewählt, und Sie haben keinerlei Änderungen an "
-"Eingabefeldern gemacht. Wahrscheinlich suchen Sie eher nach dem „Ausführen“-"
-"Knopf als dem „Speichern“-Knopf."
+#~ msgid "You have selected an action, but you haven't saved your changes to individual fields yet. Please click OK to save. You'll need to re-run the action."
+#~ msgstr "Sie haben eine Aktion ausgewählt, aber Sie haben ihre Änderungen an einzelnen Eingabefeldern noch nicht gespeichert. Bitte klicken Sie auf „Ok“, um zu speichern. Sie müssen die Aktion danach noch einmal ausführen."
 
-#: static_collection/admin/js/calendar.js:24
-#: static_collection/admin/js/dateparse.js:32
-msgid ""
-"January February March April May June July August September October November "
-"December"
-msgstr ""
-"Januar Februar März April Mai Juni Juli August September Oktober November "
-"Dezember"
+#~ msgid "You have selected an action, and you haven't made any changes on individual fields. You're probably looking for the Go button rather than the Save button."
+#~ msgstr "Sie haben eine Aktion ausgewählt, und Sie haben keinerlei Änderungen an Eingabefeldern gemacht. Wahrscheinlich suchen Sie eher nach dem „Ausführen“-Knopf als dem „Speichern“-Knopf."
 
-#: static_collection/admin/js/calendar.js:25
-msgid "S M T W T F S"
-msgstr "S M D M D F S"
+#~ msgid "January February March April May June July August September October November December"
+#~ msgstr "Januar Februar März April Mai Juni Juli August September Oktober November Dezember"
 
-#: static_collection/admin/js/collapse.js:9
-#: static_collection/admin/js/collapse.js:21
-#: static_collection/admin/js/collapse.min.js:1
-msgid "Show"
-msgstr "Zeigen"
+#~ msgid "S M T W T F S"
+#~ msgstr "S M D M D F S"
 
-#: static_collection/admin/js/collapse.js:16
-#: static_collection/admin/js/collapse.min.js:1
-msgid "Hide"
-msgstr "Ausblenden"
+#~ msgid "Show"
+#~ msgstr "Zeigen"
 
-#: static_collection/admin/js/dateparse.js:33
-msgid "Sunday Monday Tuesday Wednesday Thursday Friday Saturday"
-msgstr "Sonntag Montag Dienstag Mittwoch Donnerstag Freitag Samstag"
+#~ msgid "Hide"
+#~ msgstr "Ausblenden"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:49
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:84
-msgid "Now"
-msgstr "Jetzt"
+#~ msgid "Sunday Monday Tuesday Wednesday Thursday Friday Saturday"
+#~ msgstr "Sonntag Montag Dienstag Mittwoch Donnerstag Freitag Samstag"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:53
-msgid "Clock"
-msgstr "Uhr"
+#~ msgid "Now"
+#~ msgstr "Jetzt"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:80
-msgid "Choose a time"
-msgstr "Wählen Sie eine Zeit"
+#~ msgid "Clock"
+#~ msgstr "Uhr"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:85
-msgid "Midnight"
-msgstr "Mitternacht"
+#~ msgid "Choose a time"
+#~ msgstr "Wählen Sie eine Zeit"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:86
-msgid "6 a.m."
-msgstr "6 Uhr"
+#~ msgid "Midnight"
+#~ msgstr "Mitternacht"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:87
-msgid "Noon"
-msgstr "Mittag"
+#~ msgid "6 a.m."
+#~ msgstr "6 Uhr"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:91
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:188
-msgid "Cancel"
-msgstr "Abbrechen"
+#~ msgid "Noon"
+#~ msgstr "Mittag"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:133
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:182
-msgid "Today"
-msgstr "Heute"
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:137
-msgid "Calendar"
-msgstr "Kalender"
+#~ msgid "Today"
+#~ msgstr "Heute"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:180
-msgid "Yesterday"
-msgstr "Gestern"
+#~ msgid "Calendar"
+#~ msgstr "Kalender"
 
-#: static_collection/admin/js/admin/DateTimeShortcuts.js:184
-msgid "Tomorrow"
-msgstr "Morgen"
+#~ msgid "Yesterday"
+#~ msgstr "Gestern"
+
+#~ msgid "Tomorrow"
+#~ msgstr "Morgen"

@@ -40,7 +40,7 @@ def rootrel(p):
 dotenv.read_dotenv(rootrel('.env'))
 
 
-# sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT, 'lib/python2.7/site-packages')]
+# sys.path += [PROJECT_ROOT, os.path.join(PROJECT_ROOT, 'lib/python3.5/site-packages')]
 
 
 # ==============================================================================
@@ -48,7 +48,6 @@ dotenv.read_dotenv(rootrel('.env'))
 # ==============================================================================
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 INTERNAL_IPS = ('127.0.0.1',)
 
 # logging: see
@@ -272,7 +271,7 @@ INSTALLED_APPS = [
     #'django.contrib.sitemaps',
     'gunicorn', # not with fcgi
     'rest_framework', # RESTful API - optional, just comment
-    'registration',
+    #'registration',  # not necessary
     'guardian',
     'tagging',
     PROJECT_NAME,

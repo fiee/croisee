@@ -1,0 +1,18 @@
+{% extends "root.html" %}{% load i18n %}
+{% block title %}{% trans "Account Activation" %}{% endblock %}
+
+
+{% block maincontent %}
+    <h2>{% trans "Activation failed" %}</h2>
+    <p>{% blocktrans %}
+    Sorry, the activation of your account failed. Maybe you activated it already?
+    If you waited for a few days after signing up, then the link might be outdated.
+    Otherwise probably something’s wrong with our system.
+    {% endblocktrans %}</p>
+<!--
+Activation key used: {{ activation_key }}
+-->
+{% endblock %}
+
+
+

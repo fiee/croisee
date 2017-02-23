@@ -9,24 +9,15 @@
   {% endif %}
 {% endblock%}
 
-{% block main_content %}
+{% block maincontent %}
   <h2>{% trans "Login" %}</h2>
-
-  <form action="/accounts/login/" method="post" class="login ui-dialog-content">
-  {% csrf_token %}
   <p>{% trans "Please login using your username and password" %}</p>
 
-  <p class="field_wrapper">
-    <label for="username">{% trans "User name:" %}</label>
-    <span class="field"><input type="text" name="username" value="" id="username" /></span>
-  </p>
+  <form action="/accounts/login/" method="post" class="login ui-dialog-content">
 
-  <p class="field_wrapper">
-    <label for="password">{% trans "Password:" %}</label>
-    <input type="password" name="password" value="" id="password" />
-  </p>
+    {% include "snippets/form_edit.html" %}
 
-  <p class="field_wrapper">
+  <p class="field_wrapper ">
     <input type="hidden" name="next" value="{{ next|escape }}" />
     <input type="submit" value="{% trans "Login" %}" />
   </p>

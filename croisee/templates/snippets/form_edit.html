@@ -1,0 +1,17 @@
+{% csrf_token %}{% load i18n %}
+
+{{ form.management_form }}
+{{ form.id }}
+
+{% for field in form.invisible_fields %}{{ field }}{% endfor %}
+
+{% for field in form.visible_fields %}
+    <p class="field_wrapper" id="wrapper_{{ field.name }}">
+      <label for="id_{{ field.name }}">{% trans field.label %}:</label>
+      {% if field.help_text %}<span class="field_help">{% trans field.help_text %}</span>{% endif %}
+      <span class="field">{{ field }}</span>
+      {% if field.errors %}{% for error in field.errors %}
+        <span class="field_errors">{{ error }} </span>
+      {% endfor %}{% endif %}
+    </p>
+{% endfor %}

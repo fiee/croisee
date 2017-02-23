@@ -1,0 +1,17 @@
+{% load i18n %}
+{% blocktrans %}
+Welcome!
+
+Someone registered an account as {{user}} with your email address at our free crossword puzzle generator [fiëé croisée] at https://croisee.fiee.net
+
+We hope it was you, then please click the following link within {{expiration_days}} days to activate your account:
+{% endblocktrans %}
+{{activation_key}}
+
+{% blocktrans %}
+If it wasn’t you, then please just delete this message. No harm was done.
+
+Best regards,
+Hraban of fiëé visuëlle
+https://www.fiee.net
+{% endblocktrans %}

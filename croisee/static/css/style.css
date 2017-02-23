@@ -154,48 +154,150 @@ h5, th, dt {
 	font-size: 100%;
 }
 
-/* Forms */
+/* Forms
 
-input, textarea {
-	line-height: 1.0;
-	padding: 0.25em;
-	border-radius: 4px;
-	-moz-border-radius: 4px;
-}
 
-input[type=radio] {
-	margin-right: 0.5em;
-}
-
-input[type=checkbox], input[type=radio], input[type=file] {
-	border: none !important;
-}
-
-.hint {
+.hint, .field_help {
 	font-size: 77%;
 }
 
-div.formline {
+.field_wrapper {
 	margin: 0.5em 0 0.5em 0;
 }
+*/
 
-div.formline .label, .ui-widget .label {
-	display: inline-block;
-	width: 8em;
+/* Forms */
+
+form p {
+    padding-bottom: 0.5em;
+  position: relative;
+}
+
+button, input.button, .ui-button {
+    margin: 0 0 0.25em 0em;
+}
+
+input.ui-button {
+    font-size: 80%;
+    height: 2.45em;
+}
+
+.ui-button-text {
+    font-size: 77%;
+    color: #555;
+    white-space: nowrap;
+}
+
+input, textarea {
+    line-height: 1.0;
+    padding: 0.25em;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+input[type=text],
+input[type=password],
+textarea,
+select {
+  width: 30em;
+}
+
+input[type=radio] {
+  margin-right: 0.5em;
+}
+
+input[type=checkbox],
+input[type=radio],
+input[type=file] {
+  border: none !important;
+}
+
+.shortinput input[type=text],
+input.short,
+.shortinput select,
+select.short,
+.horizontal label {
+  width: 6em;
+}
+
+.form-indent {
+  margin-left: 6em;
+}
+
+.form-indent-labelwidth {
+  margin-left: 12em;
+}
+
+.field_wrapper label,
+.field_wrapper .label,
+.ui-widget .label {
+    display: inline-block;
+    width: 8em;
+}
+
+/*
+label, .label, input.label {
+    width: 12em;
+    float: left;
+}
+*/
+
+.field label,
+.label label {
+  width:auto;
+}
+
+.field {
+  clear: both;
+}
+
+.field_wrapper {
+  float: none;
+  clear: both;
+  min-height: 2em;
+}
+
+.field_help {
+  display: none;
+}
+
+.field_errors,
+.field_wrapper:hover .field_help {
+  font-size: 77%;
+  padding: 0.5em;
+  z-index: 90;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+
+.field_wrapper:hover .field_help {
+  border: 1px solid #727;
+  background-color: #d9d;
+  display:block;
+  position: absolute;
+  max-width: 14em;
+}
+
+.field_errors {
+  position: absolute;
+  left: 60em;
+  display: inline-block;  
+  background-color: yellow;
+  border: 1px solid #aaa;
 }
 
 .ui-widget .numlabel {
-	text-align: right;
-	width: 1.5em;
+    text-align: right;
+    width: 1.5em;
 }
 
 .question input {
-	width: 20em;
+    width: 20em;
 }
 
-div.formline input.numeric {
-	width: 4em;
-	text-align: right;
+.field_wrapper input.numeric {
+    width: 4em;
+    text-align: right;
 }
 
 table {
@@ -395,13 +497,22 @@ ul#mainmenu > li > a {
 	width: 10em;
 }
 .toolbar input[type=text] {
-	top: -0.5em;
+	top: -0.25em;
 	margin-right: -0.5em;
 }
 
-#mainmenu button, .toolbar .button {
+#mainmenu button,
+.toolbar .button {
 	font-size: 77%;
 	width: 18px;
+}
+
+.toolbar .button {
+    margin-right: 0.5em;
+}
+
+.toolbar .button_search {
+    top: -0.4em;
 }
 
 #mainmenu button {

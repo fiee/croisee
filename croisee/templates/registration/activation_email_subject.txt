@@ -1,0 +1,1 @@
+{% load i18n %}[fiëé croisée] {% blocktrans %}Your account registration{% endblocktrans %}
