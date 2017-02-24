@@ -40,7 +40,7 @@ Features
   * export public puzzles as ConTeXt_, LaTeX (cwpuzzle_) or plain text files
   * list words in dictionaries
 
-* active users
+* authenticated users
 
   * questions get automatically saved to personal dictionary
   * save puzzles as private
@@ -63,7 +63,7 @@ Cloze Query
 
 Using the search field in the toolbar you can look up words that contain defined letters at discrete locations.
 
-You can use _ and ? as wildcards for single letters, * and % for an undefined number of letters (including none).
+You can use _ as wildcards for single letters, * for an undefined number of letters (including none).
 
 E.g. if you look up ``_Y__O_`` you get PYTHON and SYMBOL (depending on dictionaries, of course);
 if you look up ``RAM*``, you get e.g. RAM, RAMBLE, RAMADAN etc. Of course you can mix wildcards at will.
@@ -141,6 +141,7 @@ I’m planning to implement the following features in about this order:
 * export grid and solution as text (done) / HTML / LaTeX (cwpuzzle_, done) / ConTeXt_ (done) / PDF / InDesign IDML
 * export of dictionaries
 * edit personal dictionary (or all for admins)
+* add additional locales
 * use tagging for puzzles
 * delete anonymous puzzles after e.g. 1 month
 * allow adopting of anonymous puzzles by users
@@ -167,6 +168,7 @@ Bugs / Todo
 * add setup.py
 * bind anonymous puzzles to one session to avoid puzzles being edited by several anonymous users at the same time
 * add sample `settings_local.py`
+* Esperanto locale is an automatical translation, I don’t speak Esperanto (but like the concept)
 
 
 Internal workflow (how it *should* work)
@@ -181,8 +183,8 @@ as anonymous user
 Your saved puzzles are always public (otherwise you couldn’t access it later). Everyone can change it.
 Your solutions (i.e. questions for words) are only saved with the puzzle.
 
-as logged in user
-^^^^^^^^^^^^^^^^^
+as authenticated user
+^^^^^^^^^^^^^^^^^^^^^
 
 You can decide to make your puzzles public, but only you can change it.
 Your solutions are also saved to your personal dictionary.
@@ -225,7 +227,7 @@ Dependencies
 * djangorestframework_ (optional)
 
 
-.. _fiëé visuëlle: http://www.fiee.net
+.. _fiëé visuëlle: https://www.fiee.net
 .. _fiëé cérébrale: http://www.cerebrale.net
 
 .. _Python: http://www.python.org

@@ -635,3 +635,30 @@ input.ui-button {
 	color: #555;
 	white-space: nowrap;
 }
+
+/* TeX */
+
+.tex-t, .tex-e, .tex-x, .tex-a {
+  position: relative;
+  text-transform: uppercase;
+}
+
+.tex-e {
+  top: 0.25em;
+  left: -0.125em;
+  font-size: 85%;
+}
+
+.tex-a { /* LaTeX */
+  top: -0.33em;
+  left: -0.125em;
+  font-size: 85%;
+}
+
+.tex-a > .tex-t {
+    left: -0.5em;
+}
+
+.tex-x {
+  left: -0.125em;
+}
