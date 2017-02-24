@@ -1,20 +1,17 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Crossword tool - wordlist
 
 Make a wordlist from a text (in utf-8 encoding)
 """
-from __future__ import unicode_literals
-from __future__ import print_function
 import os, sys, locale
 import re
-import sets
 locale.setlocale(locale.LC_ALL, 'de_DE.utf-8') # affects re's \w
 
-reTEX = re.compile(r'\\\w+', re.LOCALE)
-reNONCHARS = re.compile(r'[^\w\s]', re.LOCALE)
-reSINGLECHAR = re.compile(r'^\w?\n', re.LOCALE|re.MULTILINE)
+reTEX = re.compile(r'\\\w+')
+reNONCHARS = re.compile(r'[^\w\s]')
+reSINGLECHAR = re.compile(r'^\w?\n', flags=re.MULTILINE)
 
 def clean_text(text):
     text = reTEX.sub(' ', text)
@@ -31,9 +28,14 @@ def text_to_set(text):
     """
     take a text and return a set of all contained words
     """
-    s = sets.Set(text.split(' '))
+    s = set(text.split(' '))
     s.discard('')
-    return s
+    n = set()
+    for w in s:
+        # remove case variants
+        if not w.lower() in n:
+            n.add(w)
+    return n
 
 def lowercase(text):
     return text.lower()
@@ -45,18 +47,18 @@ if __name__ == '__main__':
     else:
         sys.exit(1)
     
-    targetfile = file('wordlist.txt', 'a+')
+    targetfile = open('wordlist.txt', 'a+', encoding='utf-8')
     text = ''
     while len(args)>0:
         path = os.path.abspath(args.pop())
         print("reading %s" % path)
-        sourcefile = file(path, 'rU')
-        sourcetext = unicode(''.join(sourcefile.readlines()), 'utf-8')
+        sourcefile = open(path, 'rU', encoding='utf-8')
+        sourcetext = ''.join(sourcefile.readlines())
         sourcefile.close()
         text += sourcetext
 
     text = clean_text(text)
     text = '\n'.join(sorted(text_to_set(text), key=lowercase))
-    targetfile.write(text.encode('utf-8'))
+    targetfile.write(text)
     targetfile.close()
     
