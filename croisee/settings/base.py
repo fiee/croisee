@@ -202,7 +202,8 @@ DATABASES = {
 TIME_ZONE = 'Europe/Berlin'
 LANGUAGE_CODE = 'de'
 LANGUAGES = (('en', _(u'English')),
-             ('de', _(u'German')))
+             ('de', _(u'German')),
+             ('eo', 'Esperanto'))
 USE_I18N = True
 USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
