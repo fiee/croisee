@@ -168,6 +168,7 @@ class WordlistUpload(models.Model):
         
         for line in lines:
             (newword, newdesc, newprio) = splitwordline(line)
+            newdesc = newdesc[:127]  # max. length
             # TODO: exception if decoding fails
             if len(newword) < 2: continue
             try:
