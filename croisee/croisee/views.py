@@ -121,11 +121,11 @@ class DictionaryMixin(object):
             else:
                 self.personal_dictionary, is_new = Dictionary.objects.get_or_create(owner=user, name=user.username)
                 if is_new:
-                    self.personal_dictionary.description = _(u'personal dictionary of user %s, do not rename!') % user.username
+                    self.personal_dictionary.description = _('personal dictionary of user %s, do not rename!') % user.username
                     self.personal_dictionary.public = False
                     # TODO: language?
                     self.personal_dictionary.save()
-                    logger.info(_(u'Personal dictionary for user %(username)s was created.') % 
+                    logger.info(_('Personal dictionary for user %(username)s was created.') % 
                                 {'username': user.username})
         return self.personal_dictionary
     
@@ -513,7 +513,11 @@ class PuzzleListView(ListView, DictionaryMixin):
         return context    
 
     def get_queryset(self):
-        return Puzzle.objects.filter(Q(public=True)|Q(owner=self.request.user.id))
+        """
+        Find puzzles that belong to the current user
+        or the default (anonymous) user or are public
+        """
+        return Puzzle.objects.filter(Q(public=True)|Q(owner=self.request.user.id)|Q(owner=settings.CROISEE_DEFAULT_OWNER_ID))
 
 
 class PuzzleExportView(PuzzleView):
