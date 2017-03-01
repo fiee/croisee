@@ -492,13 +492,11 @@ ul#mainmenu > li > a {
 }
 
 #mainmenu input[type=text], .toolbar input[type=text] {
-	position: relative;
-	top: -0.75em;
 	width: 10em;
+	height: 1.4em;
 }
 .toolbar input[type=text] {
-	top: -0.25em;
-	margin-right: -0.5em;
+	margin-right: -0.66em;
 }
 
 #mainmenu button,
@@ -509,10 +507,7 @@ ul#mainmenu > li > a {
 
 .toolbar .button {
     margin-right: 0.5em;
-}
-
-.toolbar .button_search {
-    top: -0.4em;
+    padding: 0.4em;
 }
 
 #mainmenu button {
@@ -528,19 +523,6 @@ ul#mainmenu > li > a {
 #mainmenu input[type=checkbox] {
 	margin: 0;
 }
-
-/*
- .toolbar {
- position: relative;
- top: -1em;
- left: -1em;
- }
-
- .toolbar ul {
- position: relative;
- padding-left: 0.25em;
- }
- */
 
 /* zweite Ebene */
 
@@ -613,7 +595,6 @@ body .ui-widget {
 span.ui-icon {
 	float: left;
 	position: relative;
-	top: -0.25em;
 }
 
 p span.ui-icon {
