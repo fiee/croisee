@@ -1,4 +1,8 @@
 # see http://www.robotstxt.org
 User-agent: *
 Disallow: /admin/
-Sitemap: /sitemap.xml
+Disallow: /accounts/
+Disallow: /ajax/
+Disallow: /puzzle/save/
+Disallow: /api/
+# Sitemap: /sitemap.xml
