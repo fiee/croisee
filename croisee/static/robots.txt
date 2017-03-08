@@ -3,6 +3,6 @@ User-agent: *
 Disallow: /admin/
 Disallow: /accounts/
 Disallow: /ajax/
-Disallow: /puzzle/save/
+Disallow: /puzzle/
 Disallow: /api/
 # Sitemap: /sitemap.xml
