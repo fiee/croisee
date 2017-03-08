@@ -1,1 +1,7 @@
 # http://humanstxt.org
+Author & Maintainer:
+Henning Hraban Ramm, fiëé visuëlle
+www.fiee.net
+
+Sourcecode:
+https://github.com/fiee/croisee

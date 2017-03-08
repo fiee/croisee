@@ -17,15 +17,15 @@ It’s a Django_ application, to be run on Nginx_ with Django via gunicorn_.
 The provided fabfile (fabric_ deployment) is for a Debian server 
 and documented at http://github.com/fiee/generic_django_project
 
-Additionally you need a ``settings_webserver.py`` that gets copied as ``settings_local.py``.
-It can contain every kind of local settings, at least the database password.
+Additionally you need an ``.env`` file, containing SECRET_KEY,
+DATABASE_PASSWORD and EMAIL_PASSWORD.
 
 
 Setup
 -----
 
-If you don’t need a public API, comment “rest_framework” in ``settings.py`` (INSTALLED_APPS)
-and ``requirements.txt``.
+If you don’t need a public API, comment “rest_framework” in ``settings/base.py``
+(INSTALLED_APPS) and ``requirements/base.txt``.
 
 
 Features
@@ -83,23 +83,35 @@ Here’s how to make your own crossword puzzle:
 
 Click the “star” button to create a grid in your favourite size (12x12 is good).
 
-You can move around in the grid with the arrow keys (tab, shift-tab, backspace, delete work also).
-If you write letters, the cursor will move right to the next cell; if you press shift, it will move downward.
+You can move around in the grid with the arrow keys (tab, shift-tab, backspace,
+delete work also).
+If you type letters, the cursor will move right to the next cell;
+if you press shift while typing a letter, the cursor will move downward.
 Please write slowly, otherwise the key handler swallows characters.
 
-Write some words into the grid “by heart” - in an empty grid, you’d get thousands of possible words.
+Write some letters or words into the grid “by heart” - in an empty grid, you’d
+get thousands of possible words.
 
 Perhaps write only one letter in the corners - that’s how I mostly start.
-Press ? (question mark) in any square, and after a short delay you’ll get two lists of words that match in this place horizontally and vertically.
+You might also want to start with a pattern of black fields (see below).
+Press ? (question mark) in any square, and after a short delay you’ll get
+two lists of words that match in this place horizontally and vertically.
 
-You can click on the words in the result list to place them in the grid. The list will adapt automatically to the new situation.
+You can click on the words in the result list to place them in the grid.
+The list will adapt automatically to the new situation.
 
-To mark cells as “blockers”, press space (and again to remove the block).
+If you click on the search pattern, it gets copied to the cloze query field.
 
-To set a number as start-of-word mark, press # (number sign). The numbering works automatically.
-A question field is added to the horizontal and/or vertical list, it gets filled with the first solution from your selected dictionaries.
- 
+To mark cells as “blockers” (black fields), press space (and again to remove the block).
+
+To set a number as start-of-word mark, press # (number sign).
+The numbering works automatically.
+A question field is added to the horizontal and/or vertical list,
+it gets filled with the first solution from your selected dictionaries.
 Just press # again to remove the number and the question field.
+If you change the questions/descriptions, they get saved into your personal
+dictionary (only for logged-in users, of course).
+ 
 
 
 Admin
@@ -109,7 +121,7 @@ Make a wordlist
 ---------------
 
 1. use the provided wordlists for German, English and Esperanto 
-   (derived from ispell_ dictionaries); you can upload them directly
+   (derived from ispell_ dictionaries); you can upload them directly.
 2. use a dictionary from aspell_:
 
  aspell dump master > mydict.txt
@@ -118,14 +130,18 @@ Make a wordlist
 4. write your own
 
 * The wordlist file is expected in UTF-8 encoding.
-* Format is “(word)\\t(description)\\t(priority)\\n”. Description and priority are optional (default to word and 0).
+* Format is “(word)\\t(description)\\t(priority)\\n”.
+  Description and priority are optional (default to word and 0).
 * run ``make-wordlist.py`` on it (or several), result is ``wordlist.txt``.
 
 
 Make a dictionary
 -----------------
 
-* upload a wordlist file to your croisee installation (Wordlist Upload); that may take a while.
+* upload a wordlist file to your croisee installation (Wordlist Upload);
+  that may take a while.
+* If the wordlist is too big for processing, you can split it using
+  ``tools/split-wordlist.py`` to create chunks of max. 10’000 lines.
 * fix descriptions and priorities, if you like.
 
 
@@ -157,6 +173,8 @@ I’m planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
+* If the first fields of the grid are empty, text is shifted left after saving.
+  (Problem of the text format used for saving; replace space with underscore.)
 * only German keyboards work well; seems we use key codes instead of character codes
 * word numbers are rather small in Mozilla (and probably other browsers than WebKit-based)
 * admin: if adding to an existing dict, disable other fields
@@ -171,16 +189,18 @@ Bugs / Todo
 * Esperanto locale is an automatical translation, I don’t speak Esperanto (but like the concept)
 
 
-Internal workflow (how it *should* work)
-----------------------------------------
+Internal workflow
+-----------------
 
-If you save a puzzle for the first time, a new hash code is generated from your IP address and the local datetime.
+If you save a puzzle for the first time, a new hash code is generated
+from your IP address and the local datetime.
 The puzzle’s address is becoming something like “/puzzle/abcdef123456/”.
 
 as anonymous user
 ^^^^^^^^^^^^^^^^^
 
-Your saved puzzles are always public (otherwise you couldn’t access it later). Everyone can change it.
+Your saved puzzles are always public (otherwise you couldn’t access it later).
+Everyone can change it.
 Your solutions (i.e. questions for words) are only saved with the puzzle.
 
 as authenticated user
@@ -188,9 +208,14 @@ as authenticated user
 
 You can decide to make your puzzles public, but only you can change it.
 Your solutions are also saved to your personal dictionary.
-If you’re a staff member, your solutions can be saved to a public dictionary and you can use non-public dictionaries.
-You can export your personal dictionary to use it with your own croisee installation.
-You can claim (adopt) puzzles of anonymous users (e.g. your own, while you weren’t logged in).
+
+*The following is not yet implemented:*
+If you’re a staff member, your solutions can be saved to a public dictionary
+and you can use non-public dictionaries.
+You can export your personal dictionary to use it with your own croisee
+installation.
+You can claim (adopt) puzzles of anonymous users (e.g. your own, while you
+weren’t logged in).
 
 
 License
@@ -202,16 +227,19 @@ Feel free to ask for different, additional licensing.
 
 I don’t plan to release my edited dictionaries, because in them’s the most work.
 
-Everything related to `fiëé visuëlle`_ (logo, names) is copyrighted and contained only for the sake of completeness.
-That means you must not use the fiëé logo, fiëé favicon or any name containing fiëé in public, 
-except in a descriptive manner, where it is encouraged (e.g. “this is derived from / based on”).
+Everything related to `fiëé visuëlle`_ (logo, names) is copyrighted and
+contained only for the sake of completeness.
+That means you must not use the fiëé logo, fiëé favicon or any name containing
+fiëé in public, except in a descriptive manner, where it is encouraged
+(e.g. “this is derived from / based on”).
 
 
 Author(s)
 ---------
 
-* Henning Hraban Ramm, `fiëé visuëlle`_, <hraban@fiee.net>, http://www.fiee.net
-* Heiko Oberdiek: enhancement of LaTeX template, http://www.listserv.dfn.de/cgi-bin/wa?A2=ind1110&L=tex-d-l&T=0&P=3297
+* Henning Hraban Ramm, `fiëé visuëlle`_, <hraban@fiee.net>, https://www.fiee.net
+* Heiko Oberdiek: enhancement of LaTeX template,
+  http://www.listserv.dfn.de/cgi-bin/wa?A2=ind1110&L=tex-d-l&T=0&P=3297
 * inspiration and code snippets by several other people & projects
 
 
