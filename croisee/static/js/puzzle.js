@@ -14,7 +14,7 @@ function chars2text(maxcol, maxrow) {
   var text = '';
   for (var y=0; y <= maxrow; y++) {
     for (var x=0; x <= maxcol; x++) {
-      text += $('#char_'+y+'_'+x).val() || ' ';
+      text += $('#char_'+y+'_'+x).val() || '_';
     }
     text += line_sep;
   }
@@ -28,7 +28,7 @@ function text2chars() {
    */
   var lines = $('input#text_id').val();
   if (!lines) { return false; }
-  lines = lines.split(line_sep);
+  lines = lines.replace(/_/g, ' ').split(line_sep);
   for (var y=0; y <= lines.length; y++) {
     if (!lines[y]) return false;
     var line = lines[y].split('');

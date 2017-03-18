@@ -173,8 +173,6 @@ I’m planning to implement the following features in about this order:
 Bugs / Todo
 -----------
 
-* If the first fields of the grid are empty, text is shifted left after saving.
-  (Problem of the text format used for saving; replace space with underscore.)
 * only German keyboards work well; seems we use key codes instead of character codes
 * word numbers are rather small in Mozilla (and probably other browsers than WebKit-based)
 * admin: if adding to an existing dict, disable other fields
