@@ -68,12 +68,16 @@ function fill_questions(maxcol, maxrow, dict) {
    */
   var quests = $('input#questions_id').val() || ''; 
   quests = quests.split('\n');
-  if (DEBUG) console.log('fill_questions H, V, dict', quests, dict);
+  if (DEBUG) {
+    console.log('fill_questions H, V, dict', quests, dict);
+  }
   var ok = [];
   for (var i=0; i < quests.length; i++) {
     if (quests[i]>'') {
       var qst = quests[i].split('::'); // num::dir::word
-      if (DEBUG) console.log('fill questions:', i, qst);
+      if (DEBUG) {
+        console.log('fill questions:', i, qst);
+      }
       qst[0] = Number(qst[0]);
       var coords = dict[qst[0]]
       if (qst[2]) { //} && coords) {
@@ -83,7 +87,9 @@ function fill_questions(maxcol, maxrow, dict) {
     }
   }
   ok.sort();
-  if (DEBUG) console.log('fill_questions ok:', ok)
+  if (DEBUG) {
+    console.log('fill_questions ok:', ok);
+  }
   /* fill missing questions with solution word */
   for (num in dict) {
     var t = dict[num];
@@ -103,13 +109,16 @@ function find_words(x, y, maxcol, maxrow, direction) {
      * maxcol, maxrow = size of the grid
      * direction      = if set to 'h' or 'v', get and return only one word ('b' or empty for both)
      */
-    var direction = direction[0].toLowerCase() || 'b';
+    direction = direction[0].toLowerCase() || 'b';
+    var horiz = '';
+    var vert = '';
+    var i = 0;
+    var letter = '';
     
     if (direction != 'v') {
       /* collect word horizontally */
-      var horiz = '';
-      for (var i = x; i <= maxcol; i++) {
-          var letter = $('#char_' + y + '_' + i).val() || '_';
+      for (i = x; i <= maxcol; i++) {
+          letter = $('#char_' + y + '_' + i).val() || '_';
           if (letter == stop_char) { break; }
           horiz += letter;
       }
@@ -118,9 +127,8 @@ function find_words(x, y, maxcol, maxrow, direction) {
     
     if (direction != 'h') {
       /* collect word vertically */
-      var vert = '';
-      for (var i = y; i <= maxrow; i++) {
-          var letter = $('#char_' + i + '_' + x).val() || '_';
+      for (i = y; i <= maxrow; i++) {
+          letter = $('#char_' + i + '_' + x).val() || '_';
           if (letter == stop_char) { break; }
           vert += letter;
       }
@@ -157,10 +165,12 @@ function lookup_word(x, y, maxcol, maxrow){
     var ypos = y;
     var xstart = 0;
     var ystart = 0;
+    var i = 0;
+    var letter = '';
      
     /* collect word horizontally */
-    for (var i = 0; i <= maxcol; i++) {
-      var letter = $('#char_' + y + '_' + i).val() || '_';
+    for (i = 0; i <= maxcol; i++) {
+      letter = $('#char_' + y + '_' + i).val() || '_';
       if (letter == stop_char) {
         /* now there's the stop char at i,y */
         if (i < x) {
@@ -177,8 +187,8 @@ function lookup_word(x, y, maxcol, maxrow){
     horiz = horiz.replace(/\s/g, '_');
     
     /* collect word vertically */
-    for (var i = 0; i <= maxrow; i++) {
-      var letter = $('#char_' + i + '_' + x).val() || '_';
+    for (i = 0; i <= maxrow; i++) {
+      letter = $('#char_' + i + '_' + x).val() || '_';
       if (letter == stop_char) {
         /* now there's the stop char at x,i */
         if (i < y) {
@@ -194,7 +204,7 @@ function lookup_word(x, y, maxcol, maxrow){
     }
     vert = vert.replace(/\s/g, '_');
     
-    if (horiz.indexOf('_')==-1 && vert.indexOf('_')==-1) {
+    if (horiz.indexOf('_') == -1 && vert.indexOf('_') == -1) {
       console.log(interpolate(gettext('No search necessary for %s/%s'), [horiz, vert]));
       return false;
     }
@@ -224,7 +234,7 @@ function check_dictionaries(){
         context[this.id] = true;
         dict_count++;
     });
-    if (dict_count == 0) {
+    if (dict_count === 0) {
         // TODO: gettext()
         $('#dict_error').removeClass('hidden').show(500).delay(7000).hide(500);
     }
@@ -257,15 +267,15 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
     }
     var nums = []; // list of coordinates with numbers
     var num = 1; // start number
-    for (cy = 0; cy <= maxrow; cy++) {
-        for (cx = 0; cx <= maxcol; cx++) {
+    for (var cy = 0; cy <= maxrow; cy++) {
+        for (var cx = 0; cx <= maxcol; cx++) {
             var nf_id = '#num_' + cy + '_' + cx;
             var nf = $(nf_id);
             var content = nf.html();
             if (content) { // if number field contains anything, nf.html() doesn’t work here, if it’s '#'!
                 nf.html(num);
-                nums.push(cy+'.'+cx+'.'+num);
-                if ((content=='#')||(oldnums.indexOf(cy+'.'+cx+'.')==-1)) {
+                nums.push(cy + '.' + cx + '.' + num);
+                if ((content=='#')||(oldnums.indexOf(cy + '.' + cx + '.') == -1)) {
                   insertpos = num;
                 }
                 num++;
@@ -274,7 +284,9 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
     }
     num--;
     insertpos--;
-    if (DEBUG) console.log('renumber_puzzle | x=',x,'y=',y,'num=',num,'insertpos=',insertpos,'nums=',nums);
+    if (DEBUG) {
+      console.log('renumber_puzzle | x=',x,'y=',y,'num=',num,'insertpos=',insertpos,'nums=',nums);
+    }
     if (insertpos < 0) insertpos = 0;
     if (num<0) {
       console.log('ERROR in renumber_puzzle:',insertpos,'/',num);
@@ -285,7 +297,9 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
 
     /* question fields */
     if (reset) { // remove question
-      if (DEBUG) console.log('renumber, removing question at',insertpos,'/',num);
+      if (DEBUG) {
+        console.log('renumber, removing question at',insertpos,'/',num);
+      }
       $('#question_h_'+insertpos).remove();
       $('#question_v_'+insertpos).remove();
       // decrease following numbers
@@ -296,7 +310,9 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
           var nid = '_'+dir+'_'+nnr;
           var div = $('#question'+oid);
           if (div.length==1) {
-            if (DEBUG) console.log('renumber', div.attr('id'), 'as', nid);
+            if (DEBUG) {
+              console.log('renumber', div.attr('id'), 'as', nid);
+            }
             div.attr('id','question'+nid);
             nid = 'qst'+nid; 
             div.children('#qst'+oid).attr({'id':nid, 'name':nid});
@@ -305,7 +321,9 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
         }
       });
     } else { // add question
-      if (DEBUG) console.log('renumber, adding question at',insertpos,'/',num);
+      if (DEBUG) {
+        console.log('renumber, adding question at',insertpos,'/',num);
+      }
       // increase following numbers
       $.each(['h','v'], function(index,dir) {
         for (var i=num; i>=insertpos; i--){
@@ -314,7 +332,9 @@ function renumber_puzzle(x, y, maxcol, maxrow, reset){
           var nid = '_'+dir+'_'+nnr;
           var div = $('#question'+oid);
           if (div.length==1) {
-            if (DEBUG) console.log('renumber', div.attr('id'), 'as', nid);
+            if (DEBUG) {
+              console.log('renumber', div.attr('id'), 'as', nid);
+            }
             div.attr('id','question'+nid);
             nid = 'qst'+nid; 
             div.children('#qst'+oid).attr({'id':nid, 'name':nid});
@@ -352,7 +372,7 @@ function add_question(x, y, maxcol, maxrow, direction, num, word, lookup) {
   clone.attr('id','question_'+direction+'_'+num).find('label').attr('for', id).html(num+1);
   clone.children('input').attr({'name':id, 'id':id}).val(word);
 
-  if ($('div#questions_list_'+direction+' div.question').length==0) {
+  if ($('div#questions_list_'+direction+' div.question').length === 0) {
     clone.appendTo($('div#questions_list_'+direction));
   } else {
     // find previous element
@@ -380,7 +400,9 @@ function add_question(x, y, maxcol, maxrow, direction, num, word, lookup) {
   }
 
   if (num > Number($('input#maxnum_id').val())) $('input#maxnum_id').val(num);
-  if (DEBUG) console.log('add_question',x,y,direction,num,word);
+  if (DEBUG) {
+    console.log('add_question',x,y,direction,num,word);
+  }
   return clone;
 }
 
@@ -399,7 +421,9 @@ function copy_questions_to_save() {
       }
     });
     $('input#questions_id').val(quests.join('\n'));
-    if (DEBUG) console.log('copy questions:', $('input#questions_id').val());
+    if (DEBUG) {
+      console.log('copy questions:', $('input#questions_id').val());
+    }
     return maxnum;
 }
 
@@ -413,6 +437,7 @@ function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
   $('#result dl.resultlist span.word').click(function(event){
     /* on click fill word into grid */
     var word = $(this).html();
+    var i = 0;
     if ($(this).hasClass('horizontal')) {
         for (i = 0; i < word.length; i++) {
             $('#char_' + y + '_' + (i + xstart)).val(word[i]);
@@ -499,7 +524,7 @@ $(function(){
       $('form#puzzle_form #dicts').append($('input.dictionary-checkbox'));
       copy_questions_to_save();
       chars2text(maxcol, maxrow);
-      document.forms['puzzle'].submit();
+      document.forms.puzzle.submit();
     });
     /* enable load button */
     $('#tb_load_puzzle').click(function(event){
