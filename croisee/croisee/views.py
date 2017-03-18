@@ -540,7 +540,11 @@ class PuzzleExportView(PuzzleView):
     def get_context_data(self, **kwargs):
         context = super(PuzzleExportView, self).get_context_data(**kwargs)
         lines = context['puzzle'].text.split('\n')
-        numdict = dict( [('%s.%s' % (y,x), int(num)) for (y,x,num) in [ t.split('.') for t in context['puzzle'].numbers.strip(' ,').split(',') ] ] )
+        try:
+            numdict = dict( [('%s.%s' % (y,x), int(num)) for (y,x,num) in [ t.split('.') for t in context['puzzle'].numbers.strip(' ,').split(',') ] ] )
+        except ValueError as e:
+            logger.error(e)
+            numdict = {}
         blocks = [] # positions of black boxes
         cells = [] # content and number of cells
         questions = {'h':[], 'v':[]}
@@ -554,7 +558,8 @@ class PuzzleExportView(PuzzleView):
                     char = ''
                 try:
                     num = numdict['%d.%d' % (y,x)]
-                except KeyError:
+                except KeyError as e:
+                    logger.warn(e)
                     num = ''
                 cells[y].append({'char':char, 'num':num, 'blocked':blocked})
         for qu in context['puzzle'].questions.split('\n'):
