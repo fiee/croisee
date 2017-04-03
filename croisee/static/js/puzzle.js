@@ -434,7 +434,7 @@ function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
    * parameters:
    * x,y = cursor position
    */
-  $('#result dl.resultlist span.word').click(function(event){
+  $('#result dl.resultlist span.word').click(function(evt){
     /* on click fill word into grid */
     var word = $(this).html();
     var i = 0;
@@ -455,12 +455,12 @@ function activate_resultlist(x, y, maxcol, maxrow, xstart, ystart){
     chars2text(maxcol, maxrow);
   });
   /* enable copy of searchterm to cloze search */
-  $('span.searchterm').click(function(event){
+  $('span.searchterm').click(function(evt){
     $('input#cloze_searchterm_id').val($(this).html());
   });
 }
 
-function searchhandler(event){
+function searchhandler(evt){
   /*
    * handler for search field
    */
@@ -474,6 +474,89 @@ function searchhandler(event){
       $('dl.resultlist .word').attr('title', '');
   }, 'html');
   return false; // don't propagate
+}
+
+function shift_left(y, maxx) {
+    var first = $('#char_'+y+'_0').val();
+    for (var x=0; x < maxx; x++) {
+        $('#char_'+y+'_'+x).val($('#char_'+y+'_'+(x+1)).val());
+    }
+    $('#char_'+y+'_'+maxx).val(first);
+}
+
+function shift_right(y, maxx) {
+    var last = $('#char_'+y+'_'+maxx).val();
+    for (var x=maxx; x > 0; x--) {
+        $('#char_'+y+'_'+x).val($('#char_'+y+'_'+(x-1)).val());
+    }
+    $('#char_'+y+'_0').val(last);
+}
+
+function shift_up(x, maxy) {
+    var first = $('#char_0_'+x).val();
+    for (var y=0; y < maxy; y++) {
+        $('#char_'+y+'_'+x).val($('#char_'+(y+1)+'_'+x).val());
+    }
+    $('#char_'+maxy+'_'+x).val(first);
+}
+
+function shift_down(x, maxy) {
+    var first = $('#char_'+maxy+'_'+x).val();
+    for (var y=maxy; y > 0; y--) {
+        $('#char_'+y+'_'+x).val($('#char_'+(y-1)+'_'+x).val());
+    }
+    $('#char_0_'+x).val(first);
+}
+
+function shift(evt) {
+  /* move puzzle contents */
+  var tgt = evt.target;
+  if (tgt.nodeName == 'SPAN' || tgt.localName == 'span') {
+    // target is 'a' or contained 'span', we need 'a'
+    tgt = tgt.parentNode;
+  }
+  var [direction, id] = tgt.id.split('_');
+  var width = $('#width_id').val();
+  var height = $('#height_id').val();
+  if (id == 'all') {
+      switch (direction) {
+          case 'left':
+            for (var y=0; y < height; y++) {
+                shift_left(y, width-1);
+            }
+            break;
+          case 'right':
+            for (var y=0; y < height; y++) {
+                shift_right(y, width-1);
+            }
+            break;
+          case 'up':
+            for (var x=0; x < width; x++) {
+                shift_up(x, height-1);
+            }
+            break;
+          case 'down':
+            for (var x=0; x < width; x++) {
+                shift_down(x, height-1);
+            }
+            break;
+      }
+  } else {
+      switch (direction) {
+          case 'left':
+            shift_left(id, width-1);
+            break;
+          case 'right':
+            shift_right(id, width-1);
+            break;
+          case 'up':
+            shift_up(id, height-1);
+            break;
+          case 'down':
+            shift_down(id, height-1);
+            break;
+      }
+  }
 }
 
 function clear_grid(){
@@ -509,17 +592,17 @@ $(function(){
     init_puzzle(maxcol, maxrow);
     
     /* toolbar init: disable normal link behaviour */
-    $('.toolbar a').click(function(event){
-      event.preventDefault();
+    $('.toolbar a').click(function(evt){
+      evt.preventDefault();
       //if (DEBUG) console.log($(this).attr('href'));
       return false;      
     });
     /* enable new puzzle button */
-    $('#tb_new_puzzle').click(function(event){
+    $('#tb_new_puzzle').click(function(evt){
       $('#dialog_new_puzzle').dialog();
     });
     /* enable save puzzle button/menu */
-    $('#tb_save_puzzle').click(function(event){
+    $('#tb_save_puzzle').click(function(evt){
       /* append dictionary settings from other form */
       $('form#puzzle_form #dicts').append($('input.dictionary-checkbox'));
       copy_questions_to_save();
@@ -527,13 +610,13 @@ $(function(){
       document.forms.puzzle.submit();
     });
     /* enable load button */
-    $('#tb_load_puzzle').click(function(event){
+    $('#tb_load_puzzle').click(function(evt){
       // TODO: dialog
       window.location.href='/puzzle/list';
       return true;
     });
     /* enable clear button */
-    $('#tb_clear_puzzle').click(function(event){
+    $('#tb_clear_puzzle').click(function(evt){
       $('#dialog_clear_confirm').dialog({
         modal:true,
         resizable:false,
@@ -548,8 +631,13 @@ $(function(){
         },
       });
     });
+    /* enable move buttons */
+    $('#tb_move_puzzle').click(function(evt){
+      $('table.puzzle th').toggle();
+    });
+    $('.puzzle th a.button').click(shift);
     /* enable help button */
-    $('#tb_help, #menu_help').click(function(event){
+    $('#tb_help, #menu_help').click(function(evt){
       $('#dialog_keys_help').dialog();
     });
 
@@ -559,7 +647,7 @@ $(function(){
     $('form#cloze_search_form').submit(searchhandler);
 
     /* enable dictionary button */
-    $('#tb_dicts').click(function(event){
+    $('#tb_dicts').click(function(evt){
       $('#dialog_dicts').dialog({
         resizable: false,
         modal: true,
@@ -587,41 +675,41 @@ $(function(){
      * Safari/Mac doesn't send keyPress for control keys (arrows, esc).
      * Mozilla doesn't send an usable keyUp for visible chars (?, #)
      */
-    $('input.puzzlechar').keypress(function(event){
-        //if (DEBUG) console.log('PRESS', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
-        if (event.metaKey || event.ctrlKey) 
+    $('input.puzzlechar').keypress(function(evt){
+        //if (DEBUG) console.log('PRESS', evt, 'key='+evt.keyCode, 'char='+evt.charCode, 'which='+evt.which);
+        if (evt.metaKey || evt.ctrlKey) 
             return true;
         var idp = this.id.split('_'); // char,y,x
         var x = idp[2];
         var y = idp[1];
         set_focus(x, y);
         /* handle character keys A-Z */
-        event.preventDefault();
-        if ((65 <= event.which && event.which <= 65 + 25) ||
-        (97 <= event.which && event.which <= 97 + 25)) {
-            var c = String.fromCharCode(event.which).toUpperCase();
+        evt.preventDefault();
+        if ((65 <= evt.which && evt.which <= 65 + 25) ||
+        (97 <= evt.which && evt.which <= 97 + 25)) {
+            var c = String.fromCharCode(evt.which).toUpperCase();
             $(this).val(c);
-            //if (DEBUG) console.log(event.keyCode, c);
+            //if (DEBUG) console.log(evt.keyCode, c);
         }
         else 
-            if (event.which == 35) // # number sign
+            if (evt.which == 35) // # number sign
                 renumber_puzzle(x, y, maxcol, maxrow, false);
             else 
-                if (event.which == 63) { // question mark
+                if (evt.which == 63) { // question mark
                     lookup_word(x, y, maxcol, maxrow);
                 }
         return false;
     });
     
-    $('input.puzzlechar').keyup(function(event){
-        if (event.metaKey || event.ctrlKey) 
+    $('input.puzzlechar').keyup(function(evt){
+        if (evt.metaKey || evt.ctrlKey) 
             return true;
         /* handle any other keys */
         var idp = this.id.split('_'); // char,y,x
         var x = idp[2];
         var y = idp[1];
-        //if (DEBUG) console.log('UP', event, 'key='+event.keyCode, 'char='+event.charCode, 'which='+event.which);
-        switch (event.which) {
+        //if (DEBUG) console.log('UP', evt, 'key='+evt.keyCode, 'char='+evt.charCode, 'which='+evt.which);
+        switch (evt.which) {
             case 0: break; // e.g. question mark on Mozilla
             case 8: // backspace
                 $(this).val('');
@@ -629,7 +717,7 @@ $(function(){
                 x--;
                 break;
             case 9: // tab
-                //if (event.shiftKey) { x--; } else { x++; }
+                //if (evt.shiftKey) { x--; } else { x++; }
                 break;
             case 16: // shift
                 break;
@@ -664,7 +752,7 @@ $(function(){
                 break;
             default:
                 $(this).parent('td').removeClass('blocked');
-                if (event.shiftKey) {
+                if (evt.shiftKey) {
                     y++;
                 }
                 else {
@@ -686,19 +774,19 @@ $(function(){
             if (y < 0) {
                 y = maxrow;
             }
-        event.preventDefault();
-        if (modifiers.indexOf(event.keyCode) == -1) {
+        evt.preventDefault();
+        if (modifiers.indexOf(evt.keyCode) == -1) {
           set_focus(x, y);
         }
         return true;
     });
 	  
 	  /* only allow numbers in numeric input fields, e.g. "new puzzle" form */
-    $('input.numeric').keyup(function(event){
-        if (event.metaKey || event.ctrlKey || event.which==9) 
+    $('input.numeric').keyup(function(evt){
+        if (evt.metaKey || evt.ctrlKey || evt.which==9) 
             return true;
         /* handle numeric input fields */
-        event.preventDefault();
+        evt.preventDefault();
         var num = Number(this.value);
         if (isNaN(num)) 
             num = 0;

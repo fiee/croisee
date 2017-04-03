@@ -8,8 +8,8 @@
     <!--
     <li><a class="button" title="{% trans "Delete Puzzle" %}" id="tb_delete_puzzle" href="{% url 'croisee-puzzle-delete' slug="abc" %}"><span class="ui-icon ui-icon-trash"></span></a></li>
     <li><a class="button" title="{% trans "Adapt Puzzle Size" %}" href="{#% url 'croisee-adapt' %#}"><span class="ui-icon ui-icon-arrow-2-se-nw"></span></a></li>
-    <li><a class="button" title="{% trans "Move Puzzle Contents" %}" href="{#% url 'croisee-move' %#}"><span class="ui-icon ui-icon-arrow-4-diag"></span></a></li>
     -->
+    <li><a class="button" accesskey="m" title="{% trans "Move Puzzle Contents" %} [m]" id="tb_move_puzzle" href="{#% url 'croisee-move' %#}"><span class="ui-icon ui-icon-arrow-4-diag"></span></a></li>
     <li>
     <form action="#" method="post" name="cloze_search" id="cloze_search_form">
       {% csrf_token %}

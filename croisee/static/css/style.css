@@ -154,18 +154,6 @@ h5, th, dt {
 	font-size: 100%;
 }
 
-/* Forms
-
-
-.hint, .field_help {
-	font-size: 77%;
-}
-
-.field_wrapper {
-	margin: 0.5em 0 0.5em 0;
-}
-*/
-
 /* Forms */
 
 form p {
@@ -234,13 +222,6 @@ select.short,
     display: inline-block;
     width: 8em;
 }
-
-/*
-label, .label, input.label {
-    width: 12em;
-    float: left;
-}
-*/
 
 .field label,
 .label label {
@@ -311,11 +292,19 @@ table.puzzle {
 	background-color: #fff;
 }
 
+table.puzzle td,
+table.puzzle th {
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+}
+
+table.puzzle th {
+    display: none;
+}
+
 table.puzzle td {
 	border: 1px solid #aaa;
-	width: 1.5em;
-	height: 1.5em;
-	padding: 0;
 }
 
 table.puzzle td.blocked, table.puzzle td.blocked input.puzzlechar {
@@ -500,7 +489,8 @@ ul#mainmenu > li > a {
 }
 
 #mainmenu button,
-.toolbar .button {
+.toolbar .button,
+.puzzle .button {
 	font-size: 77%;
 	width: 18px;
 }
@@ -510,13 +500,19 @@ ul#mainmenu > li > a {
     padding: 0.4em;
 }
 
+.puzzle .button {
+    padding: 6px 4px 1px 4px;
+    height: 17px;
+}
+
 #mainmenu button {
 	position: relative;
 	top: -0.25em;
 	left: -0.5em;
 }
 
-#mainmenu .ui-button-text-only .ui-button-text, .toolbar .ui-button-text-only .ui-button-text {
+#mainmenu .ui-button-text-only .ui-button-text,
+.toolbar .ui-button-text-only .ui-button-text {
 	padding: 2px 0 0 0;
 }
 
