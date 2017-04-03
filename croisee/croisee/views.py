@@ -345,7 +345,7 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
                 createdon = datetime.now(),
                 height = max(min(int(self.request.POST.get('width', settings.CROISEE_GRIDMIN_Y)), settings.CROISEE_GRIDMAX_Y), settings.CROISEE_GRIDMIN_Y),
                 width = max(min(int(self.request.POST.get('height', settings.CROISEE_GRIDMIN_X)), settings.CROISEE_GRIDMAX_X), settings.CROISEE_GRIDMIN_X),
-                text = self.request.POST.get('text', '').upper(),
+                text = self.request.POST.get('text', '').replace(' ', '_').upper(),
                 numbers = self.request.POST.get('numbers', ''),
                 questions = self.request.POST.get('questions', ''),
             )
@@ -369,6 +369,8 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
             self.get_object()
         self.object.lastchangedby = self.get_user()
         self.object.lastchangedon = datetime.now()
+        if self.object.createdby == settings.CROISEE_DEFAULT_OWNER_ID:
+            self.object.createdby = self.get_user()
         self.save_words(self.object.text, self.object.questions, self.object.numbers) # TODO: background task?
         logger.info('save_puzzle: %s' % self.object)
         return self.object.save(**kwargs)
