@@ -104,6 +104,11 @@ If you click on the search pattern, it gets copied to the cloze query field.
 
 To mark cells as “blockers” (black fields), press space (and again to remove the block).
 
+If you want to move the contents of the grid, click on the diagonal arrow cross
+button to show the move buttons around the grid.
+Then you can move single rows or columns (thin arrow buttons) or the whole grid
+(fat arrow buttons). Afterwards save to fix the blockers.
+
 To set a number as start-of-word mark, press # (number sign).
 The numbering works automatically.
 A question field is added to the horizontal and/or vertical list,
@@ -175,6 +180,7 @@ Bugs / Todo
 
 * only German keyboards work well; seems we use key codes instead of character codes
 * word numbers are rather small in Mozilla (and probably other browsers than WebKit-based)
+* numbers don’t move with the characters
 * admin: if adding to an existing dict, disable other fields
 * clean up redundant template/view code
 * update libraries and optimize JS code
@@ -207,13 +213,13 @@ as authenticated user
 You can decide to make your puzzles public, but only you can change it.
 Your solutions are also saved to your personal dictionary.
 
+If you save an anonymous user’s puzzle, it becomes yours.
+
 *The following is not yet implemented:*
 If you’re a staff member, your solutions can be saved to a public dictionary
 and you can use non-public dictionaries.
 You can export your personal dictionary to use it with your own croisee
 installation.
-You can claim (adopt) puzzles of anonymous users (e.g. your own, while you
-weren’t logged in).
 
 
 License

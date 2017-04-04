@@ -15,7 +15,7 @@ That means that we need some interpretation of the saved data.
 :text:
   All letters of the puzzle’s solution as continous text, uppercase,
   lines separated by line breaks (\n), blocked cells represented by stops (.),
-  empty cells represented by spaces ( ).
+  empty cells represented by underscores (_) or spaces ( ).
 :numbers:
   Numbers mark the start of words and relate to questions. Each "number" is
   a tuple of row, column and word number, separated by stops (.) and chained
