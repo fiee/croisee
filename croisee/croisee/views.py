@@ -550,9 +550,9 @@ class PuzzleExportView(PuzzleView):
         blocks = [] # positions of black boxes
         cells = [] # content and number of cells
         questions = {'h':[], 'v':[]}
-        for y in range(0, len(lines)-1):
+        for y in range(0, len(lines)):
             cells.append([])
-            for x in range(0, len(lines[y])-1):
+            for x in range(0, len(lines[y])):
                 char = lines[y][x]
                 blocked = (char=='.')
                 if blocked:
@@ -565,6 +565,8 @@ class PuzzleExportView(PuzzleView):
                     num = ''
                 cells[y].append({'char':char, 'num':num, 'blocked':blocked})
         for qu in context['puzzle'].questions.split('\n'):
+            if not qu:
+                continue
             num, dir, text = qu.split('::')
             questions[dir].append({'num':int(num)+1, 'text':text.strip()})
         context['blocks'] = blocks
