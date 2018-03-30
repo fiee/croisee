@@ -529,19 +529,19 @@ class PuzzleExportView(PuzzleView):
     
     FORMAT_MAP = {
         # format/template name : (extension, mimetype)
-        'html': ('html', 'text/html; charset=utf-8'),
+        #'html': ('html', 'text/html; charset=utf-8'),
         'txt': ('txt', 'text/plain; charset=utf-8'),
-        'json': ('json', 'text/json; charset=utf-8'),
-        'yaml': ('yaml', 'text/yaml; charset=utf-8'),
+        #'json': ('json', 'text/json; charset=utf-8'),
+        #'yaml': ('yaml', 'text/yaml; charset=utf-8'),
         'context': ('tex', 'text/context; charset=utf-8'),
         'latex': ('tex', 'text/latex; charset=utf-8'),
-        'pdf': ('pdf', 'application/pdf'),
-        'idml': ('idml', 'text/xml+idml; charset=utf-16BE'),
+        #'pdf': ('pdf', 'application/pdf'),
+        #'idml': ('idml', 'text/xml+idml; charset=utf-16BE'),
     }
 
     def get_context_data(self, **kwargs):
         context = super(PuzzleExportView, self).get_context_data(**kwargs)
-        lines = context['puzzle'].text.split('\n')
+        lines = context['puzzle'].text.replace('\r','').split('\n')
         try:
             numdict = dict( [('%s.%s' % (y,x), int(num)) for (y,x,num) in [ t.split('.') for t in context['puzzle'].numbers.strip(' ,').split(',') ] ] )
         except ValueError as e:
@@ -561,7 +561,8 @@ class PuzzleExportView(PuzzleView):
                 try:
                     num = numdict['%d.%d' % (y,x)]
                 except KeyError as e:
-                    logger.warn(e)
+                    # no number at this cell
+                    # logger.warn(e)
                     num = ''
                 cells[y].append({'char':char, 'num':num, 'blocked':blocked})
         for qu in context['puzzle'].questions.split('\n'):
