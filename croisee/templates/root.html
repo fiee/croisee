@@ -2,20 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
     <head></head>
     <body>
-        {% load cache i18n %}{% get_current_language as LANGUAGE_CODE %}
+        {% load cache i18n %}{% get_current_language as LANGUAGE_CODE %}{% load static from staticfiles %}
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>fiëé croisée :: {% block title %}{% endblock %}</title>
-        <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico">
-        <link rel="icon" href="{{ STATIC_URL }}favicon.ico" type="image/ico">
-        <link type="text/plain" rel="author" href="{{ STATIC_URL }}humans.txt" />
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/cssgrids-min.css">
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen,projection">
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/print.css" type="text/css" media="print">
-        <link type="text/css" href="{{ STATIC_URL }}jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
-        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-3.3.1.min.js"></script>
-        {# <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-migrate-1.4.1.js"></script> #}
-        <script type="text/javascript" src="{{ STATIC_URL }}js/js.cookie-2.2.0.min.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <link rel="shortcut icon" href="{% static "favicon.ico" %}">
+        <link rel="icon" href="{% static "favicon.ico" %}" type="image/ico">
+        <link type="text/plain" rel="author" href="{% static "humans.txt" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "css/cssgrids-min.css" %}">
+        <link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css" media="screen,projection">
+        <link rel="stylesheet" href="{% static "css/print.css" %}" type="text/css" media="print">
+        <link type="text/css" href="{% static "jquery-ui-1.12.1.custom/jquery-ui.min.css" %}" rel="stylesheet">
+        <script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+        {# <script type="text/javascript" src="{% static "js/jquery-migrate-1.4.1.js" %}"></script> #}
+        <script type="text/javascript" src="{% static "js/js.cookie-2.2.0.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "jquery-ui-1.12.1.custom/jquery-ui.min.js" %}"></script>
         <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
         <script type="text/javascript">
             /* see https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax */
@@ -39,7 +39,7 @@
             <div id="hd">
                 {% block hd %}
                 <div class="fiee">
-                    <h1><img src="{{ STATIC_URL }}img/fiee_croisee.png" alt="ﬁëé croisée"></h1>
+                    <h1><img src="{% static "img/fiee_croisee.png" %}" alt="ﬁëé croisée"></h1>
                 </div>
                 {% include "snippets/menu.html" %}
                 {% endblock %}
