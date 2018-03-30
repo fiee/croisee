@@ -179,11 +179,10 @@ Bugs / Todo
 -----------
 
 * only German keyboards work well; seems we use key codes instead of character codes
-* word numbers are rather small in Mozilla (and probably other browsers than WebKit-based)
 * numbers don’t move with the characters
 * admin: if adding to an existing dict, disable other fields
 * clean up redundant template/view code
-* update libraries and optimize JS code
+* optimize JS code
 * still not really a reusable app (to be integrated in `fiëé cérébrale`_)
 * still no tests!
 * add Sphinx_ documentation
