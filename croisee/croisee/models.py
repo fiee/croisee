@@ -22,7 +22,6 @@ REPLACEMENTS = (
     ('Œ', 'OE'),
     ('Æ', 'AE'),
     ('Ø', 'OE'),
-    #(u'', ''),
 )
 reASCIIonly = re.compile(r'[^A-Z]', re.I)
 reCleanInput = re.compile(r'[^\w_%\?\*]', re.I)
@@ -118,7 +117,7 @@ class WordlistUpload(models.Model):
     """
     Wordlist importer
     """
-    wordlist_file = models.FileField(_('wordlist file (.txt)'), upload_to=os.path.join(settings.MEDIA_ROOT, 'temp'),
+    wordlist_file = models.FileField(_('wordlist file (.txt)'), upload_to=os.path.relpath(os.path.join(settings.MEDIA_ROOT, 'temp')),
                                 help_text=_('Select a .txt file containing a single word per line to upload as a new dictionary.'))
     dictionary = models.ForeignKey(Dictionary, null=True, blank=True, help_text=_('Select a dictionary to add these words to. leave this empty to create a new dictionary from the supplied name.'))
     name = models.CharField(_('Name'), max_length=31, blank=True, help_text=_('A short descriptive name'))
