@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-24 09:14+0100\n"
-"PO-Revision-Date: 2017-02-24 09:53+0100\n"
+"POT-Creation-Date: 2018-03-30 22:18+0200\n"
+"PO-Revision-Date: 2018-03-30 22:22+0200\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "Language: de\n"
@@ -19,58 +19,58 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Poedit 1.8.7\n"
 
-#: croisee/models.py:71 croisee/models.py:102 templates/snippets/menu.html:50
+#: croisee/models.py:70 croisee/models.py:101 templates/snippets/menu.html:50
 msgid "Dictionary"
 msgstr "Wörterbuch"
 
-#: croisee/models.py:72 templates/snippets/toolbar.html:22
+#: croisee/models.py:71 templates/snippets/toolbar.html:22
 msgid "Dictionaries"
 msgstr "Wörterbücher"
 
-#: croisee/models.py:76 croisee/models.py:124
+#: croisee/models.py:75 croisee/models.py:123
 msgid "Name"
 msgstr "Name"
 
-#: croisee/models.py:76 croisee/models.py:124
+#: croisee/models.py:75 croisee/models.py:123
 msgid "A short descriptive name"
 msgstr "Ein kurzer, aussagekräftiger Name"
 
-#: croisee/models.py:77 croisee/models.py:126
+#: croisee/models.py:76 croisee/models.py:125
 msgid "public?"
 msgstr "öffentlich?"
 
-#: croisee/models.py:77 croisee/models.py:126
+#: croisee/models.py:76 croisee/models.py:125
 msgid "May everyone use this dictionary?"
 msgstr "Darf dieses Wörterbuch von jedermann benutzt werden?"
 
-#: croisee/models.py:78 croisee/models.py:127 templates/puzzle_list.html:13
+#: croisee/models.py:77 croisee/models.py:126 templates/puzzle_list.html:13
 #: templates/snippets/menu.html:62
 msgid "Language"
 msgstr "Sprache"
 
-#: croisee/models.py:80 croisee/models.py:129
+#: croisee/models.py:79 croisee/models.py:128
 msgid "Language of (most of) the words in this dictionary"
 msgstr "Sprache der (meisten) Wörter in diesem Wörterbuch"
 
-#: croisee/models.py:81 croisee/models.py:103 croisee/models.py:130
+#: croisee/models.py:80 croisee/models.py:102 croisee/models.py:129
 #: templates/dictionary_word_list.html:13 templates/puzzle_list.html:12
 msgid "Description"
 msgstr "Beschreibung"
 
-#: croisee/models.py:82 croisee/models.py:131 templates/puzzle_list.html:14
+#: croisee/models.py:81 croisee/models.py:130 templates/puzzle_list.html:14
 msgid "Owner"
 msgstr "Besitzer"
 
-#: croisee/models.py:96 croisee/models.py:101
+#: croisee/models.py:95 croisee/models.py:100
 #: templates/dictionary_word_list.html:12
 msgid "Word"
 msgstr "Wort"
 
-#: croisee/models.py:97
+#: croisee/models.py:96
 msgid "Words"
 msgstr "Wörter"
 
-#: croisee/models.py:101
+#: croisee/models.py:100
 msgid ""
 "a word fitting a crossword puzzle; will become uppercased; no numbers, "
 "hyphens etc."
@@ -78,23 +78,23 @@ msgstr ""
 "ein Kreuzworträtsel-Wort; wird in Großbuchstaben umgewandelt; keine Zahlen, "
 "Bindestriche usw."
 
-#: croisee/models.py:103
+#: croisee/models.py:102
 msgid "Meaning of the word within the context of the selected dictionary"
 msgstr "Bedeutung des Wortes im Kontext des ausgewählten Wörterbuchs"
 
-#: croisee/models.py:104 templates/dictionary_word_list.html:14
+#: croisee/models.py:103 templates/dictionary_word_list.html:14
 msgid "Priority"
 msgstr "Priorität"
 
-#: croisee/models.py:104
+#: croisee/models.py:103
 msgid "0 is neutral, you can increase or decrease the priority"
 msgstr "0 ist neutral, Sie können die Priorität erhöhen oder verringern"
 
-#: croisee/models.py:121
+#: croisee/models.py:120
 msgid "wordlist file (.txt)"
 msgstr "Wortlisten-Datei (*.txt)"
 
-#: croisee/models.py:122
+#: croisee/models.py:121
 msgid ""
 "Select a .txt file containing a single word per line to upload as a new "
 "dictionary."
@@ -102,7 +102,7 @@ msgstr ""
 "Wählen Sie eine Textdatei, die pro Zeile ein einzelnes Wort enthält, um sie "
 "als neues Wörterbuch hochzuladen."
 
-#: croisee/models.py:123
+#: croisee/models.py:122
 msgid ""
 "Select a dictionary to add these words to. leave this empty to create a new "
 "dictionary from the supplied name."
@@ -111,20 +111,20 @@ msgstr ""
 "Lassen Sie dieses Feld frei, um ein neues Wörterbuch mit dem angegebenen "
 "Namen zu erzeugen."
 
-#: croisee/models.py:125
+#: croisee/models.py:124
 msgid "only unique"
 msgstr "eindeutig"
 
-#: croisee/models.py:125
+#: croisee/models.py:124
 msgid "Import only words that are not contained in any other dictionary?"
 msgstr ""
-"Nur Wörter importieren, die nicht in einem andern Wörterbuch enthalten sind?"
+"Nur Wörter importieren, die nicht in einem anderen Wörterbuch enthalten sind?"
 
-#: croisee/models.py:134
+#: croisee/models.py:133
 msgid "wordlist upload"
 msgstr "Wortlisten-Upload"
 
-#: croisee/models.py:135
+#: croisee/models.py:134
 msgid "wordlist uploads"
 msgstr "Wortlisten-Uploads"
 
@@ -269,7 +269,7 @@ msgstr "Kreuzworträtsel"
 msgid "crossword puzzles"
 msgstr "Kreuzworträtsel"
 
-#: croisee/views.py:124 croisee/views.py:599
+#: croisee/views.py:124 croisee/views.py:613
 #, python-format
 msgid "personal dictionary of user %s, do not rename!"
 msgstr "Persönliches Wörterbuch von Benutzer %s, nicht umbenennen!"
@@ -302,18 +302,18 @@ msgstr ""
 msgid "Don’t save any words, since user %s is not active."
 msgstr "Speichere keine Wörter, da Benutzer %s nicht aktiv ist."
 
-#: croisee/views.py:441 templates/ajax_query.html:6
+#: croisee/views.py:443 templates/ajax_query.html:6
 #: templates/snippets/resultlist.html:20
 msgid "results"
 msgstr "Suchergebnisse"
 
-#: croisee/views.py:496 templates/export/context.tex:33
-#: templates/export/latex.tex:47 templates/grid.html:59
+#: croisee/views.py:498 templates/export/context.tex:33
+#: templates/export/latex.tex:47 templates/grid.html:81
 msgid "horizontal"
 msgstr "waagerecht"
 
-#: croisee/views.py:497 templates/export/context.tex:40
-#: templates/export/latex.tex:51 templates/grid.html:62
+#: croisee/views.py:499 templates/export/context.tex:40
+#: templates/export/latex.tex:51 templates/grid.html:84
 msgid "vertical"
 msgstr "senkrecht"
 
@@ -322,23 +322,23 @@ msgstr "senkrecht"
 msgid "Set the %s environment variable."
 msgstr "Setzen Sie die Umgebungsvariable %s."
 
-#: settings/base.py:204
+#: settings/base.py:206
 msgid "English"
 msgstr "Englisch"
 
-#: settings/base.py:205
+#: settings/base.py:207
 msgid "German"
 msgstr "Deutsch"
 
-#: settings/base.py:212
+#: settings/base.py:214
 msgid "d/m/Y"
 msgstr "d.m.Y"
 
-#: settings/base.py:213
+#: settings/base.py:215
 msgid "d/m/Y H:m"
 msgstr "d.m.Y H:m"
 
-#: settings/base.py:214
+#: settings/base.py:216
 msgid "H:m"
 msgstr "H:m"
 
@@ -348,7 +348,7 @@ msgstr "403 Zugriff verweigert"
 
 #: templates/403.html:8
 msgid "We're sorry, but you are not authorized to view this page."
-msgstr "Sie sind leider nicht berechntigs, diese Seite anzusehen."
+msgstr "Sie sind leider nicht berechtigt, diese Seite anzusehen."
 
 #: templates/404.html:4 templates/404.html:7
 msgid "404 Page Not Found"
@@ -443,23 +443,55 @@ msgstr "öffentlich?"
 msgid "Should this puzzle be publicly viewable?"
 msgstr "Soll dieses Rätsel öffentlich sichtbar sein?"
 
-#: templates/grid.html:67
+#: templates/grid.html:39
+msgid "Shift grid up"
+msgstr "Raster nach oben schieben"
+
+#: templates/grid.html:41
+msgid "Shift column up"
+msgstr "Spalte nach oben schieben"
+
+#: templates/grid.html:43
+msgid "Shift grid right"
+msgstr "Raster nach rechts schieben"
+
+#: templates/grid.html:49
+msgid "Shift row left"
+msgstr "Zeile nach links schieben"
+
+#: templates/grid.html:56
+msgid "Shift row right"
+msgstr "Zeile nach rechts schieben"
+
+#: templates/grid.html:62
+msgid "Shift grid left"
+msgstr "Raster nach links schieben"
+
+#: templates/grid.html:64
+msgid "Shift column down"
+msgstr "Spalte nach unten schieben"
+
+#: templates/grid.html:66
+msgid "Shift grid down"
+msgstr "Raster nach unten schieben"
+
+#: templates/grid.html:89
 msgid "Create a new crossword puzzle by clicking on the star button!"
 msgstr ""
 "Beginnen Sie ein neues Kreuzworträtsel, indem Sie auf den Stern-Button "
 "klicken!"
 
-#: templates/grid.html:68
+#: templates/grid.html:90
 msgid "Hint: Searching works only if you activate at least one dictionary."
 msgstr ""
 "Achtung: Die Suche funktioniert nur, wenn Sie mindestens ein Wörterbuch "
 "aktivieren."
 
-#: templates/grid.html:73
+#: templates/grid.html:95
 msgid "Please select at least one dictionary!"
 msgstr "Bitte wählen Sie mindestens ein Wörterbuch aus!"
 
-#: templates/grid.html:74 templates/snippets/resultlist.html:4
+#: templates/grid.html:96 templates/snippets/resultlist.html:4
 #: templates/snippets/resultlist.html:15
 msgid "Search Results"
 msgstr "Suchergebnisse"
@@ -499,7 +531,7 @@ msgstr ""
 "<p>Gehen Sie weiter zum <strong><a href=\"/puzzle/\" class=\"button\">Rätsel-"
 "Gitter</a></strong> und beginnen Sie ein neues Kreuzworträtsel.\n"
 "Im Moment können Sie die Seite im Browser ausdrucken oder Layout-Daten für "
-"<a href=\"http://www.dante“.de>L<span class=\"tex-a\">a</span><span class="
+"<a href=\"http://www.dante\".de>L<span class=\"tex-a\">a</span><span class="
 "\"tex-t\">T</span><span class=\"tex-e\">E</span><span class=\"tex-x\">X</"
 "span></a> (<a href=\"http://www.gerd-neugebauer.de/software/TeX/cwpuzzle/"
 "\">cwpuzzle</a>) oder <a href=\"http://wiki.contextgarden.net\">Con<span "
@@ -963,7 +995,7 @@ msgstr "Rätsel löschen"
 msgid "Adapt Puzzle Size"
 msgstr "Rätselgröße anpassen"
 
-#: templates/snippets/toolbar.html:11
+#: templates/snippets/toolbar.html:12
 msgid "Move Puzzle Contents"
 msgstr "Inhalte verschieben"
 
