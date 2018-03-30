@@ -91,7 +91,7 @@ function fill_questions(maxcol, maxrow, dict) {
     console.log('fill_questions ok:', ok);
   }
   /* fill missing questions with solution word */
-  for (num in dict) {
+  for (var num in dict) {
     var t = dict[num];
     if (DEBUG) console.log('fill_questions', num, t);
     if ($.inArray('h_'+num, ok)==-1) add_question(t[1], t[0], maxcol, maxrow, 'h', num);
@@ -657,14 +657,9 @@ $(function(){
       });
     });
     /* enable check/uncheck all dictionaries */
-    $('#dic_all').toggle(
-      function(){
-        $('#dialog_dicts input.dictionary-checkbox').prop('checked', true);
-      },
-      function(){
-        $('#dialog_dicts input.dictionary-checkbox').prop('checked', false);
-      }
-    );
+    $('#dic_all').click(function(){
+        $('#dialog_dicts input.dictionary-checkbox').prop('checked', $('#dic_all').prop('checked'));
+    });
         
     /* restore blocked cells from saved grids */
     $('input.puzzlechar').each(function(index){
@@ -747,6 +742,7 @@ $(function(){
                 $(this).parent('td').removeClass('blocked');
                 x++;
                 break;
+            case 63:
             case 191: // question mark
                 // don't move
                 break;
