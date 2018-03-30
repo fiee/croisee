@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 from django.conf import settings
 from django.http import HttpResponseForbidden
-from django.template import RequestContext,Template,loader,TemplateDoesNotExist
+from django.template import Template, loader, TemplateDoesNotExist
 from importlib import import_module
 """
 # Middleware to allow the display of a 403.html template when a
@@ -42,8 +42,6 @@ class Http403Middleware(object):
                  </html>""")
 
             # Now use context and render template
-            c = RequestContext(request, {
-                  'message': '%s' % exception
-             })
+            c = { 'message': '%s' % exception }
 
             return HttpResponseForbidden(t.render(c))
