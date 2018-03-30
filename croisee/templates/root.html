@@ -12,9 +12,9 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen,projection">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/print.css" type="text/css" media="print">
         <link type="text/css" href="{{ STATIC_URL }}jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
-        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.12.4.min.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-migrate-1.4.1.min.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-3.3.1.min.js"></script>
+        {# <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-migrate-1.4.1.js"></script> #}
+        <script type="text/javascript" src="{{ STATIC_URL }}js/js.cookie-2.2.0.min.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
         <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
         <script type="text/javascript">
@@ -24,7 +24,7 @@
                     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
                 }
                 if (!(safeMethod(settings.type) || settings.crossDomain)) {
-                    xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+                    xhr.setRequestHeader("X-CSRFToken", Cookies.get('csrftoken'));
                 }
             });
             $(function(){
