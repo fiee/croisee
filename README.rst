@@ -251,7 +251,7 @@ Dependencies
 ------------
 
 * Python_ 2.7/3.5
-* Django_ 1.9+
+* Django_ 1.11
 * `django registration`_
 * `django guardian`_
 * Fabric_ 0.9+ (optional, for easy deployment)
@@ -265,7 +265,6 @@ Dependencies
 .. _Python: http://www.python.org
 .. _Sphinx: http://sphinx.pocoo.org/
 .. _Fabric: http://docs.fabfile.org/
-.. _South: http://south.aeracode.org/
 .. _gunicorn: http://gunicorn.org/
 
 .. _Django: http://www.djangoproject.com

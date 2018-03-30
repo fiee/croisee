@@ -7,7 +7,7 @@ pytz
 # reportlab
 PyYAML # for fixtures
 
-django
+django>=1.11,<2
 django-guardian
 django-registration
 django-tagging
