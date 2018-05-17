@@ -58,7 +58,8 @@ urlpatterns += [
         views.PuzzleListView.as_view(), 
         name='%s-puzzle-list' % settings.PROJECT_NAME),
     url(r'^puzzle/(?P<slug>[a-z\d]+)/$', views.PuzzleView.as_view(), name='%s-puzzle-get' % settings.PROJECT_NAME),
-    url(r'^puzzle/(?P<slug>[a-z\d]+)/(?P<format>html|context|latex|pdf|txt|idml|json|yaml)/$', views.PuzzleExportView.as_view(), name='%s-puzzle-export' % settings.PROJECT_NAME),
+    url(r'^puzzle/(?P<slug>[a-z\d]+)/(?P<format>context|latex|txt)/$', views.PuzzleExportView.as_view(), name='%s-puzzle-export' % settings.PROJECT_NAME),
+    # (?P<format>html|context|latex|pdf|txt|idml|json|yaml)
     url(r'^puzzle/(?P<slug>[a-z\d]+)/delete/$', views.DeletePuzzleView.as_view(), name='%s-puzzle-delete' % settings.PROJECT_NAME),
 #    # new puzzle
 #    url(r'^puzzle/$', 
