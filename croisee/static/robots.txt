@@ -5,4 +5,4 @@ Disallow: /accounts/
 Disallow: /ajax/
 Disallow: /puzzle/
 Disallow: /api/
-# Sitemap: /sitemap.xml
+# Sitemap: https://croisee.fiee.net/sitemap.xml
