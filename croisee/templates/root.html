@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
-    <head></head>
-    <body>
+    <head>
         {% load cache i18n %}{% get_current_language as LANGUAGE_CODE %}{% load static from staticfiles %}
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>fiëé croisée :: {% block title %}{% endblock %}</title>
@@ -35,6 +34,8 @@
         </script>
         {% block extrahead %}
         {% endblock %}
+    </head>
+    <body>
         <div class="yui3-g">
             <div id="hd">
                 {% block hd %}
