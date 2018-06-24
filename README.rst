@@ -158,15 +158,14 @@ Roadmap
 
 I’m planning to implement the following features in about this order:
 
-* move from jQuery to Vue.js
 * export grid and solution as text (done) / HTML / LaTeX (cwpuzzle_, done) / ConTeXt_ (done) / PDF / InDesign IDML
 * export of dictionaries
 * edit personal dictionary (or all for admins)
 * add additional locales
 * use tagging for puzzles
 * delete anonymous puzzles after e.g. 1 month
-* allow adopting of anonymous puzzles by users
 * import text files (JSON, YAML?)
+* move from jQuery to Vue.js
 * different types of crossword grids (fat lines instead of blocked cells, uneven outline...)
 * mark letters for extra solution (competition word)
 * automate filling the grid (algorithm?)
@@ -205,6 +204,8 @@ as anonymous user
 Your saved puzzles are always public (otherwise you couldn’t access it later).
 Everyone can change it.
 Your solutions (i.e. questions for words) are only saved with the puzzle.
+
+If you open and save a public puzzle of someone else, you get a copy.
 
 as authenticated user
 ^^^^^^^^^^^^^^^^^^^^^
