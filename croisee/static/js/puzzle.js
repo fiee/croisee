@@ -367,6 +367,12 @@ function add_question(x, y, maxcol, maxrow, direction, num, word, lookup) {
   num = Number( num );
   word = word || find_words(x, y, maxcol, maxrow, direction);
   lookup = lookup || false;
+  if (word.length < 2) {
+    if (DEBUG) {
+      console.log('word too short!', word, word.length);
+    }
+    return false;
+  }
   var clone = $('div#question_template').clone();
   var id = 'qst_'+direction+'_'+num;
   clone.attr('id','question_'+direction+'_'+num).find('label').attr('for', id).html(num+1);
