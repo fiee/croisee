@@ -328,15 +328,15 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
         if hasattr(self, 'object') and ((not hash_id) or hash_id == self.object.code):
             return self.object
         user = self.get_user() # current user or anonymous
-        # owner = user
         anonymous = User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
         try:
             self.object = Puzzle.objects.get(code=hash_id)
             owner = self.object.owner
-            if user != anonymous and self.request.user.is_active and owner == anonymous:
+            if (user != anonymous) and (self.request.user.is_active) and (owner == anonymous):
                 # take over ownership
                 self.object.owner = user
-                logger.info('puzzle previously owned by anonymous user is now yours, %s!' % user)
+                self.object.public = True
+                logger.info('puzzle previously owned by anonymous user is now owned by "%s"' % user)
         except Puzzle.DoesNotExist as e:
             logger.info('puzzle "%s" not found, creating new puzzle' % hash_id)
             hash_id = self.request.POST.get('code', self.new_hash_id())
@@ -366,15 +366,34 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
         else:
             return User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
     
+    def clone_puzzle(self):
+        return Puzzle(
+            public = True,
+            code = self.new_hash_id(),
+            owner = self.get_user(),
+            createdby = self.object.createdby,
+            createdon = self.object.createdon,
+            height = self.object.height,
+            width = self.object.width,
+            text = self.object.text,
+            numbers = self.object.numbers,
+            questions = self.object.questions,
+            title = _('Copy of %s' % self.object.title)
+        )
+    
     def save_puzzle(self, **kwargs):
-        # TODO: permissions
+        # TODO: proper permissions handling
         if not (hasattr(self, 'object') and isinstance(self.object, Puzzle)):
             self.get_object()
-        self.object.lastchangedby = self.get_user()
+        user = self.get_user()
+        if (self.object.owner != user) and (not user.is_superuser):
+            # if you try to save another user’s puzzle, it gets copied
+            self.object = self.clone_puzzle()
+        self.object.lastchangedby = user
         self.object.lastchangedon = datetime.now()
         if self.object.createdby == settings.CROISEE_DEFAULT_OWNER_ID:
-            self.object.createdby = self.get_user()
-        self.save_words(self.object.text, self.object.questions, self.object.numbers) # TODO: background task?
+            self.object.createdby = user
+        self.save_words(self.object.text, self.object.questions, self.object.numbers)
         logger.info('save_puzzle: %s' % self.object)
         return self.object.save(**kwargs)
 
