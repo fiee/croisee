@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-30 22:18+0200\n"
+"POT-Creation-Date: 2018-06-24 16:19+0200\n"
 "PO-Revision-Date: 2017-02-24 09:39+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: \n"
@@ -270,7 +270,7 @@ msgstr "krucvortenigmo"
 msgid "crossword puzzles"
 msgstr "krucvortenigmoj"
 
-#: croisee/views.py:124 croisee/views.py:613
+#: croisee/views.py:124 croisee/views.py:637
 #, python-format
 msgid "personal dictionary of user %s, do not rename!"
 msgstr "persona vortaro de uzanto %s ne renomi!"
@@ -303,17 +303,22 @@ msgstr ""
 msgid "Don’t save any words, since user %s is not active."
 msgstr "Ne ŝpari vortojn, ĉar uzanto%s ne aktiva."
 
-#: croisee/views.py:443 templates/ajax_query.html:6
+#: croisee/views.py:381
+#, python-format
+msgid "Copy of %s"
+msgstr ""
+
+#: croisee/views.py:466 templates/ajax_query.html:6
 #: templates/snippets/resultlist.html:20
 msgid "results"
 msgstr "Rezultojn"
 
-#: croisee/views.py:498 templates/export/context.tex:33
+#: croisee/views.py:521 templates/export/context.tex:33
 #: templates/export/latex.tex:47 templates/grid.html:81
 msgid "horizontal"
 msgstr "horizontalaj"
 
-#: croisee/views.py:499 templates/export/context.tex:40
+#: croisee/views.py:522 templates/export/context.tex:40
 #: templates/export/latex.tex:51 templates/grid.html:84
 msgid "vertical"
 msgstr "vertikalaj"
@@ -861,7 +866,7 @@ msgstr "Registru"
 msgid "Do you already have an account?"
 msgstr "Ĉu vi jam havas konton?"
 
-#: templates/root.html:62
+#: templates/root.html:64
 #, fuzzy
 msgid "fiëé croisée is a free service of fiëé visuëlle."
 msgstr "fiëé croisée estas senpaga servo de fiëé visuëlle."

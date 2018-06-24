@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-30 22:18+0200\n"
+"POT-Creation-Date: 2018-06-24 16:19+0200\n"
 "PO-Revision-Date: 2017-02-24 09:19+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: \n"
@@ -24,6 +24,6 @@ msgstr ""
 msgid "No search necessary for %s/%s"
 msgstr "Neniu serĉo necesa por %s/%s"
 
-#: static/js/puzzle.js:451
+#: static/js/puzzle.js:457
 msgid "Code error! Word is neither horizontal nor vertical!"
 msgstr "Kodo eraro! Vorto estas nek horizontala nek vertikala!"

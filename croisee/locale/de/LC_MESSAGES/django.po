@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fiëé croisée\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-30 22:18+0200\n"
-"PO-Revision-Date: 2018-03-30 22:22+0200\n"
+"POT-Creation-Date: 2018-06-24 16:19+0200\n"
+"PO-Revision-Date: 2018-06-24 16:20+0200\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "Language: de\n"
@@ -269,7 +269,7 @@ msgstr "Kreuzworträtsel"
 msgid "crossword puzzles"
 msgstr "Kreuzworträtsel"
 
-#: croisee/views.py:124 croisee/views.py:613
+#: croisee/views.py:124 croisee/views.py:637
 #, python-format
 msgid "personal dictionary of user %s, do not rename!"
 msgstr "Persönliches Wörterbuch von Benutzer %s, nicht umbenennen!"
@@ -302,17 +302,22 @@ msgstr ""
 msgid "Don’t save any words, since user %s is not active."
 msgstr "Speichere keine Wörter, da Benutzer %s nicht aktiv ist."
 
-#: croisee/views.py:443 templates/ajax_query.html:6
+#: croisee/views.py:381
+#, python-format
+msgid "Copy of %s"
+msgstr "Kopie von %s"
+
+#: croisee/views.py:466 templates/ajax_query.html:6
 #: templates/snippets/resultlist.html:20
 msgid "results"
 msgstr "Suchergebnisse"
 
-#: croisee/views.py:498 templates/export/context.tex:33
+#: croisee/views.py:521 templates/export/context.tex:33
 #: templates/export/latex.tex:47 templates/grid.html:81
 msgid "horizontal"
 msgstr "waagerecht"
 
-#: croisee/views.py:499 templates/export/context.tex:40
+#: croisee/views.py:522 templates/export/context.tex:40
 #: templates/export/latex.tex:51 templates/grid.html:84
 msgid "vertical"
 msgstr "senkrecht"
@@ -866,7 +871,7 @@ msgstr "Registrierung"
 msgid "Do you already have an account?"
 msgstr "Haben Sie bereits ein Benutzerkonto?"
 
-#: templates/root.html:62
+#: templates/root.html:64
 msgid "fiëé croisée is a free service of fiëé visuëlle."
 msgstr "fiëé croisée ist ein kostenloses Angebot von fiëé visuëlle."
 

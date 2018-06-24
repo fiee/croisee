@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-30 22:18+0200\n"
+"POT-Creation-Date: 2018-06-24 16:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,6 @@ msgstr ""
 msgid "No search necessary for %s/%s"
 msgstr ""
 
-#: static/js/puzzle.js:451
+#: static/js/puzzle.js:457
 msgid "Code error! Word is neither horizontal nor vertical!"
 msgstr ""
