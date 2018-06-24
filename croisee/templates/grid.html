@@ -3,7 +3,7 @@
 {% block title %}{% trans "Puzzle Grid" %}{% endblock %}
 
 {% block extrahead %}
-<script type="text/javascript" src="{{ STATIC_URL }}js/puzzle.js"></script>
+<script type="text/javascript" src="{% static 'js/puzzle.js' %}"></script>
 {% endblock %}
 
 {% block maincontent %}
@@ -36,34 +36,34 @@
 <table class="puzzle">
     <thead>
     <tr>
-        <th><a class="button" title="{% trans "Shift grid up" %}" id="up_all"><span class="ui-icon ui-icon-arrowthick-1-n"></span></th>
+        <th><a class="button" title="{% trans 'Shift grid up' %}" id="up_all"><span class="ui-icon ui-icon-arrowthick-1-n"></span></th>
         {% for cell in puzzle.width|get_range %}
-        <th><a class="button" title="{% trans "Shift column up" %}" id="up_{{ cell }}"><span class="ui-icon ui-icon-arrow-1-n"></span></th>
+        <th><a class="button" title="{% trans 'Shift column up' %}" id="up_{{ cell }}"><span class="ui-icon ui-icon-arrow-1-n"></span></th>
         {% endfor %}
-        <th><a class="button" title="{% trans "Shift grid right" %}" id="right_all"><span class="ui-icon ui-icon-arrowthick-1-e"></span></th>
+        <th><a class="button" title="{% trans 'Shift grid right' %}" id="right_all"><span class="ui-icon ui-icon-arrowthick-1-e"></span></th>
     </tr>
     </thead>
     <tbody>
 	{% for row in puzzle.height|get_range %}
 	<tr id="row_{{row}}">
-	   <th><a class="button" title="{% trans "Shift row left" %}" id="left_{{ row }}"><span class="ui-icon ui-icon-arrow-1-w"></span></th>
+	   <th><a class="button" title="{% trans 'Shift row left' %}" id="left_{{ row }}"><span class="ui-icon ui-icon-arrow-1-w"></span></th>
 		{% for cell in puzzle.width|get_range %}
 		<td id="cell_{{row}}_{{cell}}" class="puzzlecell">
 			<div id="num_{{row}}_{{cell}}" class="puzzlenum"></div>
 			<input type="text" name="char_{{row}}_{{cell}}" id="char_{{row}}_{{cell}}" class="puzzlechar" length="1" maxlength="1" value="" />
 		</td>
 		{% endfor %}
-       <th><a class="button" title="{% trans "Shift row right" %}" id="right_{{ row }}"><span class="ui-icon ui-icon-arrow-1-e"></span></th>
+       <th><a class="button" title="{% trans 'Shift row right' %}" id="right_{{ row }}"><span class="ui-icon ui-icon-arrow-1-e"></span></th>
 	</tr>
 	{% endfor %}
 	</tbody>
 	<tfoot>
     <tr>
-       <th><a class="button" title="{% trans "Shift grid left" %}" id="left_all"><span class="ui-icon ui-icon-arrowthick-1-w"></span></th>
+       <th><a class="button" title="{% trans 'Shift grid left' %}" id="left_all"><span class="ui-icon ui-icon-arrowthick-1-w"></span></th>
        {% for cell in puzzle.width|get_range %}
-           <th><a class="button" title="{% trans "Shift column down" %}" id="down_{{ cell }}"><span class="ui-icon ui-icon-arrow-1-s"></span></th>
+           <th><a class="button" title="{% trans 'Shift column down' %}" id="down_{{ cell }}"><span class="ui-icon ui-icon-arrow-1-s"></span></th>
        {% endfor %}
-        <th><a class="button" title="{% trans "Shift grid down" %}" id="down_all"><span class="ui-icon ui-icon-arrowthick-1-s"></span></th>
+        <th><a class="button" title="{% trans 'Shift grid down' %}" id="down_all"><span class="ui-icon ui-icon-arrowthick-1-s"></span></th>
     </tr>
 	</tfoot>
 </table>

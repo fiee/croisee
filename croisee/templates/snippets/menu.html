@@ -1,7 +1,7 @@
 {% load i18n %}
 <ul id="mainmenu">
   <li>{# fiee Menu #}
-    <a href="/"><img src="{{ STATIC_URL }}img/favicon_16.png" style="height:16px;" alt="fiëé" /></a>
+    <a href="/"><img src="{% static 'img/favicon_16.png' %}" style="height:16px;" alt="fiëé" /></a>
     <ul>
       <li><a href="/about/"><span class="ui-icon ui-icon-help"></span> {% trans "About fiëé croisée" %}</a></li>
       <li><a href="/"><span class="ui-icon ui-icon-home"></span> {% trans "Home" %}</a></li>
