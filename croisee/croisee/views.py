@@ -327,20 +327,26 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
             hash_id = self.request.POST.get('code', None)
         if hasattr(self, 'object') and ((not hash_id) or hash_id == self.object.code):
             return self.object
-        user = self.get_user()
-        owner = user
+        user = self.get_user() # current user or anonymous
+        # owner = user
+        anonymous = User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
         if owner != self.request.user and not self.request.user.is_active:
             # an unknown or anonymous user cannot become an owner
-            owner = User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
+            owner = anonymous
         try:
             self.object = Puzzle.objects.get(code=hash_id)
+            owner = self.object.owner
+            if user != anonymous and self.request.user.is_active and owner == anonymous:
+                # take over ownership
+                self.object.owner = user
+                logger.info('puzzle previously owned by anonymous user is now yours, %s!' % user)
         except Puzzle.DoesNotExist as e:
             logger.info('puzzle "%s" not found, creating new puzzle' % hash_id)
             hash_id = self.request.POST.get('code', self.new_hash_id())
             self.object = Puzzle(
                 public = True, #(not self.request.user.is_active),
                 code = hash_id,
-                owner = owner,
+                owner = user,
                 createdby = user,
                 createdon = datetime.now(),
                 height = max(min(int(self.request.POST.get('width', settings.CROISEE_GRIDMIN_Y)), settings.CROISEE_GRIDMAX_Y), settings.CROISEE_GRIDMIN_Y),
@@ -386,7 +392,7 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
         TODO: compare with get_object
         """
         new_object = form.save(commit=False)
-        for field in ('title', 'text', 'questions', 'numbers', 'width', 'height'):
+        for field in ('title', 'text', 'questions', 'numbers', 'width', 'height', 'public'):
             #logger.info('setting %s to:\n%s' % (field, getattr(new_object, field)))
             setattr(self.object, field, getattr(new_object, field))
         logger.info('form_valid: %s' % self.object)
@@ -517,7 +523,8 @@ class PuzzleListView(ListView, DictionaryMixin):
     def get_queryset(self):
         """
         Find puzzles that belong to the current user
-        or the default (anonymous) user or are public
+        or the default (anonymous) user or are public.
+        Shows also "non-public" puzzles of anonymous.
         """
         return Puzzle.objects.filter(Q(public=True)|Q(owner=self.request.user.id)|Q(owner=settings.CROISEE_DEFAULT_OWNER_ID))
 
