@@ -13,6 +13,7 @@ rel = lambda p: os.path.join(PROJECT_ROOT, p)
 rootrel = lambda p: os.path.join(PROJECT_ROOT, '..', p)
 
 DEBUG = True
+CROISEE_DEFAULT_OWNER_ID = -1
 
 CACHES = {
     'default': {
