@@ -330,9 +330,6 @@ class PuzzleView(DictionaryMixin, SingleObjectTemplateResponseMixin, ModelFormMi
         user = self.get_user() # current user or anonymous
         # owner = user
         anonymous = User.objects.get(pk=settings.CROISEE_DEFAULT_OWNER_ID)
-        if owner != self.request.user and not self.request.user.is_active:
-            # an unknown or anonymous user cannot become an owner
-            owner = anonymous
         try:
             self.object = Puzzle.objects.get(code=hash_id)
             owner = self.object.owner
