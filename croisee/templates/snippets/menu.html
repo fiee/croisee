@@ -7,7 +7,7 @@
       <li><a href="/"><span class="ui-icon ui-icon-home"></span> {% trans "Home" %}</a></li>
       {% if user.is_authenticated %}
       <li><a href="/accounts/logout/"><span class="ui-icon ui-icon-power"></span> {% trans "Logout" %} {{ user }}</a></li>
-      <li><a href="/accounts/password/change/"><span class="ui-icon ui-icon-wrench"></span> {% trans "Password change" %}</a></li>
+      <li><a href="/accounts/password_change/"><span class="ui-icon ui-icon-wrench"></span> {% trans "Password change" %}</a></li>
       {% if user.is_superuser %}
       <li><a href="/admin/"><span class="ui-icon ui-icon-key"></span> {% trans "Administration" %}</a></li>
       {% endif %}
