@@ -5,6 +5,7 @@ import django
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.i18n import JavaScriptCatalog
 try:
     from rest_framework.views import ListOrCreateModelView, InstanceModelView
     from croisee.resources import PuzzleResource, DictionaryResource
@@ -16,14 +17,15 @@ from croisee import views
 
 admin.autodiscover()
 
-js_info_dict = {
-    'packages': (settings.PROJECT_NAME,),
-}
+# js_info_dict = {
+#     'packages': (settings.PROJECT_NAME,),
+# }
 
 urlpatterns = [
     url(r'^/?$', views.IndexView.as_view(), name='%s-index' % settings.PROJECT_NAME),
     url(r'^i18n/', include('django.conf.urls.i18n',)),
-    url(r'^jsi18n/$', django.views.i18n.javascript_catalog, js_info_dict, name='javascript-catalog'),
+    # url(r'^jsi18n/$', django.views.i18n.javascript_catalog, js_info_dict, name='javascript-catalog'),
+    url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
 ]
 
 # serve static content in debug mode
@@ -46,7 +48,7 @@ urlpatterns += [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('django_registration.backends.activation.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
-    url(r'^ajax/(?P<cloze>[A-Z\*\?_%]+)/$', 
+    url(r'^ajax/(?P<cloze>[A-Z\*\?_%]+)/$',
         views.AjaxClozeQueryView.as_view(),
         name='%s-ajax_clozequery' % settings.PROJECT_NAME),
     url(r'^ajax/(?P<horizontal>[A-Z\*\?_%]+)(,(?P<hletter>\d+))?/(?P<vertical>[A-Z\*\?_%]+)(,(?P<vletter>\d+))?/$',
