@@ -10,7 +10,7 @@ PyYAML # for fixtures
 django>=1.11,<2
 django-guardian
 django-registration>=3.0
-django-tagging
+# django-tagging
 django-dotenv
 djangorestframework
 

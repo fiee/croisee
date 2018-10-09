@@ -275,7 +275,7 @@ INSTALLED_APPS = [
     'rest_framework', # RESTful API - optional, just comment
     'django_registration',
     'guardian',
-    'tagging',
+    #'tagging',
     PROJECT_NAME,
     'django.contrib.admin', # don’t overwrite registration templates
 ]
