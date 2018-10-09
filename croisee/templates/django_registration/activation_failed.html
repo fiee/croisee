@@ -9,10 +9,6 @@
     If you waited for a few days after signing up, then the link might be outdated.
     Otherwise probably something’s wrong with our system.
     {% endblocktrans %}</p>
-<!--
-Activation key used: {{ activation_key }}
--->
+    <p>{% trans "Activation key used:" %} <pre>{{ activation_error.params.activation_key }}</pre></p>
+    <p>{% trans "Error message:" %} <pre>{{ activation_error }}</pre></p>
 {% endblock %}
-
-
-

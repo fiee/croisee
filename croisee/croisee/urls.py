@@ -44,42 +44,43 @@ if settings.DEBUG:
 
 urlpatterns += [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/', include('registration.backends.hmac.urls')),
+    url(r'^accounts/', include('django_registration.backends.activation.urls')),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^ajax/(?P<cloze>[A-Z\*\?_%]+)/$', 
-        views.AjaxClozeQueryView.as_view(), 
-        name='%s-ajax_clozequery' % settings.PROJECT_NAME),  
-    url(r'^ajax/(?P<horizontal>[A-Z\*\?_%]+)(,(?P<hletter>\d+))?/(?P<vertical>[A-Z\*\?_%]+)(,(?P<vletter>\d+))?/$', 
-        views.AjaxCrossQueryView.as_view(), 
+        views.AjaxClozeQueryView.as_view(),
+        name='%s-ajax_clozequery' % settings.PROJECT_NAME),
+    url(r'^ajax/(?P<horizontal>[A-Z\*\?_%]+)(,(?P<hletter>\d+))?/(?P<vertical>[A-Z\*\?_%]+)(,(?P<vletter>\d+))?/$',
+        views.AjaxCrossQueryView.as_view(),
         name='%s-ajax_crossquery' % settings.PROJECT_NAME),
-    
+
     url(r'^puzzle/$', views.NewPuzzleView.as_view(), name='%s-puzzle-new' % settings.PROJECT_NAME),
     url(r'^puzzle/save/$', views.PuzzleView.as_view(), name='%s-puzzle-save' % settings.PROJECT_NAME),
-    url(r'^puzzle/list/$', 
-        views.PuzzleListView.as_view(), 
+    url(r'^puzzle/list/$',
+        views.PuzzleListView.as_view(),
         name='%s-puzzle-list' % settings.PROJECT_NAME),
     url(r'^puzzle/(?P<slug>[a-z\d]+)/$', views.PuzzleView.as_view(), name='%s-puzzle-get' % settings.PROJECT_NAME),
     url(r'^puzzle/(?P<slug>[a-z\d]+)/(?P<format>context|latex|txt)/$', views.PuzzleExportView.as_view(), name='%s-puzzle-export' % settings.PROJECT_NAME),
     # (?P<format>html|context|latex|pdf|txt|idml|json|yaml)
     url(r'^puzzle/(?P<slug>[a-z\d]+)/delete/$', views.DeletePuzzleView.as_view(), name='%s-puzzle-delete' % settings.PROJECT_NAME),
 #    # new puzzle
-#    url(r'^puzzle/$', 
-#        NewPuzzleView.as_view(), 
+#    url(r'^puzzle/$',
+#        NewPuzzleView.as_view(),
 #        name='%s-puzzle-new' % settings.PROJECT_NAME),
 #    # save new puzzle
-#    url(r'^puzzle/save/$', 
-#        SavePuzzleView.as_view(), 
+#    url(r'^puzzle/save/$',
+#        SavePuzzleView.as_view(),
 #        name='%s-puzzle-save' % settings.PROJECT_NAME),
-#    # get puzzle by hash code  
-#    url(r'^puzzle/(?P<slug>)[a-z\d]{24,}/(?P<action>(get|save|delete)/)?$', 
-#        PuzzleView.as_view(), 
+#    # get puzzle by hash code
+#    url(r'^puzzle/(?P<slug>)[a-z\d]{24,}/(?P<action>(get|save|delete)/)?$',
+#        PuzzleView.as_view(),
 #        name='%s-puzzle' % settings.PROJECT_NAME),
-    # show personal dictionary  
-    url(r'^dictionary/$', 
-        views.WordListView.as_view(), 
+    # show personal dictionary
+    url(r'^dictionary/$',
+        views.WordListView.as_view(),
         name='%s-dictionary-personal' % settings.PROJECT_NAME),
-    # show other dictionary  
-    url(r'^dictionary/(?P<object_id>\d+)/$', 
-        views.WordListView.as_view(), 
+    # show other dictionary
+    url(r'^dictionary/(?P<object_id>\d+)/$',
+        views.WordListView.as_view(),
         name='%s-dictionary' % settings.PROJECT_NAME),
 ]
 

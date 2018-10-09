@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.10/ref/settings/
+https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 import os
 import sys
@@ -63,7 +63,7 @@ LOGGING = {
     'disable_existing_loggers': True,
     'formatters': {
         'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(message)s'  # %(process)d %(thread)d 
+            'format': '%(levelname)s %(asctime)s %(module)s %(message)s'  # %(process)d %(thread)d
         },
         'simple': {
             'format': '%(levelname)s %(message)s'
@@ -263,7 +263,6 @@ INSTALLED_APPS = [
     #'admin_tools.theming',
     #'admin_tools.menu',
     #'admin_tools.dashboard',
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -274,10 +273,11 @@ INSTALLED_APPS = [
     #'django.contrib.sitemaps',
     'gunicorn', # not with fcgi
     'rest_framework', # RESTful API - optional, just comment
-    #'registration',  # not necessary
+    'django_registration',
     'guardian',
     'tagging',
     PROJECT_NAME,
+    'django.contrib.admin', # don’t overwrite registration templates
 ]
 
 MIDDLEWARE_CLASSES = [

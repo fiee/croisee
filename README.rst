@@ -1,7 +1,7 @@
 fiëé croisée
 ============
 
-I like making crossword puzzles. But it needs *a lot* of time without the right tools. 
+I like making crossword puzzles. But it needs *a lot* of time without the right tools.
 
 At the moment this is some kind of fill-in sheet with attached dictionary to look for matching words.
 
@@ -12,10 +12,9 @@ Installation
 ------------
 
 It’s a Django_ application, to be run on Nginx_ with Django via gunicorn_.
-(Outdated configuration files for Apache and FCGI are included.)
 
-The provided fabfile (fabric_ deployment) is for a Debian server 
-and documented at http://github.com/fiee/generic_django_project
+The provided fabfile (fabric_ deployment) is for a Debian server
+and documented at https://github.com/fiee/generic_django_project
 
 Additionally you need an ``.env`` file, containing SECRET_KEY,
 DATABASE_PASSWORD and EMAIL_PASSWORD.
@@ -116,7 +115,7 @@ it gets filled with the first solution from your selected dictionaries.
 Just press # again to remove the number and the question field.
 If you change the questions/descriptions, they get saved into your personal
 dictionary (only for logged-in users, of course).
- 
+
 
 
 Admin
@@ -125,7 +124,7 @@ Admin
 Make a wordlist
 ---------------
 
-1. use the provided wordlists for German, English and Esperanto 
+1. use the provided wordlists for German, English and Esperanto
    (derived from ispell_ dictionaries); you can upload them directly.
 2. use a dictionary from aspell_:
 
@@ -252,7 +251,7 @@ Dependencies
 
 * Python_ 2.7/3.5
 * Django_ 1.11
-* `django registration`_
+* `django registration`_ 3.0
 * `django guardian`_
 * Fabric_ 0.9+ (optional, for easy deployment)
 * jQuery_, `jQuery UI`_

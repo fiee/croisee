@@ -9,7 +9,7 @@ PyYAML # for fixtures
 
 django>=1.11,<2
 django-guardian
-django-registration
+django-registration>=3.0
 django-tagging
 django-dotenv
 djangorestframework
@@ -19,4 +19,3 @@ eventlet # for gunicorn
 setproctitle # for gunicorn
 
 #python-memcached # for memcached cache (you must install that separately)
-
