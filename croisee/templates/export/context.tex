@@ -1,7 +1,6 @@
 {% load i18n tex_tags %}
 \setupbodyfont[ss,8pt]
 \language[{{language}}]
-\usemodule[old-columnsets]
 \setuplayout[header=10mm,footer=10mm,topspace=0mm]
 \setupTABLE[column][width=1cm,height=1cm,style=bold]
 %\setupheader[location=high]
@@ -13,7 +12,7 @@
 \definecolor[solutionbackground][s=0.0]
 \definecolor[solutionforeground][s=1.0]
 \definecolor[solutionframe][s=1.0]
-\definecolumnset[twocols][n=2]
+\definemixedcolumns[twocols][n=2,balance=no]
 \setupitemize[n,packed]
 
 \starttext
@@ -29,7 +28,7 @@
 
 \blank[big]
 
-\startcolumnset[twocols]
+\startmixedcolumns[twocols]
 
 \subsubject{% trans "horizontal"|braced %}
 
@@ -37,14 +36,14 @@
 {% for qu in questions.h %} \sym{{qu.num|braced}} {{ qu.text|texquote }}
 {% endfor %}\stopitemize
 
-\column
+%\column
 \subsubject{% trans "vertical"|braced %}
 
 \startitemize[n]
 {% for qu in questions.v %} \sym{{qu.num|braced}} {{ qu.text|texquote }}
 {% endfor %}\stopitemize
 
-\stopcolumnset
+\stopmixedcolumns
 
 %\setupTABLE[column][width=1em,height=1em,align={middle,lohi}]
 \subject{% trans "Solution"|braced %}
