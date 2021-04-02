@@ -2,12 +2,11 @@
 % setup parameters courtesy of Heiko Oberdiek (TeX-D-L mailing list, 2011-10-12)
 \nofiles % no auxiliary files
 \documentclass[ngerman,12pt,a4paper]{article}
-\usepackage[hmargin=2cm,vmargin=2cm]{geometry}
+\usepackage[margin=2cm]{geometry}
 \usepackage[large]{cwpuzzle}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{ngerman}
 \usepackage{array}
 \pagestyle{empty}
 {% if language == "de" %}\usepackage{ngerman}{% endif %}
@@ -46,11 +45,11 @@
 
 \begin{MyPuzzleClues}{% trans "horizontal"|braced %}
 {% for qu in questions.h %} \Clue{{qu.num|braced}}{}{{ qu.text|texquote|braced }}
-{% endfor %}\end{PuzzleClues}
+{% endfor %}\end{MyPuzzleClues}
 \hfill
 \begin{MyPuzzleClues}{% trans "vertical"|braced %}
 {% for qu in questions.v %} \Clue{{qu.num|braced}}{}{{ qu.text|texquote|braced }}
-{% endfor %}\end{PuzzleClues}
+{% endfor %}\end{MyPuzzleClues}
 
 \PuzzleSolution
 
