@@ -46,13 +46,13 @@ if __name__ == '__main__':
         args = sys.argv[1:]
     else:
         sys.exit(1)
-    
+
     targetfile = open('wordlist.txt', 'a+', encoding='utf-8')
     text = ''
     while len(args)>0:
         path = os.path.abspath(args.pop())
         print("reading %s" % path)
-        sourcefile = open(path, 'rU', encoding='utf-8')
+        sourcefile = open(path, 'r', encoding='utf-8')
         sourcetext = ''.join(sourcefile.readlines())
         sourcefile.close()
         text += sourcetext
@@ -61,4 +61,3 @@ if __name__ == '__main__':
     text = '\n'.join(sorted(text_to_set(text), key=lowercase))
     targetfile.write(text)
     targetfile.close()
-    
