@@ -23,3 +23,5 @@ lib
 .Python
 pip-selfcheck.json
 puzzles
+.env
+pyvenv.cfg
