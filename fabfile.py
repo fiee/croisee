@@ -308,7 +308,7 @@ def local_setup():
             env.dbuserscript = '%(prj_path)s/userscript.sql' % env
             dbs = open(env.dbuserscript, 'w')
             dbs.write('''create user '%(prj_name)s'@'localhost' identified by '%(database_password)s';
-create database %(prj_name)s character set 'utf8';
+create database %(prj_name)s character set 'utf8mb4';
 grant all privileges on %(prj_name)s.* to '%(prj_name)s'@'localhost';
 flush privileges;\n''' % env)
             dbs.close()
@@ -320,7 +320,7 @@ flush privileges;\n''' % env)
 def deploy(param=''):
     """
     Deploy the latest version of the site to the servers, install any
-    required third party modules, install the virtual host and 
+    required third party modules, install the virtual host and
     then restart the webserver
     """
     require('hosts', provided_by=[localhost, webserver])
@@ -401,7 +401,7 @@ def install_site():
                 run('cp server-setup/logrotate.conf /etc/logrotate.d/website-%(prj_name)s' % env)
                 if env.use_celery:
                     run('cp server-setup/logrotate-celery.conf /etc/logrotate.d/celery' % env)
-                run('cp server-setup/letsencrypt.conf /etc/letsencrypt/configs/%(cryptdomain)s.conf' % env)            
+                run('cp server-setup/letsencrypt.conf /etc/letsencrypt/configs/%(cryptdomain)s.conf' % env)
     with settings(user=env.adminuser, warn_only=True, pty=True):
         run('ln -s /etc/%(webserver)s/sites-available/%(prj_name)s /etc/%(webserver)s/sites-enabled/%(prj_name)s' % env)
 

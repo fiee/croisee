@@ -1,6 +1,9 @@
 fiëé croisée
 ============
 
+***OUTDATED and moved to https://codeberg.org/fiee/croisee !***
+
+
 I like making crossword puzzles. But it needs *a lot* of time without the right tools.
 
 At the moment this is some kind of fill-in sheet with attached dictionary to look for matching words.
